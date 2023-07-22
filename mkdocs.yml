@@ -1,3 +1,83 @@
+# Project information
 site_name: MinJoker's TechStack
+site_url: https://minjoker.github.io
+site_description: 这是 MinJoker 的笔记本
+site_author: MinJoker
+copyright: Copyright &copy; 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
+
+# Build directories
 theme:
   name: material
+  icon:
+    logo: material/bed
+  feature: 
+    - navigation.instant
+    - navigation.tabs
+    - navigation.prune
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - header.autohide
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+extra:
+  social:
+    - icon: material/github
+      link: https://github.com/MinJoker
+
+# Formatting options
+markdown_extensions:
+  #Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 2
+  #Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+
+# Documentation layout
