@@ -50,7 +50,7 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
-      toc_depth: 2
+      toc_depth: 4
   #Python Markdown Extensions
   - pymdownx.arithmatex:
       generic: true
@@ -67,6 +67,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.smartsymbols
   - pymdownx.snippets
+    auto_append:
+        - includes/abbreviations.md
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -81,3 +83,11 @@ plugins:
   - search
 
 # Documentation layout
+nav:
+  - 首页:
+    - index.md
+  
+  - 书籍:
+    - books/index.md
+    - 脑机接口导论:
+      - books/BCIAI/Ch3.md
