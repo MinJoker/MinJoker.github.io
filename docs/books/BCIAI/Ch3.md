@@ -24,9 +24,9 @@
 
 单个神经元的细胞外记录是一种最常见的侵入式技术。将端部尺寸不到10μm的由钨或者铂铱合金制成的微电极插入目标脑区，调整插入深度直至足够接近单个神经元细胞体，以采集由细胞动作电位引起的电压波动。
 
-img
-
 细胞外记录到的信号幅值一般不到1mV，需要放大器来检测信号。电压波动与动作电位直接相关，所以即使电极没有插入细胞，记录的信号也显得和动作电位相匹配。
+
+![Intracellular versus extracellular recording of spikes](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/1.jpg)
 
 #### 多电极阵列
 
