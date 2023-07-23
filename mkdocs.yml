@@ -1,6 +1,8 @@
 # Project information
 site_name: MinJoker's TechStack
 site_url: https://minjoker.github.io
+repo_name: MinJoker/MinJoker.github.io
+repo_url: https://github.com/MinJoker/MinJoker.github.io
 site_description: 这是 MinJoker 的笔记本
 site_author: MinJoker
 copyright: Copyright &copy; 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
@@ -12,6 +14,7 @@ theme:
     logo: material/bed
   feature: 
     - navigation.instant
+    - navigation.tracking
     - navigation.tabs
     - navigation.prune
     - navigation.indexes
@@ -36,7 +39,7 @@ theme:
   
 extra:
   social:
-    - icon: material/github
+    - icon: fontawesome/brands/github
       link: https://github.com/MinJoker
 
 # Formatting options
@@ -84,8 +87,11 @@ plugins:
 nav:
   - 首页:
     - index.md
-  
+
   - 书籍:
     - books/index.md
     - 脑机接口导论:
       - books/BCIAI/Ch3.md
+
+  - 课程:
+    - courses/index.md
