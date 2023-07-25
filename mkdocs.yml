@@ -12,13 +12,14 @@ theme:
   name: material
   icon:
     logo: material/bed
-  feature: 
+  features: 
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
     - navigation.prune
     - navigation.indexes
     - navigation.top
+    - search.suggest
     - search.highlight
     - header.autohide
     - content.code.copy
