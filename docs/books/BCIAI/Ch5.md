@@ -255,3 +255,75 @@ $$
 
 神经网络是用于**非线性函数逼近**的流行算法。
 
+我们在讨论分类技术的时候涉及了感知器，它是一种神经网络。阈值函数对分类是有效的，但对非线性回归是无效的，对回归来说，流行的选择是`sigmoid`输出函数：
+
+$$
+v = g(w^T u)
+$$
+
+$$
+g(x) = \frac{1}{1+e^{-\beta x}}
+$$
+
+sigmoid函数可以看做是阈值函数更平滑的版本：它将输入压缩到0~1之间，用参数 $\beta$ 控制函数的斜率（$\beta$ 值越大，sigmoid函数越接近阈值函数）。sigmoid函数容易求导，这在推导反向传播学习规则时将变得很重要。
+
+![sigmoid函数](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/12.jpg "sigmoid函数")
+
+对非线性回归来说，我们感兴趣的是**包括多层神经元的网络**，网络中上一层的输出作为下一层神经元的输入。最常见的一种多层网络是包括一个输入层、一个“隐藏”层、一个输出层的三层网络，至少在理论上已经证明，这种网络**能够通过隐藏层中足够多的神经元逼近任何非线性函数**。
+
+假定有一个由sigmoid神经元构成的三层网络，矩阵 $V$ 表示输入层到隐藏层的权重，矩阵 $W$ 表示隐藏层到输出层的权重。输出层中第 $i$ 个神经元的输出可表示为：
+
+$$
+v_i = g(\sum_j W_{ji} g(\sum_k V_{kj} u_k))
+$$
+
+![三层神经网络](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/13.jpg "三层神经网络")
+
+和线性回归一样，其目标也是要减少训练数据期望的输出向量与由网络产生的实际输出向量之间的误差。对训练中每个输入，其误差如下：
+
+$$
+E(W,V) = \frac{1}{2} \sum_i (d_i - v_i) ^2
+$$
+
+这里需要注意两点：
+
+1. 由于sigmoid非线性函数的存在，不能像线性回归那样直接通过将 $E$ 的导数置零来导出权重的解析表达式；
+2. 只知道输出层的误差（上式）；
+
+因此需要反向传播误差信息到网络的更低层，以便能知道它们对输出误差的贡献，成比例的修正权重（“信任分配”问题）。**反向传播算法**可以作为这两个问题的解决方案。
+
+??? note "反向传播算法"
+
+    反向传播算法试图通过让权重 $W$ 和 $V$ 的函数 $E$ 的梯度下降来减小输出误差函数 $E(W,V)$ 。这意味着更新与 $-\frac{\partial E}{\partial W}$ 和 $-\frac{\partial E}{\partial V}$ 成正比的权重，直到权重的变化变小，表明已经达到了误差函数的局部最小值。利用链式法则能够很容易地导出用于更新权重 $W$ 外层的表达式：
+
+    $$
+    W_{ji} \leftarrow W_{ji} - \epsilon \frac{\mathrm{d} E}{\mathrm{d} W_{ji}}
+    $$
+
+    $$
+    \frac{\mathrm{d} E}{\mathrm{d} W_{ji}} = -(d_i - v_i) g \prime (\sum_m W_{mi}x_m) x_j
+    $$
+
+    上式中，$\leftarrow$ 表示左边的表达式被右边的表达式替代，$\epsilon$ 是“学习率”（0~1之间的正数），$g\prime$ 是sigmoid函数 $g$ 的导数，$x_j$ 是隐藏层神经元 $j$ 的输出：$x_j = g(\displaystyle{\sum_k} v_{kj}u_k)$ 。
+
+    用于更新权重 $V$ 内层的表达式也能利用链式法则获得：
+
+    $$
+    V_{kj} \leftarrow V_{kj} - \epsilon \frac{\mathrm{d} E}{\mathrm{d} V_{kj}}
+    $$
+
+    $$
+    \frac{\mathrm{d} E}{\mathrm{d} V_{kj}} = \frac{\mathrm{d} E}{\mathrm{d} x_j} \cdot \frac{\mathrm{d} x_j}{\mathrm{d} V_{kj}}
+    $$
+
+    $$
+    \frac{\mathrm{d} E}{\mathrm{d} V_{kj}} = [-\sum_i (d_i - v_i) g\prime (\sum_m W_{mi}x_m) W_{ji}] \cdot [g\prime (\sum_n V_{nj}u_n) u_k]
+    $$
+
+    可以看到，输出误差 $(d_i - v_i)$ 影响了权重内层的更新，可以在每一层中通过对sigmoid非线性函数求导来适当调整输出误差。误差被反向传播到更低层，因而算法由此得名。
+
+尽管这种网络容易对训练数据过度拟合而导致泛化能力差，这种学习过程还是可以推广到任意数量的层，包括含有很多隐藏层的深层网络。**大多数的BCI应用趋向于使用三层网络**，并使用交叉验证来决定隐藏层神经元的数量。
+
+### 径向基函数网络
+
+### 高斯过程
