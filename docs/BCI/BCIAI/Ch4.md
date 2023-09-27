@@ -94,7 +94,7 @@ DFT的时间复杂度为 $O(T^2)$ ，当数据量较大时运算速度很不理�
 
 ??? example "时频相差很大的两个信号，可能拥有一样的傅里叶频谱图"
 
-    ![傅里叶变换在平稳及非平稳条件下的表现](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/2.jpg "傅里叶变换在平稳及非平稳条件下的表现")
+    ![傅里叶变换在平稳及非平稳条件下的表现](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/2.jpg "傅里叶变换在平稳及非平稳条件下的表现")
 
 一种简单可行的优化方法是加窗，在短时窗内（近似平稳）进行傅里叶分析，这就是短时傅里叶分析（STFT）。但是STFT在选择窗口宽度时很难协调时间分辨率和频率分辨率之间的矛盾。
 
@@ -108,7 +108,7 @@ $$
 
 小波分析信号处理不仅可以知道信号由怎样频率的成分，而且知道其在时域上对应的具体位置。傅里叶变换只能得到一个频谱，而小波变换可以得到一个时频谱。
 
-![小波变换能同时确定时间和频率](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/3.png "小波变换能同时确定时间和频率")
+![小波变换能同时确定时间和频率](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/3.png "小波变换能同时确定时间和频率")
 
 此外，小波变换在处理突变信号时也优于傅里叶变换，因为傅里叶变换存在吉布斯效应，对突变信号的拟合效果不够理想。
 
@@ -218,7 +218,7 @@ $$
 
 **卡尔曼滤波器将环境的隐藏状态都估计为用均值和方差（协方差）定义的高斯分布**。其工作过程为：在测量 $y_t$ 之前，先预测均值 $\overline x_t$ 和协方差 $M_t$ ，它们由卡尔曼滤波器在 $t-1$ 时刻估计的均值和协方差计算得到，然后计算预测误差 $(y_t - B \overline x_t)$ ，将校正项 $K_t (y_t - B \overline x_t)$ 与之前的预测均值 $\overline x_t$ 相加即可得到新的估计值 $\hat x_t$ 。下图说明了卡尔曼滤波器的预测-校正周期：
 
-![卡尔曼滤波器的预测-校正周期](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/4.jpg "卡尔曼滤波器的预测-校正周期")
+![卡尔曼滤波器的预测-校正周期](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/4.jpg "卡尔曼滤波器的预测-校正周期")
 
 #### 粒子滤波
 
@@ -251,7 +251,7 @@ $$
 
 ??? example "三种基本的空间滤波技术示例"
 
-    ![三种基本的空间滤波技术示例](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/5.jpg "三种基本的空间滤波技术示例")
+    ![三种基本的空间滤波技术示例](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/5.jpg "三种基本的空间滤波技术示例")
 
 ### 主成分分析
 
@@ -304,7 +304,7 @@ $$
 
 ??? example "PCA并不试图寻找独立信号源，但是ICA是的"
 
-    ![PCA与ICA线性变换过程对比示例](https://raw.githubusercontent.com/MinJoker/ImageHost/main/books/BCIAI/6.png "PCA与ICA线性变换过程对比示例")
+    ![PCA与ICA线性变换过程对比示例](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/6.png "PCA与ICA线性变换过程对比示例")
 
 目前存在多种计算 $W$ 的算法，其中最常用的是`Bell-Sejnowski "infomax" 算法`以及`FastICA`。由中心极限定理可得，独立源信号的线性混合几乎总是服从高斯分布，从而ICA算法将**一个合适的非高斯分布作为待求**的 $P(a_i)$ ，从得到的最优化函数推导出 $W$ 的估算准则。
 
