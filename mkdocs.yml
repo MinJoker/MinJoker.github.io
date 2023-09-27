@@ -91,15 +91,13 @@ plugins:
 
 # Documentation layout
 nav:
-  - 首页:
+  - Home:
     - index.md
 
-  - 书籍:
-    - books/index.md
-    - 脑机接口导论:
-      - books/BCIAI/Ch3.md
-      - books/BCIAI/Ch4.md
-      - books/BCIAI/Ch5.md
+  - Computer Science:
+    - 数据结构与算法
+      - CS/Algorithms/Lec1.md
 
-  - 课程:
-    - courses/index.md
+  - BCI:
+
+  - Others:
