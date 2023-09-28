@@ -63,16 +63,30 @@ Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了�
 - Root:
     - Make every other node in path point to its grandparent (thereby halving path length).
 
-```c
-int root(int i)
-{
-    while(i!=id[i]){
-        id[i] = id[id[i]];      // only one extra line of code!
-        i = id[i];
+=== "with path compression"
+
+    ```c linenums="1"
+    int root(int i)
+    {
+        while(i!=id[i]){
+            id[i] = id[id[i]];      // only one extra line of code!
+            i = id[i];
+        }
+        return i;
     }
-    return i;
-}
-```
+    ```
+
+=== "without path compression"
+
+    ```c linenums="1"
+    int root(int i)
+    {
+        while(i!=id[i]){
+            i = id[i];
+        }
+        return i;
+    }
+    ```
 
 !!! tip
     
