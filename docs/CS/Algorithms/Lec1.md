@@ -8,6 +8,7 @@ Union-Find算法，也就是并查集算法，主要用于解决「动态连通�
 - Find: 查询两节点是否连通；
 
 「连通」是一种等价关系，具有以下性质：
+
 1. 自反性：节点`p`和`p`是连通的；
 2. 对称性：如果节点`p`和`q`连通，那么`q`和`p`也连通；
 3. 传递性：如果节点`p`和`q`连通，`q`和`r`连通，那么`p`和`r`也连通；
@@ -62,10 +63,6 @@ Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了�
 - Root:
     - Make every other node in path point to its grandparent (thereby halving path length).
 
-!!! tip
-    
-    No reason not to. Keep tree almost completely flat.
-
 ```c
 int root(int i)
 {
@@ -76,3 +73,7 @@ int root(int i)
     return i;
 }
 ```
+
+!!! tip
+    
+    No reason not to. Keep tree almost completely flat.

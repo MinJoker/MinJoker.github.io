@@ -1,7 +1,7 @@
 # Project information
 site_name: MinJoker's Notebook
 site_url: https://minjoker.github.io
-repo_name: MinJoker/MinJoker.github.io
+repo_name: MinJoker.github.io
 repo_url: https://github.com/MinJoker/MinJoker.github.io
 site_description: 这是 MinJoker 的笔记本
 site_author: MinJoker
@@ -95,11 +95,12 @@ nav:
     - index.md
 
   - Computer Science:
+    - CS/index.md
     - 数据结构与算法:
       - CS/Algorithms/Lec1.md
 
   - BCI:
-    - index.md
+    - BCI/index.md
 
   - Others:
-    - index.md
+    - Others/index.md
