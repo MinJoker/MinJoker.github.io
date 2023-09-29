@@ -45,7 +45,7 @@ $$
 y = sign(w^T x + w_0)
 $$
 
-![二分类的线性判别分析](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/7.jpg "二分类的线性判别分析")
+![二分类的线性判别分析](/assets/images/bci/bciai/7.jpg "二分类的线性判别分析")
 
 **LDA实现简单、运算速度较快，已经成为BCI研究中常用的分类器**。尽管由于在LDA的推导中做了**强假设**，诸如非高斯分布、异常值、噪声等因素会降低LDA的性能，但总体上LDA能产生好的分类结果。
 
@@ -89,7 +89,7 @@ sigmoid函数的输出是0~1之间的数字，其值接近于0则表示属于类
 
 LDA和感知器通过选择超平面来分离两类，而被选择的超平面有无数种合适的可能，可以证明在这些超平面中，**选择两类之间距离最大的超平面**能获得最好的泛化能力。SVM就是这样的一个分类器。
 
-![支持向量机](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/8.jpg "支持向量机")
+![支持向量机](/assets/images/bci/bciai/8.jpg "支持向量机")
 
 **线性SVM已经成功用于大量BCI应用**。线性SVM就不能解决问题的情况下，可利用**核技巧**（kernel trick）来有效实现数据的非线性映射，将数据映射到更高维的空间中，使数据线性可分。（BCI中最常用的核是高斯核或径向基函数）
 
@@ -135,7 +135,7 @@ boosting对解决弱分类器问题（这些弱分类器的表现可能仅比随
 
 NN分类存在的一个问题是它对噪声和异常值很敏感，这种技术可以通过使用**k-最近邻**（k-NN）来变得更加稳健。在k-NN中，输入被指定为k个最近邻中最普遍的一种类别。
 
-![k-最近邻](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/9.jpg "k-最近邻")
+![k-最近邻](/assets/images/bci/bciai/9.jpg "k-最近邻")
 
 k-NN技术存在的一个潜在问题是它偏向于训练集中最多样本所属的类别，其有一种变式，把距离和类别同时纳入考虑，可以解决这一问题。
 
@@ -176,11 +176,11 @@ $$
 
 ROC曲线（“受试者操作特征”曲线）是真阳性比例和假阳性比例的对比图，能**反映敏感性与特异性之间的关系**。横坐标为假阳性率（$1-$特异性），纵坐标为真阳性率（敏感度）。
 
-![ROC空间](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/10.jpg "ROC空间")
+![ROC空间](/assets/images/bci/bciai/10.jpg "ROC空间")
 
 根据曲线的位置，把整个图分成两部分，曲线下方部分的面积（AUC）越大，表示预测准确性越高；曲线越接近左上角，预测准确性越高。
 
-![ROC曲线](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/11.jpg "ROC曲线")
+![ROC曲线](/assets/images/bci/bciai/11.jpg "ROC曲线")
 
 #### 分类正确率与Kappa系数
 
@@ -269,7 +269,7 @@ $$
 
 sigmoid函数可以看做是阈值函数更平滑的版本：它将输入压缩到0~1之间，用参数 $\beta$ 控制函数的斜率（$\beta$ 值越大，sigmoid函数越接近阈值函数）。sigmoid函数容易求导，这在推导反向传播学习规则时将变得很重要。
 
-![sigmoid函数](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/12.jpg "sigmoid函数")
+![sigmoid函数](/assets/images/bci/bciai/12.jpg "sigmoid函数")
 
 对非线性回归来说，我们感兴趣的是**包括多层神经元的网络**，网络中上一层的输出作为下一层神经元的输入。最常见的一种多层网络是包括一个输入层、一个“隐藏”层、一个输出层的三层网络，至少在理论上已经证明，这种网络**能够通过隐藏层中足够多的神经元逼近任何非线性函数**。
 
@@ -279,7 +279,7 @@ $$
 v_i = g(\sum_j W_{ji} g(\sum_k V_{kj} u_k))
 $$
 
-![三层神经网络图示](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/13.jpg "三层神经网络图示")
+![三层神经网络图示](/assets/images/bci/bciai/13.jpg "三层神经网络图示")
 
 和线性回归一样，其目标也是要减少训练数据期望的输出向量与由网络产生的实际输出向量之间的误差。对训练中每个输入，其误差如下：
 
@@ -356,7 +356,7 @@ $$
 \varphi_i(u) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
 $$
 
-![RBF网络图示](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/14.jpg "RBF网络图示")
+![RBF网络图示](/assets/images/bci/bciai/14.jpg "RBF网络图示")
 
 ### 高斯过程
 

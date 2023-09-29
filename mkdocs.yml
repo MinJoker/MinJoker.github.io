@@ -101,6 +101,10 @@ nav:
 
   - BCI:
     - bci/index.md
+    - 脑机接口导论:
+      - bci/bciai/ch3.md
+      - bci/bciai/ch4.md
+      - bci/bciai/ch5.md
 
   - Others:
     - others/index.md

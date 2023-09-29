@@ -47,7 +47,7 @@ Quick-Union算法用「森林」来表达图的动态连通性。
 
 Union-Find算法的一种优化方式是，通过衡量两棵树的大小(*number of objects*)来决定树的连接方式，从而避免生成过高的树状结构，甚至退化成链表。
 
-![Weighting对树的优化效果](https://raw.githubusercontent.com/MinJoker/ImageHost/main/CS/Algorithms/1.png "Weighting对树的优化效果")
+![Weighting对树的优化效果](/assets/images/cs/algorithms/1.png "Weighting对树的优化效果")
 
 - Data structure:
     - Same as Quick-Union, but maintain extra array `sz[i]` to count number of objects in the tree rooted at `i`.
