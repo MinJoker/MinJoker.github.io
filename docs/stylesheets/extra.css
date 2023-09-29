@@ -1,3 +1,5 @@
+/* Font */
+
 :root {
     --md-text-font: "JetBrains Mono", "LXGW WenKai";
     --md-code-font: "JetBrains Mono";
@@ -12,3 +14,38 @@
     font-family: "LXGW WenKai";
     src: url("/assets/fonts/LXGWWenKaiScreen.woff2") format("woff2"); 
 }
+
+/* end Font */
+
+
+
+/* Color */
+
+/* light mode */
+[data-md-color-scheme="default"] {
+    /* primary color shades, i.e. header */
+    --md-primary-fg-color:               hsla(0, 0%, 90%, 0.8);
+    --md-primary-bg-color:               hsla(0, 0%, 0%, 0.8);
+
+    /* footer color shades */
+    --md-footer-fg-color:                hsla(0, 0%, 90%, 0.8);
+    --md-footer-bg-color:                hsla(0, 0%, 20%, 0.8);
+
+    /* default color shades, i.e. text */
+    --md-default-fg-color:               hsla(0, 0%, 0%, 0.8);
+    --md-default-bg-color:               hsla(0, 0%, 100%, 1);
+
+    /* code color shades */
+    --md-code-fg-color:                  hsla(200, 15%, 25%, 1);
+    --md-code-bg-color:                  hsla(200, 0%, 95%, 1);
+
+    /* typeset `a` color shades, i.e. hyperlinks, toc */
+    --md-typeset-a-color:                hsla(0, 0%, 0%, 0.5);
+}
+
+/* light mode: search color shades */
+[data-md-color-scheme="default"] input.md-search__input {
+    background-color:                    hsla(0, 0%, 90%, 0.8);
+}
+
+/* end Color */
