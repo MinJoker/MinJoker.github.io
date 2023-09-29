@@ -99,7 +99,7 @@ nav:
     - 数据结构与算法:
       - cs/algorithms/lec1.md
 
-  - BCI:
+  - Brain-Computer Interface:
     - bci/index.md
     - 脑机接口导论:
       - bci/bciai/ch3.md
