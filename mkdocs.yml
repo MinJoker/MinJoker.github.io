@@ -40,7 +40,6 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/custom.css
 
 extra_javascript:
   - javascripts/mathjax.js

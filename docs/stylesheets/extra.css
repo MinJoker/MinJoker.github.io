@@ -1,3 +1,8 @@
+:root {
+    --md-text-font: "JetBrains Mono", "LXGW WenKai";
+    --md-code-font: "JetBrains Mono";
+  }
+
 @font-face {
     font-family: "JetBrains Mono";
     src: url("/assets/fonts/JetBrainsMono-Regular.woff2") format("woff2"); 
