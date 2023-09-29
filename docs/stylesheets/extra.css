@@ -22,34 +22,105 @@
 /* Color */
 
 /* light mode */
-[data-md-color-scheme="light"] {
-    /* primary color shades, i.e. header */
+[data-md-color-scheme="default"] {
+    /* header */
     --md-primary-fg-color:               hsla(0, 0%, 90%, 0.8);
     --md-primary-bg-color:               hsla(0, 0%, 0%, 0.8);
 
-    /* footer color shades */
+    /* footer */
     --md-footer-fg-color:                hsla(0, 0%, 90%, 0.8);
     --md-footer-bg-color:                hsla(0, 0%, 20%, 0.8);
 
-    /* default color shades, i.e. text */
-    --md-default-fg-color:               hsla(0, 0%, 0%, 0.8);
-    --md-default-bg-color:               hsla(0, 0%, 100%, 1);
+    /* text */
+    --md-typeset-color:                  hsla(0, 0%, 0%, 0.8);
 
-    /* code color shades */
+    /* default */
+    --md-default-fg-color:               hsla(0, 0%, 0%, 0.8);
+    --md-default-fg-color--light:        hsla(0, 0%, 0%, 0.5);
+    --md-default-fg-color--lighter:      hsla(0, 0%, 0%, 0.3);
+    --md-default-fg-color--lightest:     hsla(0, 0%, 0%, 0.07);
+    --md-default-bg-color:               hsla(0, 0%, 100%, 1);
+    --md-default-bg-color--light:        hsla(0, 0%, 100%, 0.7);
+    --md-default-bg-color--lighter:      hsla(0, 0%, 100%, 0.3);
+    --md-default-bg-color--lightest:     hsla(0, 0%, 100%, 0.12);
+
+    /* code */
     --md-code-fg-color:                  hsla(200, 15%, 25%, 1);
     --md-code-bg-color:                  hsla(200, 0%, 95%, 1);
 
-    /* typeset `a` color shades, i.e. hyperlinks, toc */
+    /* code highlight */
+    --md-code-hl-number-color:           hsla(0, 67%, 50%, 1);
+    --md-code-hl-special-color:          hsla(340, 83%, 47%, 1);
+    --md-code-hl-function-color:         hsla(291, 45%, 50%, 1);
+    --md-code-hl-constant-color:         hsla(250, 63%, 60%, 1);
+    --md-code-hl-keyword-color:          hsla(219, 54%, 51%, 1);
+    --md-code-hl-string-color:           hsla(150, 63%, 30%, 1);
+    --md-code-hl-name-color:             var(--md-code-fg-color);
+    --md-code-hl-operator-color:         var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color:      var(--md-default-fg-color--light);
+    --md-code-hl-comment-color:          var(--md-default-fg-color--light);
+    --md-code-hl-generic-color:          var(--md-default-fg-color--light);
+    --md-code-hl-variable-color:         var(--md-default-fg-color--light);
+
+    /* typeset `a` color shades, e.g. hyperlinks, toc */
     --md-typeset-a-color:                hsla(0, 0%, 0%, 0.5);
 
-    /* admonition color shades */
+    /* admonition */
     --md-admonition-fg-color:              var(--md-default-fg-color);
     --md-admonition-bg-color:              var(--md-default-bg-color);
 }
 
 /* light mode: search color shades */
-[data-md-color-scheme="light"] input.md-search__input {
+[data-md-color-scheme="default"] input.md-search__input {
     background-color:                    hsla(0, 0%, 90%, 0.8);
+}
+
+/* dark mode */
+[data-md-color-scheme="slate"] {
+    /* header */
+    --md-primary-fg-color:               hsla(0, 0%, 0%, 1);
+    --md-primary-bg-color:               hsla(0, 0%, 100%, 0.9);
+
+    /* footer */
+    --md-footer-fg-color:                hsla(0, 0%, 100%, 0.9);
+    --md-footer-bg-color:                hsla(0, 0%, 0%, 1);
+
+    /* text */
+    --md-typeset-color:                  hsla(0, 0%, 100%, 0.75);
+
+    /* default */
+    --md-default-fg-color:               hsla(0, 0%, 100%, 0.75);
+    --md-default-fg-color--light:        hsla(0, 0%, 100%, 0.55);
+    --md-default-fg-color--lighter:      hsla(0, 0%, 100%, 0.3);
+    --md-default-fg-color--lightest:     hsla(0, 0%, 100%, 0.1);
+    --md-default-bg-color:               hsla(0, 0%, 10%, 1); 
+    --md-default-bg-color--light:        hsla(0, 0%, 10%, 0.6);
+    --md-default-bg-color--lighter:      hsla(0, 0%, 10%, 0.3);
+    --md-default-bg-color--lightest:     hsla(0, 0%, 10%, 0.1);
+
+    /* code */
+    --md-code-fg-color:                  hsla(0, 0%, 100%, 0.75);
+    --md-code-bg-color:                  hsla(0, 0%, 15%, 1);
+
+    /* code highlight */
+    --md-code-hl-name-color:             var(--md-code-fg-color);
+    --md-code-hl-operator-color:         var(--md-default-fg-color--light);
+    --md-code-hl-punctuation-color:      var(--md-default-fg-color--light);
+    --md-code-hl-comment-color:          var(--md-default-fg-color--light);
+    --md-code-hl-generic-color:          var(--md-default-fg-color--light);
+    --md-code-hl-variable-color:         var(--md-default-fg-color--light);
+
+    /* typeset `a` color shades, e.g. hyperlinks, toc */
+    --md-typeset-a-color:                hsla(0, 0%, 100%, 0.75);
+
+    /* admonition */
+    --md-admonition-fg-color:              var(--md-default-fg-color);
+    --md-admonition-bg-color:              var(--md-default-bg-color);
+}
+
+/* dark mode: search color shades */
+[data-md-color-scheme="slate"] input.md-search__input {
+    background-color:                    hsla(0, 0%, 10%, 1);
 }
 
 /* end Color */
