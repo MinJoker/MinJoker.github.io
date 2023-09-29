@@ -10,8 +10,7 @@ copyright: Copyright &copy; 2023 <a href="https://github.com/MinJoker" target="_
 # Build directories
 theme:
   name: material
-  icon:
-    logo: material/bed
+  logo: assets/icons/bed.svg
   features: 
     - navigation.instant
     - navigation.tracking
