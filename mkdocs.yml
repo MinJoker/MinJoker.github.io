@@ -3,14 +3,16 @@ site_name: MinJoker's Notebook
 site_url: https://minjoker.github.io
 repo_name: MinJoker.github.io
 repo_url: https://github.com/MinJoker/MinJoker.github.io
-site_description: 这是 MinJoker 的笔记本
+site_description: MinJoker 的笔记本
 site_author: MinJoker
 copyright: Copyright &copy; 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
 
 # Build directories
 theme:
   name: material
-  logo: assets/icons/bed.svg
+  icon:
+    logo: material/drama-masks
+  favicon: assets/icons/drama-masks-white.svg
   features: 
     - navigation.instant
     - navigation.tracking

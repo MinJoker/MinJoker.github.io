@@ -1,3 +1,3 @@
-# Welcome to MinJoker's Notebook
+# MinJoker's Notebook
 
 
