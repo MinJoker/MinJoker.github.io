@@ -22,7 +22,7 @@
 /* Color */
 
 /* light mode */
-[data-md-color-scheme="default"] {
+[data-md-color-scheme="light"] {
     /* primary color shades, i.e. header */
     --md-primary-fg-color:               hsla(0, 0%, 90%, 0.8);
     --md-primary-bg-color:               hsla(0, 0%, 0%, 0.8);
@@ -44,7 +44,7 @@
 }
 
 /* light mode: search color shades */
-[data-md-color-scheme="default"] input.md-search__input {
+[data-md-color-scheme="light"] input.md-search__input {
     background-color:                    hsla(0, 0%, 90%, 0.8);
 }
 
