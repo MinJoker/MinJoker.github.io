@@ -95,12 +95,12 @@ nav:
     - index.md
 
   - Computer Science:
-    - CS/index.md
+    - cs/index.md
     - 数据结构与算法:
-      - CS/Algorithms/Lec1.md
+      - cs/algorithms/lec1.md
 
   - BCI:
-    - BCI/index.md
+    - bci/index.md
 
   - Others:
-    - Others/index.md
+    - others/index.md
