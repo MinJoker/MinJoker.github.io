@@ -51,6 +51,8 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/MinJoker
+    - icon: fontawesome/brands/google
+      link: mailto:jokermin551008@gmail.com
 
 # Formatting options
 markdown_extensions:
