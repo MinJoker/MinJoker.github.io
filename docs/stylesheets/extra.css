@@ -41,6 +41,10 @@
 
     /* typeset `a` color shades, i.e. hyperlinks, toc */
     --md-typeset-a-color:                hsla(0, 0%, 0%, 0.5);
+
+    /* admonition color shades */
+    --md-admonition-fg-color:              var(--md-default-fg-color);
+    --md-admonition-bg-color:              var(--md-default-bg-color);
 }
 
 /* light mode: search color shades */
@@ -49,3 +53,16 @@
 }
 
 /* end Color */
+
+
+
+/* Admonitions */
+
+/* classic admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px;
+}
+
+/* end Admonitions */
