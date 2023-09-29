@@ -37,7 +37,11 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/custom.css
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
