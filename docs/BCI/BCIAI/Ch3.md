@@ -19,7 +19,7 @@
 
 细胞外记录到的信号幅值一般不到1mV，需要放大器来检测信号。电压波动与动作电位直接相关，所以即使电极没有插入细胞，记录的信号也显得和动作电位相匹配。
 
-![Intracellular versus extracellular recording of spikes](https://raw.githubusercontent.com/MinJoker/ImageHost/main/BCI/BCIAI/1.jpg "Intracellular versus extracellular recording of spikes")
+![Intracellular versus extracellular recording of spikes](/assets/images/BCI/BCIAI/1.jpg "Intracellular versus extracellular recording of spikes")
 
 #### 多电极阵列
 
