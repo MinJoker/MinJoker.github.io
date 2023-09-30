@@ -103,6 +103,7 @@ nav:
   - Computer Science:
     - cs/index.md
     - 数据结构与算法:
+      - cs/algorithms/index.md
       - cs/algorithms/lec1.md
 
   - Brain-Computer Interface:
