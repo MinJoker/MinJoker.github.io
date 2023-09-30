@@ -34,6 +34,9 @@
     /* text */
     --md-typeset-color:                  hsla(0, 0%, 0%, 0.8);
 
+    /* accent */
+    --md-accent-fg-color:                hsla(90, 20%, 70%, 1);
+
     /* default */
     --md-default-fg-color:               hsla(0, 0%, 0%, 0.8);
     --md-default-fg-color--light:        hsla(0, 0%, 0%, 0.5);
@@ -65,6 +68,8 @@
     /* typeset `a` color shades, e.g. hyperlinks, toc */
     --md-typeset-a-color:                hsla(0, 0%, 0%, 0.5);
 
+    
+
     /* admonition */
     --md-admonition-fg-color:              var(--md-default-fg-color);
     --md-admonition-bg-color:              var(--md-default-bg-color);
@@ -87,6 +92,9 @@
 
     /* text */
     --md-typeset-color:                  hsla(0, 0%, 100%, 0.75);
+
+    /* accent */
+    --md-accent-fg-color:                hsla(217, 70%, 68%, 1);
 
     /* default */
     --md-default-fg-color:               hsla(0, 0%, 100%, 0.75);
