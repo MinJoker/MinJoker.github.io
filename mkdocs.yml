@@ -109,6 +109,7 @@ nav:
   - Brain-Computer Interface:
     - bci/index.md
     - 脑机接口导论:
+      - bci/bciai/index.md
       - bci/bciai/ch3.md
       - bci/bciai/ch4.md
       - bci/bciai/ch5.md
