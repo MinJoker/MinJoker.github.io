@@ -90,3 +90,60 @@ Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了�
         return i;
     }
     ```
+
+### 2.3 C Implementation
+
+以下为加权和路径压缩优化后的并查集算法的 C 实现。
+
+最终还是用了全局变量。本着对全局变量的厌恶，一开始是用函数传递参数写的，但是感觉会使并查集算法的典型API变得不纯粹而且很丑陋（多一个参数）。
+
+或许还有更好的解决方法？
+
+```c linenums="1" title="weighted Union-Find with path compression"
+#include <stdio.h>
+#define N 10
+                                    // Data Structure
+int id[N];                              // id[i] is parent of i.
+int sz[N];                              // sz[i] is the size ( number of objects ) in the tree rooted at i.
+                                    // API
+void Initialize(void);                  // initialize id[] and sz[].
+void Union(int p, int q);               // connect p and q.
+int isConnected(int p, int q);          // check if p and q are connected.
+int root(int i);                        // find the root of i in the tree.
+
+void Initialize(void)
+{
+    for(int i=0; i<N; i++){
+        id[i] = i;                      // initial id[] is self-reference.
+        sz[i] = 1;
+    }
+}
+
+void Union(int p, int q)
+{
+    int i = root(p);
+    int j = root(q);
+    // if( i == j ){                    // isConnected() guarantees i is not equal to j.
+    //     return;
+    // }
+    if( sz[i] < sz[j] ){                // link root of smaller tree to root of larger tree.
+        id[i] = j; sz[j] += sz[i];
+    } else{
+        id[j] = i; sz[i] += sz[j];
+    }
+}
+
+int isConnected(int p, int q)
+{
+    return root(p)==root(q);            // p and q are connected iff they have the same root.
+}
+
+int root(int i)
+{
+    while(i!=id[i]){                    // i is a root iff id[i] is equal to i ( self-reference ).
+        id[i] = id[id[i]];              // set id[i] i's grandparent, no more parent.
+        i = id[i];
+    }
+    return i;
+}
+```
