@@ -147,3 +147,30 @@ int root(int i)
     return i;
 }
 ```
+
+## 3 算法分析及应用
+
+### 3.1 时间复杂度
+
+`M` union-find operations on a set of `N` objects.
+
+| algorithm | worst-case time |
+| :---: | :---: |
+| quick-find | M N |
+| quick-union | M N |
+| weighted QU | N + M log N |
+| QU + path compression| N + M log N |
+| weighted QU + path compression | N + M lg\* N |
+
+[Hopcroft-Ulman,Tarjan] 证明了从空的内含 `N` 个元素的数据结构开始，任何 `M` 次合并与查找操作都至多需要 c ( `N` + `M` lg\* `N` ) 次数组访问。其中，lg\* 是[迭代对数](https://en.wikipedia.org/wiki/Iterated_logarithm)，现实中可以看做是一个小于 5 的数。
+
+[Fredman-Saks] 证明了并查集问题不存在线性时间算法。
+
+- In theory, WQUPC is not quite linear.
+- In practice, WQUPC is linear.
+
+关于并查集算法，还有更多值得分析的地方... e.g. [OI Wiki](https://oi-wiki.org/ds/dsu-complexity/)
+
+### 3.2 应用
+
+更新中...
