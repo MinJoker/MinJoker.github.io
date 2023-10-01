@@ -50,10 +50,14 @@ $$
 **LDA实现简单、运算速度较快，已经成为BCI研究中常用的分类器**。尽管由于在LDA的推导中做了**强假设**，诸如非高斯分布、异常值、噪声等因素会降低LDA的性能，但总体上LDA能产生好的分类结果。
 
 LDA至少有以下两种变式：
+
 - 正则化线性判别分析（RDA）：
-将LDA的协方差用正则化形式取代，以提升泛化能力和避免过度拟合。
+
+    将LDA的协方差用正则化形式取代，以提升泛化能力和避免过度拟合。
+
 - 二次判别分析（QDA）：
-与LDA的不同之处在于QDA允许两类有不同的协方差矩阵。
+
+    与LDA的不同之处在于QDA允许两类有不同的协方差矩阵。
 
 #### 神经网络与感知器
 
@@ -176,11 +180,15 @@ $$
 
 ROC曲线（“受试者操作特征”曲线）是真阳性比例和假阳性比例的对比图，能**反映敏感性与特异性之间的关系**。横坐标为假阳性率（$1-$特异性），纵坐标为真阳性率（敏感度）。
 
-![ROC空间](/assets/images/bci/bciai/10.jpg "ROC空间")
+<div align="center">
+    <img src="/assets/images/bci/bciai/10.jpg" width="60%">
+</div>
 
 根据曲线的位置，把整个图分成两部分，曲线下方部分的面积（AUC）越大，表示预测准确性越高；曲线越接近左上角，预测准确性越高。
 
-![ROC曲线](/assets/images/bci/bciai/11.jpg "ROC曲线")
+<div align="center">
+    <img src="/assets/images/bci/bciai/11.jpg" width="60%">
+</div>
 
 #### 分类正确率与Kappa系数
 
@@ -356,7 +364,9 @@ $$
 \varphi_i(u) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
 $$
 
-![RBF网络图示](/assets/images/bci/bciai/14.jpg "RBF网络图示")
+<div align="center">
+    <img src="/assets/images/bci/bciai/14.jpg" width="40%">
+</div>
 
 ### 高斯过程
 
