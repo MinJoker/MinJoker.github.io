@@ -106,13 +106,19 @@ nav:
       - cs/algorithms/index.md
       - cs/algorithms/lec1.md
 
-  - Brain-Computer Interface:
+  - Mathematics:
+    - math/index.md
+
+  - BCI:
     - bci/index.md
     - 脑机接口导论:
       - bci/bciai/index.md
       - bci/bciai/ch3.md
       - bci/bciai/ch4.md
       - bci/bciai/ch5.md
+
+  - Photography:
+    - photo/index.md
 
   - Others:
     - others/index.md
