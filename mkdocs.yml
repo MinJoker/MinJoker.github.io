@@ -5,7 +5,7 @@ repo_name: MinJoker.github.io
 repo_url: https://github.com/MinJoker/MinJoker.github.io
 site_description: MinJoker 的笔记本
 site_author: MinJoker
-copyright: Copyright &copy; 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
+copyright: Copyright <span style="font-family:Arial;">&copy;</span> 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
 
 # Build directories
 theme:
@@ -13,6 +13,7 @@ theme:
   icon:
     logo: material/drama-masks
   favicon: assets/icons/drama-masks-white.svg
+  font: false
   features: 
     - navigation.instant
     - navigation.tracking
