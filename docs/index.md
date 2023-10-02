@@ -1,3 +1,7 @@
+---
+nostatistics: True
+---
+
 # MinJoker's Notebook
 
 !!! quote
