@@ -95,7 +95,7 @@ markdown_extensions:
 
 plugins:
   - search
-  - statistics:
+  - statistics
       # page_check_metadata: <metadata>  # strict indentation ( tab )
 
 # Documentation layout
