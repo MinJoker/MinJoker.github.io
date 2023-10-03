@@ -153,3 +153,24 @@
 }
 
 /* end Admonitions */
+
+
+
+/* Text Selection Color ( universal css, not for material-for-mkdocs only ) */
+
+::selection {
+    background:#d3d3d3;
+    color:#555;
+}
+
+::-moz-selection {
+    background:#d3d3d3;
+    color:#555;
+}
+
+::-webkit-selection {
+    background:#d3d3d3;
+    color:#555;
+}
+
+/* end Text Selection Color */
