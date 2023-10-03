@@ -97,6 +97,14 @@ plugins:
   - search
   - statistics
 #      page_check_metadata: <metadata>  # strict indentation ( tab )
+  - git-revision-date-localized:
+      type: iso_datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
+      
 
 # Documentation layout
 nav:
