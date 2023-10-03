@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1381,7 +1383,7 @@
 
 <h1 id="_1">机器学习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4001 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 13 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4003 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 13 分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">摘要</p>
@@ -1411,18 +1413,18 @@
 </div>
 <h2 id="_2">分类技术<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">二分类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>分类器的任务是为 <span class="arithmatex">\(p\)</span> 维的特征向量 <span class="arithmatex">\(x\)</span> 分配类别标签 <span class="arithmatex">\(y\in Y\)</span> 。最简单的情况在两类（标记为 <span class="arithmatex">\(-1\)</span> 和 <span class="arithmatex">\(+1\)</span>）之间进行区分，即二分类。</p>
+<p>分类器的任务是为 $p$ 维的特征向量 $x$ 分配类别标签 $y\in Y$ 。最简单的情况在两类（标记为 $-1$ 和 $+1$）之间进行区分，即二分类。</p>
 <p>二分类问题的关键在于通过训练数据计算找到一个边界，以使新的数据能被正确分类。</p>
 <h4 id="_4">线性判别分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>线性判别分析（LDA）是一个线性二分类器，将 <span class="arithmatex">\(p\)</span> 维输入向量 <span class="arithmatex">\(x\)</span> 映射到一个超平面，该超平面将输入空间划分为两个半空间，超平面公式如下：</p>
-<div class="arithmatex">\[
+<p>线性判别分析（LDA）是一个线性二分类器，将 $p$ 维输入向量 $x$ 映射到一个超平面，该超平面将输入空间划分为两个半空间，超平面公式如下：</p>
+<p>$$
 g(x) = w^T x + w_0 = 0
-\]</div>
-<p>边界由超平面的法向量 <span class="arithmatex">\(w\)</span> 和阈值 <span class="arithmatex">\(w_0\)</span> 来表示，它们由被标记的训练数据决定。</p>
-<p>对于新的输入向量 <span class="arithmatex">\(x\in X^p\)</span> ，通过如下计算对其进行二分类：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>边界由超平面的法向量 $w$ 和阈值 $w_0$ 来表示，它们由被标记的训练数据决定。</p>
+<p>对于新的输入向量 $x\in X^p$ ，通过如下计算对其进行二分类：</p>
+<p>$$
 y = sign(w^T x + w_0)
-\]</div>
+$$</p>
 <p><img alt="二分类的线性判别分析" src="/assets/images/bci/bciai/7.jpg" title="二分类的线性判别分析" /></p>
 <p><strong>LDA实现简单、运算速度较快，已经成为BCI研究中常用的分类器</strong>。尽管由于在LDA的推导中做了<strong>强假设</strong>，诸如非高斯分布、异常值、噪声等因素会降低LDA的性能，但总体上LDA能产生好的分类结果。</p>
 <p>LDA至少有以下两种变式：</p>
@@ -1439,19 +1441,19 @@ y = sign(w^T x + w_0)
 <h4 id="_5">神经网络与感知器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>神经网络（ANN）受生物学中神经网络的启发，力图重建大脑网络的适应能力，以一种强健的方式对输入数据进行分类。</p>
 <p>一个著名的例子是感知器（及多层感知器）。单层感知器计算一个超平面（类似于LDA）：</p>
-<div class="arithmatex">\[
+<p>$$
 w^T x + w_0 = 0
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 y = sign(w^T x + w_0)
-\]</div>
-<p>其中，向量 <span class="arithmatex">\(w\)</span> 表示连接输入与神经元的“突触权值”， <span class="arithmatex">\(-w_0\)</span> 表示神经元的放电阈值。</p>
+$$</p>
+<p>其中，向量 $w$ 表示连接输入与神经元的“突触权值”， $-w_0$ 表示神经元的放电阈值。</p>
 <p>对此有一个“神经”视角的解释：<strong>神经元的输出是基于对输入的加权和计算，以及对加权和与阈值的比较</strong>。（这可视为产生锋电位阈值模型的一种简化形式）</p>
-<p>感知器和LDA不同之处在于权值和阈值参数如何适应输入。受生物学启发，感知器以在线的方式调节其参数：给定一个输入 <span class="arithmatex">\(x\)</span> 和期望的输出 <span class="arithmatex">\(y^d\)</span> ，如果输出误差 <span class="arithmatex">\(y-y^d\)</span> 为正，那么正输入的权值减小，负输入的权值增大，并且阈值增大。<strong>这种“学习”规则的净效应是减少将来类似输入所产生的输出误差</strong>。</p>
+<p>感知器和LDA不同之处在于权值和阈值参数如何适应输入。受生物学启发，感知器以在线的方式调节其参数：给定一个输入 $x$ 和期望的输出 $y^d$ ，如果输出误差 $y-y^d$ 为正，那么正输入的权值减小，负输入的权值增大，并且阈值增大。<strong>这种“学习”规则的净效应是减少将来类似输入所产生的输出误差</strong>。</p>
 <p><strong>多层感知器是感知器的非线性推广</strong>，其使用<code>sigmoid</code>软阈值非线性函数，而不是使用硬阈值非线性函数来表示它们的神经单元：</p>
-<div class="arithmatex">\[
+<p>$$
 y = sigmoid(w^T x + w_0)
-\]</div>
+$$</p>
 <p>sigmoid函数的输出是0~1之间的数字，其值接近于0则表示属于类型1，接近于1则表示属于类型2 。关于sigmoid以及神经网络的更多内容，参见下文“神经网络与反向传播算法”部分。</p>
 <h4 id="_6">支持向量机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>神经网络很强大，但是存在对训练数据过度拟合，导致其泛化能力变差的问题。较新的技术支持向量机（SVM）通常比神经网络更受青睐，成为众多BCI选择的分类算法。</p>
@@ -1467,7 +1469,7 @@ y = sigmoid(w^T x + w_0)
 <li>训练m个分类器，每个分类器对应一个新产生的训练集；</li>
 <li>通过m个分类器对新的输入进行分类，选择获得最多“投票”的类别；</li>
 </ol>
-<p>考虑 <span class="arithmatex">\(N^{'} = N\)</span> 这一典型情况（<span class="arithmatex">\(N^{'}\)</span> 指的是每个训练集的抽样样本数），这样产生的样本集被称作<code>bootstrap样本</code>。</p>
+<p>考虑 $N^{'} = N$ 这一典型情况（$N^{'}$ 指的是每个训练集的抽样样本数），这样产生的样本集被称作<code>bootstrap样本</code>。</p>
 <p>随机森林可能是当今最流行的bagging技术，其名字源于它们由许多<strong>决策树分类器</strong>组成。在随机森林中，输入向量首先森林中的每一棵树，每棵树预测一个输出类别，森林选择获得树投票最多的类别作为其输出。</p>
 <p>由于随机森林<strong>在具有大量输入变量的大数据集上表现良好</strong>，使得它近年来愈加流行。但是随机森林<strong>在BCI中的应用依然相对较少</strong>。</p>
 <h4 id="boosting">boosting<a class="headerlink" href="#boosting" title="Permanent link">&para;</a></h4>
@@ -1477,39 +1479,41 @@ y = sigmoid(w^T x + w_0)
 <p>或许最有名的boosting算法是<code>AdaBoost</code>。</p>
 <h3 id="_8">多分类<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>上述讨论的分类器都是二分类的，而在BCI应用中，期望的输出信号个数通常大于二，这就需要使用多分类方法。</p>
-<p>多分类也可以通过二分类器结合的方法得到：
-- 训练若干个二分类器，并使用多数投票机制，每个二分类器用于一个两类组合；
-- 采取一对多的策略，对于每一类，训练一个独立的分类器来分离该类数据和其他类别的数据；</p>
+<p>多分类也可以通过二分类器结合的方法得到：</p>
+<ul>
+<li>训练若干个二分类器，并使用多数投票机制，每个二分类器用于一个两类组合；</li>
+<li>采取一对多的策略，对于每一类，训练一个独立的分类器来分离该类数据和其他类别的数据；</li>
+</ul>
 <h4 id="_9">最近邻<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p>最近邻（NN）是最简单的多分类技术之一，输入被简单指定为其最近邻的类别。</p>
 <p>NN分类存在的一个问题是它对噪声和异常值很敏感，这种技术可以通过使用<strong>k-最近邻</strong>（k-NN）来变得更加稳健。在k-NN中，输入被指定为k个最近邻中最普遍的一种类别。</p>
 <p><img alt="k-最近邻" src="/assets/images/bci/bciai/9.jpg" title="k-最近邻" /></p>
 <p>k-NN技术存在的一个潜在问题是它偏向于训练集中最多样本所属的类别，其有一种变式，把距离和类别同时纳入考虑，可以解决这一问题。</p>
 <h4 id="_10">学习矢量量化<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p>学习矢量量化（LVQ）中，分类基于标签 <span class="arithmatex">\(Y_i\in [1,\cdots ,N_y]\)</span> 标记的特征向量 <span class="arithmatex">\(\{m_i, Y_i \}_{i=1}^N\)</span>（也称为码本向量，lodebook vector）构成的小集合。新样本的分类通过将与它距离最近的码本向量 <span class="arithmatex">\(m_k\)</span> 的标签 <span class="arithmatex">\(Y_k\)</span> 赋予样本实现。</p>
+<p>学习矢量量化（LVQ）中，分类基于标签 $Y_i\in [1,\cdots ,N_y]$ 标记的特征向量 ${m_i, Y_i }_{i=1}^N$（也称为码本向量，lodebook vector）构成的小集合。新样本的分类通过将与它距离最近的码本向量 $m_k$ 的标签 $Y_k$ 赋予样本实现。</p>
 <p>LVQ中的每个码本向量的贡献是相等的，但在BCI中更常见的情况是需要对不同特征作加权处理，这就需要使用LVQ的一种优化，即<strong>区分敏感LVQ</strong>（DSLVQ），在计算“距离”时进行加权。</p>
 <h4 id="_11">朴素贝叶斯分类器<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p>朴素贝叶斯分类器是一种基于强独立性（朴素）假设贝叶斯准则的概率分类器。假设目标是要根据输入计算得到的大量特征 <span class="arithmatex">\(F_1, F_2, \cdots , F_n\)</span> 确定特定输入的所属类别（从 <span class="arithmatex">\(N\)</span> 种可能的类别中选择）。实现这一目标的一种方式是选择具有最大后验概率的类别 <span class="arithmatex">\(i\)</span> ：</p>
-<div class="arithmatex">\[
+<p>朴素贝叶斯分类器是一种基于强独立性（朴素）假设贝叶斯准则的概率分类器。假设目标是要根据输入计算得到的大量特征 $F_1, F_2, \cdots , F_n$ 确定特定输入的所属类别（从 $N$ 种可能的类别中选择）。实现这一目标的一种方式是选择具有最大后验概率的类别 $i$ ：</p>
+<p>$$
 \begin{aligned}
-P(C = i \vert F_1, F_2, \cdots , F_n) &amp; = \frac{P(C=i) P(F_1, F_2, \cdots , F_n | C=i)}{P(F_1, F_2, \cdots , F_n)} \\[4ex]
-&amp; = \frac{P(C=i) P(F_1 | C=i)P(F_2 | C=i)\cdots P(F_n | C=i)}{P(F_1,F_2,\cdots ,F_n)} \\[4ex]
+P(C = i \vert F_1, F_2, \cdots , F_n) &amp; = \frac{P(C=i) P(F_1, F_2, \cdots , F_n | C=i)}{P(F_1, F_2, \cdots , F_n)} \cr
+&amp; = \frac{P(C=i) P(F_1 | C=i)P(F_2 | C=i)\cdots P(F_n | C=i)}{P(F_1,F_2,\cdots ,F_n)} \cr
 &amp; \propto P(C=i) P(F_1 | C=i)P(F_2 | C=i)\cdots P(F_n | C=i)
 \end{aligned}
-\]</div>
+$$</p>
 <h3 id="_12">分类性能的评估<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <h4 id="roc">混淆矩阵与ROC曲线：<a class="headerlink" href="#roc" title="Permanent link">&para;</a></h4>
-<p>对于 <span class="arithmatex">\(N_y \times N_y\)</span> 的混淆矩阵 <span class="arithmatex">\(M\)</span> ，行表示真实的类标签，列表示分类器的输出。<span class="arithmatex">\(M\)</span> 的对角元素表示正确分类的样本，非对角元素 <span class="arithmatex">\(M_{ij}\)</span> 给出了有多少类 <span class="arithmatex">\(i\)</span> 的样本被误分类为 <span class="arithmatex">\(j\)</span> 。</p>
+<p>对于 $N_y \times N_y$ 的混淆矩阵 $M$ ，行表示真实的类标签，列表示分类器的输出。$M$ 的对角元素表示正确分类的样本，非对角元素 $M_{ij}$ 给出了有多少类 $i$ 的样本被误分类为 $j$ 。</p>
 <p>两类问题的混淆矩阵如下：</p>
-<div class="arithmatex">\[
+<p>$$
 \begin{array}{lll}
-{\qquad}&amp;{正}&amp;{负}\\
+{\qquad}&amp;{正}&amp;{负}\cr
 \hline
-{正}&amp;{真阳性（TP）}&amp;{假阴性（FN）}\\
+{正}&amp;{真阳性（TP）}&amp;{假阴性（FN）}\cr
 {负}&amp;{假阳性（FP）}&amp;{真阴性（TN）}
 \end{array}
-\]</div>
-<p>ROC曲线（“受试者操作特征”曲线）是真阳性比例和假阳性比例的对比图，能<strong>反映敏感性与特异性之间的关系</strong>。横坐标为假阳性率（<span class="arithmatex">\(1-\)</span>特异性），纵坐标为真阳性率（敏感度）。</p>
+$$</p>
+<p>ROC曲线（“受试者操作特征”曲线）是真阳性比例和假阳性比例的对比图，能<strong>反映敏感性与特异性之间的关系</strong>。横坐标为假阳性率（$1-$特异性），纵坐标为真阳性率（敏感度）。</p>
 <div align="center">
     <img src="/assets/images/bci/bciai/10.jpg" width="60%">
 </div>
@@ -1520,119 +1524,119 @@ P(C = i \vert F_1, F_2, \cdots , F_n) &amp; = \frac{P(C=i) P(F_1, F_2, \cdots , 
 </div>
 
 <h4 id="kappa">分类正确率与Kappa系数<a class="headerlink" href="#kappa" title="Permanent link">&para;</a></h4>
-<p>分类正确率（ACC）定义为正确分类的样本数与样本总数的比值。定义错误率 <span class="arithmatex">\(err = 1 - ACC\)</span> 。当每一类的样本数目相同时，机会水平（随机） <span class="arithmatex">\(ACC_0 = 1/N_Y\)</span> ,其中 <span class="arithmatex">\(N_Y\)</span> 表示类别数。</p>
+<p>分类正确率（ACC）定义为正确分类的样本数与样本总数的比值。定义错误率 $err = 1 - ACC$ 。当每一类的样本数目相同时，机会水平（随机） $ACC_0 = 1/N_Y$ ,其中 $N_Y$ 表示类别数。</p>
 <p>kappa系数定义如下：</p>
-<div class="arithmatex">\[
+<p>$$
 \kappa = \frac{ACC - ACC_0}{1 - ACC_0}
-\]</div>
-<p>kappa系数与每类样本的数目和类别数无关。<span class="arithmatex">\(\kappa = 0\)</span> 意味着机会水平的表现，<span class="arithmatex">\(\kappa = 1\)</span> 意味着最好的分类，<span class="arithmatex">\(\kappa &lt; 0\)</span> 意味着分类性能差于机会水平。</p>
+$$</p>
+<p>kappa系数与每类样本的数目和类别数无关。$\kappa = 0$ 意味着机会水平的表现，$\kappa = 1$ 意味着最好的分类，$\kappa &lt; 0$ 意味着分类性能差于机会水平。</p>
 <h4 id="_13">信息传输率<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <p>为比较BCI性能，同时考虑BCI的正确率和速度是非常重要，可以利用信息论的概念，根据比特率或者信息传输率（ITR）来量化BCI的性能。</p>
-<div class="arithmatex">\[
+<p>$$
 B = log_2 (N) + P log_2 (P) + (1-P) log_2 (1-P) / (N-1)
-\]</div>
-<p>现实情况下虽然不一定总能满足推导 <span class="arithmatex">\(B\)</span> 所做得假设条件，但是 <span class="arithmatex">\(B\)</span> 提供了一个能够获得的性能上限。</p>
+$$</p>
+<p>现实情况下虽然不一定总能满足推导 $B$ 所做得假设条件，但是 $B$ 提供了一个能够获得的性能上限。</p>
 <h4 id="_14">交叉验证<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
-<p>交叉验证用于对错误率 <span class="arithmatex">\(err\)</span> 的估计。一种方法是将给定的输入数据集简单地划分为两个子集，一个子集用于训练，另一个子集用于测试（hand out 方法）。但是这种方法对数据怎样划分很敏感。</p>
+<p>交叉验证用于对错误率 $err$ 的估计。一种方法是将给定的输入数据集简单地划分为两个子集，一个子集用于训练，另一个子集用于测试（hand out 方法）。但是这种方法对数据怎样划分很敏感。</p>
 <p>一种更复杂的方法是<strong>K折交叉验证</strong>：将数据集划分为K个维数大致相同的子集，其中K-1个子集用于训练分类器，剩下的子集用于训练。对分类器进行K次训练和测试，产生K个不同的错误率，总错误率可以通过求平均得到：</p>
-<div class="arithmatex">\[
+<p>$$
 err = \frac{1}{K} \sum_{k=1}^K err_k
-\]</div>
+$$</p>
 <p>在很多的应用中，一般将数据集划分为三个子集：一个是用于确定分类器参数的训练子集，一个是用于调整分类器参数的验证子集，一个是用于报告优化分类器性能的测试子集。虽然这些过程计算量大，但它们对于提高分类器的泛化能力起着重要作用。</p>
 <h2 id="_15">回归方法<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <h3 id="_16">线性回归<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>线性回归假设产生数据的向量函数是线性的。为了更好地说明线性回归，考虑输入 <span class="arithmatex">\(u\)</span> 是 <span class="arithmatex">\(K\)</span> 维向量、输出 <span class="arithmatex">\(v\)</span> 是标量值的特殊情况，于是输出由线性函数给出：</p>
-<div class="arithmatex">\[
+<p>线性回归假设产生数据的向量函数是线性的。为了更好地说明线性回归，考虑输入 $u$ 是 $K$ 维向量、输出 $v$ 是标量值的特殊情况，于是输出由线性函数给出：</p>
+<p>$$
 v = \sum_{i=1}^K w_i u_i = w^T u
-\]</div>
-<p>上式中，<span class="arithmatex">\(w\)</span> 是需要由训练数据来确定的“权”向量或线性滤波器。线性最小二乘回归寻找能减少所有训练样本的输出误差平方和的权向量 <span class="arithmatex">\(w\)</span>：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>上式中，$w$ 是需要由训练数据来确定的“权”向量或线性滤波器。线性最小二乘回归寻找能减少所有训练样本的输出误差平方和的权向量 $w$：</p>
+<p>$$
 \begin{aligned}
-E(w) &amp;= \sum_m (d^m - v^m) ^2 \\[2ex]
+E(w) &amp;= \sum_m (d^m - v^m) ^2 \cr
 &amp;= \Vert d-Uw \Vert ^2
 \end{aligned}
-\]</div>
-<p>上式中，<span class="arithmatex">\(d\)</span> 是训练输出向量，<span class="arithmatex">\(U\)</span> 是输入矩阵，矩阵的行是来自训练集的输入向量 <span class="arithmatex">\(u\)</span>。为减小误差，对关于 <span class="arithmatex">\(w\)</span> 的 <span class="arithmatex">\(E\)</span> 求导，并将求导结果置为 <span class="arithmatex">\(0\)</span>，得到：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>上式中，$d$ 是训练输出向量，$U$ 是输入矩阵，矩阵的行是来自训练集的输入向量 $u$。为减小误差，对关于 $w$ 的 $E$ 求导，并将求导结果置为 $0$，得到：</p>
+<p>$$
 2 \cdot U^T (d-Uw) = 0
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 U^T U w = U^T d
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 w = (U^T U) ^{-1} U^T d
-\]</div>
-<p>估计权向量的上述方法有时也被称为广义逆法（矩阵 <span class="arithmatex">\((U^T U)^{-1} U^T\)</span> 是“伪逆”的）。</p>
+$$</p>
+<p>估计权向量的上述方法有时也被称为广义逆法（矩阵 $(U^T U)^{-1} U^T$ 是“伪逆”的）。</p>
 <p><strong>线性回归已经被证明在很多侵入式BCI中非常有效</strong>。它速度快且易于计算，主要缺点是在某些应用中对模型过于简化，此外，它也没有在输出中提供任何关于不确定性的估计。</p>
 <h3 id="_17">神经网络与反向传播算法<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>神经网络是用于<strong>非线性函数逼近</strong>的流行算法。</p>
 <p>我们在讨论分类技术的时候涉及了感知器，它是一种神经网络。阈值函数对分类是有效的，但对非线性回归是无效的，对回归来说，流行的选择是<code>sigmoid</code>输出函数：</p>
-<div class="arithmatex">\[
+<p>$$
 v = g(w^T u)
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 g(x) = \frac{1}{1+e^{-\beta x}}
-\]</div>
-<p>sigmoid函数可以看做是阈值函数更平滑的版本：它将输入压缩到0~1之间，用参数 <span class="arithmatex">\(\beta\)</span> 控制函数的斜率（<span class="arithmatex">\(\beta\)</span> 值越大，sigmoid函数越接近阈值函数）。sigmoid函数容易求导，这在推导反向传播学习规则时将变得很重要。</p>
+$$</p>
+<p>sigmoid函数可以看做是阈值函数更平滑的版本：它将输入压缩到0~1之间，用参数 $\beta$ 控制函数的斜率（$\beta$ 值越大，sigmoid函数越接近阈值函数）。sigmoid函数容易求导，这在推导反向传播学习规则时将变得很重要。</p>
 <p><img alt="sigmoid函数" src="/assets/images/bci/bciai/12.jpg" title="sigmoid函数" /></p>
 <p>对非线性回归来说，我们感兴趣的是<strong>包括多层神经元的网络</strong>，网络中上一层的输出作为下一层神经元的输入。最常见的一种多层网络是包括一个输入层、一个“隐藏”层、一个输出层的三层网络，至少在理论上已经证明，这种网络<strong>能够通过隐藏层中足够多的神经元逼近任何非线性函数</strong>。</p>
-<p>假定有一个由sigmoid神经元构成的三层网络，矩阵 <span class="arithmatex">\(V\)</span> 表示输入层到隐藏层的权重，矩阵 <span class="arithmatex">\(W\)</span> 表示隐藏层到输出层的权重。输出层中第 <span class="arithmatex">\(i\)</span> 个神经元的输出可表示为：</p>
-<div class="arithmatex">\[
+<p>假定有一个由sigmoid神经元构成的三层网络，矩阵 $V$ 表示输入层到隐藏层的权重，矩阵 $W$ 表示隐藏层到输出层的权重。输出层中第 $i$ 个神经元的输出可表示为：</p>
+<p>$$
 v_i = g(\sum_j W_{ji} g(\sum_k V_{kj} u_k))
-\]</div>
+$$</p>
 <p><img alt="三层神经网络图示" src="/assets/images/bci/bciai/13.jpg" title="三层神经网络图示" /></p>
 <p>和线性回归一样，其目标也是要减少训练数据期望的输出向量与由网络产生的实际输出向量之间的误差。对训练中每个输入，其误差如下：</p>
-<div class="arithmatex">\[
+<p>$$
 E(W,V) = \frac{1}{2} \sum_i (d_i - v_i) ^2
-\]</div>
+$$</p>
 <p>这里需要注意两点：</p>
 <ol>
-<li>由于sigmoid非线性函数的存在，不能像线性回归那样直接通过将 <span class="arithmatex">\(E\)</span> 的导数置零来导出权重的解析表达式；</li>
+<li>由于sigmoid非线性函数的存在，不能像线性回归那样直接通过将 $E$ 的导数置零来导出权重的解析表达式；</li>
 <li>只知道输出层的误差（上式）；</li>
 </ol>
 <p>因此需要反向传播误差信息到网络的更低层，以便能知道它们对输出误差的贡献，成比例的修正权重（“信任分配”问题）。<strong>反向传播算法</strong>可以作为这两个问题的解决方案。</p>
 <details class="note">
 <summary>反向传播算法</summary>
-<p>反向传播算法试图通过让权重 <span class="arithmatex">\(W\)</span> 和 <span class="arithmatex">\(V\)</span> 的函数 <span class="arithmatex">\(E\)</span> 的梯度下降来减小输出误差函数 <span class="arithmatex">\(E(W,V)\)</span> 。这意味着更新与 <span class="arithmatex">\(-\frac{\partial E}{\partial W}\)</span> 和 <span class="arithmatex">\(-\frac{\partial E}{\partial V}\)</span> 成正比的权重，直到权重的变化变小，表明已经达到了误差函数的局部最小值。利用链式法则能够很容易地导出用于更新权重 <span class="arithmatex">\(W\)</span> 外层的表达式：</p>
-<div class="arithmatex">\[
+<p>反向传播算法试图通过让权重 $W$ 和 $V$ 的函数 $E$ 的梯度下降来减小输出误差函数 $E(W,V)$ 。这意味着更新与 $-\frac{\partial E}{\partial W}$ 和 $-\frac{\partial E}{\partial V}$ 成正比的权重，直到权重的变化变小，表明已经达到了误差函数的局部最小值。利用链式法则能够很容易地导出用于更新权重 $W$ 外层的表达式：</p>
+<p>$$
 W_{ji} \leftarrow W_{ji} - \epsilon \frac{\mathrm{d} E}{\mathrm{d} W_{ji}}
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 \frac{\mathrm{d} E}{\mathrm{d} W_{ji}} = -(d_i - v_i) g \prime (\sum_m W_{mi}x_m) x_j
-\]</div>
-<p>上式中，<span class="arithmatex">\(\leftarrow\)</span> 表示左边的表达式被右边的表达式替代，<span class="arithmatex">\(\epsilon\)</span> 是“学习率”（0~1之间的正数），<span class="arithmatex">\(g\prime\)</span> 是sigmoid函数 <span class="arithmatex">\(g\)</span> 的导数，<span class="arithmatex">\(x_j\)</span> 是隐藏层神经元 <span class="arithmatex">\(j\)</span> 的输出：<span class="arithmatex">\(x_j = g(\displaystyle{\sum_k} v_{kj}u_k)\)</span> 。</p>
-<p>用于更新权重 <span class="arithmatex">\(V\)</span> 内层的表达式也能利用链式法则获得：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>上式中，$\leftarrow$ 表示左边的表达式被右边的表达式替代，$\epsilon$ 是“学习率”（0~1之间的正数），$g\prime$ 是sigmoid函数 $g$ 的导数，$x_j$ 是隐藏层神经元 $j$ 的输出：$x_j = g(\displaystyle{\sum_k} v_{kj}u_k)$ 。</p>
+<p>用于更新权重 $V$ 内层的表达式也能利用链式法则获得：</p>
+<p>$$
 V_{kj} \leftarrow V_{kj} - \epsilon \frac{\mathrm{d} E}{\mathrm{d} V_{kj}}
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 \frac{\mathrm{d} E}{\mathrm{d} V_{kj}} = \frac{\mathrm{d} E}{\mathrm{d} x_j} \cdot \frac{\mathrm{d} x_j}{\mathrm{d} V_{kj}}
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 \frac{\mathrm{d} E}{\mathrm{d} V_{kj}} = [-\sum_i (d_i - v_i) g\prime (\sum_m W_{mi}x_m) W_{ji}] \cdot [g\prime (\sum_n V_{nj}u_n) u_k]
-\]</div>
-<p>可以看到，输出误差 <span class="arithmatex">\((d_i - v_i)\)</span> 影响了权重内层的更新，可以在每一层中通过对sigmoid非线性函数求导来适当调整输出误差。误差被反向传播到更低层，因而算法由此得名。</p>
+$$</p>
+<p>可以看到，输出误差 $(d_i - v_i)$ 影响了权重内层的更新，可以在每一层中通过对sigmoid非线性函数求导来适当调整输出误差。误差被反向传播到更低层，因而算法由此得名。</p>
 </details>
 <p>尽管这种网络容易对训练数据过度拟合而导致泛化能力差，这种学习过程还是可以推广到任意数量的层，包括含有很多隐藏层的深层网络。<strong>大多数的BCI应用趋向于使用三层网络</strong>，并使用交叉验证来决定隐藏层神经元的数量。</p>
 <h3 id="_18">径向基函数网络<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>考虑前面讨论过的线性回归模型：</p>
-<div class="arithmatex">\[
+<p>$$
 v = w^T u
-\]</div>
-<p>提高这种线性模型功效的一种方式是使用一组 <span class="arithmatex">\(M\)</span> 维固定的非线性基函数（“特征”）<span class="arithmatex">\(\varphi_i\)</span> ，它们是由输入向量定义的：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>提高这种线性模型功效的一种方式是使用一组 $M$ 维固定的非线性基函数（“特征”）$\varphi_i$ ，它们是由输入向量定义的：</p>
+<p>$$
 v = w^T \varphi (u)
-\]</div>
-<p>上式中，<span class="arithmatex">\(\varphi (u)\)</span> 为 <span class="arithmatex">\(M\)</span> 维向量 <span class="arithmatex">\([\varphi_1(u),\cdots,\varphi_M(u)]^T\)</span> 。</p>
-<p>然后可以使用前面讨论的线性回归中所用的方法来估计给定的一组基函数的权向量 <span class="arithmatex">\(w\)</span> 。如果每个基函数 <span class="arithmatex">\(\varphi_i\)</span> 仅与到“中心” <span class="arithmatex">\(\mu_i\)</span> 的径向距离（如欧氏距离）有关，那么 <span class="arithmatex">\(\mu_i(u) = f(\Vert u-\mu_i \Vert)\)</span> ，生成的模型称为<strong>径向基函数（RBF）网络</strong>。</p>
-<p>RBF网络可以看做三层神经元网络，其中输入层与隐藏层之间的连接存储着均值 <span class="arithmatex">\(\mu_i\)</span> ，隐藏层神经元的输出为 <span class="arithmatex">\(\mu_i(u)\)</span> ，网络的输出 <span class="arithmatex">\(v\)</span> 是<strong>隐藏层神经元输出的线性加权组合</strong>：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>上式中，$\varphi (u)$ 为 $M$ 维向量 $[\varphi_1(u),\cdots,\varphi_M(u)]^T$ 。</p>
+<p>然后可以使用前面讨论的线性回归中所用的方法来估计给定的一组基函数的权向量 $w$ 。如果每个基函数 $\varphi_i$ 仅与到“中心” $\mu_i$ 的径向距离（如欧氏距离）有关，那么 $\mu_i(u) = f(\Vert u-\mu_i \Vert)$ ，生成的模型称为<strong>径向基函数（RBF）网络</strong>。</p>
+<p>RBF网络可以看做三层神经元网络，其中输入层与隐藏层之间的连接存储着均值 $\mu_i$ ，隐藏层神经元的输出为 $\mu_i(u)$ ，网络的输出 $v$ 是<strong>隐藏层神经元输出的线性加权组合</strong>：</p>
+<p>$$
 v = \sum_{i=1}^M w_i \varphi_i(u) = w^T \varphi(u)
-\]</div>
+$$</p>
 <p>常用的基函数是“高斯核”：</p>
-<div class="arithmatex">\[
+<p>$$
 \varphi_i(u) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
-\]</div>
+$$</p>
 <div align="center">
     <img src="/assets/images/bci/bciai/14.jpg" width="40%">
 </div>
@@ -1642,47 +1646,47 @@ v = \sum_{i=1}^M w_i \varphi_i(u) = w^T \varphi(u)
 <details class="note">
 <summary>高斯过程实例</summary>
 <p>假设我们使用前面讨论RBF网络时使用的模型：</p>
-<div class="arithmatex">\[
+<p>$$
 v = w^T \varphi(u)
-\]</div>
-<p>然而，现在采用一种概率方法，假设 <span class="arithmatex">\(w\)</span> 服从以下分布：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>然而，现在采用一种概率方法，假设 $w$ 服从以下分布：</p>
+<p>$$
 p(w) = G(w \vert 0, \sigma^2 I)
-\]</div>
-<p>上式中，<span class="arithmatex">\(G\)</span> 表示平均值为 <span class="arithmatex">\(0\)</span> ，协方差为 <span class="arithmatex">\(\sigma^2 I\)</span> 的多变量高斯分布。</p>
-<p>给定一组输入数据点 <span class="arithmatex">\(u_1, \cdots, u_N\)</span> ，考虑输出值 <span class="arithmatex">\(v(u_1), \cdots, v(u_N)\)</span> 的联合分布。用向量 <span class="arithmatex">\(\nu\)</span> 表示 <span class="arithmatex">\([v(u_1), \cdots, v(u_N)]^T\)</span> ，公式可重写为：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>上式中，$G$ 表示平均值为 $0$ ，协方差为 $\sigma^2 I$ 的多变量高斯分布。</p>
+<p>给定一组输入数据点 $u_1, \cdots, u_N$ ，考虑输出值 $v(u_1), \cdots, v(u_N)$ 的联合分布。用向量 $\nu$ 表示 $[v(u_1), \cdots, v(u_N)]^T$ ，公式可重写为：</p>
+<p>$$
 \nu = \varPhi w
-\]</div>
-<p>上式中，<span class="arithmatex">\(\varPhi\)</span> 为矩阵，其元素为 <span class="arithmatex">\(\varPhi_{ji} = \varphi_i(u_j)\)</span> 。</p>
-<p>由于 <span class="arithmatex">\(\nu\)</span> 是高斯分布变量（由 <span class="arithmatex">\(w\)</span> 的元素给出）的线性组合，因此 <span class="arithmatex">\(\nu\)</span> 也是服从高斯分布的，它可由下面公式给出的均值和协方差来完全定义：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>上式中，$\varPhi$ 为矩阵，其元素为 $\varPhi_{ji} = \varphi_i(u_j)$ 。</p>
+<p>由于 $\nu$ 是高斯分布变量（由 $w$ 的元素给出）的线性组合，因此 $\nu$ 也是服从高斯分布的，它可由下面公式给出的均值和协方差来完全定义：</p>
+<p>$$
 \mathrm{mean} (v) = E(\varPhi w) = \varPhi E(w) = 0
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 \mathrm{cov} (v) = E(v v^T) = \varPhi E(w w^T) \varPhi^T = \sigma^2 \varPhi \varPhi^T = K
-\]</div>
-<p>上式中，<span class="arithmatex">\(K\)</span> 称为Gram矩阵，其元素为：</p>
-<div class="arithmatex">\[
+$$</p>
+<p>上式中，$K$ 称为Gram矩阵，其元素为：</p>
+<p>$$
 K_{ij} = k(u_i,u_j) = \sigma^2 \varphi(u_i)^T \varphi(u_j)
-\]</div>
-<p>函数 <span class="arithmatex">\(k(u_i,u_j)\)</span> 称为核函数。</p>
-<p>以上关于 <span class="arithmatex">\(\nu\)</span> 的模型是高斯过程的一个实例，它可以定义为关于函数 <span class="arithmatex">\(v(u)\)</span> 的概率分布，这使得对任意 <span class="arithmatex">\(N\)</span> 值关于 <span class="arithmatex">\(v(u_1), \cdots, v(u_N)\)</span> 的联合分布都是高斯分布。在对函数 <span class="arithmatex">\(v(u)\)</span> 无任何先验知识的条件下，假设其均值为 <span class="arithmatex">\(0\)</span> ，这意味着高斯过程完全由协方差函数 <span class="arithmatex">\(K\)</span> 或等效的核函数 <span class="arithmatex">\(k(u_i,u_j)\)</span> 确定。</p>
+$$</p>
+<p>函数 $k(u_i,u_j)$ 称为核函数。</p>
+<p>以上关于 $\nu$ 的模型是高斯过程的一个实例，它可以定义为关于函数 $v(u)$ 的概率分布，这使得对任意 $N$ 值关于 $v(u_1), \cdots, v(u_N)$ 的联合分布都是高斯分布。在对函数 $v(u)$ 无任何先验知识的条件下，假设其均值为 $0$ ，这意味着高斯过程完全由协方差函数 $K$ 或等效的核函数 $k(u_i,u_j)$ 确定。</p>
 </details>
-<p>上述例子中的核函数可以通过假设定义于输入 <span class="arithmatex">\(u\)</span> 的基函数 <span class="arithmatex">\(\varphi_i\)</span> 获取，但核函数也可以直接定义。例如，可以使用由下式给出的高斯核函数：</p>
-<div class="arithmatex">\[
+<p>上述例子中的核函数可以通过假设定义于输入 $u$ 的基函数 $\varphi_i$ 获取，但核函数也可以直接定义。例如，可以使用由下式给出的高斯核函数：</p>
+<p>$$
 k(u_i,u_j) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
-\]</div>
-<p><strong>核函数</strong>可以看做对两个输入之间相似度的测量，它影响函数的平滑度等属性。一般来说，任意函数都可以用作核函数，只要对于任意输入其相关矩阵 <span class="arithmatex">\(K\)</span> 是半正定的。<strong>核函数的选择需要由应用来决定，而高斯核函数是较为普遍的选择</strong>。</p>
-<p>为了将高斯过程用于回归，需要为新的输入 <span class="arithmatex">\(u_{N+1}\)</span> 预测其输出 <span class="arithmatex">\(v_{N+1}\)</span> ，给定的训练数据由向量 <span class="arithmatex">\(\nu_N = [v_1, \cdots, v_N]^T\)</span> 表示的输出组成，相应的输入为 <span class="arithmatex">\(u_1, \cdots, u_N\)</span> 。期望的后验分布 <span class="arithmatex">\(p(v_{N+1} \vert \nu_N, u_1, \cdots, u_N)\)</span> 也是高斯分布，其均值和协方差如下：</p>
-<div class="arithmatex">\[
+$$</p>
+<p><strong>核函数</strong>可以看做对两个输入之间相似度的测量，它影响函数的平滑度等属性。一般来说，任意函数都可以用作核函数，只要对于任意输入其相关矩阵 $K$ 是半正定的。<strong>核函数的选择需要由应用来决定，而高斯核函数是较为普遍的选择</strong>。</p>
+<p>为了将高斯过程用于回归，需要为新的输入 $u_{N+1}$ 预测其输出 $v_{N+1}$ ，给定的训练数据由向量 $\nu_N = [v_1, \cdots, v_N]^T$ 表示的输出组成，相应的输入为 $u_1, \cdots, u_N$ 。期望的后验分布 $p(v_{N+1} \vert \nu_N, u_1, \cdots, u_N)$ 也是高斯分布，其均值和协方差如下：</p>
+<p>$$
 \mathrm{mean} = k^T C_N^{-1} \nu_N
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 \mathrm{variance} = c - k^T C_N^{-1} k
-\]</div>
-<p>上式中，<span class="arithmatex">\(k\)</span> 是包含元素 <span class="arithmatex">\(k(u_1,u_{N+1}), i=1,\cdots,N\)</span>（<span class="arithmatex">\(k\)</span> 实质上测量每个训练输入与新输入之间的相似度）的向量，<span class="arithmatex">\(C_N\)</span> 是协方差矩阵，当 <span class="arithmatex">\(i\not=j\)</span> 时，其元素由 <span class="arithmatex">\(C_N(u_i,u_j) = k(u_i,u_j)\)</span> 表示，当 <span class="arithmatex">\(i=j\)</span> 时，其元素由 <span class="arithmatex">\(k(u_i,u_j) + \lambda\)</span> 表示，式中 <span class="arithmatex">\(i,j=1,\cdots,N\)</span>（这里 <span class="arithmatex">\(\lambda\)</span> 是与输出上的噪声相关的参数）。标量值 <span class="arithmatex">\(c\)</span> 定义为 <span class="arithmatex">\(c=k(u_{N+1},u_{N+1})+\lambda\)</span> 。</p>
-<p>从这些公式可以看出，输出 <span class="arithmatex">\(v_{N+1}\)</span> 的后验分布不仅取决于过去的训练输入和输出（通过 <span class="arithmatex">\(C_N\)</span> 与 <span class="arithmatex">\(\nu_N\)</span>），也取决于新的输入（通过 <span class="arithmatex">\(k\)</span> 与 <span class="arithmatex">\(c\)</span>）。</p>
+$$</p>
+<p>上式中，$k$ 是包含元素 $k(u_1,u_{N+1}), i=1,\cdots,N$（$k$ 实质上测量每个训练输入与新输入之间的相似度）的向量，$C_N$ 是协方差矩阵，当 $i\not=j$ 时，其元素由 $C_N(u_i,u_j) = k(u_i,u_j)$ 表示，当 $i=j$ 时，其元素由 $k(u_i,u_j) + \lambda$ 表示，式中 $i,j=1,\cdots,N$（这里 $\lambda$ 是与输出上的噪声相关的参数）。标量值 $c$ 定义为 $c=k(u_{N+1},u_{N+1})+\lambda$ 。</p>
+<p>从这些公式可以看出，输出 $v_{N+1}$ 的后验分布不仅取决于过去的训练输入和输出（通过 $C_N$ 与 $\nu_N$），也取决于新的输入（通过 $k$ 与 $c$）。</p>
 <p>该模型具有一个优良特性：与训练数据密集的区域相比，在训练数据不足或者不存在的区域，输出预测值的方差较大，反映出更大的不确定性。这个特性对于<strong>需要控制自动设备的BCI应用</strong>非常有用，当预测值的不确定性较高时，BCI可以选择不执行命令，以避免发生可能的灾难性事故。一些BCI常常不具备这样的能力，它们使用无法提供输出不确定性估计值的回归模型，如神经网络。</p>
 
   <hr>
@@ -1690,7 +1694,7 @@ k(u_i,u_j) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-01 21:57:34</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-03 19:57:30</span>
       
         <br>
         Created:
@@ -1775,11 +1779,11 @@ k(u_i,u_j) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
     
       <script src="../../../assets/javascripts/bundle.6eac0284.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   </body>
