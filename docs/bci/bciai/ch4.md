@@ -51,8 +51,8 @@
     $$
     c_n = 
     \begin{cases}
-    \frac{a_n - j b_n}{2} & n > 0 \\[2ex]
-    \frac{a_0}{2} & n = 0 \\[2ex]
+    \frac{a_n - j b_n}{2} & n > 0 \cr
+    \frac{a_0}{2} & n = 0 \cr
     \frac{a_n + j b_n}{2} & n < 0
     \end{cases}
     $$
@@ -266,9 +266,9 @@ PCA的具体操作关键在于**寻找数据方差最大的方向**。运用线�
 
     $$
     \begin{aligned}
-    var(v) & = \frac{1}{N} \sum_{i=1}^N \Vert (x_i - \overline x)^T v \Vert ^2 \\[2ex]
-    & = \frac{1}{N} \sum_{i=1}^N v^T (x_i-\overline x) (x_i-\overline x)^T v \\[2ex]
-    & = v^T (\frac{1}{N} \sum_{i=1}^N (x_i-\overline x) (x_i-\overline x)^T) v \\[2ex]
+    var(v) & = \frac{1}{N} \sum_{i=1}^N \Vert (x_i - \overline x)^T v \Vert ^2 \cr
+    & = \frac{1}{N} \sum_{i=1}^N v^T (x_i-\overline x) (x_i-\overline x)^T v \cr
+    & = v^T (\frac{1}{N} \sum_{i=1}^N (x_i-\overline x) (x_i-\overline x)^T) v \cr
     & = v^T A v
     \end{aligned}
     $$
@@ -283,8 +283,8 @@ PCA的具体操作关键在于**寻找数据方差最大的方向**。运用线�
 
     $$
     a = \begin{bmatrix}
-    (x-\overline x)^T v_1 \\
-    \vdots \\
+    (x-\overline x)^T v_1 \cr
+    \vdots \cr
     (x-\overline x)^T v_m
     \end{bmatrix}
     $$
