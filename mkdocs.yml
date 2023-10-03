@@ -15,7 +15,7 @@ theme:
   favicon: assets/icons/drama-masks-white.svg
   font: false
   features: 
-    - navigation.instant
+#    - navigation.instant   # seems to cause formula rendering difficulty ( need one more refresh )
     - navigation.tracking
     - navigation.tabs
     - navigation.prune
