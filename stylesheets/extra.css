@@ -1,19 +1,23 @@
 /* Font */
 
 :root {
-    --md-text-font: "JetBrains Mono", "LXGW WenKai";
+    --md-text-font: "JetBrains Mono", "LXGW WenKai Screen";
     --md-code-font: "JetBrains Mono";
   }
 
-@font-face {
-    font-family: "JetBrains Mono";
-    src: url("/assets/fonts/JetBrainsMono-Regular.woff2") format("woff2"); 
-}
+/* use TonyCrane's cdn instead.
 
-@font-face {
-    font-family: "LXGW WenKai";
-    src: url("/assets/fonts/LXGWWenKaiScreen.woff2") format("woff2"); 
-}
+    @font-face {
+        font-family: "JetBrains Mono";
+        src: url("/assets/fonts/JetBrainsMono-Regular.woff2") format("woff2"); 
+    }
+
+    @font-face {
+        font-family: "LXGW WenKai Screen";
+        src: url("/assets/fonts/LXGWWenKaiScreen.woff2") format("woff2"); 
+    }
+
+*/
 
 /* end Font */
 
