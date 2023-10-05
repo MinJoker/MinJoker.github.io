@@ -122,6 +122,7 @@ nav:
     - 数据结构与算法:
       - cs/algorithms/index.md
       - cs/algorithms/lec1.md
+      - cs/algorithms/lec2.md
 
   - Mathematics:
     - math/index.md
