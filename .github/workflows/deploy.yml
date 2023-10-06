@@ -1,11 +1,14 @@
-name: ci 
+name: deploy
+
 on:
   push:
     branches:
-      - master 
       - main
+
 permissions:
   contents: write
+
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,7 +26,8 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-statistics-plugin
-      - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: pip install \ 
+              mkdocs-material \
+              mkdocs-statistics-plugin \
+              mkdocs-git-revision-date-localized-plugin \
       - run: mkdocs gh-deploy --force
