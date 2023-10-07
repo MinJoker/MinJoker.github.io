@@ -126,6 +126,9 @@ nav:
 
   - Mathematics:
     - math/index.md
+    - 概率论与数理统计:
+      - math/probability/index.md
+      - math/probability/note0.md
 
   - BCI:
     - bci/index.md
