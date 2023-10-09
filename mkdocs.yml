@@ -123,6 +123,9 @@ nav:
       - cs/algorithms/index.md
       - cs/algorithms/lec1.md
       - cs/algorithms/lec2.md
+    - 数字逻辑设计:
+      - cs/digital_logic/index.md
+      - cs/digital_logic/note0.md
 
   - Mathematics:
     - math/index.md
