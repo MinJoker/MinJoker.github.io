@@ -14,7 +14,7 @@
 
 ### 布尔代数补充公式
 
-#### 香农公式（Shannon formula）
+**1.香农公式（Shannon formula）:**
 
 基于 $X \overline{X} = 0$ 和 $X X = 1$ ，我们可以得到以下公式：
 
@@ -38,7 +38,7 @@ $$
 
 ---
 
-#### 逻辑函数分解（Shannon Expansion）
+**2.逻辑函数分解（Shannon Expansion）:**
 
 $$
 \begin{aligned}
