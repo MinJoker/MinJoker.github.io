@@ -132,6 +132,9 @@ nav:
     - 概率论与数理统计:
       - math/probability/index.md
       - math/probability/note0.md
+    - 离散数学:
+      - math/discrete/index.md
+      - math/discrete/note0.md
 
   - BCI:
     - bci/index.md
