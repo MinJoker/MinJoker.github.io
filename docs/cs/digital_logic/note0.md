@@ -2,7 +2,7 @@
 
 !!! quote "引用其他人的笔记"
 
-    此「课程笔记」仅作为对以下笔记的补充：
+    此「课程笔记」作为对以下笔记的补充：
 
     [Isshiki修's Notebook/课程笔记/[大二秋冬]数字逻辑设计](https://note.isshikih.top/cour_note/D2QD_DigitalDesign/)
 
@@ -12,9 +12,9 @@
 
 ## 2 Combinational Logic Circuits
 
-### 布尔代数补充公式
+### 2.1 布尔代数补充公式
 
-**1.香农公式（Shannon formula）:**
+#### 2.1.1 香农公式（Shannon formula）
 
 基于 $X \overline{X} = 0$ 和 $X X = 1$ ，我们可以得到以下公式：
 
@@ -38,7 +38,7 @@ $$
 
 ---
 
-**2.逻辑函数分解（Shannon Expansion）:**
+#### 2.1.2 逻辑函数分解（Shannon Expansion）
 
 $$
 \begin{aligned}
@@ -62,11 +62,9 @@ $$
     \end{aligned}
     $$
 
----
+### 2.2 SOM与POM
 
-### SOM与POM
-
-SOM与POM蕴含着一种精巧的对偶性，具体体现有：
+SOM与POM蕴含着一种精巧的对称性，具体体现有：
 
 - SOM与POM的自然推导过程中，一个关键点就在于我们对 `1` 和 `0` 谁是主体的理解，两者的推导过程是完全对称的；
 - SOM与POM还存在一种取反的对称性，比如假设 $F(x,y,z)=\sum_m(1,3,5,7)$ ，则有 $\overline{F}(x,y,z)=\sum_m(0,2,4,6) = \prod_M(1,3,5,7)$
