@@ -66,6 +66,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://minjoker.github.io/math/discrete/</loc>
+         <lastmod>2023-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://minjoker.github.io/math/discrete/note0/</loc>
+         <lastmod>2023-10-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://minjoker.github.io/math/probability/</loc>
          <lastmod>2023-10-10</lastmod>
          <changefreq>daily</changefreq>
