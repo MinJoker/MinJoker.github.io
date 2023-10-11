@@ -8,7 +8,7 @@
 
 ## 1 Digital Systems and Information
 
-
+There's nothing here.
 
 ## 2 Combinational Logic Circuits
 
@@ -69,12 +69,12 @@ $$
 
 #### 2.2.1 SOP与POS
 
-- SOP ( Standard Sum-of-Products ) 即把表达式写成 `OR of AND` 的形式；
-- POS ( Standard Product-of-Sums ) 即把表达式写成 `AND of OR` 的形式；
+- SOP（Standard Sum-of-Products）即把表达式写成 `OR of AND` 的形式；
+- POS（Standard Product-of-Sums）即把表达式写成 `AND of OR` 的形式；
 
 #### 2.2.2 SOM与POM
 
-SOM ( Sum of Minterms ) 与POM ( Product of Maxterms ) 蕴含着一种精巧的对称性，具体体现有：
+SOM（Sum of Minterms）与POM（Product of Maxterms）蕴含着一种精巧的对称性，具体体现有：
 
 - SOM与POM的自然推导过程中，一个关键点就在于我们对 `1` 和 `0` 谁是主体的理解，两者的推导过程是完全对称的；
 - SOM与POM还存在一种取反的对称性，比如假设 $F(x,y,z)=\sum_m(1,3,5,7)$ ，则有 $\overline{F}(x,y,z)=\sum_m(0,2,4,6) = \prod_M(1,3,5,7)$
@@ -88,3 +88,11 @@ f & = x + \overline{x}\overline{y} \cr
 & = xy + x\overline{y} + \overline{x}\overline{y}
 \end{aligned}
 $$
+
+### 2.3 主蕴含项选择规则
+
+主蕴含项选择规则（Prime Implicant Selection Rule）是一种卡诺图优化步骤，其主要思路是尽可能减少蕴含项的重合（overlap）：
+
+1. 找到所有主蕴含项；
+2. 选中所有「基本主蕴含项」；
+3. 选择尽量少的非基本主蕴含项来覆盖所有最小项（或最大项）；
