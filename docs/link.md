@@ -11,10 +11,10 @@
     <div class="flink-list-item">
         <a href="https://note.isshikih.top/" title="Isshiki修's Notebook" target="_blank">
             <div class="flink-item-icon">
-                ![](/assets/images/link/isshikihugh.png)
+                <img src="/assets/images/link/IsshikiHugh.png" alt="IsshikiHugh">
             </div>
             <div class="flink-item-name">Isshiki修's Notebook</div>
-            <div class="flink-item-desc">修佬 tql！</div>
+            <div class="flink-item-desc">修佬 tql!</div>
         </a>
     </div>
 
