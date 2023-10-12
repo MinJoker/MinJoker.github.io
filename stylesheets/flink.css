@@ -1,4 +1,4 @@
-/* Copy form TonyCrane */
+/* Copy From TonyCrane and Customize */
 
 .flink-list {
     overflow: auto;
@@ -44,7 +44,7 @@
     font-size: 0.93em;
   }
   .flink-list-item:hover {
-    background-color: rgba(68,138,255,.1);
+    background-color: rgba(128,118,105,.1);
   }
   .flink-list-item {
     width: calc(50% - 15px) !important;
