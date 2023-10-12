@@ -67,12 +67,12 @@ $$
 
 $$
 \begin{aligned}
-((p_1\wedge p_2\wedge ... \wedge p_n)\to q)^{(*)} & \iff \neg (p_1\wedge p_2\wedge ... \wedge p_n)\vee q \cr
-& \iff \neg (p_1\wedge p_2\wedge ... \wedge p_n\wedge \neg q)^{(**)}
+((p_1\wedge p_2\wedge ... \wedge p_n)\to q)^{(\*)} & \iff \neg (p_1\wedge p_2\wedge ... \wedge p_n)\vee q \cr
+& \iff \neg (p_1\wedge p_2\wedge ... \wedge p_n\wedge \neg q)^{(\*\*)}
 \end{aligned}
 $$
 
-(*) 是重言式，当且仅当 (**) 是矛盾式。
+(\*) 是重言式，当且仅当 (\*\*) 是矛盾式。
 
 ---
 

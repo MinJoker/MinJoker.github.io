@@ -111,6 +111,7 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
+        - link.md
       
 
 # Documentation layout
