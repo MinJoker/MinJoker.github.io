@@ -42,6 +42,7 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/flink.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
@@ -116,6 +117,7 @@ plugins:
 nav:
   - Home:
     - index.md
+    - Friends: link.md
 
   - Computer Science:
     - cs/index.md
