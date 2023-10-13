@@ -11,7 +11,7 @@
     <div class="flink-list-item">
         <a href="https://note.isshikih.top/" title="Isshiki修's Notebook" target="_blank">
             <div class="flink-item-icon">
-                <img src="/assets/images/link/Isshikihugh.png" alt="IsshikiHugh">
+                <img src="/assets/images/link/isshikihugh.png" alt="IsshikiHugh">
             </div>
             <div class="flink-item-name">Isshiki修's Notebook</div>
             <div class="flink-item-desc">修佬 tql!</div>
