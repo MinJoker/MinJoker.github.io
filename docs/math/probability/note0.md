@@ -38,5 +38,46 @@
 
 - 分布函数通常写成大写字母，例如 $F(x)$
 - 分布函数的定义域为全体实数
-- 分布函数的分段写法，按照「左闭右开」的区间进行分段是一个较好的习惯
-- 支撑（support）指的是使概率分布为正的密度的随机变量的取值的集合，定义为 $ \{x: f(x)>0\} $
+- 分布函数的分段写法，按照「左闭右开」的区间进行分段是一个较好的习惯（主要针对离散型随机变量的分布函数）
+- 支撑（support）指的是使概率分布为正的密度的随机变量的取值的集合，定义为 $ \lbrace x: f(x)>0\rbrace $
+
+### 2.3 指数分布的无记忆性
+
+假设 $t_0>0，t>0，$
+
+$$
+\begin{aligned}
+P(X>t_0+t \;\; | \;\; X>t_0 ) & = \frac{P(X>t_0+t)}{P(X>t_0)} \cr
+& = \frac{1-F(t_0+t)}{1-F(t_0)} \cr
+& = e^{-\lambda t} = P(X>t)
+\end{aligned}
+$$
+
+??? example "无记忆性的一个例子"
+
+    假设设备无故障运行的时间 $T$ 服从指数分布。已知设备无故障运行了10个小时，求该设备再无故障至少运行8个小时的概率。
+
+    $$
+    P\lbrace T\geq 18 \; | \; T>10 \rbrace = \frac{P\lbrace T>18\rbrace }{P\lbrace T>10\rbrace} = e^{-8\lambda} = P\lbrace T>8\rbrace
+    $$
+
+    注意到，这一条件概率与无条件下无故障运行8小时的概率没有区别。
+
+### 2.4 正态分布标准化
+
+当 $X\sim N(\mu,\sigma^2)$ 时：
+
+$$
+P(X\leq b) = \int_{-\infty}^b \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x+\mu) ^2}{2\sigma ^2}} \mathrm{d}x
+$$
+
+做变换：$\frac{x-\mu}{\sigma} = t$
+
+$$
+\begin{aligned}
+P(X\leq b) & = \int_{-\infty}^{\frac{b-\mu}{\sigma}} \frac{1}{\sqrt{2\pi}} e^{-\frac{t ^2}{2}} \mathrm{d}t \cr
+& = \Phi(\frac{b-\mu}{\sigma})
+\end{aligned}
+$$
+
+换言之，当 $X\sim N(\mu,\sigma^2)$ 时，$\frac{X-\mu}{\sigma}\sim N(0,1)$
