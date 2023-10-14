@@ -18,4 +18,14 @@
         </a>
     </div>
 
+    <div class="flink-list-item">
+        <a href="https://note.bowling233.top/" title="Bowling's TechStack" target="_blank">
+            <div class="flink-item-icon">
+                <img src="/assets/images/link/bowling.jpg" alt="Bowling">
+            </div>
+            <div class="flink-item-name">Bowling's TechStack</div>
+            <div class="flink-item-desc">blgg 浇浇</div>
+        </a>
+    </div>
+
     <div>
