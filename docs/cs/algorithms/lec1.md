@@ -154,6 +154,8 @@ int root(int i)
 
 `M` union-find operations on a set of `N` objects.
 
+<center>
+
 | algorithm | worst-case time |
 | :---: | :---: |
 | quick-find | M N |
@@ -161,6 +163,8 @@ int root(int i)
 | weighted QU | N + M log N |
 | QU + path compression| N + M log N |
 | weighted QU + path compression | N + M lg\* N |
+
+</center>
 
 [Hopcroft-Ulman,Tarjan] 证明了从空的内含 `N` 个元素的数据结构开始，任何 `M` 次合并与查找操作都至多需要 c ( `N` + `M` lg\* `N` ) 次数组访问。其中，lg\* 是[迭代对数](https://en.wikipedia.org/wiki/Iterated_logarithm)，现实中可以看做是一个小于 5 的数。
 
