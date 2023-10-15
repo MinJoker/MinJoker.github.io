@@ -76,7 +76,7 @@ $$
 当 $X\sim N(\mu,\sigma^2)$ 时：
 
 $$
-P(X\leq b) = \int_{-\infty}^b \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x+\mu) ^2}{2\sigma ^2}} \mathrm{d}x
+P(X\leq b) = \int_{-\infty}^b \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu) ^2}{2\sigma ^2}} \mathrm{d}x
 $$
 
 做变换：$\frac{x-\mu}{\sigma} = t$
