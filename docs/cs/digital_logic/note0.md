@@ -8,7 +8,37 @@
 
 ## 1 Digital Systems and Information
 
-There's nothing here.
+### 1.1 两种逻辑系统
+
+- 组合逻辑（Combinational Logic）：任意时刻的输出仅取决于该时刻的输入
+- 时序逻辑（Suquential Logic）：任意时刻的输出既取决于该时刻的输入，也取决于电路原来的状态
+    - 同步（Synchronous）：State updated at discrete times
+    - 异步（Asynchronous）：State updated at any time
+
+### 1.2 Number System 与 Codes
+
+数字系统与编码的概念是不一样的，仔细思考就可以发现两者的不同之处：
+
+- 数字系统（Number System）：指数字的不同进制系统，如十进制、二进制、八进制、十六进制
+    - 数字系统的前导 `0` 可以省略
+- 编码（Codes）：较为灵活，只要求一一映射即为合法编码
+    - 编码系统的前导 `0` 不能省略
+
+### 1.3 BCD 码与余三码
+
+余三码的一个关键点在于其解决了 BCD 码的加减法进位问题，我们可以通过一个例子来明白余三码做了什么：
+
+??? example "BCD 码的加法示例"
+
+    ![](/assets/images/cs/digital_logic/1.jpg){width="60%"}
+
+### 1.4 格雷码
+
+格雷码的一种简单粗暴的写法，是通过「镜像」的技巧来倍增已知的格雷编码。
+
+具体来说，如果现在有 `0` - `3` 的格雷码，分别是 `00`，`01`，`11`，`10`，那么我们可以将其增添一位前导 `0`，然后镜面对称地书写出带有前导 `1` 的 `4` - `7` 的格雷码。
+
+最终我们得到的 `0` - `7` 的格雷码是：`000`，`001`，`011`，`010`，`110`，`111`，`101`，`100`
 
 ## 2 Combinational Logic Circuits
 
@@ -67,21 +97,21 @@ $$
 - 标准形式提供了一种布尔表达式化简的方向（但其形式并不唯一确定，即一个表达式可以有多个标准形式）
 - 规范形式提供了一种唯一确定的表达形式（这对于把复杂的逻辑运算交由机器去完成是很重要的）
 
-#### 2.2.1 SOP与POS
+#### 2.2.1 SOP 与 POS
 
-任何表达式都可以化成SOP和POS这样的标准形式。
+任何表达式都可以化成 SOP 和 POS 这样的标准形式。
 
 - SOP（Standard Sum-of-Products）即把表达式写成 `OR of AND` 的形式；
 - POS（Standard Product-of-Sums）即把表达式写成 `AND of OR` 的形式；
 
-#### 2.2.2 SOM与POM
+#### 2.2.2 SOM 与 POM
 
-SOM（Sum of Minterms）与POM（Product of Maxterms）蕴含着一种精巧的对称性，具体体现有：
+SOM（Sum of Minterms）与 POM（Product of Maxterms）蕴含着一种精巧的对称性，具体体现有：
 
-- SOM与POM的自然推导过程中，一个关键点就在于我们对 `1` 和 `0` 谁是主体的理解，两者的推导过程是完全对称的
-- SOM与POM还存在一种取反的对称性，比如假设 $F(x,y,z)=\sum_m(1,3,5,7)$ ，则有 $\overline{F}(x,y,z)=\sum_m(0,2,4,6) = \prod_M(1,3,5,7)$
+- SOM 与 POM 的自然推导过程中，一个关键点就在于我们对 `1` 和 `0` 谁是主体的理解，两者的推导过程是完全对称的
+- SOM 与 POM 还存在一种取反的对称性，比如假设 $F(x,y,z)=\sum_m(1,3,5,7)$ ，则有 $\overline{F}(x,y,z)=\sum_m(0,2,4,6) = \prod_M(1,3,5,7)$
 
-任何表达式都可以化成SOM和POM这样的规范形式，以由SOP得到SOM为例：
+任何表达式都可以化成 SOM 和 POM 这样的规范形式，以由 SOP 得到 SOM 为例：
 
 $$
 \begin{aligned}

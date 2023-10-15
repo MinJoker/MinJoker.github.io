@@ -53,6 +53,8 @@ $p\to q$ 的两个等价叙述：
     - Full Disjunctive Normal Form（主析取范式）与 SOM 一致
     - Full Conjunctive Normal Form（主合取范式）与 POM 一致
 
+关于标准形式化成规范形式的技巧、两种范式的对称性及其转化，请跳转至[数字逻辑设计相应章节](/cs/digital_logic/note0/#22)学习。
+
 ### 1.4 推理的技巧
 
 技巧一：如果结论是 $p\to q$ 的形式，那么我们可以把原问题像这样转化：
