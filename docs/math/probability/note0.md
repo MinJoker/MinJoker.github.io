@@ -53,6 +53,14 @@ P(X>t_0+t \;\; | \;\; X>t_0 ) & = \frac{P(X>t_0+t)}{P(X>t_0)} \cr
 \end{aligned}
 $$
 
+$$
+\begin{aligned}
+P(X\lt t_0+t \;\; | \;\; X>t_0) & = \frac{P(t_0\lt X\lt t_0+t)}{P(X>t_0)} \cr
+& = \frac{F(t_0+t)-F(t_0)}{1-F(t_0)} \cr
+& = 1-e^{-\lambda t} = P(X<t)
+\end{aligned}
+$$
+
 ??? example "无记忆性的一个例子"
 
     假设设备无故障运行的时间 $T$ 服从指数分布。已知设备无故障运行了10个小时，求该设备再无故障至少运行8个小时的概率。
