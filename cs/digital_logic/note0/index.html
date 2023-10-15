@@ -63,7 +63,18 @@
     
     
     
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1406,7 +1417,7 @@
 <p>余三码的一个关键点在于其解决了 BCD 码的加减法进位问题，我们可以通过一个例子来明白余三码做了什么：</p>
 <details class="example">
 <summary>BCD 码的加法示例</summary>
-<p><img alt="" src="/assets/images/cs/digital_logic/1.jpg" width="60%" /></p>
+<p><a class="glightbox" href="/assets/images/cs/digital_logic/1.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="/assets/images/cs/digital_logic/1.jpg" width="60%" /></a></p>
 </details>
 <h3 id="14">1.4 格雷码<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <p>格雷码的一种简单粗暴的写法，是通过「镜像」的技巧来倍增已知的格雷编码。</p>
@@ -1580,5 +1591,5 @@ $$</p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
