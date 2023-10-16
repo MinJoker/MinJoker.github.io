@@ -128,3 +128,60 @@ $$
 1. 找到所有主蕴含项；
 2. 选中所有「基本主蕴含项」；
 3. 选择尽量少的非基本主蕴含项来覆盖所有最小项（或最大项）；
+
+### 2.4 经典组合电路补充
+
+#### 2.4.1 缓冲器（Buffer）
+
+Buffer：$F=X$
+
+- buffer 可以作为放大器，提高电路的电压水平（回忆数字信号的宽进严出）
+- buffer 可以提高电路运行的速度
+
+#### 2.4.2 三态门（3-State Buffer）
+
+??? example "三态门解决多路输出互联问题（multiplexed output line）的一个例子"
+    
+    ![](/assets/images/cs/digital_logic/2.jpg){width="60%"}
+
+#### 2.4.3 传输门（Transmission Gate）
+
+传输门可以视为一个开关，值得注意的是：
+
+- 传输门与三态门并不相同，尽管两者在某种意义上都可以起到开关的作用
+    - 关于两者具体有何区别，我暂时没有找到很合适的答案
+- 传输门这个概念放在这里似乎并不合适，但是马德老师讲解到了，遂提一笔
+
+![](/assets/images/cs/digital_logic/3.jpg)
+
+#### 2.4.4 异或门 同或门
+
+- 异或和同或可以用来实现奇校验和偶校验。
+- 而且观察其卡诺图的形状（棋盘形），可以发现，它们是天然优化的，即不可优化的。
+
+### 2.5 逻辑合成（Logic Synthesis）
+
+逻辑合成是所设计数字电路的高抽象级表达，经过化简、优化后，转换到逻辑门级别的电路连线网表（netlist）的过程。
+
+逻辑合成是电子设计自动化（EDA）中电路设计的一个步骤。
+
+<center>
+
+![](/assets/images/cs/digital_logic/6.jpg){width="50%"}
+
+</center>
+
+通常通过硬件描述语言（HDL）来实现电路的高级抽象。以 Verilog 为例，逻辑合成的过程可以理解为 behavioral description 转化为 structural description 的过程。
+
+??? example "Verilog: Structural & Behavioral Description"
+
+    Structural Description:
+
+    ![](/assets/images/cs/digital_logic/4.jpg){width="80%"}
+
+    Behavioral Description:
+
+    ![](/assets/images/cs/digital_logic/5.jpg){width="80%"}
+
+## 3 Combinational Logic Design
+
