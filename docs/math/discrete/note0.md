@@ -6,9 +6,9 @@
 
     [聆诡思谛的语雀/一些浙大课程笔记/离散数学及其应用](https://www.yuque.com/linguisty/zju_courses/yx9t7q)
 
-## 1 The Foundations: Logic and Proofs
+## The Foundations: Logic and Proofs
 
-### 1.1 命题逻辑补充
+### 命题逻辑补充
 
 - 来一些中英对照（主要是我觉得这些中文翻译还蛮有意思）：
     - 合取（Conjunction）
@@ -29,7 +29,7 @@
     p\leftrightarrow q \iff (p\to q) \wedge (q\to p)
     $$
 
-### 1.2 If 与 Only if
+### If 与 Only if
 
 $p\to q$ 的两个等价叙述：
 
@@ -42,7 +42,7 @@ $p\to q$ 的两个等价叙述：
 - Only if 表示必要（necessary）条件，相当于“仅当”
 - If and only if（Iff）表示充要条件，相当于“当且仅当”
 
-### 1.3 离散与数逻的表达式范式
+### 离散与数逻的表达式范式
 
 离散数学里的表达式范式与数字逻辑设计里表达式的标准形式和规范形式是一致的，但是两者对此有不同的称呼：
 
@@ -55,7 +55,7 @@ $p\to q$ 的两个等价叙述：
 
 关于标准形式化成规范形式的技巧、两种范式的对称性及其转化，请跳转至[数字逻辑设计相应章节](/cs/digital_logic/note0/#22)学习。
 
-### 1.4 推理的技巧
+### 推理的技巧
 
 技巧一：如果结论是 $p\to q$ 的形式，那么我们可以把原问题像这样转化：
 

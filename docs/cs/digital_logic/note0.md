@@ -6,16 +6,16 @@
 
     [Isshiki修's Notebook/课程笔记/[大二秋冬]数字逻辑设计](https://note.isshikih.top/cour_note/D2QD_DigitalDesign/)
 
-## 1 Digital Systems and Information
+## Digital Systems and Information
 
-### 1.1 两种逻辑系统
+### 两种逻辑系统
 
 - 组合逻辑（Combinational Logic）：任意时刻的输出仅取决于该时刻的输入
 - 时序逻辑（Suquential Logic）：任意时刻的输出既取决于该时刻的输入，也取决于电路原来的状态
     - 同步（Synchronous）：State updated at discrete times
     - 异步（Asynchronous）：State updated at any time
 
-### 1.2 Number System 与 Codes
+### Number System 与 Codes
 
 数字系统与编码的概念是不一样的，仔细思考就可以发现两者的不同之处：
 
@@ -24,7 +24,7 @@
 - 编码（Codes）：较为灵活，只要求一一映射即为合法编码
     - 编码系统的前导 `0` 不能省略
 
-### 1.3 BCD 码与余三码
+### BCD 码与余三码
 
 余三码的一个关键点在于其解决了 BCD 码的加减法进位问题，我们可以通过一个例子来明白余三码做了什么：
 
@@ -32,7 +32,7 @@
 
     ![](/assets/images/cs/digital_logic/1.jpg){width="60%"}
 
-### 1.4 格雷码
+### 格雷码
 
 格雷码的一种简单粗暴的写法，是通过「镜像」的技巧来倍增已知的格雷编码。
 
@@ -40,11 +40,11 @@
 
 最终我们得到的 `0` - `7` 的格雷码是：`000`，`001`，`011`，`010`，`110`，`111`，`101`，`100`
 
-## 2 Combinational Logic Circuits
+## Combinational Logic Circuits
 
-### 2.1 布尔代数补充公式
+### 布尔代数补充公式
 
-#### 2.1.1 香农公式（Shannon formula）
+#### 香农公式（Shannon formula）
 
 基于 $X \overline{X} = 0$ 和 $X X = 1$ ，我们可以得到以下公式：
 
@@ -68,7 +68,7 @@ $$
 
 ---
 
-#### 2.1.2 逻辑函数分解（Shannon Expansion）
+#### 逻辑函数分解（Shannon Expansion）
 
 $$
 \begin{aligned}
@@ -92,19 +92,19 @@ $$
     \end{aligned}
     $$
 
-### 2.2 标准形式与规范形式
+### 标准形式与规范形式
 
 - 标准形式提供了一种布尔表达式化简的方向（但其形式并不唯一确定，即一个表达式可以有多个标准形式）
 - 规范形式提供了一种唯一确定的表达形式（这对于把复杂的逻辑运算交由机器去完成是很重要的）
 
-#### 2.2.1 SOP 与 POS
+#### SOP 与 POS
 
 任何表达式都可以化成 SOP 和 POS 这样的标准形式。
 
 - SOP（Standard Sum-of-Products）即把表达式写成 `OR of AND` 的形式；
 - POS（Standard Product-of-Sums）即把表达式写成 `AND of OR` 的形式；
 
-#### 2.2.2 SOM 与 POM
+#### SOM 与 POM
 
 SOM（Sum of Minterms）与 POM（Product of Maxterms）蕴含着一种精巧的对称性，具体体现有：
 
@@ -121,7 +121,7 @@ f & = x + \overline{x}\overline{y} \cr
 \end{aligned}
 $$
 
-### 2.3 主蕴含项选择规则
+### 主蕴含项选择规则
 
 主蕴含项选择规则（Prime Implicant Selection Rule）是一种卡诺图优化步骤，其主要思路是尽可能减少蕴含项的重合（overlap）：
 
@@ -129,22 +129,22 @@ $$
 2. 选中所有「基本主蕴含项」；
 3. 选择尽量少的非基本主蕴含项来覆盖所有最小项（或最大项）；
 
-### 2.4 经典组合电路补充
+### 经典组合电路补充
 
-#### 2.4.1 缓冲器（Buffer）
+#### 缓冲器（Buffer）
 
 Buffer：$F=X$
 
 - buffer 可以作为放大器，提高电路的电压水平（回忆数字信号的宽进严出）
 - buffer 可以提高电路运行的速度
 
-#### 2.4.2 三态门（3-State Buffer）
+#### 三态门（3-State Buffer）
 
 ??? example "三态门解决多路输出互联问题（multiplexed output line）的一个例子"
     
     ![](/assets/images/cs/digital_logic/2.jpg){width="60%"}
 
-#### 2.4.3 传输门（Transmission Gate）
+#### 传输门（Transmission Gate）
 
 传输门可以视为一个开关，值得注意的是：
 
@@ -154,12 +154,12 @@ Buffer：$F=X$
 
 ![](/assets/images/cs/digital_logic/3.jpg)
 
-#### 2.4.4 异或门 同或门
+#### 异或门 同或门
 
 - 异或和同或可以用来实现奇校验和偶校验。
 - 而且观察其卡诺图的形状（棋盘形），可以发现，它们是天然优化的，即不可优化的。
 
-### 2.5 逻辑合成（Logic Synthesis）
+### 逻辑合成（Logic Synthesis）
 
 逻辑合成是所设计数字电路的高抽象级表达，经过化简、优化后，转换到逻辑门级别的电路连线网表（netlist）的过程。
 
@@ -183,5 +183,5 @@ Buffer：$F=X$
 
     ![](/assets/images/cs/digital_logic/5.jpg){width="80%"}
 
-## 3 Combinational Logic Design
+## Combinational Logic Design
 

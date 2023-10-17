@@ -1,6 +1,6 @@
 # Analysis of Algorithms
 
-## 1 引入
+## 引入
 
 影响程序运行时间的因素有以下两种：
 
@@ -14,9 +14,9 @@
 
 运行时间等于每种基本操作（operation）的成本（cost）与频次（frequency）的乘积。
 
-## 2 算法理论
+## 算法理论
 
-### 2.1 时间复杂度
+### 时间复杂度
 
 ![常用的时间复杂度分析符号](/assets/images/cs/algorithms/2.png "常用的时间复杂度分析符号")
 
@@ -29,6 +29,6 @@
 >1. [鹤翔万里的笔记本/数据结构基础/算法分析基础](https://note.tonycrane.cc/cs/algorithm/ds/topic1/)
 >2. [oneko的语雀/数据结构基础/算法分析](https://www.yuque.com/oneko/something/org92s)
 
-### 2.2 空间复杂度
+### 空间复杂度
 
 >干红华老师（我在ZJU的FDS老师）认为，空间复杂度相比时间复杂度更为不重要，因为在某种意义上，空间可以被认为是无限的，或者说可拓展至无限的，而时间则是绝对有限的。

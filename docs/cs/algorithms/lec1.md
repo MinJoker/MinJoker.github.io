@@ -1,6 +1,6 @@
 # Union-Find
 
-## 1 动态连通性问题
+## 动态连通性问题
 
 Union-Find算法，也就是并查集算法，主要用于解决「动态连通性」问题。
 
@@ -14,9 +14,9 @@ Union-Find算法，也就是并查集算法，主要用于解决「动态连通�
 3. 传递性：如果节点`p`和`q`连通，`q`和`r`连通，那么`p`和`r`也连通；
 
 
-## 2 算法实现
+## 算法实现
 
-### 2.1 Quick-Find
+### Quick-Find
 
 - Data structure：
     - Integer array `id[]` of length `N`.
@@ -28,7 +28,7 @@ Union-Find算法，也就是并查集算法，主要用于解决「动态连通�
 - Find:
     - Check if `p` and `q` have the same id.
 
-### 2.2 Quick-Union
+### Quick-Union
 
 Quick-Union算法用「森林」来表达图的动态连通性。
 
@@ -43,7 +43,7 @@ Quick-Union算法用「森林」来表达图的动态连通性。
 - Find:
     - Check if `p` and `q` have the same root.
 
-#### 2.2.1 Weighting
+#### Weighting
 
 Union-Find算法的一种优化方式是，通过衡量两棵树的大小(*number of objects*)来决定树的连接方式，从而避免生成过高的树状结构，甚至退化成链表。
 
@@ -59,7 +59,7 @@ Union-Find算法的一种优化方式是，通过衡量两棵树的大小(*numbe
     - Link root of smaller tree to root of larger tree.
     - Update the `sz[]` array.
 
-#### 2.2.2 Path Compression
+#### Path Compression
 
 Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了同一条路径上的所有节点，可以同时更新节点的父节点，从而将路径压缩。
 
@@ -91,7 +91,7 @@ Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了�
     }
     ```
 
-### 2.3 C Implementation
+### C Implementation
 
 以下为加权和路径压缩优化后的并查集算法的 C 实现。
 
@@ -148,9 +148,9 @@ int root(int i)
 }
 ```
 
-## 3 算法分析及应用
+## 算法分析及应用
 
-### 3.1 时间复杂度
+### 时间复杂度
 
 `M` union-find operations on a set of `N` objects.
 
@@ -175,6 +175,6 @@ int root(int i)
 
 关于并查集算法，还有更多值得分析的地方... e.g. [OI Wiki](https://oi-wiki.org/ds/dsu-complexity/)
 
-### 3.2 应用
+### 应用
 
 更新中...
