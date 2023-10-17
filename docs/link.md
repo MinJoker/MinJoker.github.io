@@ -13,7 +13,7 @@
             <div class="flink-item-icon">
                 <img src="/assets/images/link/isshikihugh.png" alt="IsshikiHugh">
             </div>
-            <div class="flink-item-name">Isshiki修's Notebook</div>
+            <div class="flink-item-name heti-skip">Isshiki修's Notebook</div>
             <div class="flink-item-desc">修佬 tql!</div>
         </a>
     </div>
