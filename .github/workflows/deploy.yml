@@ -31,4 +31,5 @@ jobs:
               mkdocs-glightbox \
               mkdocs-statistics-plugin \
               mkdocs-git-revision-date-localized-plugin \
+              mkdocs-heti-plugin \
       - run: mkdocs gh-deploy --force
