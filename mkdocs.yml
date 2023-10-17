@@ -116,6 +116,10 @@ plugins:
       
 
 # Documentation layout
+validation:
+  absolute_links: ignore
+#  unrecognized_links: ignore
+
 nav:
   - Home:
     - index.md
