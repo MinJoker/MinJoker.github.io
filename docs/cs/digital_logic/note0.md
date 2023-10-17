@@ -4,7 +4,7 @@
 
     此「课程笔记」作为对以下笔记的补充：
 
-    [Isshiki修's Notebook/课程笔记/[大二秋冬]数字逻辑设计](https://note.isshikih.top/cour_note/D2QD_DigitalDesign/)
+    <div class="heti-skip">[Isshiki修's Notebook/课程笔记/[大二秋冬]数字逻辑设计](https://note.isshikih.top/cour_note/D2QD_DigitalDesign/)</div>
 
 ## Digital Systems and Information
 

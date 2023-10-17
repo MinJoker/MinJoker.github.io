@@ -4,7 +4,7 @@
 
     此「课程笔记」作为对以下笔记的补充：
 
-    [Isshiki修's Notebook/课程笔记/[大一春夏]概率论与数理统计](https://note.isshikih.top/cour_note/D1CX_ProbabilityAndStatistics/)
+    <div class="heti-skip">[Isshiki修's Notebook/课程笔记/[大一春夏]概率论与数理统计](https://note.isshikih.top/cour_note/D1CX_ProbabilityAndStatistics/)</div>
 
 ## 概率论的基本概念
 
