@@ -1,71 +1,26 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="MinJoker 的笔记本">
-      
-      
-        <meta name="author" content="MinJoker">
-      
-      
-        <link rel="canonical" href="https://minjoker.github.io/bci/bciai/ch5/">
-      
-      
-        <link rel="prev" href="../ch4/">
-      
-      
-        <link rel="next" href="../../../photo/">
-      
-      
-      <link rel="icon" href="../../../assets/images/link/minjoker.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
-    
-    
-      
-        <title>机器学习 - MinJoker's Notebook</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
-      
-      
-
-
-    
-    
-      
-    
-    
-      
-    
-    
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-      <link rel="stylesheet" href="../../../stylesheets/flink.css">
-    
-      <link rel="stylesheet" href="../../../stylesheets/heti.css">
-    
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
-    
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="MinJoker 的笔记本" name="description"/>
+<meta content="MinJoker" name="author"/>
+<link href="https://minjoker.github.io/bci/bciai/ch5/" rel="canonical"/>
+<link href="../ch4/" rel="prev"/>
+<link href="../../../photo/" rel="next"/>
+<link href="../../../assets/images/link/minjoker.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.4.6" name="generator"/>
+<title>机器学习 - MinJoker's Notebook</title>
+<link href="../../../assets/stylesheets/main.35e1ed30.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
+<link href="../../../css/heti.css" rel="stylesheet"/>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../../stylesheets/flink.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css" rel="stylesheet"/>
+<link href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -77,170 +32,101 @@
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
             </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#_1" class="md-skip">
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="MinJoker&#39;s Notebook" class="md-header__button md-logo" aria-label="MinJoker's Notebook" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.11 19.45a6.948 6.948 0 0 1-4.4-5.1L2.05 6.54c-.24-1.08.45-2.14 1.53-2.37l9.77-2.07.03-.01c1.07-.21 2.12.48 2.34 1.54l.35 1.67 4.35.93h.03c1.05.24 1.73 1.3 1.51 2.36l-1.66 7.82a6.993 6.993 0 0 1-8.3 5.38 6.888 6.888 0 0 1-3.89-2.34M20 8.18 10.23 6.1l-1.66 7.82v.03c-.57 2.68 1.16 5.32 3.85 5.89 2.69.57 5.35-1.15 5.92-3.84L20 8.18m-4 8.32a2.962 2.962 0 0 1-3.17 1.39 2.974 2.974 0 0 1-2.33-2.55L16 16.5M8.47 5.17 4 6.13l1.66 7.81.01.03c.15.71.45 1.35.86 1.9-.1-.77-.08-1.57.09-2.37l.43-2c-.45-.08-.84-.33-1.05-.69.06-.61.56-1.15 1.25-1.31h.25l.78-3.81c.04-.19.1-.36.19-.52m6.56 7.06c.32-.53 1-.81 1.69-.66.69.14 1.19.67 1.28 1.29-.33.52-1 .8-1.7.64-.69-.13-1.19-.66-1.27-1.27m-4.88-1.04c.32-.53.99-.81 1.68-.66.67.14 1.2.68 1.28 1.29-.33.52-1 .81-1.69.68-.69-.17-1.19-.7-1.27-1.31m1.82-6.76 1.96.42-.16-.8-1.8.38Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MinJoker's Notebook" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="MinJoker's Notebook">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.11 19.45a6.948 6.948 0 0 1-4.4-5.1L2.05 6.54c-.24-1.08.45-2.14 1.53-2.37l9.77-2.07.03-.01c1.07-.21 2.12.48 2.34 1.54l.35 1.67 4.35.93h.03c1.05.24 1.73 1.3 1.51 2.36l-1.66 7.82a6.993 6.993 0 0 1-8.3 5.38 6.888 6.888 0 0 1-3.89-2.34M20 8.18 10.23 6.1l-1.66 7.82v.03c-.57 2.68 1.16 5.32 3.85 5.89 2.69.57 5.35-1.15 5.92-3.84L20 8.18m-4 8.32a2.962 2.962 0 0 1-3.17 1.39 2.974 2.974 0 0 1-2.33-2.55L16 16.5M8.47 5.17 4 6.13l1.66 7.81.01.03c.15.71.45 1.35.86 1.9-.1-.77-.08-1.57.09-2.37l.43-2c-.45-.08-.84-.33-1.05-.69.06-.61.56-1.15 1.25-1.31h.25l.78-3.81c.04-.19.1-.36.19-.52m6.56 7.06c.32-.53 1-.81 1.69-.66.69.14 1.19.67 1.28 1.29-.33.52-1 .8-1.7.64-.69-.13-1.19-.66-1.27-1.27m-4.88-1.04c.32-.53.99-.81 1.68-.66.67.14 1.2.68 1.28 1.29-.33.52-1 .81-1.69.68-.69-.17-1.19-.7-1.27-1.31m1.82-6.76 1.96.42-.16-.8-1.8.38Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             MinJoker's Notebook
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               机器学习
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
-      </label>
-    
-  
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
 </form>
-      
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/MinJoker/MinJoker.github.io" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/MinJoker/MinJoker.github.io" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
     MinJoker.github.io
   </div>
 </a>
-      </div>
-    
-  </nav>
-  
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
           
   
     
@@ -248,19 +134,9 @@
   Home
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../cs/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../cs/">
           
   
     
@@ -268,19 +144,9 @@
   Computer Science
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../math/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../math/">
           
   
     
@@ -288,21 +154,9 @@
   Mathematics
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../">
           
   
     
@@ -310,19 +164,9 @@
   BCI
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../photo/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../photo/">
           
   
     
@@ -330,19 +174,9 @@
   Photography
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../others/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../others/">
           
   
     
@@ -350,1233 +184,541 @@
   Others
 
         </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="MinJoker&#39;s Notebook" class="md-nav__button md-logo" aria-label="MinJoker's Notebook" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.11 19.45a6.948 6.948 0 0 1-4.4-5.1L2.05 6.54c-.24-1.08.45-2.14 1.53-2.37l9.77-2.07.03-.01c1.07-.21 2.12.48 2.34 1.54l.35 1.67 4.35.93h.03c1.05.24 1.73 1.3 1.51 2.36l-1.66 7.82a6.993 6.993 0 0 1-8.3 5.38 6.888 6.888 0 0 1-3.89-2.34M20 8.18 10.23 6.1l-1.66 7.82v.03c-.57 2.68 1.16 5.32 3.85 5.89 2.69.57 5.35-1.15 5.92-3.84L20 8.18m-4 8.32a2.962 2.962 0 0 1-3.17 1.39 2.974 2.974 0 0 1-2.33-2.55L16 16.5M8.47 5.17 4 6.13l1.66 7.81.01.03c.15.71.45 1.35.86 1.9-.1-.77-.08-1.57.09-2.37l.43-2c-.45-.08-.84-.33-1.05-.69.06-.61.56-1.15 1.25-1.31h.25l.78-3.81c.04-.19.1-.36.19-.52m6.56 7.06c.32-.53 1-.81 1.69-.66.69.14 1.19.67 1.28 1.29-.33.52-1 .8-1.7.64-.69-.13-1.19-.66-1.27-1.27m-4.88-1.04c.32-.53.99-.81 1.68-.66.67.14 1.2.68 1.28 1.29-.33.52-1 .81-1.69.68-.69-.17-1.19-.7-1.27-1.31m1.82-6.76 1.96.42-.16-.8-1.8.38Z"/></svg>
-
-    </a>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MinJoker's Notebook" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="MinJoker's Notebook">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.11 19.45a6.948 6.948 0 0 1-4.4-5.1L2.05 6.54c-.24-1.08.45-2.14 1.53-2.37l9.77-2.07.03-.01c1.07-.21 2.12.48 2.34 1.54l.35 1.67 4.35.93h.03c1.05.24 1.73 1.3 1.51 2.36l-1.66 7.82a6.993 6.993 0 0 1-8.3 5.38 6.888 6.888 0 0 1-3.89-2.34M20 8.18 10.23 6.1l-1.66 7.82v.03c-.57 2.68 1.16 5.32 3.85 5.89 2.69.57 5.35-1.15 5.92-3.84L20 8.18m-4 8.32a2.962 2.962 0 0 1-3.17 1.39 2.974 2.974 0 0 1-2.33-2.55L16 16.5M8.47 5.17 4 6.13l1.66 7.81.01.03c.15.71.45 1.35.86 1.9-.1-.77-.08-1.57.09-2.37l.43-2c-.45-.08-.84-.33-1.05-.69.06-.61.56-1.15 1.25-1.31h.25l.78-3.81c.04-.19.1-.36.19-.52m6.56 7.06c.32-.53 1-.81 1.69-.66.69.14 1.19.67 1.28 1.29-.33.52-1 .8-1.7.64-.69-.13-1.19-.66-1.27-1.27m-4.88-1.04c.32-.53.99-.81 1.68-.66.67.14 1.2.68 1.28 1.29-.33.52-1 .81-1.69.68-.69-.17-1.19-.7-1.27-1.31m1.82-6.76 1.96.42-.16-.8-1.8.38Z"></path></svg>
+</a>
     MinJoker's Notebook
   </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/MinJoker/MinJoker.github.io" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/MinJoker/MinJoker.github.io" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
     MinJoker.github.io
   </div>
 </a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
     Home
   </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
             Home
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../link/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../link/">
+<span class="md-ellipsis">
     Friends
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../cs/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../cs/">
+<span class="md-ellipsis">
     Computer Science
   </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
             Computer Science
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../../cs/algorithms/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../cs/algorithms/">
+<span class="md-ellipsis">
     数据结构与算法
   </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../../cs/digital_logic/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../cs/digital_logic/">
+<span class="md-ellipsis">
     数字逻辑设计
   </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../math/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../math/">
+<span class="md-ellipsis">
     Mathematics
   </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
             Mathematics
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../../math/probability/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../math/probability/">
+<span class="md-ellipsis">
     概率论与数理统计
   </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../../math/discrete/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../math/discrete/">
+<span class="md-ellipsis">
     离散数学
   </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
     BCI
   </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
             BCI
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
     脑机接口导论
   </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
             脑机接口导论
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ch3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch3/">
+<span class="md-ellipsis">
     信号记录与刺激大脑
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ch4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ch4/">
+<span class="md-ellipsis">
     信号处理
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
     机器学习
   </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
     机器学习
   </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
     分类技术
   </a>
-  
-    <nav class="md-nav" aria-label="分类技术">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+<nav aria-label="分类技术" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
     二分类
   </a>
-  
-    <nav class="md-nav" aria-label="二分类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+<nav aria-label="二分类" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
     线性判别分析
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
     神经网络与感知器
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
     支持向量机
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
     集成分类技术
   </a>
-  
-    <nav class="md-nav" aria-label="集成分类技术">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bagging" class="md-nav__link">
+<nav aria-label="集成分类技术" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bagging">
     bagging与随机森林
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#boosting" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boosting">
     boosting
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
     多分类
   </a>
-  
-    <nav class="md-nav" aria-label="多分类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+<nav aria-label="多分类" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
     最近邻
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
     学习矢量量化
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
     朴素贝叶斯分类器
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
     分类性能的评估
   </a>
-  
-    <nav class="md-nav" aria-label="分类性能的评估">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#roc" class="md-nav__link">
+<nav aria-label="分类性能的评估" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#roc">
     混淆矩阵与ROC曲线
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#kappa" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kappa">
     分类正确率与Kappa系数
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
     信息传输率
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
     交叉验证
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
     回归方法
   </a>
-  
-    <nav class="md-nav" aria-label="回归方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+<nav aria-label="回归方法" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
     线性回归
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
     神经网络与反向传播算法
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
     径向基函数网络
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
     高斯过程
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../photo/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../photo/">
+<span class="md-ellipsis">
     Photography
   </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
             Photography
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../others/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../others/">
+<span class="md-ellipsis">
     Others
   </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
             Others
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
     分类技术
   </a>
-  
-    <nav class="md-nav" aria-label="分类技术">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+<nav aria-label="分类技术" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
     二分类
   </a>
-  
-    <nav class="md-nav" aria-label="二分类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+<nav aria-label="二分类" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
     线性判别分析
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
     神经网络与感知器
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
     支持向量机
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
     集成分类技术
   </a>
-  
-    <nav class="md-nav" aria-label="集成分类技术">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bagging" class="md-nav__link">
+<nav aria-label="集成分类技术" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bagging">
     bagging与随机森林
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#boosting" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boosting">
     boosting
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
     多分类
   </a>
-  
-    <nav class="md-nav" aria-label="多分类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+<nav aria-label="多分类" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
     最近邻
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
     学习矢量量化
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
     朴素贝叶斯分类器
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
     分类性能的评估
   </a>
-  
-    <nav class="md-nav" aria-label="分类性能的评估">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#roc" class="md-nav__link">
+<nav aria-label="分类性能的评估" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#roc">
     混淆矩阵与ROC曲线
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#kappa" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kappa">
     分类正确率与Kappa系数
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
     信息传输率
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
     交叉验证
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
     回归方法
   </a>
-  
-    <nav class="md-nav" aria-label="回归方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+<nav aria-label="回归方法" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
     线性回归
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
     神经网络与反向传播算法
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
     径向基函数网络
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
     高斯过程
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-  
-  
-
-
-<h1 id="_1">机器学习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="_1">机器学习<a class="headerlink" href="#_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 4005 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 13 分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>4005<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>13<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">摘要</p>
@@ -1597,96 +739,96 @@
 给定数据通常由高维向量的输入组成，算法的目标是在未标记的数据中挖掘隐藏的统计结构，通过学习构建一种紧凑的或对后续分析有用的统计模型。</p>
 </li>
 </ul>
-<p>构建一个BCI一般需要将大脑信号映射为合适的控制信号，这通常利用分类技术或者回归技术实现。</p>
-<p>我们已经讨论了两种主要的无监督学习技术（PCA和ICA），下文将继续讨论常见的监督学习技术。</p>
+<p>构建一个<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>一般需要将大脑信号映射为合适的控制信号，这通常利用分类技术或者回归技术实现。</p>
+<p>我们已经讨论了两种主要的无监督学习技术（<span>PCA<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>ICA</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，下文将继续讨论常见的监督学习技术。</p>
 <ul>
-<li>基于EEG、ECoG、fMRI、fNRI等的BCI主要利用分类产生离散的控制输出信号；</li>
-<li>基于神经元记录的BCI主要利用回归产生连续的输出信号；</li>
+<li>基于<span><span class="heti-spacing"> </span>EEG</span>、ECoG、fMRI、<span>fNRI<span class="heti-spacing"> </span></span>等的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>主要利用分类产生离散的控制输出信号；</li>
+<li>基于神经元记录的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>主要利用回归产生连续的输出信号；</li>
 </ul>
 </div>
-<h2 id="_2">分类技术<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">二分类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>分类器的任务是为 $p$ 维的特征向量 $x$ 分配类别标签 $y\in Y$ 。最简单的情况在两类（标记为 $-1$ 和 $+1$）之间进行区分，即二分类。</p>
+<h2 id="_2">分类技术<a class="headerlink" href="#_2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="_3">二分类<a class="headerlink" href="#_3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>分类器的任务是为<span class="heti-skip"><span class="heti-spacing"> </span>$p$<span class="heti-spacing"> </span></span>维的特征向量<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>分配类别标签<span><span class="heti-spacing"> </span>$y\in Y$</span> 。最简单的情况在两类（标记为<span class="heti-skip"><span class="heti-spacing"> </span>$-1$<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>$+1$</span>）之间进行区分，即二分类。</p>
 <p>二分类问题的关键在于通过训练数据计算找到一个边界，以使新的数据能被正确分类。</p>
-<h4 id="_4">线性判别分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>线性判别分析（LDA）是一个线性二分类器，将 $p$ 维输入向量 $x$ 映射到一个超平面，该超平面将输入空间划分为两个半空间，超平面公式如下：</p>
+<h4 id="_4">线性判别分析<a class="headerlink" href="#_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>线性判别分析（LDA）是一个线性二分类器，将<span class="heti-skip"><span class="heti-spacing"> </span>$p$<span class="heti-spacing"> </span></span>维输入向量<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>映射到一个超平面，该超平面将输入空间划分为两个半空间，超平面公式如下：</p>
 <p>$$
 g(x) = w^T x + w_0 = 0
 $$</p>
-<p>边界由超平面的法向量 $w$ 和阈值 $w_0$ 来表示，它们由被标记的训练数据决定。</p>
-<p>对于新的输入向量 $x\in X^p$ ，通过如下计算对其进行二分类：</p>
+<p>边界由超平面的法向量<span class="heti-skip"><span class="heti-spacing"> </span>$w$<span class="heti-spacing"> </span></span>和阈值<span class="heti-skip"><span class="heti-spacing"> </span>$w_0$<span class="heti-spacing"> </span></span>来表示，它们由被标记的训练数据决定。</p>
+<p>对于新的输入向量<span><span class="heti-spacing"> </span>$x\in X^p$</span> ，通过如下计算对其进行二分类：</p>
 <p>$$
 y = sign(w^T x + w_0)
 $$</p>
-<p><a class="glightbox" href="/assets/images/bci/bciai/7.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="二分类的线性判别分析" src="/assets/images/bci/bciai/7.jpg" title="二分类的线性判别分析" /></a></p>
-<p><strong>LDA实现简单、运算速度较快，已经成为BCI研究中常用的分类器</strong>。尽管由于在LDA的推导中做了<strong>强假设</strong>，诸如非高斯分布、异常值、噪声等因素会降低LDA的性能，但总体上LDA能产生好的分类结果。</p>
-<p>LDA至少有以下两种变式：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/7.jpg"><img alt="二分类的线性判别分析" src="/assets/images/bci/bciai/7.jpg" title="二分类的线性判别分析"/></a></p>
+<p><strong><span>LDA<span class="heti-spacing"> </span></span>实现简单、运算速度较快，已经成为<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>研究中常用的分类器</strong>。尽管由于在<span class="heti-skip"><span class="heti-spacing"> </span>LDA<span class="heti-spacing"> </span></span>的推导中做了<strong>强假设</strong>，诸如非高斯分布、异常值、噪声等因素会降低<span class="heti-skip"><span class="heti-spacing"> </span>LDA<span class="heti-spacing"> </span></span>的性能，但总体上<span class="heti-skip"><span class="heti-spacing"> </span>LDA<span class="heti-spacing"> </span></span>能产生好的分类结果。</p>
+<p><span>LDA<span class="heti-spacing"> </span></span>至少有以下两种变式：</p>
 <ul>
 <li>
-<p>正则化线性判别分析（RDA）：</p>
-<p>将LDA的协方差用正则化形式取代，以提升泛化能力和避免过度拟合。</p>
+<p>正则化线性判别分析（RDA<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<p>将<span class="heti-skip"><span class="heti-spacing"> </span>LDA<span class="heti-spacing"> </span></span>的协方差用正则化形式取代，以提升泛化能力和避免过度拟合。</p>
 </li>
 <li>
-<p>二次判别分析（QDA）：</p>
-<p>与LDA的不同之处在于QDA允许两类有不同的协方差矩阵。</p>
+<p>二次判别分析（QDA<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<p>与<span class="heti-skip"><span class="heti-spacing"> </span>LDA<span class="heti-spacing"> </span></span>的不同之处在于<span class="heti-skip"><span class="heti-spacing"> </span>QDA<span class="heti-spacing"> </span></span>允许两类有不同的协方差矩阵。</p>
 </li>
 </ul>
-<h4 id="_5">神经网络与感知器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h4 id="_5">神经网络与感知器<a class="headerlink" href="#_5" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>神经网络（ANN）受生物学中神经网络的启发，力图重建大脑网络的适应能力，以一种强健的方式对输入数据进行分类。</p>
-<p>一个著名的例子是感知器（及多层感知器）。单层感知器计算一个超平面（类似于LDA）：</p>
+<p>一个著名的例子是感知器（及多层感知器<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。单层感知器计算一个超平面（类似于<span><span class="heti-spacing"> </span>LDA</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
 <p>$$
 w^T x + w_0 = 0
 $$</p>
 <p>$$
 y = sign(w^T x + w_0)
 $$</p>
-<p>其中，向量 $w$ 表示连接输入与神经元的“突触权值”， $-w_0$ 表示神经元的放电阈值。</p>
-<p>对此有一个“神经”视角的解释：<strong>神经元的输出是基于对输入的加权和计算，以及对加权和与阈值的比较</strong>。（这可视为产生锋电位阈值模型的一种简化形式）</p>
-<p>感知器和LDA不同之处在于权值和阈值参数如何适应输入。受生物学启发，感知器以在线的方式调节其参数：给定一个输入 $x$ 和期望的输出 $y^d$ ，如果输出误差 $y-y^d$ 为正，那么正输入的权值减小，负输入的权值增大，并且阈值增大。<strong>这种“学习”规则的净效应是减少将来类似输入所产生的输出误差</strong>。</p>
+<p>其中，向量<span class="heti-skip"><span class="heti-spacing"> </span>$w$<span class="heti-spacing"> </span></span>表示连接输入与神经元的“突触权值”， <span>$-w_0$<span class="heti-spacing"> </span></span>表示神经元的放电阈值。</p>
+<p>对此有一个“神经”视角的解释：<strong>神经元的输出是基于对输入的加权和计算，以及对加权和与阈值的比较</strong><heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（这可视为产生锋电位阈值模型的一种简化形式）</p>
+<p>感知器和<span class="heti-skip"><span class="heti-spacing"> </span>LDA<span class="heti-spacing"> </span></span>不同之处在于权值和阈值参数如何适应输入。受生物学启发，感知器以在线的方式调节其参数：给定一个输入<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>和期望的输出<span><span class="heti-spacing"> </span>$y^d$</span> ，如果输出误差<span class="heti-skip"><span class="heti-spacing"> </span>$y-y^d$<span class="heti-spacing"> </span></span>为正，那么正输入的权值减小，负输入的权值增大，并且阈值增大。<strong>这种“学习”规则的净效应是减少将来类似输入所产生的输出误差</strong>。</p>
 <p><strong>多层感知器是感知器的非线性推广</strong>，其使用<code>sigmoid</code>软阈值非线性函数，而不是使用硬阈值非线性函数来表示它们的神经单元：</p>
 <p>$$
 y = sigmoid(w^T x + w_0)
 $$</p>
-<p>sigmoid函数的输出是0~1之间的数字，其值接近于0则表示属于类型1，接近于1则表示属于类型2 。关于sigmoid以及神经网络的更多内容，参见下文“神经网络与反向传播算法”部分。</p>
-<h4 id="_6">支持向量机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>神经网络很强大，但是存在对训练数据过度拟合，导致其泛化能力变差的问题。较新的技术支持向量机（SVM）通常比神经网络更受青睐，成为众多BCI选择的分类算法。</p>
-<p>LDA和感知器通过选择超平面来分离两类，而被选择的超平面有无数种合适的可能，可以证明在这些超平面中，<strong>选择两类之间距离最大的超平面</strong>能获得最好的泛化能力。SVM就是这样的一个分类器。</p>
-<p><a class="glightbox" href="/assets/images/bci/bciai/8.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="支持向量机" src="/assets/images/bci/bciai/8.jpg" title="支持向量机" /></a></p>
-<p><strong>线性SVM已经成功用于大量BCI应用</strong>。线性SVM就不能解决问题的情况下，可利用<strong>核技巧</strong>（kernel trick）来有效实现数据的非线性映射，将数据映射到更高维的空间中，使数据线性可分。（BCI中最常用的核是高斯核或径向基函数）</p>
-<h3 id="_7">集成分类技术<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><span>sigmoid<span class="heti-spacing"> </span></span>函数的输出是<span class="heti-skip"><span class="heti-spacing"> </span>0~1<span class="heti-spacing"> </span></span>之间的数字，其值接近于<span class="heti-skip"><span class="heti-spacing"> </span>0<span class="heti-spacing"> </span></span>则表示属于类型<span><span class="heti-spacing"> </span>1</span>，接近于<span class="heti-skip"><span class="heti-spacing"> </span>1<span class="heti-spacing"> </span></span>则表示属于类型<span><span class="heti-spacing"> </span>2</span> 。关于<span class="heti-skip"><span class="heti-spacing"> </span>sigmoid<span class="heti-spacing"> </span></span>以及神经网络的更多内容，参见下文“神经网络与反向传播算法”部分。</p>
+<h4 id="_6">支持向量机<a class="headerlink" href="#_6" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>神经网络很强大，但是存在对训练数据过度拟合，导致其泛化能力变差的问题。较新的技术支持向量机（SVM）通常比神经网络更受青睐，成为众多<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>选择的分类算法。</p>
+<p><span>LDA<span class="heti-spacing"> </span></span>和感知器通过选择超平面来分离两类，而被选择的超平面有无数种合适的可能，可以证明在这些超平面中，<strong>选择两类之间距离最大的超平面</strong>能获得最好的泛化能力。<span>SVM<span class="heti-spacing"> </span></span>就是这样的一个分类器。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/8.jpg"><img alt="支持向量机" src="/assets/images/bci/bciai/8.jpg" title="支持向量机"/></a></p>
+<p><strong>线性<span class="heti-skip"><span class="heti-spacing"> </span>SVM<span class="heti-spacing"> </span></span>已经成功用于大量<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>应用</strong>。线性<span class="heti-skip"><span class="heti-spacing"> </span>SVM<span class="heti-spacing"> </span></span>就不能解决问题的情况下，可利用<strong>核技巧</strong>（kernel trick）来有效实现数据的非线性映射，将数据映射到更高维的空间中，使数据线性可分<heti-adjacent class="heti-adjacent-half">。</heti-adjacent>（<span>BCI<span class="heti-spacing"> </span></span>中最常用的核是高斯核或径向基函数）</p>
+<h3 id="_7">集成分类技术<a class="headerlink" href="#_7" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>分类的集成方法结合多个分类器的输出，形成一个比任意单一分类器的泛化能力更好的综合分类器。</p>
-<h4 id="bagging">bagging与随机森林<a class="headerlink" href="#bagging" title="Permanent link">&para;</a></h4>
-<p>bagging是一种最简单的集成学习方法，可概括如下：</p>
+<h4 id="bagging"><span>bagging<span class="heti-spacing"> </span></span>与随机森林<a class="headerlink" href="#bagging" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p><span>bagging<span class="heti-spacing"> </span></span>是一种最简单的集成学习方法，可概括如下：</p>
 <ol>
-<li>对给定数据集进行有放回抽样（意味着同一个训练集中样本可能重复），产生m个新的训练集；</li>
-<li>训练m个分类器，每个分类器对应一个新产生的训练集；</li>
-<li>通过m个分类器对新的输入进行分类，选择获得最多“投票”的类别；</li>
+<li>对给定数据集进行有放回抽样（意味着同一个训练集中样本可能重复<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，产生<span class="heti-skip"><span class="heti-spacing"> </span>m<span class="heti-spacing"> </span></span>个新的训练集；</li>
+<li>训练<span class="heti-skip"><span class="heti-spacing"> </span>m<span class="heti-spacing"> </span></span>个分类器，每个分类器对应一个新产生的训练集；</li>
+<li>通过<span class="heti-skip"><span class="heti-spacing"> </span>m<span class="heti-spacing"> </span></span>个分类器对新的输入进行分类，选择获得最多“投票”的类别；</li>
 </ol>
-<p>考虑 $N^{'} = N$ 这一典型情况（$N^{'}$ 指的是每个训练集的抽样样本数），这样产生的样本集被称作<code>bootstrap样本</code>。</p>
-<p>随机森林可能是当今最流行的bagging技术，其名字源于它们由许多<strong>决策树分类器</strong>组成。在随机森林中，输入向量首先森林中的每一棵树，每棵树预测一个输出类别，森林选择获得树投票最多的类别作为其输出。</p>
-<p>由于随机森林<strong>在具有大量输入变量的大数据集上表现良好</strong>，使得它近年来愈加流行。但是随机森林<strong>在BCI中的应用依然相对较少</strong>。</p>
-<h4 id="boosting">boosting<a class="headerlink" href="#boosting" title="Permanent link">&para;</a></h4>
-<p>boosting寻找一系列分类器，这些分类器<strong>给予预测错误的数据点的权重高于预测正确的</strong>，由此可以找到新的分类器，对当前分类器不能很好分类的数据点能进行更好的分类。</p>
-<p>boosting与bagging不同之处在于它的<strong>新分类器依赖于之前分类器的表现</strong>。</p>
-<p>boosting对解决弱分类器问题（这些弱分类器的表现可能仅比随机的结果好一些）非常有用，可以<strong>基于弱分类器构建出强分类器</strong>，以提高准确度。</p>
-<p>或许最有名的boosting算法是<code>AdaBoost</code>。</p>
-<h3 id="_8">多分类<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>上述讨论的分类器都是二分类的，而在BCI应用中，期望的输出信号个数通常大于二，这就需要使用多分类方法。</p>
+<p>考虑<span class="heti-skip"><span class="heti-spacing"> </span>$N^{'} = N$<span class="heti-spacing"> </span></span>这一典型情况（<span>$N^{'}$<span class="heti-spacing"> </span></span>指的是每个训练集的抽样样本数<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，这样产生的样本集被称作<code>bootstrap样本</code>。</p>
+<p>随机森林可能是当今最流行的<span class="heti-skip"><span class="heti-spacing"> </span>bagging<span class="heti-spacing"> </span></span>技术，其名字源于它们由许多<strong>决策树分类器</strong>组成。在随机森林中，输入向量首先森林中的每一棵树，每棵树预测一个输出类别，森林选择获得树投票最多的类别作为其输出。</p>
+<p>由于随机森林<strong>在具有大量输入变量的大数据集上表现良好</strong>，使得它近年来愈加流行。但是随机森林<strong>在<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>中的应用依然相对较少</strong>。</p>
+<h4 id="boosting">boosting<a class="headerlink" href="#boosting" title="Permanent link">¶</a></h4>
+<p><span>boosting<span class="heti-spacing"> </span></span>寻找一系列分类器，这些分类器<strong>给予预测错误的数据点的权重高于预测正确的</strong>，由此可以找到新的分类器，对当前分类器不能很好分类的数据点能进行更好的分类。</p>
+<p><span>boosting<span class="heti-spacing"> </span></span>与<span class="heti-skip"><span class="heti-spacing"> </span>bagging<span class="heti-spacing"> </span></span>不同之处在于它的<strong>新分类器依赖于之前分类器的表现</strong>。</p>
+<p><span>boosting<span class="heti-spacing"> </span></span>对解决弱分类器问题（这些弱分类器的表现可能仅比随机的结果好一些）非常有用，可以<strong>基于弱分类器构建出强分类器</strong>，以提高准确度。</p>
+<p>或许最有名的<span class="heti-skip"><span class="heti-spacing"> </span>boosting<span class="heti-spacing"> </span></span>算法是<code>AdaBoost</code>。</p>
+<h3 id="_8">多分类<a class="headerlink" href="#_8" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>上述讨论的分类器都是二分类的，而在<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>应用中，期望的输出信号个数通常大于二，这就需要使用多分类方法。</p>
 <p>多分类也可以通过二分类器结合的方法得到：</p>
 <ul>
 <li>训练若干个二分类器，并使用多数投票机制，每个二分类器用于一个两类组合；</li>
 <li>采取一对多的策略，对于每一类，训练一个独立的分类器来分离该类数据和其他类别的数据；</li>
 </ul>
-<h4 id="_9">最近邻<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h4 id="_9">最近邻<a class="headerlink" href="#_9" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
 <p>最近邻（NN）是最简单的多分类技术之一，输入被简单指定为其最近邻的类别。</p>
-<p>NN分类存在的一个问题是它对噪声和异常值很敏感，这种技术可以通过使用<strong>k-最近邻</strong>（k-NN）来变得更加稳健。在k-NN中，输入被指定为k个最近邻中最普遍的一种类别。</p>
-<p><a class="glightbox" href="/assets/images/bci/bciai/9.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="k-最近邻" src="/assets/images/bci/bciai/9.jpg" title="k-最近邻" /></a></p>
-<p>k-NN技术存在的一个潜在问题是它偏向于训练集中最多样本所属的类别，其有一种变式，把距离和类别同时纳入考虑，可以解决这一问题。</p>
-<h4 id="_10">学习矢量量化<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p>学习矢量量化（LVQ）中，分类基于标签 $Y_i\in [1,\cdots ,N_y]$ 标记的特征向量 $\lbrace m_i, Y_i \rbrace_{i=1}^N$（也称为码本向量，lodebook vector）构成的小集合。新样本的分类通过将与它距离最近的码本向量 $m_k$ 的标签 $Y_k$ 赋予样本实现。</p>
-<p>LVQ中的每个码本向量的贡献是相等的，但在BCI中更常见的情况是需要对不同特征作加权处理，这就需要使用LVQ的一种优化，即<strong>区分敏感LVQ</strong>（DSLVQ），在计算“距离”时进行加权。</p>
-<h4 id="_11">朴素贝叶斯分类器<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p>朴素贝叶斯分类器是一种基于强独立性（朴素）假设贝叶斯准则的概率分类器。假设目标是要根据输入计算得到的大量特征 $F_1, F_2, \cdots , F_n$ 确定特定输入的所属类别（从 $N$ 种可能的类别中选择）。实现这一目标的一种方式是选择具有最大后验概率的类别 $i$ ：</p>
+<p><span>NN<span class="heti-spacing"> </span></span>分类存在的一个问题是它对噪声和异常值很敏感，这种技术可以通过使用<strong><span>k-<span class="heti-spacing"> </span></span>最近邻</strong>（k-NN）来变得更加稳健。在<span class="heti-skip"><span class="heti-spacing"> </span>k-NN<span class="heti-spacing"> </span></span>中，输入被指定为<span class="heti-skip"><span class="heti-spacing"> </span>k<span class="heti-spacing"> </span></span>个最近邻中最普遍的一种类别。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/9.jpg"><img alt="k-最近邻" src="/assets/images/bci/bciai/9.jpg" title="k-最近邻"/></a></p>
+<p><span>k-NN<span class="heti-spacing"> </span></span>技术存在的一个潜在问题是它偏向于训练集中最多样本所属的类别，其有一种变式，把距离和类别同时纳入考虑，可以解决这一问题。</p>
+<h4 id="_10">学习矢量量化<a class="headerlink" href="#_10" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>学习矢量量化（LVQ）中，分类基于标签<span class="heti-skip"><span class="heti-spacing"> </span>$Y_i\in [1,\cdots ,N_y]$<span class="heti-spacing"> </span></span>标记的特征向量<span><span class="heti-spacing"> </span>$\lbrace m_i, Y_i \rbrace_{i=1}^N$</span>（也称为码本向量，lodebook vector）构成的小集合。新样本的分类通过将与它距离最近的码本向量<span class="heti-skip"><span class="heti-spacing"> </span>$m_k$<span class="heti-spacing"> </span></span>的标签<span class="heti-skip"><span class="heti-spacing"> </span>$Y_k$<span class="heti-spacing"> </span></span>赋予样本实现。</p>
+<p><span>LVQ<span class="heti-spacing"> </span></span>中的每个码本向量的贡献是相等的，但在<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>中更常见的情况是需要对不同特征作加权处理，这就需要使用<span class="heti-skip"><span class="heti-spacing"> </span>LVQ<span class="heti-spacing"> </span></span>的一种优化，即<strong>区分敏感<span><span class="heti-spacing"> </span>LVQ</span></strong>（DSLVQ<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，在计算“距离”时进行加权。</p>
+<h4 id="_11">朴素贝叶斯分类器<a class="headerlink" href="#_11" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>朴素贝叶斯分类器是一种基于强独立性（朴素）假设贝叶斯准则的概率分类器。假设目标是要根据输入计算得到的大量特征<span class="heti-skip"><span class="heti-spacing"> </span>$F_1, F_2, \cdots , F_n$<span class="heti-spacing"> </span></span>确定特定输入的所属类别（从<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>种可能的类别中选择<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。实现这一目标的一种方式是选择具有最大后验概率的类别<span><span class="heti-spacing"> </span>$i$</span> ：</p>
 <p>$$
 \begin{aligned}
 P(C = i \vert F_1, F_2, \cdots , F_n) &amp; = \frac{P(C=i) P(F_1, F_2, \cdots , F_n | C=i)}{P(F_1, F_2, \cdots , F_n)} \cr
@@ -1694,9 +836,9 @@ P(C = i \vert F_1, F_2, \cdots , F_n) &amp; = \frac{P(C=i) P(F_1, F_2, \cdots , 
 &amp; \propto P(C=i) P(F_1 | C=i)P(F_2 | C=i)\cdots P(F_n | C=i)
 \end{aligned}
 $$</p>
-<h3 id="_12">分类性能的评估<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<h4 id="roc">混淆矩阵与ROC曲线<a class="headerlink" href="#roc" title="Permanent link">&para;</a></h4>
-<p>对于 $N_y \times N_y$ 的混淆矩阵 $M$ ，行表示真实的类标签，列表示分类器的输出。$M$ 的对角元素表示正确分类的样本，非对角元素 $M_{ij}$ 给出了有多少类 $i$ 的样本被误分类为 $j$ 。</p>
+<h3 id="_12">分类性能的评估<a class="headerlink" href="#_12" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="roc">混淆矩阵与<span class="heti-skip"><span class="heti-spacing"> </span>ROC<span class="heti-spacing"> </span></span>曲线<a class="headerlink" href="#roc" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>对于<span class="heti-skip"><span class="heti-spacing"> </span>$N_y \times N_y$<span class="heti-spacing"> </span></span>的混淆矩阵<span><span class="heti-spacing"> </span>$M$</span> ，行表示真实的类标签，列表示分类器的输出。<span>$M$<span class="heti-spacing"> </span></span>的对角元素表示正确分类的样本，非对角元素<span class="heti-skip"><span class="heti-spacing"> </span>$M_{ij}$<span class="heti-spacing"> </span></span>给出了有多少类<span class="heti-skip"><span class="heti-spacing"> </span>$i$<span class="heti-spacing"> </span></span>的样本被误分类为<span><span class="heti-spacing"> </span>$j$</span> 。</p>
 <p>两类问题的混淆矩阵如下：</p>
 <p>$$
 \begin{array}{lll}
@@ -1706,50 +848,48 @@ $$</p>
 {负}&amp;{假阳性（FP）}&amp;{真阴性（TN）}
 \end{array}
 $$</p>
-<p>ROC曲线（“受试者操作特征”曲线）是真阳性比例和假阳性比例的对比图，能<strong>反映敏感性与特异性之间的关系</strong>。横坐标为假阳性率（$1-$特异性），纵坐标为真阳性率（敏感度）。</p>
+<p><span>ROC<span class="heti-spacing"> </span></span>曲线（“受试者操作特征”曲线）是真阳性比例和假阳性比例的对比图，能<strong>反映敏感性与特异性之间的关系</strong>。横坐标为假阳性率（<span>$1-$<span class="heti-spacing"> </span></span>特异性<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，纵坐标为真阳性率（敏感度<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
 <div align="center">
-    <a class="glightbox" href="/assets/images/bci/bciai/10.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/bci/bciai/10.jpg" width="60%"></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/10.jpg"><img src="/assets/images/bci/bciai/10.jpg" width="60%"/></a>
 </div>
-
 <p>根据曲线的位置，把整个图分成两部分，曲线下方部分的面积（AUC）越大，表示预测准确性越高；曲线越接近左上角，预测准确性越高。</p>
 <div align="center">
-    <a class="glightbox" href="/assets/images/bci/bciai/11.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/bci/bciai/11.jpg" width="60%"></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/11.jpg"><img src="/assets/images/bci/bciai/11.jpg" width="60%"/></a>
 </div>
-
-<h4 id="kappa">分类正确率与Kappa系数<a class="headerlink" href="#kappa" title="Permanent link">&para;</a></h4>
-<p>分类正确率（ACC）定义为正确分类的样本数与样本总数的比值。定义错误率 $err = 1 - ACC$ 。当每一类的样本数目相同时，机会水平（随机） $ACC_0 = 1/N_Y$ ,其中 $N_Y$ 表示类别数。</p>
-<p>kappa系数定义如下：</p>
+<h4 id="kappa">分类正确率与<span class="heti-skip"><span class="heti-spacing"> </span>Kappa<span class="heti-spacing"> </span></span>系数<a class="headerlink" href="#kappa" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>分类正确率（ACC）定义为正确分类的样本数与样本总数的比值。定义错误率<span><span class="heti-spacing"> </span>$err = 1 - ACC$</span> 。当每一类的样本数目相同时，机会水平（随机） <span>$ACC_0 = 1/N_Y$ ,<span class="heti-spacing"> </span></span>其中<span class="heti-skip"><span class="heti-spacing"> </span>$N_Y$<span class="heti-spacing"> </span></span>表示类别数。</p>
+<p><span>kappa<span class="heti-spacing"> </span></span>系数定义如下：</p>
 <p>$$
 \kappa = \frac{ACC - ACC_0}{1 - ACC_0}
 $$</p>
-<p>kappa系数与每类样本的数目和类别数无关。$\kappa = 0$ 意味着机会水平的表现，$\kappa = 1$ 意味着最好的分类，$\kappa &lt; 0$ 意味着分类性能差于机会水平。</p>
-<h4 id="_13">信息传输率<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p>为比较BCI性能，同时考虑BCI的正确率和速度是非常重要，可以利用信息论的概念，根据比特率或者信息传输率（ITR）来量化BCI的性能。</p>
+<p><span>kappa<span class="heti-spacing"> </span></span>系数与每类样本的数目和类别数无关。<span>$\kappa = 0$<span class="heti-spacing"> </span></span>意味着机会水平的表现，<span>$\kappa = 1$<span class="heti-spacing"> </span></span>意味着最好的分类，<span>$\kappa &lt; 0$<span class="heti-spacing"> </span></span>意味着分类性能差于机会水平。</p>
+<h4 id="_13">信息传输率<a class="headerlink" href="#_13" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>为比较<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>性能，同时考虑<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>的正确率和速度是非常重要，可以利用信息论的概念，根据比特率或者信息传输率（ITR）来量化<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>的性能。</p>
 <p>$$
 B = log_2 (N) + P log_2 (P) + (1-P) log_2 (1-P) / (N-1)
 $$</p>
-<p>现实情况下虽然不一定总能满足推导 $B$ 所做得假设条件，但是 $B$ 提供了一个能够获得的性能上限。</p>
-<h4 id="_14">交叉验证<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
-<p>交叉验证用于对错误率 $err$ 的估计。一种方法是将给定的输入数据集简单地划分为两个子集，一个子集用于训练，另一个子集用于测试（hand out 方法）。但是这种方法对数据怎样划分很敏感。</p>
-<p>一种更复杂的方法是<strong>K折交叉验证</strong>：将数据集划分为K个维数大致相同的子集，其中K-1个子集用于训练分类器，剩下的子集用于训练。对分类器进行K次训练和测试，产生K个不同的错误率，总错误率可以通过求平均得到：</p>
+<p>现实情况下虽然不一定总能满足推导<span class="heti-skip"><span class="heti-spacing"> </span>$B$<span class="heti-spacing"> </span></span>所做得假设条件，但是<span class="heti-skip"><span class="heti-spacing"> </span>$B$<span class="heti-spacing"> </span></span>提供了一个能够获得的性能上限。</p>
+<h4 id="_14">交叉验证<a class="headerlink" href="#_14" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>交叉验证用于对错误率<span class="heti-skip"><span class="heti-spacing"> </span>$err$<span class="heti-spacing"> </span></span>的估计。一种方法是将给定的输入数据集简单地划分为两个子集，一个子集用于训练，另一个子集用于测试（<span>hand out<span class="heti-spacing"> </span></span>方法<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。但是这种方法对数据怎样划分很敏感。</p>
+<p>一种更复杂的方法是<strong><span>K<span class="heti-spacing"> </span></span>折交叉验证</strong>：将数据集划分为<span class="heti-skip"><span class="heti-spacing"> </span>K<span class="heti-spacing"> </span></span>个维数大致相同的子集，其中<span class="heti-skip"><span class="heti-spacing"> </span>K-1<span class="heti-spacing"> </span></span>个子集用于训练分类器，剩下的子集用于训练。对分类器进行<span class="heti-skip"><span class="heti-spacing"> </span>K<span class="heti-spacing"> </span></span>次训练和测试，产生<span class="heti-skip"><span class="heti-spacing"> </span>K<span class="heti-spacing"> </span></span>个不同的错误率，总错误率可以通过求平均得到：</p>
 <p>$$
 err = \frac{1}{K} \sum_{k=1}^K err_k
 $$</p>
 <p>在很多的应用中，一般将数据集划分为三个子集：一个是用于确定分类器参数的训练子集，一个是用于调整分类器参数的验证子集，一个是用于报告优化分类器性能的测试子集。虽然这些过程计算量大，但它们对于提高分类器的泛化能力起着重要作用。</p>
-<h2 id="_15">回归方法<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
-<h3 id="_16">线性回归<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>线性回归假设产生数据的向量函数是线性的。为了更好地说明线性回归，考虑输入 $u$ 是 $K$ 维向量、输出 $v$ 是标量值的特殊情况，于是输出由线性函数给出：</p>
+<h2 id="_15">回归方法<a class="headerlink" href="#_15" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="_16">线性回归<a class="headerlink" href="#_16" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>线性回归假设产生数据的向量函数是线性的。为了更好地说明线性回归，考虑输入<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>$K$<span class="heti-spacing"> </span></span>维向量、输出<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>是标量值的特殊情况，于是输出由线性函数给出：</p>
 <p>$$
 v = \sum_{i=1}^K w_i u_i = w^T u
 $$</p>
-<p>上式中，$w$ 是需要由训练数据来确定的“权”向量或线性滤波器。线性最小二乘回归寻找能减少所有训练样本的输出误差平方和的权向量 $w$：</p>
+<p>上式中，<span>$w$<span class="heti-spacing"> </span></span>是需要由训练数据来确定的“权”向量或线性滤波器。线性最小二乘回归寻找能减少所有训练样本的输出误差平方和的权向量<span><span class="heti-spacing"> </span>$w$</span>：</p>
 <p>$$
 \begin{aligned}
 E(w) &amp;= \sum_m (d^m - v^m) ^2 \cr
 &amp;= \Vert d-Uw \Vert ^2
 \end{aligned}
 $$</p>
-<p>上式中，$d$ 是训练输出向量，$U$ 是输入矩阵，矩阵的行是来自训练集的输入向量 $u$。为减小误差，对关于 $w$ 的 $E$ 求导，并将求导结果置为 $0$，得到：</p>
+<p>上式中，<span>$d$<span class="heti-spacing"> </span></span>是训练输出向量，<span>$U$<span class="heti-spacing"> </span></span>是输入矩阵，矩阵的行是来自训练集的输入向量<span><span class="heti-spacing"> </span>$u$</span>。为减小误差，对关于<span class="heti-skip"><span class="heti-spacing"> </span>$w$<span class="heti-spacing"> </span></span>的<span class="heti-skip"><span class="heti-spacing"> </span>$E$<span class="heti-spacing"> </span></span>求导，并将求导结果置为<span><span class="heti-spacing"> </span>$0$</span>，得到：</p>
 <p>$$
 2 \cdot U^T (d-Uw) = 0
 $$</p>
@@ -1759,9 +899,9 @@ $$</p>
 <p>$$
 w = (U^T U) ^{-1} U^T d
 $$</p>
-<p>估计权向量的上述方法有时也被称为广义逆法（矩阵 $(U^T U)^{-1} U^T$ 是“伪逆”的）。</p>
-<p><strong>线性回归已经被证明在很多侵入式BCI中非常有效</strong>。它速度快且易于计算，主要缺点是在某些应用中对模型过于简化，此外，它也没有在输出中提供任何关于不确定性的估计。</p>
-<h3 id="_17">神经网络与反向传播算法<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>估计权向量的上述方法有时也被称为广义逆法（矩阵<span class="heti-skip"><span class="heti-spacing"> </span>$(U^T U)^{-1} U^T$<span class="heti-spacing"> </span></span>是“伪逆”的<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
+<p><strong>线性回归已经被证明在很多侵入式<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>中非常有效</strong>。它速度快且易于计算，主要缺点是在某些应用中对模型过于简化，此外，它也没有在输出中提供任何关于不确定性的估计。</p>
+<h3 id="_17">神经网络与反向传播算法<a class="headerlink" href="#_17" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>神经网络是用于<strong>非线性函数逼近</strong>的流行算法。</p>
 <p>我们在讨论分类技术的时候涉及了感知器，它是一种神经网络。阈值函数对分类是有效的，但对非线性回归是无效的，对回归来说，流行的选择是<code>sigmoid</code>输出函数：</p>
 <p>$$
@@ -1770,35 +910,35 @@ $$</p>
 <p>$$
 g(x) = \frac{1}{1+e^{-\beta x}}
 $$</p>
-<p>sigmoid函数可以看做是阈值函数更平滑的版本：它将输入压缩到0~1之间，用参数 $\beta$ 控制函数的斜率（$\beta$ 值越大，sigmoid函数越接近阈值函数）。sigmoid函数容易求导，这在推导反向传播学习规则时将变得很重要。</p>
-<p><a class="glightbox" href="/assets/images/bci/bciai/12.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="sigmoid函数" src="/assets/images/bci/bciai/12.jpg" title="sigmoid函数" /></a></p>
+<p><span>sigmoid<span class="heti-spacing"> </span></span>函数可以看做是阈值函数更平滑的版本：它将输入压缩到<span class="heti-skip"><span class="heti-spacing"> </span>0~1<span class="heti-spacing"> </span></span>之间，用参数<span class="heti-skip"><span class="heti-spacing"> </span>$\beta$<span class="heti-spacing"> </span></span>控制函数的斜率（<span>$\beta$<span class="heti-spacing"> </span></span>值越大，<span>sigmoid<span class="heti-spacing"> </span></span>函数越接近阈值函数<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。<span>sigmoid<span class="heti-spacing"> </span></span>函数容易求导，这在推导反向传播学习规则时将变得很重要。</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/12.jpg"><img alt="sigmoid函数" src="/assets/images/bci/bciai/12.jpg" title="sigmoid函数"/></a></p>
 <p>对非线性回归来说，我们感兴趣的是<strong>包括多层神经元的网络</strong>，网络中上一层的输出作为下一层神经元的输入。最常见的一种多层网络是包括一个输入层、一个“隐藏”层、一个输出层的三层网络，至少在理论上已经证明，这种网络<strong>能够通过隐藏层中足够多的神经元逼近任何非线性函数</strong>。</p>
-<p>假定有一个由sigmoid神经元构成的三层网络，矩阵 $V$ 表示输入层到隐藏层的权重，矩阵 $W$ 表示隐藏层到输出层的权重。输出层中第 $i$ 个神经元的输出可表示为：</p>
+<p>假定有一个由<span class="heti-skip"><span class="heti-spacing"> </span>sigmoid<span class="heti-spacing"> </span></span>神经元构成的三层网络，矩阵<span class="heti-skip"><span class="heti-spacing"> </span>$V$<span class="heti-spacing"> </span></span>表示输入层到隐藏层的权重，矩阵<span class="heti-skip"><span class="heti-spacing"> </span>$W$<span class="heti-spacing"> </span></span>表示隐藏层到输出层的权重。输出层中第<span class="heti-skip"><span class="heti-spacing"> </span>$i$<span class="heti-spacing"> </span></span>个神经元的输出可表示为：</p>
 <p>$$
 v_i = g(\sum_j W_{ji} g(\sum_k V_{kj} u_k))
 $$</p>
-<p><a class="glightbox" href="/assets/images/bci/bciai/13.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="三层神经网络图示" src="/assets/images/bci/bciai/13.jpg" title="三层神经网络图示" /></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/13.jpg"><img alt="三层神经网络图示" src="/assets/images/bci/bciai/13.jpg" title="三层神经网络图示"/></a></p>
 <p>和线性回归一样，其目标也是要减少训练数据期望的输出向量与由网络产生的实际输出向量之间的误差。对训练中每个输入，其误差如下：</p>
 <p>$$
 E(W,V) = \frac{1}{2} \sum_i (d_i - v_i) ^2
 $$</p>
 <p>这里需要注意两点：</p>
 <ol>
-<li>由于sigmoid非线性函数的存在，不能像线性回归那样直接通过将 $E$ 的导数置零来导出权重的解析表达式；</li>
-<li>只知道输出层的误差（上式）；</li>
+<li>由于<span class="heti-skip"><span class="heti-spacing"> </span>sigmoid<span class="heti-spacing"> </span></span>非线性函数的存在，不能像线性回归那样直接通过将<span class="heti-skip"><span class="heti-spacing"> </span>$E$<span class="heti-spacing"> </span></span>的导数置零来导出权重的解析表达式；</li>
+<li>只知道输出层的误差（上式<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>；</li>
 </ol>
-<p>因此需要反向传播误差信息到网络的更低层，以便能知道它们对输出误差的贡献，成比例的修正权重（“信任分配”问题）。<strong>反向传播算法</strong>可以作为这两个问题的解决方案。</p>
+<p>因此需要反向传播误差信息到网络的更低层，以便能知道它们对输出误差的贡献，成比例的修正权重（“信任分配”问题<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。<strong>反向传播算法</strong>可以作为这两个问题的解决方案。</p>
 <details class="note">
 <summary>反向传播算法</summary>
-<p>反向传播算法试图通过让权重 $W$ 和 $V$ 的函数 $E$ 的梯度下降来减小输出误差函数 $E(W,V)$ 。这意味着更新与 $-\frac{\partial E}{\partial W}$ 和 $-\frac{\partial E}{\partial V}$ 成正比的权重，直到权重的变化变小，表明已经达到了误差函数的局部最小值。利用链式法则能够很容易地导出用于更新权重 $W$ 外层的表达式：</p>
+<p>反向传播算法试图通过让权重<span class="heti-skip"><span class="heti-spacing"> </span>$W$<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$V$<span class="heti-spacing"> </span></span>的函数<span class="heti-skip"><span class="heti-spacing"> </span>$E$<span class="heti-spacing"> </span></span>的梯度下降来减小输出误差函数<span><span class="heti-spacing"> </span>$E(W,V)$</span> 。这意味着更新与<span class="heti-skip"><span class="heti-spacing"> </span>$-\frac{\partial E}{\partial W}$<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$-\frac{\partial E}{\partial V}$<span class="heti-spacing"> </span></span>成正比的权重，直到权重的变化变小，表明已经达到了误差函数的局部最小值。利用链式法则能够很容易地导出用于更新权重<span class="heti-skip"><span class="heti-spacing"> </span>$W$<span class="heti-spacing"> </span></span>外层的表达式：</p>
 <p>$$
 W_{ji} \leftarrow W_{ji} - \epsilon \frac{\mathrm{d} E}{\mathrm{d} W_{ji}}
 $$</p>
 <p>$$
 \frac{\mathrm{d} E}{\mathrm{d} W_{ji}} = -(d_i - v_i) g \prime (\sum_m W_{mi}x_m) x_j
 $$</p>
-<p>上式中，$\leftarrow$ 表示左边的表达式被右边的表达式替代，$\epsilon$ 是“学习率”（0~1之间的正数），$g\prime$ 是sigmoid函数 $g$ 的导数，$x_j$ 是隐藏层神经元 $j$ 的输出：$x_j = g(\displaystyle{\sum_k} v_{kj}u_k)$ 。</p>
-<p>用于更新权重 $V$ 内层的表达式也能利用链式法则获得：</p>
+<p>上式中，<span>$\leftarrow$<span class="heti-spacing"> </span></span>表示左边的表达式被右边的表达式替代，<span>$\epsilon$<span class="heti-spacing"> </span></span>是“学习率”（<span>0~1<span class="heti-spacing"> </span></span>之间的正数<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，<span>$g\prime$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>sigmoid<span class="heti-spacing"> </span></span>函数<span class="heti-skip"><span class="heti-spacing"> </span>$g$<span class="heti-spacing"> </span></span>的导数，<span>$x_j$<span class="heti-spacing"> </span></span>是隐藏层神经元<span class="heti-skip"><span class="heti-spacing"> </span>$j$<span class="heti-spacing"> </span></span>的输出：$x_j = g(\displaystyle{\sum_k} v_{kj}u_k)$ 。</p>
+<p>用于更新权重<span class="heti-skip"><span class="heti-spacing"> </span>$V$<span class="heti-spacing"> </span></span>内层的表达式也能利用链式法则获得：</p>
 <p>$$
 V_{kj} \leftarrow V_{kj} - \epsilon \frac{\mathrm{d} E}{\mathrm{d} V_{kj}}
 $$</p>
@@ -1808,21 +948,21 @@ $$</p>
 <p>$$
 \frac{\mathrm{d} E}{\mathrm{d} V_{kj}} = [-\sum_i (d_i - v_i) g\prime (\sum_m W_{mi}x_m) W_{ji}] \cdot [g\prime (\sum_n V_{nj}u_n) u_k]
 $$</p>
-<p>可以看到，输出误差 $(d_i - v_i)$ 影响了权重内层的更新，可以在每一层中通过对sigmoid非线性函数求导来适当调整输出误差。误差被反向传播到更低层，因而算法由此得名。</p>
+<p>可以看到，输出误差<span class="heti-skip"><span class="heti-spacing"> </span>$(d_i - v_i)$<span class="heti-spacing"> </span></span>影响了权重内层的更新，可以在每一层中通过对<span class="heti-skip"><span class="heti-spacing"> </span>sigmoid<span class="heti-spacing"> </span></span>非线性函数求导来适当调整输出误差。误差被反向传播到更低层，因而算法由此得名。</p>
 </details>
-<p>尽管这种网络容易对训练数据过度拟合而导致泛化能力差，这种学习过程还是可以推广到任意数量的层，包括含有很多隐藏层的深层网络。<strong>大多数的BCI应用趋向于使用三层网络</strong>，并使用交叉验证来决定隐藏层神经元的数量。</p>
-<h3 id="_18">径向基函数网络<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>尽管这种网络容易对训练数据过度拟合而导致泛化能力差，这种学习过程还是可以推广到任意数量的层，包括含有很多隐藏层的深层网络。<strong>大多数的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>应用趋向于使用三层网络</strong>，并使用交叉验证来决定隐藏层神经元的数量。</p>
+<h3 id="_18">径向基函数网络<a class="headerlink" href="#_18" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>考虑前面讨论过的线性回归模型：</p>
 <p>$$
 v = w^T u
 $$</p>
-<p>提高这种线性模型功效的一种方式是使用一组 $M$ 维固定的非线性基函数（“特征”）$\varphi_i$ ，它们是由输入向量定义的：</p>
+<p>提高这种线性模型功效的一种方式是使用一组<span class="heti-skip"><span class="heti-spacing"> </span>$M$<span class="heti-spacing"> </span></span>维固定的非线性基函数（“特征”）$\varphi_i$ ，它们是由输入向量定义的：</p>
 <p>$$
 v = w^T \varphi (u)
 $$</p>
-<p>上式中，$\varphi (u)$ 为 $M$ 维向量 $[\varphi_1(u),\cdots,\varphi_M(u)]^T$ 。</p>
-<p>然后可以使用前面讨论的线性回归中所用的方法来估计给定的一组基函数的权向量 $w$ 。如果每个基函数 $\varphi_i$ 仅与到“中心” $\mu_i$ 的径向距离（如欧氏距离）有关，那么 $\mu_i(u) = f(\Vert u-\mu_i \Vert)$ ，生成的模型称为<strong>径向基函数（RBF）网络</strong>。</p>
-<p>RBF网络可以看做三层神经元网络，其中输入层与隐藏层之间的连接存储着均值 $\mu_i$ ，隐藏层神经元的输出为 $\mu_i(u)$ ，网络的输出 $v$ 是<strong>隐藏层神经元输出的线性加权组合</strong>：</p>
+<p>上式中，<span>$\varphi (u)$<span class="heti-spacing"> </span></span>为<span class="heti-skip"><span class="heti-spacing"> </span>$M$<span class="heti-spacing"> </span></span>维向量<span><span class="heti-spacing"> </span>$[\varphi_1(u),\cdots,\varphi_M(u)]^T$</span> 。</p>
+<p>然后可以使用前面讨论的线性回归中所用的方法来估计给定的一组基函数的权向量<span><span class="heti-spacing"> </span>$w$</span> 。如果每个基函数<span class="heti-skip"><span class="heti-spacing"> </span>$\varphi_i$<span class="heti-spacing"> </span></span>仅与到“中心” <span>$\mu_i$<span class="heti-spacing"> </span></span>的径向距离（如欧氏距离）有关，那么<span><span class="heti-spacing"> </span>$\mu_i(u) = f(\Vert u-\mu_i \Vert)$</span> ，生成的模型称为<strong>径向基函数（RBF）网络</strong>。</p>
+<p><span>RBF<span class="heti-spacing"> </span></span>网络可以看做三层神经元网络，其中输入层与隐藏层之间的连接存储着均值<span><span class="heti-spacing"> </span>$\mu_i$</span> ，隐藏层神经元的输出为<span><span class="heti-spacing"> </span>$\mu_i(u)$</span> ，网络的输出<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>是<strong>隐藏层神经元输出的线性加权组合</strong>：</p>
 <p>$$
 v = \sum_{i=1}^M w_i \varphi_i(u) = w^T \varphi(u)
 $$</p>
@@ -1831,155 +971,107 @@ $$</p>
 \varphi_i(u) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
 $$</p>
 <div align="center">
-    <a class="glightbox" href="/assets/images/bci/bciai/14.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/bci/bciai/14.jpg" width="40%"></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/14.jpg"><img src="/assets/images/bci/bciai/14.jpg" width="40%"/></a>
 </div>
-
-<h3 id="_19">高斯过程<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<h3 id="_19">高斯过程<a class="headerlink" href="#_19" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>前面讨论的回归方法的主要缺点是它们无法估计输出预测值的置信度。<strong>高斯过程（GP）回归</strong>为其输出结果<strong>提供了不确定性的测量</strong>。该方法还具有<strong>非参数化</strong>的优点，即该模型结构能随着数据的变化而变化，而不会保持固定，以适应数据的复杂度。</p>
 <details class="note">
 <summary>高斯过程实例</summary>
-<p>假设我们使用前面讨论RBF网络时使用的模型：</p>
+<p>假设我们使用前面讨论<span class="heti-skip"><span class="heti-spacing"> </span>RBF<span class="heti-spacing"> </span></span>网络时使用的模型：</p>
 <p>$$
 v = w^T \varphi(u)
 $$</p>
-<p>然而，现在采用一种概率方法，假设 $w$ 服从以下分布：</p>
+<p>然而，现在采用一种概率方法，假设<span class="heti-skip"><span class="heti-spacing"> </span>$w$<span class="heti-spacing"> </span></span>服从以下分布：</p>
 <p>$$
 p(w) = G(w \vert 0, \sigma^2 I)
 $$</p>
-<p>上式中，$G$ 表示平均值为 $0$ ，协方差为 $\sigma^2 I$ 的多变量高斯分布。</p>
-<p>给定一组输入数据点 $u_1, \cdots, u_N$ ，考虑输出值 $v(u_1), \cdots, v(u_N)$ 的联合分布。用向量 $\nu$ 表示 $[v(u_1), \cdots, v(u_N)]^T$ ，公式可重写为：</p>
+<p>上式中，<span>$G$<span class="heti-spacing"> </span></span>表示平均值为<span><span class="heti-spacing"> </span>$0$</span> ，协方差为<span class="heti-skip"><span class="heti-spacing"> </span>$\sigma^2 I$<span class="heti-spacing"> </span></span>的多变量高斯分布。</p>
+<p>给定一组输入数据点<span><span class="heti-spacing"> </span>$u_1, \cdots, u_N$</span> ，考虑输出值<span class="heti-skip"><span class="heti-spacing"> </span>$v(u_1), \cdots, v(u_N)$<span class="heti-spacing"> </span></span>的联合分布。用向量<span class="heti-skip"><span class="heti-spacing"> </span>$\nu$<span class="heti-spacing"> </span></span>表示<span><span class="heti-spacing"> </span>$[v(u_1), \cdots, v(u_N)]^T$</span> ，公式可重写为：</p>
 <p>$$
 \nu = \varPhi w
 $$</p>
-<p>上式中，$\varPhi$ 为矩阵，其元素为 $\varPhi_{ji} = \varphi_i(u_j)$ 。</p>
-<p>由于 $\nu$ 是高斯分布变量（由 $w$ 的元素给出）的线性组合，因此 $\nu$ 也是服从高斯分布的，它可由下面公式给出的均值和协方差来完全定义：</p>
+<p>上式中，<span>$\varPhi$<span class="heti-spacing"> </span></span>为矩阵，其元素为<span><span class="heti-spacing"> </span>$\varPhi_{ji} = \varphi_i(u_j)$</span> 。</p>
+<p>由于<span class="heti-skip"><span class="heti-spacing"> </span>$\nu$<span class="heti-spacing"> </span></span>是高斯分布变量（由<span class="heti-skip"><span class="heti-spacing"> </span>$w$<span class="heti-spacing"> </span></span>的元素给出）的线性组合，因此<span class="heti-skip"><span class="heti-spacing"> </span>$\nu$<span class="heti-spacing"> </span></span>也是服从高斯分布的，它可由下面公式给出的均值和协方差来完全定义：</p>
 <p>$$
 \mathrm{mean} (v) = E(\varPhi w) = \varPhi E(w) = 0
 $$</p>
 <p>$$
 \mathrm{cov} (v) = E(v v^T) = \varPhi E(w w^T) \varPhi^T = \sigma^2 \varPhi \varPhi^T = K
 $$</p>
-<p>上式中，$K$ 称为Gram矩阵，其元素为：</p>
+<p>上式中，<span>$K$<span class="heti-spacing"> </span></span>称为<span class="heti-skip"><span class="heti-spacing"> </span>Gram<span class="heti-spacing"> </span></span>矩阵，其元素为：</p>
 <p>$$
 K_{ij} = k(u_i,u_j) = \sigma^2 \varphi(u_i)^T \varphi(u_j)
 $$</p>
-<p>函数 $k(u_i,u_j)$ 称为核函数。</p>
-<p>以上关于 $\nu$ 的模型是高斯过程的一个实例，它可以定义为关于函数 $v(u)$ 的概率分布，这使得对任意 $N$ 值关于 $v(u_1), \cdots, v(u_N)$ 的联合分布都是高斯分布。在对函数 $v(u)$ 无任何先验知识的条件下，假设其均值为 $0$ ，这意味着高斯过程完全由协方差函数 $K$ 或等效的核函数 $k(u_i,u_j)$ 确定。</p>
+<p>函数<span class="heti-skip"><span class="heti-spacing"> </span>$k(u_i,u_j)$<span class="heti-spacing"> </span></span>称为核函数。</p>
+<p>以上关于<span class="heti-skip"><span class="heti-spacing"> </span>$\nu$<span class="heti-spacing"> </span></span>的模型是高斯过程的一个实例，它可以定义为关于函数<span class="heti-skip"><span class="heti-spacing"> </span>$v(u)$<span class="heti-spacing"> </span></span>的概率分布，这使得对任意<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>值关于<span class="heti-skip"><span class="heti-spacing"> </span>$v(u_1), \cdots, v(u_N)$<span class="heti-spacing"> </span></span>的联合分布都是高斯分布。在对函数<span class="heti-skip"><span class="heti-spacing"> </span>$v(u)$<span class="heti-spacing"> </span></span>无任何先验知识的条件下，假设其均值为<span><span class="heti-spacing"> </span>$0$</span> ，这意味着高斯过程完全由协方差函数<span class="heti-skip"><span class="heti-spacing"> </span>$K$<span class="heti-spacing"> </span></span>或等效的核函数<span class="heti-skip"><span class="heti-spacing"> </span>$k(u_i,u_j)$<span class="heti-spacing"> </span></span>确定。</p>
 </details>
-<p>上述例子中的核函数可以通过假设定义于输入 $u$ 的基函数 $\varphi_i$ 获取，但核函数也可以直接定义。例如，可以使用由下式给出的高斯核函数：</p>
+<p>上述例子中的核函数可以通过假设定义于输入<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>的基函数<span class="heti-skip"><span class="heti-spacing"> </span>$\varphi_i$<span class="heti-spacing"> </span></span>获取，但核函数也可以直接定义。例如，可以使用由下式给出的高斯核函数：</p>
 <p>$$
 k(u_i,u_j) = \mathrm{exp} (-\Vert u-u_i \Vert ^2 / 2\sigma^2)
 $$</p>
-<p><strong>核函数</strong>可以看做对两个输入之间相似度的测量，它影响函数的平滑度等属性。一般来说，任意函数都可以用作核函数，只要对于任意输入其相关矩阵 $K$ 是半正定的。<strong>核函数的选择需要由应用来决定，而高斯核函数是较为普遍的选择</strong>。</p>
-<p>为了将高斯过程用于回归，需要为新的输入 $u_{N+1}$ 预测其输出 $v_{N+1}$ ，给定的训练数据由向量 $\nu_N = [v_1, \cdots, v_N]^T$ 表示的输出组成，相应的输入为 $u_1, \cdots, u_N$ 。期望的后验分布 $p(v_{N+1} \vert \nu_N, u_1, \cdots, u_N)$ 也是高斯分布，其均值和协方差如下：</p>
+<p><strong>核函数</strong>可以看做对两个输入之间相似度的测量，它影响函数的平滑度等属性。一般来说，任意函数都可以用作核函数，只要对于任意输入其相关矩阵<span class="heti-skip"><span class="heti-spacing"> </span>$K$<span class="heti-spacing"> </span></span>是半正定的。<strong>核函数的选择需要由应用来决定，而高斯核函数是较为普遍的选择</strong>。</p>
+<p>为了将高斯过程用于回归，需要为新的输入<span class="heti-skip"><span class="heti-spacing"> </span>$u_{N+1}$<span class="heti-spacing"> </span></span>预测其输出<span><span class="heti-spacing"> </span>$v_{N+1}$</span> ，给定的训练数据由向量<span class="heti-skip"><span class="heti-spacing"> </span>$\nu_N = [v_1, \cdots, v_N]^T$<span class="heti-spacing"> </span></span>表示的输出组成，相应的输入为<span><span class="heti-spacing"> </span>$u_1, \cdots, u_N$</span> 。期望的后验分布<span class="heti-skip"><span class="heti-spacing"> </span>$p(v_{N+1} \vert \nu_N, u_1, \cdots, u_N)$<span class="heti-spacing"> </span></span>也是高斯分布，其均值和协方差如下：</p>
 <p>$$
 \mathrm{mean} = k^T C_N^{-1} \nu_N
 $$</p>
 <p>$$
 \mathrm{variance} = c - k^T C_N^{-1} k
 $$</p>
-<p>上式中，$k$ 是包含元素 $k(u_1,u_{N+1}), i=1,\cdots,N$（$k$ 实质上测量每个训练输入与新输入之间的相似度）的向量，$C_N$ 是协方差矩阵，当 $i\not=j$ 时，其元素由 $C_N(u_i,u_j) = k(u_i,u_j)$ 表示，当 $i=j$ 时，其元素由 $k(u_i,u_j) + \lambda$ 表示，式中 $i,j=1,\cdots,N$（这里 $\lambda$ 是与输出上的噪声相关的参数）。标量值 $c$ 定义为 $c=k(u_{N+1},u_{N+1})+\lambda$ 。</p>
-<p>从这些公式可以看出，输出 $v_{N+1}$ 的后验分布不仅取决于过去的训练输入和输出（通过 $C_N$ 与 $\nu_N$），也取决于新的输入（通过 $k$ 与 $c$）。</p>
-<p>该模型具有一个优良特性：与训练数据密集的区域相比，在训练数据不足或者不存在的区域，输出预测值的方差较大，反映出更大的不确定性。这个特性对于<strong>需要控制自动设备的BCI应用</strong>非常有用，当预测值的不确定性较高时，BCI可以选择不执行命令，以避免发生可能的灾难性事故。一些BCI常常不具备这样的能力，它们使用无法提供输出不确定性估计值的回归模型，如神经网络。</p>
-
-  <hr>
+<p>上式中，<span>$k$<span class="heti-spacing"> </span></span>是包含元素<span><span class="heti-spacing"> </span>$k(u_1,u_{N+1}), i=1,\cdots,N$</span>（<span>$k$<span class="heti-spacing"> </span></span>实质上测量每个训练输入与新输入之间的相似度）的向量，<span>$C_N$<span class="heti-spacing"> </span></span>是协方差矩阵，当<span class="heti-skip"><span class="heti-spacing"> </span>$i\not=j$<span class="heti-spacing"> </span></span>时，其元素由<span class="heti-skip"><span class="heti-spacing"> </span>$C_N(u_i,u_j) = k(u_i,u_j)$<span class="heti-spacing"> </span></span>表示，当<span class="heti-skip"><span class="heti-spacing"> </span>$i=j$<span class="heti-spacing"> </span></span>时，其元素由<span class="heti-skip"><span class="heti-spacing"> </span>$k(u_i,u_j) + \lambda$<span class="heti-spacing"> </span></span>表示，式中<span><span class="heti-spacing"> </span>$i,j=1,\cdots,N$</span>（这里<span class="heti-skip"><span class="heti-spacing"> </span>$\lambda$<span class="heti-spacing"> </span></span>是与输出上的噪声相关的参数<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。标量值<span class="heti-skip"><span class="heti-spacing"> </span>$c$<span class="heti-spacing"> </span></span>定义为<span><span class="heti-spacing"> </span>$c=k(u_{N+1},u_{N+1})+\lambda$</span> 。</p>
+<p>从这些公式可以看出，输出<span class="heti-skip"><span class="heti-spacing"> </span>$v_{N+1}$<span class="heti-spacing"> </span></span>的后验分布不仅取决于过去的训练输入和输出（通过<span class="heti-skip"><span class="heti-spacing"> </span>$C_N$<span class="heti-spacing"> </span></span>与<span><span class="heti-spacing"> </span>$\nu_N$</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，也取决于新的输入（通过<span class="heti-skip"><span class="heti-spacing"> </span>$k$<span class="heti-spacing"> </span></span>与<span><span class="heti-spacing"> </span>$c$</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
+<p>该模型具有一个优良特性：与训练数据密集的区域相比，在训练数据不足或者不存在的区域，输出预测值的方差较大，反映出更大的不确定性。这个特性对于<strong>需要控制自动设备的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>应用</strong>非常有用，当预测值的不确定性较高时，<span>BCI<span class="heti-spacing"> </span></span>可以选择不执行命令，以避免发生可能的灾难性事故。一些<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>常常不具备这样的能力，它们使用无法提供输出不确定性估计值的回归模型，如神经网络。</p>
+<hr/>
 <div class="md-source-file">
-  <small>
+<small>
     
       Last update:
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-17 23:07:24</span>
-      
-        <br>
+<br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-07-29 17:43:27</span>
-      
-    
-  </small>
+</small>
 </div>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-        </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
   Back to top
 </button>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      Copyright <span style="font-family:Arial;">&copy;</span> 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
-    </div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright <span style="font-family:Arial;">©</span> 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
+</div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-        <div class="md-social">
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://github.com/MinJoker" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-    </a>
-  
-    
-    
-    
-    
-    <a href="mailto:jokermin551008@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
-    </a>
-  
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/MinJoker" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:jokermin551008@gmail.com" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 488 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
+</a>
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.prune", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "header.autohide", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
-      
-        <script src="../../../javascripts/katex.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
-      
-        <script src="../../../javascripts/heti.js"></script>
-      
-    
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.prune", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "header.autohide", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+<script src="../../../javascripts/katex.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
