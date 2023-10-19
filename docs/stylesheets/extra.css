@@ -75,6 +75,12 @@
     /* admonition */
     --md-admonition-fg-color:            var(--md-default-fg-color);
     --md-admonition-bg-color:            var(--md-default-bg-color);
+
+    /* disable border */
+    .md-typeset .admonition,
+    .md-typeset details {
+        border: none;
+    }
 }
 
 /* light mode: search color shades */
@@ -137,22 +143,7 @@
 
 
 
-/* Admonitions */
 
-/* classic admonitions */
-.md-typeset .admonition,
-.md-typeset details {
-  border-width: 0;
-  border-left-width: 4px;
-}
-
-/* disable border */
-.md-typeset .admonition,
-.md-typeset details {
-    border: none;
-}
-
-/* end Admonitions */
 
 
 

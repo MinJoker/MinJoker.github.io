@@ -20,6 +20,10 @@ Markdown 的优势是显著的，它足够轻巧，易读易写；但是，其�
     <img src="/assets/images/cs/tools/markdown/1.png" width="80%" style="margin: 0 auto;">
     </div>
 
+    <center>
+    image from <a href="https://github.com/TonyCrane/PracticalSkillsTutorial">https://github.com/TonyCrane/PracticalSkillsTutorial</a>
+    </center>
+
 ## Markdown 语法规范
 
 这里不再赘述基本的 Markdown 语法，如果想要快速入门，建议阅读 [CommonMark 官网的教程](https://commonmark.org/help/)。
