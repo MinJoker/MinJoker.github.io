@@ -18,7 +18,9 @@ Markdown 的优势是显著的，它足够轻巧，易读易写；但是，其�
 
     <p align="right">———— <a href="https://github.com/TonyCrane">TonyCrane</a></p>
 
-    ![](../../assets/images/cs/tools/markdown/1.png)
+    <div style="text-align: center;">
+    <img src="/assets/images/cs/tools/markdown/1.png" width="80%" style="margin: 0 auto;">
+    </div>
 
 ## Markdown 语法规范
 
