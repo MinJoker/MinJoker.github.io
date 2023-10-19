@@ -1,6 +1,6 @@
 # Markdown
 
-## 什么是 Markdown ？
+## 什么是 Markdown&thinsp;？
 
 >    Markdown 是一种轻量级标记语言，用于使用纯文本编辑器创建格式化文本。John Gruber 于 2004 年创建了 Markdown，作为一种易于以源代码形式阅读的标记语言。
 >
@@ -24,7 +24,17 @@ Markdown 的优势是显著的，它足够轻巧，易读易写；但是，其�
     image from <a href="https://github.com/TonyCrane/PracticalSkillsTutorial">https://github.com/TonyCrane/PracticalSkillsTutorial</a>
     </center>
 
-## Markdown 语法规范
+### Markdown&thinsp;有什么用？
+
+- 编写文档，支持包括 PDF 在内的多种导出格式
+    - [VSCode](https://code.visualstudio.com/) + [Markdown Preview Enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/#/)
+    - [Typora](https://typora.io/)（*not recommend*）
+- 搭建网站，极大程度减小 HTML 网页编写工作量
+    - 笔记类网站制作：[MkDocs](https://www.mkdocs.org/)
+    - 博客类网站制作：[Hexo](https://hexo.io/)
+    - 在线 Slides 制作：[reveal-md](https://github.com/webpro/reveal-md)
+
+## Markdown&thinsp;语法规范
 
 这里不再赘述基本的 Markdown 语法，如果想要快速入门，建议阅读 [CommonMark 官网的教程](https://commonmark.org/help/)。
 
@@ -38,9 +48,15 @@ Markdown 还有许多常用的扩展语法，例如表格、脚注、任务列�
 
     以下规范基于 [CommonMark 3.0](https://spec.commonmark.org/0.30/) 标准。
 
-\# TODO
+### 不建议使用的语法
 
-## Markdown 排版建议
+当你在阅读 Markdown 基本语法的时候，会发现原来同一个效果可以由多种写法实现（比如分割线既可以是 `---` 也可以是 `***`）。这听起来似乎很方便，但我认为一个人的 Markdown 语法应当是一以贯之的，因此非常不建议混用多种写法。
+
+这里罗列一下笔者几乎不用的语法：
+
+Setext 式标题、`*` `_` 式分割线、`+` `*` 式无序列表、`)` 式有序列表、缩进式代码块、`< >` 自动链接（autolinks）、引用式链接（reference links）、`_` 式强调等。
+
+## Markdown&thinsp;排版建议
 
 !!! abstract
 
@@ -50,11 +66,11 @@ Markdown 还有许多常用的扩展语法，例如表格、脚注、任务列�
 
 \# TODO
 
-## 如何优雅地构建 Markdown 工作流
+## 如何优雅地构建&thinsp;Markdown&thinsp;工作流
 
 \# TODO
 
-## MkDocs 杂记
+## MkDocs&thinsp;杂记
 
 !!! abstract
 
