@@ -1,0 +1,6 @@
+mkdocs
+mkdocs-material
+mkdocs-glightbox
+mkdocs-statistics-plugin
+mkdocs-git-revision-date-localized-plugin
+mkdocs-heti-plugin
