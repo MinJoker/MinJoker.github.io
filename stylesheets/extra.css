@@ -2,7 +2,7 @@
 
 :root {
     --md-text-font: "JetBrains Mono", "LXGW WenKai Screen";
-    --md-code-font: "JetBrains Mono";
+    --md-code-font: "JetBrains Mono", "LXGW WenKai Screen";
   }
 
 /* use TonyCrane's cdn instead.

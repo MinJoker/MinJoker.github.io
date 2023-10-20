@@ -292,13 +292,13 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#markdown_1">
-    什么是 Markdown ？
+    什么是 Markdown
   </a>
-<nav aria-label="什么是 Markdown ？" class="md-nav">
+<nav aria-label="什么是 Markdown" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#markdown_2">
-    Markdown 有什么用？
+    Markdown 有什么用
   </a>
 </li>
 </ul>
@@ -313,6 +313,36 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
     不建议使用的语法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    段落、硬换行与软换行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    容器：块引用与列表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    代码块与内联代码
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    强调与强烈强调
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    反斜杠转义
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#htmlmarkdown">
+    用 HTML 完善 Markdown 语法
   </a>
 </li>
 </ul>
@@ -334,7 +364,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
+<a class="md-nav__link" href="#_7">
     参考资料
   </a>
 </li>
@@ -481,13 +511,13 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#markdown_1">
-    什么是 Markdown ？
+    什么是 Markdown
   </a>
-<nav aria-label="什么是 Markdown ？" class="md-nav">
+<nav aria-label="什么是 Markdown" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#markdown_2">
-    Markdown 有什么用？
+    Markdown 有什么用
   </a>
 </li>
 </ul>
@@ -502,6 +532,36 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
     不建议使用的语法
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    段落、硬换行与软换行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    容器：块引用与列表
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    代码块与内联代码
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    强调与强烈强调
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    反斜杠转义
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#htmlmarkdown">
+    用 HTML 完善 Markdown 语法
   </a>
 </li>
 </ul>
@@ -523,7 +583,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
+<a class="md-nav__link" href="#_7">
     参考资料
   </a>
 </li>
@@ -536,9 +596,9 @@
 <article class="md-content__inner md-typeset">
 <h1 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>923<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>3<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>1855<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>23<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>6<span class="heti-spacing"> </span></span>分钟</p>
 </div>
-<h2 id="markdown_1">什么是<span><span class="heti-spacing"> </span>Markdown</span> ？<a class="headerlink" href="#markdown_1" title="Permanent link">¶</a></h2>
+<h2 id="markdown_1">什么是 Markdown<a class="headerlink" href="#markdown_1" title="Permanent link">¶</a></h2>
 <blockquote>
 <p><span>Markdown<span class="heti-spacing"> </span></span>是一种轻量级标记语言，用于使用纯文本编辑器创建格式化文本。<span>John Gruber<span class="heti-spacing"> </span></span>于<span class="heti-skip"><span class="heti-spacing"> </span>2004<span class="heti-spacing"> </span></span>年创建了<span><span class="heti-spacing"> </span>Markdown</span>，作为一种易于以源代码形式阅读的标记语言。</p>
 <p></p><p align="right">———— Wikipedia</p>
@@ -556,7 +616,7 @@
 image from <a href="https://github.com/TonyCrane/PracticalSkillsTutorial">https://github.com/TonyCrane/PracticalSkillsTutorial</a>
 </center>
 </div>
-<h3 id="markdown_2">Markdown 有什么用？<a class="headerlink" href="#markdown_2" title="Permanent link">¶</a></h3>
+<h3 id="markdown_2">Markdown 有什么用<a class="headerlink" href="#markdown_2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>编写文档，支持包括<span class="heti-skip"><span class="heti-spacing"> </span>PDF<span class="heti-spacing"> </span></span>在内的多种导出格式<ul>
 <li><a href="https://code.visualstudio.com/">VSCode</a> + <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/">Markdown Preview Enhanced</a></li>
@@ -580,11 +640,136 @@ image from <a href="https://github.com/TonyCrane/PracticalSkillsTutorial">https:
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>以下规范基于<a href="https://spec.commonmark.org/0.30/"><span class="heti-skip"><span class="heti-spacing"> </span>CommonMark 3.0<span class="heti-spacing"> </span></span></a>标准。</p>
+<p>以下示例用的<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>解析器为<a href="https://github.com/commonmark/commonmark.js"><span><span class="heti-spacing"> </span>commonmark.js</span></a>，渲染效果直接由<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>源码中嵌入<span class="heti-skip"><span class="heti-spacing"> </span>HTML<span class="heti-spacing"> </span></span>实现（不受任何其他解析器干扰<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。此外，<span>commonmark.js<span class="heti-spacing"> </span></span>也提供<a href="https://spec.commonmark.org/dingus/">在线解析服务</a>，自己亲手试一试吧！</p>
 </div>
 <h3 id="_1">不建议使用的语法<a class="headerlink" href="#_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>当你在阅读<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>基本语法的时候，会发现原来同一个效果可以由多种写法实现（比如分割线既可以是 <code>---</code> 也可以是 <code>***</code><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。这听起来似乎很方便，但我认为一个人的<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>语法应当是一以贯之的，因此非常不建议混用多种写法。</p>
 <p>这里罗列一下笔者几乎不用的语法：</p>
 <p><span>Setext<span class="heti-spacing"> </span></span>式标题、<code>*</code> <code>_</code> 式分割线、<code>+</code> <code>*</code> 式无序列表、<code>)</code> 式有序列表、缩进式代码块、<code>&lt; &gt;</code> 自动链接（autolinks<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>、引用式链接（reference links<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>、<code>_</code> 式强调等。</p>
+<h3 id="_2">段落、硬换行与软换行<a class="headerlink" href="#_2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>在很多时候，人们往往倾向于减少空行的使用（比如写代码的压行<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。但在<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>语法中，空行是很关键的，我们甚至建议大家多用空行。因为如果在应该空行的地方不空行，会引起歧义和错误，而多用几个空行是完全没问题的（<span>Markdown<span class="heti-spacing"> </span></span>会折叠连续空行，最终只会有空一行的效果<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
+<details class="note" open="open">
+<summary><span>Markdown<span class="heti-spacing"> </span></span>空行的定义</summary>
+<p>空行指的是，没有任何字符，或者只包含空格（<code>U+0020</code>）和制表符（<code>U+0009</code>）的一行。</p>
+</details>
+<p><span>Markdown<span class="heti-spacing"> </span></span>中最基本的文本片段是段落（paragraphs<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，很多人会混淆另起一段和另起一行，这里给出他们的区别：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><input id="__tabbed_1_3" name="__tabbed_1" type="radio"/><input id="__tabbed_1_4" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">另起一段</label><label for="__tabbed_1_2">空格硬换行</label><label for="__tabbed_1_3">反斜杠硬换行</label><label for="__tabbed_1_4">软换行</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>这是第一段
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>这是第二段
+</code></pre></div>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一段<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第二段<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><p>这是第一段</p>
+<p>这是第二段</p>
+</div>
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">这是第一段</span><span class="w">  </span><span class="c1">// (1)!</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">这是第二段</span>
+</code></pre></div>
+<ol>
+<li>这里行末需要两个或更多的空格</li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一段<span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>这是第二段<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><p>这是第一段<br/>
+这是第二段</p>
+</div>
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">这是第一段</span><span class="err">\</span><span class="c1">// (1)!</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">这是第二段</span>
+</code></pre></div>
+<ol>
+<li>这里行末需要一个反斜杠 <code>\</code></li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一段<span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>这是第二段<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><p>这是第一段<br/>
+这是第二段</p>
+</div>
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">这是第一段</span><span class="c1">// (1)!</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">这是第二段</span>
+</code></pre></div>
+<ol>
+<li>这里行末没有空格或只有一个空格</li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一段
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>这是第二段<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><p>这是第一段
+这是第二段</p>
+</div>
+</div>
+</div>
+<p>这几种情形的区别还是挺明显的。当你想要另起一段的时候，你需要插入至少一个空行；当你仅仅想要换行的时候，你需要用两个或更多的空格，或者一个反斜杠来实现。那么，软换行呢？</p>
+<details class="note" open="open">
+<summary>中文排版中不建议使用软换行</summary>
+<p>这个是真的不建议，除非你清楚地知道你在用软换行做什么。</p>
+<p>软换行的关键在于，它在衔接上下文的时候自动补上了一个空格。如果这是西文排版，那这个空格就非常合适；但如果这是中文排版，那这个空格就非常突兀。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"/><input id="__tabbed_2_2" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">西文排版的软换行</label><label for="__tabbed_2_2">中文排版的软换行</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>This is line 1.
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>And this is line 2, but this sentence is ended
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>in line 3.
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><p>This is line 1.
+And this is line 2, but this sentence is ended
+in line 3.</p>
+</div>
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>这是第一行。
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>这是第二行，但这个句子会在
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>第三行结束。
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><p>这是第一行。
+这是第二行，但这个句子会在
+第三行结束。</p>
+</div>
+</div>
+</div>
+</details>
+<p>关于段落和换行，还有一些值得注意的地方：</p>
+<ul>
+<li>一定要养成添加空行的习惯，从而确保你的<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>源码在任何地方都能被正确解析。<ul>
+<li>除了段落之外，建议在不同的结构之间都插入空行，比如段落和列表之间、段落和引用之间、段落和代码块之间等。<br/>
+  这些空行并不都是必须的，但是本着宁多不少、一以贯之的原则，还是建议养成添加空行的习惯。</li>
+</ul>
+</li>
+<li>是否使用硬换行是个见仁见智的问题。<ul>
+<li>就我个人而言，我不喜欢用空格来换行（太不明显了<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，也不喜欢用反斜杠来换行（有时候无法正确解析，比如<span><span class="heti-spacing"> </span>MkDocs</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。<br/>
+  我会直接在行末加上 <code>&lt;br /&gt;</code>。</li>
+<li>不过更多时候，我还是习惯于只用段落不用换行。笔者认为一段话在<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>源码里就应该同一行写完，这是更符合<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>语法理念的习惯。</li>
+</ul>
+</li>
+</ul>
+<h3 id="_3">容器：块引用与列表<a class="headerlink" href="#_3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_4">代码块与内联代码<a class="headerlink" href="#_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_5">强调与强烈强调<a class="headerlink" href="#_5" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_6">反斜杠转义<a class="headerlink" href="#_6" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="htmlmarkdown">用 HTML 完善 Markdown 语法<a class="headerlink" href="#htmlmarkdown" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <h2 id="markdown_4">Markdown 排版建议<a class="headerlink" href="#markdown_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
@@ -608,7 +793,7 @@ image from <a href="https://github.com/TonyCrane/PracticalSkillsTutorial">https:
 </ul>
 </div>
 <p># TODO</p>
-<h2 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="_7">参考资料<a class="headerlink" href="#_7" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <ul>
 <li><a href="https://commonmark.org/">CommonMark</a></li>
 <li><a href="https://hypotensor.tonycrane.cc/">计算机类实验文档降压宝典（编写规范）</a></li>
@@ -620,7 +805,7 @@ image from <a href="https://github.com/TonyCrane/PracticalSkillsTutorial">https:
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-20 00:23:28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-20 13:25:26</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-19 01:33:22</span>
