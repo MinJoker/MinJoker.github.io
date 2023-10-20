@@ -322,21 +322,40 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    容器：块引用与列表
+    容器：块引用与列表项
   </a>
-</li>
+<nav aria-label="容器：块引用与列表项" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
-    代码块与内联代码
+    块引用
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
-    强调与强烈强调
+    列表项与列表
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
+    如何落入容器
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    代码块与内联代码
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    强调与强烈强调
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
     反斜杠转义
   </a>
 </li>
@@ -364,7 +383,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_10">
     参考资料
   </a>
 </li>
@@ -541,21 +560,40 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    容器：块引用与列表
+    容器：块引用与列表项
   </a>
-</li>
+<nav aria-label="容器：块引用与列表项" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
-    代码块与内联代码
+    块引用
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
-    强调与强烈强调
+    列表项与列表
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
+    如何落入容器
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    代码块与内联代码
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    强调与强烈强调
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
     反斜杠转义
   </a>
 </li>
@@ -583,7 +621,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_10">
     参考资料
   </a>
 </li>
@@ -596,7 +634,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>1855<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>23<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>6<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>3288<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>158<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>13<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <h2 id="markdown_1">什么是 Markdown<a class="headerlink" href="#markdown_1" title="Permanent link">¶</a></h2>
 <blockquote>
@@ -765,10 +803,427 @@ in line 3.</p>
 </ul>
 </li>
 </ul>
-<h3 id="_3">容器：块引用与列表<a class="headerlink" href="#_3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<h3 id="_4">代码块与内联代码<a class="headerlink" href="#_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<h3 id="_5">强调与强烈强调<a class="headerlink" href="#_5" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<h3 id="_6">反斜杠转义<a class="headerlink" href="#_6" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_3">容器：块引用与列表项<a class="headerlink" href="#_3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>容器（container blocks）是<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>中一个很有意思的块结构，容器内可以使用任何<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>语法和结构（包括嵌套容器本身<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，看起来就像是容器内装着一篇完整的<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>文本一样。</p>
+<p>容器分为两种：块引用（block quotes）与列表项（list items<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。下面将分别介绍它们的语法。</p>
+<h4 id="_4">块引用<a class="headerlink" href="#_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>块引用的标记 <code>&gt;</code> 和其后的文本之间原则上需要用一个空格隔开，但是这个空格是可以省略的（但建议养成打空格的习惯，原因见下文“如何落入容器”<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><input id="__tabbed_3_3" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1"><span>Markdown<span class="heti-spacing"> </span></span>源码</label><label for="__tabbed_3_2">解析为<span class="heti-skip"><span class="heti-spacing"> </span>HTML<span class="heti-spacing"> </span></span></label><label for="__tabbed_3_3">渲染效果</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">&gt; </span><span class="ge">这是一句话</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="k">&gt;</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="ge">&gt;这也是一句话</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这也是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p></p><blockquote>
+<p>这是一句话</p>
+<p>这也是一句话</p>
+</blockquote>
+</div>
+</div>
+</div>
+<h4 id="_5">列表项与列表<a class="headerlink" href="#_5" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>列表项的标记 <code>-</code> <code>.</code> 和其后的文本之间原则上需要用一个空格隔开，并且不同于块引用，这个空格是不可以省略的，而且也最好不要插入过多的空格，以免被解析为缩进式代码块（不要插入过多空格这一点对于几乎所有<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>语法都是成立的<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><input id="__tabbed_4_3" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1"><span>Markdown<span class="heti-spacing"> </span></span>源码</label><label for="__tabbed_4_2">解析为<span class="heti-skip"><span class="heti-spacing"> </span>HTML<span class="heti-spacing"> </span></span></label><label for="__tabbed_4_3">渲染效果</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">-</span><span class="w"> </span>这是一句话
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>-这也是一句话
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>
+<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="k">1.</span> 这是一句话
+<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a>
+<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>0.这也是一句话
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是一句话<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>-这也是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是一句话<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>0.这也是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p></p><ul>
+<li>这是一句话</li>
+</ul>
+<p><span>-<span class="heti-spacing"> </span></span>这也是一句话</p>
+<ol>
+<li>这是一句话</li>
+</ol>
+<p><span>0.<span class="heti-spacing"> </span></span>这也是一句话</p>
+</div>
+</div>
+</div>
+<p>列表（list）由同种类型的列表项（list items）组成，列表中的空行会影响列表行距的宽窄，这一点有些复杂（注意观察渲染效果的细微差别，以及<span class="heti-skip"><span class="heti-spacing"> </span>HTML<span class="heti-spacing"> </span></span>代码中的 <code>&lt;p&gt;</code> 标签<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，下面给出几个例子：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><input id="__tabbed_5_3" name="__tabbed_5" type="radio"/><input id="__tabbed_5_4" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">不存在任何空行</label><label for="__tabbed_5_2">母列表存在空行</label><label for="__tabbed_5_3">子列表存在空行</label><label for="__tabbed_5_4">母子列表都存在空行</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>渲染效果：</p>
+<p></p><ul>
+<li>这是第一个母列表项
+<ul>
+<li>这是第一个子列表项</li>
+<li>这是第二个子列表项</li>
+</ul>
+</li>
+<li>这是第二个母列表项</li>
+</ul>
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">-</span><span class="w"> </span>这是第一个母列表项
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>这是第一个子列表项
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>这是第二个子列表项
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="k">-</span><span class="w"> </span>这是第二个母列表项
+</code></pre></div>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第一个母列表项
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第一个子列表项<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第二个子列表项<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-6" id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-7" id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-8" id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第二个母列表项<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-15-9" id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>渲染效果：</p>
+<p></p><ul>
+<li>
+<p>这是第一个母列表项</p>
+<ul>
+<li>这是第一个子列表项</li>
+<li>这是第二个子列表项</li>
+</ul>
+</li>
+<li>
+<p>这是第二个母列表项</p>
+</li>
+</ul>
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="o">-</span><span class="w"> </span><span class="n">这是第一个母列表项</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="c1">// (1)!</span>
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">这是第一个子列表项</span>
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">这是第二个子列表项</span>
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="o">-</span><span class="w"> </span><span class="n">这是第二个母列表项</span>
+</code></pre></div>
+<ol>
+<li>这里是属于母列表的一个空行</li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一个母列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第一个子列表项<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第二个子列表项<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-9" id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-10" id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第二个母列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-11" id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-17-12" id="__codelineno-17-12" name="__codelineno-17-12"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>渲染效果：</p>
+<p></p><ul>
+<li>这是第一个母列表项
+<ul>
+<li>
+<p>这是第一个子列表项</p>
+</li>
+<li>
+<p>这是第二个子列表项</p>
+</li>
+</ul>
+</li>
+<li>这是第二个母列表项</li>
+</ul>
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="o">-</span><span class="w"> </span><span class="n">这是第一个母列表项</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">这是第一个子列表项</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="c1">// (1)!</span>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">这是第二个子列表项</span>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="o">-</span><span class="w"> </span><span class="n">这是第二个母列表项</span>
+</code></pre></div>
+<ol>
+<li>这里是属于子列表的一个空行</li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第一个母列表项
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一个子列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-7" id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-8" id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第二个子列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-9" id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-10" id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-11" id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-12" id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>这是第二个母列表项<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-19-13" id="__codelineno-19-13" name="__codelineno-19-13"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>渲染效果：</p>
+<p></p><ul>
+<li>
+<p>这是第一个母列表项</p>
+<ul>
+<li>
+<p>这是第一个子列表项</p>
+</li>
+<li>
+<p>这是第二个子列表项</p>
+</li>
+</ul>
+</li>
+<li>
+<p>这是第二个母列表项</p>
+</li>
+</ul>
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="o">-</span><span class="w"> </span><span class="n">这是第一个母列表项</span>
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="c1">// (1)!</span>
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">这是第一个子列表项</span>
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">    </span><span class="c1">// (2)!</span>
+<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">这是第二个子列表项</span>
+<a href="#__codelineno-20-6" id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="o">-</span><span class="w"> </span><span class="n">这是第二个母列表项</span>
+</code></pre></div>
+<ol>
+<li>
+<p>这里是属于母列表的一个空行</p>
+</li>
+<li>
+<p>这里是属于子列表的一个空行</p>
+</li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一个母列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-6" id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第一个子列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-7" id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-8" id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-9" id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第二个子列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-10" id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-11" id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-12" id="__codelineno-21-12" name="__codelineno-21-12"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-13" id="__codelineno-21-13" name="__codelineno-21-13"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-14" id="__codelineno-21-14" name="__codelineno-21-14"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是第二个母列表项<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-15" id="__codelineno-21-15" name="__codelineno-21-15"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-21-16" id="__codelineno-21-16" name="__codelineno-21-16"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>关于列表还有一点值得注意，就是如何在不落入上一个列表的情况下，另起一个新的列表（注意仔细看渲染效果的行距差别<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。更换列表项的标识是可行的，但是我更推荐用<span class="heti-skip"><span class="heti-spacing"> </span>HTML<span class="heti-spacing"> </span></span>空白注释来实现：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">更换列表项的标识</label><label for="__tabbed_6_2"><span class="heti-skip"><span class="heti-spacing"> </span>HTML<span class="heti-spacing"> </span></span>空白注释</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">-</span><span class="w"> </span>这是一句话
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="k">-</span><span class="w"> </span>这也是一句话
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="k">*</span><span class="w"> </span>这还是一句话
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="k">*</span><span class="w"> </span>这仍然是一句话
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><ul>
+<li>这是一句话</li>
+<li>这也是一句话</li>
+</ul>
+<ul>
+<li>这还是一句话</li>
+<li>这仍然是一句话</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">-</span><span class="w"> </span>这是一句话
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="k">-</span><span class="w"> </span>这也是一句话
+<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a>&lt;!-- --&gt;
+<a href="#__codelineno-23-4" id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="k">-</span><span class="w"> </span>这还是一句话
+<a href="#__codelineno-23-5" id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="k">-</span><span class="w"> </span>这仍然是一句话
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><ul>
+<li>这是一句话</li>
+<li>这也是一句话</li>
+</ul>
+<!-- -->
+<ul>
+<li>这还是一句话</li>
+<li>这仍然是一句话</li>
+</ul>
+</div>
+</div>
+</div>
+<h4 id="_6">如何落入容器<a class="headerlink" href="#_6" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>前面提到，容器可以包含一切<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>语法和结构，但问题的关键在于如何将一段<span class="heti-skip"><span class="heti-spacing"> </span>Markdown<span class="heti-spacing"> </span></span>代码判定为落入容器（成为这个容器内的一部分<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
+<ul>
+<li>块引用通过 <code>&gt;</code> 来标识某一行落入容器，这是很好判断的。</li>
+<li>列表项通过适当的缩进来标识某一行落入容器，这里很容易产生歧义。<ul>
+<li>想要落入列表项，必须至少缩进到列表项 <code>-</code> <code>.</code> 标记后的文本位置，但也不能缩进太多，以免被解析为缩进式代码块。</li>
+</ul>
+</li>
+</ul>
+<p>听起来有点抽象，我们来看几个例子：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">块引用</label><label for="__tabbed_7_2">列表项</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="o">&gt;</span><span class="w"> </span><span class="n">这是一句话</span>
+<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="o">&gt;</span><span class="c1">// (1)!</span>
+<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="o">&gt;</span><span class="w"> </span><span class="n">这也是一句话</span>
+<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="c1">// (2)!</span>
+<a href="#__codelineno-24-5" id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="n">这还是一句话</span>
+</code></pre></div>
+<ol>
+<li>
+<p>这里是一个落入块引用的空行</p>
+</li>
+<li>
+<p>这里是一个没有落入块引用的空行</p>
+</li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这也是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+<a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这还是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><blockquote>
+<p>这是一句话</p>
+<p>这也是一句话</p>
+</blockquote>
+<p>这还是一句话</p>
+</div>
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="o">-</span><span class="w"> </span><span class="n">这是一句话</span>
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>
+<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">  </span><span class="n">这也是一句话</span><span class="c1">// (1)!</span>
+<a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a>
+<a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">    </span><span class="n">这还是一句话</span><span class="c1">// (2)!</span>
+<a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a>
+<a href="#__codelineno-26-7" id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="w">      </span><span class="n">这仍然是一句话</span><span class="c1">// (3)!</span>
+</code></pre></div>
+<ol>
+<li>
+<p>这一行前面有两个空格，缩进到和“这是一句话”对齐的位置</p>
+</li>
+<li>
+<p>这一行前面有一个制表符（四个空格<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，这样的缩进也是可以的</p>
+</li>
+<li>
+<p>这一行前面有六个空格，相对“这是一句话”缩进了四个空格，被解析为缩进式代码块</p>
+</li>
+</ol>
+<p>解析为<span><span class="heti-spacing"> </span>HTML</span>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-27-3" id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-27-4" id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这也是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-27-5" id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这还是一句话<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a href="#__codelineno-27-6" id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span>这仍然是一句话
+<a href="#__codelineno-27-7" id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+<a href="#__codelineno-27-8" id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a href="#__codelineno-27-9" id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>渲染效果：</p>
+<p></p><ul>
+<li>
+<p>这是一句话</p>
+<p>这也是一句话</p>
+<p>这还是一句话</p>
+<pre><code>这仍然是一句话
+</code></pre>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<details class="note" open="open">
+<summary>为什么建议不要省略块引用的空格</summary>
+<p>通过一个例子来说明：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"/><input id="__tabbed_8_2" name="__tabbed_8" type="radio"/><div class="tabbed-labels"><label for="__tabbed_8_1">不省略空格</label><label for="__tabbed_8_2">省略空格</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">这是一句话</span>
+<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="o">&gt;</span>
+<a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="o">&gt;</span><span class="w">   </span><span class="n">这也是一句话</span><span class="c1">// (1)!</span>
+</code></pre></div>
+<ol>
+<li>这一行缩进到了和“这是一句话”对齐的位置，成功落入列表项</li>
+</ol>
+<p>渲染效果：</p>
+<p></p><blockquote>
+<ul>
+<li>
+<p>这是一句话</p>
+<p>这也是一句话</p>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p><span>Markdown<span class="heti-spacing"> </span></span>源码：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="o">&gt;-</span><span class="w"> </span><span class="n">这是一句话</span><span class="c1">// (1)!</span>
+<a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="o">&gt;</span>
+<a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="o">&gt;</span><span class="w">   </span><span class="n">这也是一句话</span><span class="c1">// (2)!</span>
+<a href="#__codelineno-29-4" id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="o">&gt;</span>
+<a href="#__codelineno-29-5" id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="o">&gt;</span><span class="w">  </span><span class="n">这还是一句话</span><span class="c1">// (3)!</span>
+</code></pre></div>
+<ol>
+<li>
+<p>这里的块引用 <code>&gt;</code> 后省略了空格</p>
+</li>
+<li>
+<p>这一行比“这是一句话”多缩进了一格，成功落入列表项</p>
+</li>
+<li>
+<p>这一行缩进到了和“这是一句话”对齐的位置，按理说应该成功落入列表项，但是事实并非如此</p>
+</li>
+</ol>
+<p>渲染效果：</p>
+<p></p><blockquote>
+<ul>
+<li>
+<p>这是一句话</p>
+<p>这也是一句话</p>
+</li>
+</ul>
+<p>这还是一句话</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>发生了什么？仔细思考你就会发现，虽然我们有权省略块引用后的空格，但是在判定是否落入容器的时候，列表项可不惯着你，它默认你的 <code>&gt;</code> 后有一个空格，所以要求你在缩进的时候算上这个空格。换言之，直接和 <code>-</code> 后的文本对齐并不总是适用，有时会需要多打一个空格。</p>
+</details>
+<h3 id="_7">代码块与内联代码<a class="headerlink" href="#_7" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_8">强调与强烈强调<a class="headerlink" href="#_8" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_9">反斜杠转义<a class="headerlink" href="#_9" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <h3 id="htmlmarkdown">用 HTML 完善 Markdown 语法<a class="headerlink" href="#htmlmarkdown" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <h2 id="markdown_4">Markdown 排版建议<a class="headerlink" href="#markdown_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <div class="admonition abstract">
@@ -793,7 +1248,7 @@ in line 3.</p>
 </ul>
 </div>
 <p># TODO</p>
-<h2 id="_7">参考资料<a class="headerlink" href="#_7" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="_10">参考资料<a class="headerlink" href="#_10" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <ul>
 <li><a href="https://commonmark.org/">CommonMark</a></li>
 <li><a href="https://hypotensor.tonycrane.cc/">计算机类实验文档降压宝典（编写规范）</a></li>
@@ -805,7 +1260,7 @@ in line 3.</p>
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-20 13:25:26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-20 23:24:37</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-19 01:33:22</span>
