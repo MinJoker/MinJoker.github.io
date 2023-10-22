@@ -48,7 +48,7 @@ Markdown 还有许多常用的扩展语法，例如表格、脚注、任务列�
 
     以下规范基于 [CommonMark 3.0](https://spec.commonmark.org/0.30/) 标准。
 
-    以下示例用的 Markdown 解析器为 [commonmark.js](https://github.com/commonmark/commonmark.js)，渲染效果直接由 Markdown 源码中嵌入 HTML 实现（不受任何其他解析器干扰）。此外，commonmark.js 也提供[在线解析服务](https://spec.commonmark.org/dingus/)，自己亲手试一试吧！
+    以下示例用的 Markdown 解析器为 [commonmark.js](https://github.com/commonmark/commonmark.js)，渲染效果仅供参考，因为事实上这篇笔记是用 MkDocs（python-markdown）解析的。此外，commonmark.js 也提供[在线解析服务](https://spec.commonmark.org/dingus/)，自己亲手试一试吧！
 
 ### 不建议使用的语法
 
@@ -726,7 +726,71 @@ Markdown 中最基本的文本片段是段落（paragraphs），很多人会混�
 
 ### 内联代码
 
+上文提到反斜杠转义在内联代码中是无效的，那么我们该如何在内联代码中转义 `` ` `` 呢？
+
+答案就是通过不同数量的反引号 `` ` `` 来实现反引号自身的转义。假设内联代码中有最多连续反引号 m 个，最少连续反引号 n 个，则我们可以通过连续使用 m+1 个反引号，或者 n-1 个（n>1）反引号来包裹内联代码实现代码中的反引号转义。
+
+=== "Markdown 源码"
+
+    ```c
+    ````im``good```boy````// (1)!
+
+    `im``good```boy`
+
+    `` ` ``// (2)!
+    ```
+
+    1. 这里的内联代码含有最多连续反引号 3 个，最少连续反引号 2 个。
+
+    2. 这里展示如何像上文那样转义单个反引号。注意反引号两侧的空格，这是必要的，具体语法原因见 CommonMark。
+
+=== "解析为 HTML"
+
+    ```html
+    <p><code>im``good```boy</code></p>
+    <p><code>im``good```boy</code></p>
+    <p><code>`</code></p>
+    ```
+
+=== "渲染效果"
+
+    <p><code>im``good```boy</code></p>
+
+    <p><code>im``good```boy</code></p>
+    
+    <p><code>`</code></p>
+    <!-- blankline is necessary here for parsing??? -->
+
 ### 强调与强烈强调
+
+强调 `*` 与强烈强调 `**` 在具体使用中并不像你想象的那么简单，我们通过几个例子来看看：
+
+=== "Markdown 源码"
+
+    ```c
+    这是* 一句 *话// (1)!
+
+    This is a sentence*(n.)*.// (2)!
+    ```
+
+    1. `*` 包裹的内容两侧不能有空格。
+
+    2. `*` 包裹内容的外侧为字母而内侧为标点符号的时候，强调无效。
+
+=== "解析为 HTML"
+
+    ```html
+    <p>这是* 一句 *话</p>
+    <p>This is a sentence*(n.)*.</p>
+    ```
+
+=== "渲染效果"
+
+    <p>这是\* 一句 \*话</p>
+    <p>This is a sentence\*(n.)\*.</p>
+    <!-- precedence seems to be wrong here? python-markdown is different from commonmark here! -->
+
+强调和强烈强调会在你意想不到的地方出现错误，而且当你查阅 CommonMark 的时候就会发现，它们的语法真的很复杂且不自然。我的建议是，如果你的强调和强烈强调无法成功渲染，请用 HTML 标签 `<em>` 和 `<strong>` 代替它们。
 
 ### 用&thinsp;HTML&thinsp;完善&thinsp;Markdown&thinsp;语法
 
