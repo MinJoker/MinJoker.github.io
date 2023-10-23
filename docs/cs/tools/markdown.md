@@ -794,6 +794,43 @@ Markdown 中最基本的文本片段是段落（paragraphs），很多人会混�
 
 ### 用&thinsp;HTML&thinsp;完善&thinsp;Markdown&thinsp;语法
 
+Markdown 的定位决定了它只会有很少一部分简单常用的语法，但是我们可以通过 HTML 来丰富 Markdown 的语法，这为 Markdown 提供了非常好的扩展功能。
+
+这里笔者推荐一些好用的 HTML 语法。
+
+---
+
+#### 更好地插入图片
+
+```html
+<div style="text-align: center;"><!-- (1)! -->
+<img src="url" alt="alternatetext" style="width: 60%;"><!-- (2)! -->
+</div>
+```
+
+1. 这里的 `center` 也可以改成 `left` 和 `right`；不建议使用 `<center>` 或者 `<div align>`，它们不被 HTML5 支持。
+2. 建议像这样用 `style` 来保护 `width` 和 `height`，以免被 CSS 干扰。
+
+Markdown 语法不支持图片的大小缩放和位置调整，这的确很糟糕！
+
+---
+
+#### 更多的内联标记
+
+```html
+这里用于<del>测试</del>删除线。
+
+这里用于<u>测试</u>下划线。
+```
+
+渲染效果：
+
+这里用于<del>测试</del>删除线。
+
+这里用于<u>测试</u>下划线。
+
+---
+
 ## Markdown&thinsp;排版建议
 
 !!! abstract
