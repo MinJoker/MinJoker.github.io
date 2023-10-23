@@ -362,32 +362,46 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_9">
+    文本居中与居右
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
     更多的内联标记
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+    更多的空格与空行
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#markdown_4">
-    Markdown 排版建议
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#markdown_5">
-    如何优雅地构建 Markdown 工作流
-  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mkdocs">
     MkDocs 杂记
   </a>
+<nav aria-label="MkDocs 杂记" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#github-actions">
+    GitHub Actions 与版本隐患
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_12">
+    文件路径应该怎么写
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
     参考资料
   </a>
 </li>
@@ -604,32 +618,46 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_9">
+    文本居中与居右
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
     更多的内联标记
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+    更多的空格与空行
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#markdown_4">
-    Markdown 排版建议
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#markdown_5">
-    如何优雅地构建 Markdown 工作流
-  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mkdocs">
     MkDocs 杂记
   </a>
+<nav aria-label="MkDocs 杂记" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#github-actions">
+    GitHub Actions 与版本隐患
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_12">
+    文件路径应该怎么写
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
     参考资料
   </a>
 </li>
@@ -642,7 +670,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>3988<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>178<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>16<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>4559<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>193<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>18<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <h2 id="markdown_1">什么是 Markdown<a class="headerlink" href="#markdown_1" title="Permanent link">¶</a></h2>
 <blockquote>
@@ -1346,24 +1374,37 @@ in line 3.</p>
 </ol>
 <p><span>Markdown<span class="heti-spacing"> </span></span>语法不支持图片的大小缩放和位置调整，这的确很糟糕！</p>
 <hr/>
-<h4 id="_9">更多的内联标记<a class="headerlink" href="#_9" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-41-1" id="__codelineno-41-1" name="__codelineno-41-1"></a>这里用于<span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>测试<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span>删除线。
-<a href="#__codelineno-41-2" id="__codelineno-41-2" name="__codelineno-41-2"></a>
-<a href="#__codelineno-41-3" id="__codelineno-41-3" name="__codelineno-41-3"></a>这里用于<span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>测试<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>下划线。
+<h4 id="_9">文本居中与居右<a class="headerlink" href="#_9" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-41-1" id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">"text-align: center"</span><span class="p">&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
+<a href="#__codelineno-41-2" id="__codelineno-41-2" name="__codelineno-41-2"></a>This is a sentence.
+<a href="#__codelineno-41-3" id="__codelineno-41-3" name="__codelineno-41-3"></a><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol>
+<li>这里的这里的 <code>center</code> 也可以改成 <code>left</code> 和 <code>right</code>。</li>
+</ol>
+<p><span>Markdown<span class="heti-spacing"> </span></span>语法也不支持文本的居中与居右，我们可以通过<span class="heti-skip"><span class="heti-spacing"> </span>HTML<span class="heti-spacing"> </span></span>来实现。</p>
+<hr/>
+<h4 id="_10">更多的内联标记<a class="headerlink" href="#_10" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-42-1" id="__codelineno-42-1" name="__codelineno-42-1"></a>这里用于<span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>测试<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span>删除线。
+<a href="#__codelineno-42-2" id="__codelineno-42-2" name="__codelineno-42-2"></a>
+<a href="#__codelineno-42-3" id="__codelineno-42-3" name="__codelineno-42-3"></a>这里用于<span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>测试<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>下划线。
 </code></pre></div>
 <p>渲染效果：</p>
 <p>这里用于<del>测试</del>删除线。</p>
 <p>这里用于<u>测试</u>下划线。</p>
 <hr/>
-<h2 id="markdown_4">Markdown 排版建议<a class="headerlink" href="#markdown_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<p>遵守语法规范可以保证你能编写出没有歧义的<span><span class="heti-spacing"> </span>Markdown</span>，但是如果要将这些内容导出，用于分享与交流，那你一定还需要关注排版问题。换言之，这不是对与错的问题，而是是否符合主流审美的问题。</p>
-<p>接下去的篇幅将会归纳一些笔者认为值得参考的排版建议。</p>
-</div>
-<p># TODO</p>
-<h2 id="markdown_5">如何优雅地构建 Markdown 工作流<a class="headerlink" href="#markdown_5" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<p># TODO</p>
+<h4 id="_11">更多的空格与空行<a class="headerlink" href="#_11" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>Markdown（以及浏览器）会折叠连续空格与空行，但有的时候我们真的想要更多的空格与空行。</p>
+<ul>
+<li>更多空格：<span>HTML<span class="heti-spacing"> </span></span>转义字符<ul>
+<li><code>&amp;ensp;</code>（半角空格，en-space）</li>
+<li><code>&amp;emsp;</code>（全角空格，em-space）</li>
+<li><code>&amp;thinsp;</code>（通常为全角空格的<span class="heti-skip"><span class="heti-spacing"> </span>$\frac{1}{5}$<span class="heti-spacing"> </span></span>或<span><span class="heti-spacing"> </span>$\frac{1}{6}$</span>，thin-space）</li>
+</ul>
+</li>
+<li>更多空行：<span>HTML<span class="heti-spacing"> </span></span>标签 <code>&lt;br&gt;</code></li>
+</ul>
+<hr/>
 <h2 id="mkdocs">MkDocs 杂记<a class="headerlink" href="#mkdocs" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
@@ -1373,24 +1414,65 @@ in line 3.</p>
 <div class="admonition info">
 <p class="admonition-title">笔者的工具版本</p>
 <ul>
-<li>MkDocs：</li>
-<li>Material for MkDocs：</li>
+<li>Material for MkDocs：9.4.6 (MkDocs：1.5.3)</li>
 </ul>
 </div>
-<p># TODO</p>
-<h2 id="_10">参考资料<a class="headerlink" href="#_10" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="github-actions">GitHub Actions 与版本隐患<a class="headerlink" href="#github-actions" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>很多人会用<span class="heti-skip"><span class="heti-spacing"> </span>GitHub Actions<span class="heti-spacing"> </span></span>来自动化笔记网站的部署，但是很可能忽略了其中的版本隐患。我们首先来看看 <code>.github/workflows/xxx.yml</code> 中的这部分内容：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-43-1" id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="nt">jobs</span><span class="p">:</span>
+<a href="#__codelineno-43-2" id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
+<a href="#__codelineno-43-3" id="__codelineno-43-3" name="__codelineno-43-3"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<a href="#__codelineno-43-4" id="__codelineno-43-4" name="__codelineno-43-4"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a href="#__codelineno-43-5" id="__codelineno-43-5" name="__codelineno-43-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<a href="#__codelineno-43-6" id="__codelineno-43-6" name="__codelineno-43-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v4</span>
+<a href="#__codelineno-43-7" id="__codelineno-43-7" name="__codelineno-43-7"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<a href="#__codelineno-43-8" id="__codelineno-43-8" name="__codelineno-43-8"></a><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.x</span>
+<a href="#__codelineno-43-9" id="__codelineno-43-9" name="__codelineno-43-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install mkdocs-material</span><span class="w"> </span><span class="c1"># (1)!</span>
+<a href="#__codelineno-43-10" id="__codelineno-43-10" name="__codelineno-43-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs gh-deploy --force</span>
+</code></pre></div>
+<ol>
+<li>这句命令通过<span class="heti-skip"><span class="heti-spacing"> </span>pip<span class="heti-spacing"> </span></span>下载了最新版本的<span><span class="heti-spacing"> </span>Material for MkDocs</span></li>
+</ol>
+<p>这里存在的隐患在于，每次运行<span class="heti-skip"><span class="heti-spacing"> </span>GitHub Actions<span class="heti-spacing"> </span></span>部署网站的时候，使用的都是最新版本的<span><span class="heti-spacing"> </span>Material for MkDocs</span>，但我们在本地通过 <code>mkdocs serve</code> 构建网站的时候所使用的却是本地的<span><span class="heti-spacing"> </span>Material for MkDocs</span>，这就意味着如果本地版本没有更新到最新版本，那么本地构建和实际部署就可能出现差异。</p>
+<p>是否要把软件保持最新版本这个问题，见仁见智。而我们也有相应的两种解决方案：</p>
+<ul>
+<li>在本地通过 <code>pip install --upgrade --force-reinstall mkdocs-material</code> 来把本地版本保持最新。</li>
+<li>在 <code>.github/workflows/xxx.yaml</code> 中将相应代码修改为 <code>run: pip install mkdocs-material==9.4.6</code>，从而确保<span class="heti-skip"><span class="heti-spacing"> </span>GitHub Actions<span class="heti-spacing"> </span></span>用<span class="heti-skip"><span class="heti-spacing"> </span>9.4.6<span class="heti-spacing"> </span></span>版本来部署网站。</li>
+</ul>
+<details class="note" open="open">
+<summary>提醒一下</summary>
+<p><span>Material for MkDocs<span class="heti-spacing"> </span></span>中已经包含了相应版本的<span><span class="heti-spacing"> </span>MkDocs</span>，如果忘记这件事的话可能会对上文感到有些奇怪。</p>
+</details>
+<h3 id="_12">文件路径应该怎么写<a class="headerlink" href="#_12" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p><span>MkDocs<span class="heti-spacing"> </span></span>在<a href="https://www.mkdocs.org/about/release-notes/#version-150-2023-07-26"><span class="heti-skip"><span class="heti-spacing"> </span>1.5.0<span class="heti-spacing"> </span></span></a>的版本中更新了对链接有效性的约束规则，一些不规范的路径写法会被报告出来，比如：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-44-1" id="__codelineno-44-1" name="__codelineno-44-1"></a>INFO - Doc file 'example.md' contains an absolute link '/foo/bar/', it was left as is. Did you mean 'foo/bar.md'?
+<a href="#__codelineno-44-2" id="__codelineno-44-2" name="__codelineno-44-2"></a>INFO - Doc file 'example.md' contains an absolute link '/assets/images/1.jpg', it was left as is. Did you mean '../../assets/images/1.jpg'?
+</code></pre></div>
+<p>这两个例子之所以报错，按照<span class="heti-skip"><span class="heti-spacing"> </span>MkDocs<span class="heti-spacing"> </span></span>的说法，这样的以 <code>/</code> 开头或者结尾的路径写法是<span class="heti-skip"><span class="heti-spacing"> </span>fragile<span class="heti-spacing"> </span></span>的。</p>
+<ul>
+<li>对于以 <code>/</code> 结尾的路径，我觉得确实应该改为 <code>.md</code> 结尾，指定文件类型不是一件坏事。</li>
+<li>对于以 <code>/</code> 开头的路径，我想我会继续这样写。<ul>
+<li><code>/</code> 在这里代表根目录 <code>docs</code>，我认为从根目录往下找文件，要比从当前文件所在目录往上找文件更加自然。<br/>
+  比如在插入一张图片的时候，纠结到底是 <code>../</code> 还是 <code>../../</code> 真的是件很麻烦的事情。</li>
+</ul>
+</li>
+</ul>
+<p>如果你不想看到这些<span class="heti-skip"><span class="heti-spacing"> </span>INFO<span class="heti-spacing"> </span></span>提示，可以在 <code>mkdocs.yml</code> 中添加以下内容（尽管<span class="heti-skip"><span class="heti-spacing"> </span>MkDocs<span class="heti-spacing"> </span></span>并不推荐这么做<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-45-1" id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="nt">validation</span><span class="p">:</span>
+<a href="#__codelineno-45-2" id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="w">  </span><span class="nt">absolute_links</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ignore</span>
+</code></pre></div>
+<h2 id="_13">参考资料<a class="headerlink" href="#_13" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <ul>
 <li><a href="https://commonmark.org/">CommonMark</a></li>
 <li><a href="https://hypotensor.tonycrane.cc/">计算机类实验文档降压宝典（编写规范）</a></li>
 <li><a href="https://github.com/TonyCrane/PracticalSkillsTutorial">浙江大学系列朋辈辅学「实用技能拾遗」课程资料仓库</a></li>
-<li><a href="https://www.w3.org/International/clreq/">中文排版需求（Requirements for Chinese Text Layout）</a></li>
 </ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-23 15:31:15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-23 21:56:27</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-19 01:33:22</span>
