@@ -2,9 +2,9 @@
 
 ## 什么是&thinsp;Markdown
 
->    Markdown 是一种轻量级标记语言，用于使用纯文本编辑器创建格式化文本。John Gruber 于 2004 年创建了 Markdown，作为一种易于以源代码形式阅读的标记语言。
+> Markdown 是一种轻量级标记语言，用于使用纯文本编辑器创建格式化文本。John Gruber 于 2004 年创建了 Markdown，作为一种易于以源代码形式阅读的标记语言。
 >
->    <p align="right">———— Wikipedia</p>
+> <p style="text-align: right">———— Wikipedia</p>
 
 Markdown 的优势是显著的，它足够轻巧，易读易写；但是，其缺陷也是显著的，那就是[初代版本](https://daringfireball.net/projects/markdown)的语法规范性不足，在实现中经常产生偏离作者意图的错误（最重要的是 Markdown 本身没有任何内容会被判定为“语法错误”，所以不会产生任何报错）。
 
@@ -811,7 +811,7 @@ Markdown 的定位决定了它只会有很少一部分简单常用的语法，�
 1. 这里的 `center` 也可以改成 `left` 和 `right`；不建议使用 `<center>` 或者 `<div align>`，它们不被 HTML5 支持。
 2. 建议像这样用 `style` 来保护 `width` 和 `height`，以免被 CSS 干扰。
 
-Markdown 语法不支持图片的大小缩放和位置调整，这的确很糟糕！
+Markdown 语法不支持图片的大小缩放和位置调整，我们可以通过 HTML 来实现。
 
 ---
 
@@ -897,7 +897,7 @@ jobs:
 
 ???+ note "提醒一下"
 
-    Material for MkDocs 中已经包含了相应版本的 MkDocs，如果忘记这件事的话可能会对上文感到有些奇怪。
+    Material for MkDocs 中已经包含了相应版本的 MkDocs，如果忘记了这件事的话，上文看起来可能会有些奇怪。
 
 ### 文件路径应该怎么写
 
@@ -921,6 +921,106 @@ INFO - Doc file 'example.md' contains an absolute link '/assets/images/1.jpg', i
 validation:
   absolute_links: ignore
 ```
+
+### heti&thinsp;与中西文混排优化
+
+> 原则上，汉字与西文字母、数字间使用不多于四分之一个汉字宽的字距或空白。
+>
+> <p style="text-align: right">————  [CLReq（中文排版需求）](https://www.w3.org/International/clreq/)</p>
+
+笔者使用 [mkdocs-heti-plugin](https://github.com/TonyCrane/mkdocs-heti-plugin) 来优化中西文混排，在使用这个插件的过程中遇到了一些值得关注的情况：
+
+1. 如何让 heti 忽略某部分文本？<br />
+   可以通过对 `<span>`、`<p>`、`<div>` 等标签设置 `style="heti-skip"` 实现相应效果。
+
+2. heti 无法渲染页面左右两侧的目录和索引（nav 和 table of contents）？<br />
+   插件本身暂时无法解决该问题，可以手动在标题的中西文混排处插入 `&thinsp;` 凑合用。
+
+### 更美观的标题样式
+
+Material for MkDocs 的标题字重设计得不够合理（对于中文排版而言）。可以通过设置 CSS 来优化标题字重：
+
+=== "`mkdocs.yml`"
+
+    ```yaml
+    extra_css:
+      - stylesheets/extra.css
+    ```
+
+=== "`extra.css`"
+
+    ```css
+    .md-typeset h1, .md-typeset h2 {
+        font-weight: 600;
+    }
+    .md-typeset h3 {
+        font-weight: 500;
+    }
+    ```
+
+    source: [https://github.com/TonyCrane/lab-hypotensor/](https://github.com/TonyCrane/lab-hypotensor/)
+
+---
+
+在标题前面添加编号是一种很不错的优化方案。手动添加比较繁琐，而且会导致索引（table of contents）也出现编号，影响观感。可以通过设置 CSS 来实现自动编号：
+
+=== "`mkdocs.yml`"
+
+    ```yaml
+    extra_css:
+      - stylesheets/extra.css
+    ```
+
+=== "`extra.css`"
+
+    ```css
+    h1 {
+        counter-reset: h2;
+    }
+    h2 {
+        counter-reset: h3;
+    }
+    h3 {
+        counter-reset: h4;
+    }
+    h4 {
+        counter-reset: h5;
+    }
+    h5 {
+        counter-reset: h6;
+    }
+    h2:before {
+        counter-increment: h2;
+        content: counter(h2);
+        margin-right: 0.8rem;
+    }
+    h3:before {
+        counter-increment: h3;
+        content: counter(h2) "." counter(h3);
+        margin-right: 0.8rem;
+    }
+    h4:before {
+        counter-increment: h4;
+        content: counter(h2) "." counter(h3) "." counter(h4);
+        margin-right: 0.8rem;
+    }
+    h5:before {
+        counter-increment: h5;
+        content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+        margin-right: 0.8rem;
+    }
+    h6:before {
+        counter-increment: h6;
+        content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+        margin-right: 0.8rem;
+    }
+    ```
+
+    source: [https://github.com/TonyCrane/lab-hypotensor/](https://github.com/TonyCrane/lab-hypotensor/)
+
+### 表格居中有那么难吗
+
+### KaTex
 
 ## 参考资料
 
