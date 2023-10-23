@@ -815,6 +815,20 @@ Markdown 语法不支持图片的大小缩放和位置调整，这的确很糟�
 
 ---
 
+#### 文本居中与居右
+
+```html
+<p style="text-align: center"><!-- (1)! -->
+This is a sentence.
+</p>
+```
+
+1. 这里的这里的 `center` 也可以改成 `left` 和 `right`。
+
+Markdown 语法也不支持文本的居中与居右，我们可以通过 HTML 来实现。
+
+---
+
 #### 更多的内联标记
 
 ```html
@@ -831,19 +845,17 @@ Markdown 语法不支持图片的大小缩放和位置调整，这的确很糟�
 
 ---
 
-## Markdown&thinsp;排版建议
+#### 更多的空格与空行
 
-!!! abstract
+Markdown（以及浏览器）会折叠连续空格与空行，但有的时候我们真的想要更多的空格与空行。
 
-    遵守语法规范可以保证你能编写出没有歧义的 Markdown，但是如果要将这些内容导出，用于分享与交流，那你一定还需要关注排版问题。换言之，这不是对与错的问题，而是是否符合主流审美的问题。
+- 更多空格：HTML 转义字符
+    - `&ensp;`（半角空格，en-space）
+    - `&emsp;`（全角空格，em-space）
+    - `&thinsp;`（通常为全角空格的 $\frac{1}{5}$ 或 $\frac{1}{6}$，thin-space）
+- 更多空行：HTML 标签 `<br>`
 
-    接下去的篇幅将会归纳一些笔者认为值得参考的排版建议。
-
-\# TODO
-
-## 如何优雅地构建&thinsp;Markdown&thinsp;工作流
-
-\# TODO
+---
 
 ## MkDocs&thinsp;杂记
 
@@ -855,14 +867,63 @@ Markdown 语法不支持图片的大小缩放和位置调整，这的确很糟�
 
 !!! info "笔者的工具版本"
 
-    - MkDocs：
-    - Material for MkDocs：
+    - Material for MkDocs：9.4.6 (MkDocs：1.5.3)
 
-\# TODO
+### GitHub Actions&thinsp;与版本隐患
+
+很多人会用 GitHub Actions 来自动化笔记网站的部署，但是很可能忽略了其中的版本隐患。我们首先来看看 `.github/workflows/xxx.yml` 中的这部分内容：
+
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material # (1)!
+      - run: mkdocs gh-deploy --force
+```
+
+1. 这句命令通过 pip 下载了最新版本的 Material for MkDocs
+
+这里存在的隐患在于，每次运行 GitHub Actions 部署网站的时候，使用的都是最新版本的 Material for MkDocs，但我们在本地通过 `mkdocs serve` 构建网站的时候所使用的却是本地的 Material for MkDocs，这就意味着如果本地版本没有更新到最新版本，那么本地构建和实际部署就可能出现差异。
+
+是否要把软件保持最新版本这个问题，见仁见智。而我们也有相应的两种解决方案：
+
+- 在本地通过 `pip install --upgrade --force-reinstall mkdocs-material` 来把本地版本保持最新。
+- 在 `.github/workflows/xxx.yaml` 中将相应代码修改为 `run: pip install mkdocs-material==9.4.6`，从而确保 GitHub Actions 用 9.4.6 版本来部署网站。
+
+???+ note "提醒一下"
+
+    Material for MkDocs 中已经包含了相应版本的 MkDocs，如果忘记这件事的话可能会对上文感到有些奇怪。
+
+### 文件路径应该怎么写
+
+MkDocs 在 [1.5.0](https://www.mkdocs.org/about/release-notes/#version-150-2023-07-26) 的版本中更新了对链接有效性的约束规则，一些不规范的路径写法会被报告出来，比如：
+
+```
+INFO - Doc file 'example.md' contains an absolute link '/foo/bar/', it was left as is. Did you mean 'foo/bar.md'?
+INFO - Doc file 'example.md' contains an absolute link '/assets/images/1.jpg', it was left as is. Did you mean '../../assets/images/1.jpg'?
+```
+
+这两个例子之所以报错，按照 MkDocs 的说法，这样的以 `/` 开头或者结尾的路径写法是 fragile 的。
+
+- 对于以 `/` 结尾的路径，我觉得确实应该改为 `.md` 结尾，指定文件类型不是一件坏事。
+- 对于以 `/` 开头的路径，我想我会继续这样写。
+    - `/` 在这里代表根目录 `docs`，我认为从根目录往下找文件，要比从当前文件所在目录往上找文件更加自然。<br />
+      比如在插入一张图片的时候，纠结到底是 `../` 还是 `../../` 真的是件很麻烦的事情。
+
+如果你不想看到这些 INFO 提示，可以在 `mkdocs.yml` 中添加以下内容（尽管 MkDocs 并不推荐这么做）：
+
+```yaml
+validation:
+  absolute_links: ignore
+```
 
 ## 参考资料
 
 - [CommonMark](https://commonmark.org/)
 - [计算机类实验文档降压宝典（编写规范）](https://hypotensor.tonycrane.cc/)
 - [浙江大学系列朋辈辅学「实用技能拾遗」课程资料仓库](https://github.com/TonyCrane/PracticalSkillsTutorial)
-- [中文排版需求（Requirements for Chinese Text Layout）](https://www.w3.org/International/clreq/)
