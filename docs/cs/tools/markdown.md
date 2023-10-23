@@ -48,7 +48,7 @@ Markdown 还有许多常用的扩展语法，例如表格、脚注、任务列�
 
     以下规范基于 [CommonMark 3.0](https://spec.commonmark.org/0.30/) 标准。
 
-    以下示例用的 Markdown 解析器为 [commonmark.js](https://github.com/commonmark/commonmark.js)，渲染效果仅供参考，因为事实上这篇笔记是用 MkDocs（python-markdown）解析的。此外，commonmark.js 也提供[在线解析服务](https://spec.commonmark.org/dingus/)，自己亲手试一试吧！
+    以下示例用的 Markdown 解析器为 [commonmark.js](https://github.com/commonmark/commonmark.js)，“解析为 HTML”严格按照 CommonMark 规范，但是“渲染效果”仅供参考，因为事实上这篇笔记是用 MkDocs（python-markdown）解析并发布的。此外，commonmark.js 也提供[在线解析服务](https://spec.commonmark.org/dingus/)，自己亲手试一试吧！
 
 ### 不建议使用的语法
 
