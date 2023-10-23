@@ -908,11 +908,11 @@ INFO - Doc file 'example.md' contains an absolute link '/foo/bar/', it was left 
 INFO - Doc file 'example.md' contains an absolute link '/assets/images/1.jpg', it was left as is. Did you mean '../../assets/images/1.jpg'?
 ```
 
-这两个例子之所以报错，按照 MkDocs 的说法，这样的以 `/` 开头或者结尾的路径写法是 fragile 的。
+这两个例子之所以报错，按照 MkDocs 的说法，是因为这样的以 `/` 开头或者结尾的路径写法是 fragile 的。
 
 - 对于以 `/` 结尾的路径，我觉得确实应该改为 `.md` 结尾，指定文件类型不是一件坏事。
 - 对于以 `/` 开头的路径，我想我会继续这样写。
-    - `/` 在这里代表根目录 `docs`，我认为从根目录往下找文件，要比从当前文件所在目录往上找文件更加自然。<br />
+    - `/` 在这里代表根目录 `docs/`，我认为从根目录往下找文件，要比从当前文件所在目录往上找文件更加自然。<br />
       比如在插入一张图片的时候，纠结到底是 `../` 还是 `../../` 真的是件很麻烦的事情。
 
 如果你不想看到这些 INFO 提示，可以在 `mkdocs.yml` 中添加以下内容（尽管 MkDocs 并不推荐这么做）：
