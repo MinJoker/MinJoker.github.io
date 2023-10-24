@@ -867,7 +867,7 @@ Markdown（以及浏览器）会折叠连续空格与空行，但有的时候我
 
 !!! info "笔者的工具版本"
 
-    - Material for MkDocs：9.4.6 (MkDocs：1.5.3)
+    Material for MkDocs：9.4.6 (MkDocs：1.5.3)
 
 ### GitHub Actions&thinsp;与版本隐患
 

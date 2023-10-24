@@ -11,13 +11,13 @@
 ### 命题逻辑补充
 
 - 来一些中英对照（主要是我觉得这些中文翻译还蛮有意思）：
-    - 合取（Conjunction）
-    - 析取（Disjunction）
-    - 蕴含（Implication）
-- 关于蕴含值得注意的是，Everything implies `TRUTH`, `FALSE` implies anything.
+    - 合取（conjunction）
+    - 析取（disjunction）
+    - 蕴含（implication）
+- 关于蕴含值得注意的是，everything implies `TRUTH`, `FALSE` implies anything.
 - 再来一些中英对照：
-    - 永真式/重言式（Tautology）
-    - 永假式/矛盾式（Contradiction）
+    - 永真式/重言式（tautology）
+    - 永假式/矛盾式（contradiction）
 
 !!! note "一些很重要的公式"
 
@@ -78,10 +78,44 @@ $$
 
 ---
 
-技巧三（归结原理，Resolution）：一个很有意思但是不太容易被察觉的推理公式：
+技巧三（归结原理，resolution）：一个很有意思但是不太容易被察觉的推理公式：
 
 $$
 (p\vee q)\wedge (\neg p\vee r)\to (q\vee r)
 $$
 
 更进一步地，基于任何表达式都可以化成合取范式这一事实，归结原理是「自动定理证明」的一种重要推理规则。
+
+### 谓词逻辑补充
+
+- 量词 $\forall$、$\exists$ 的优先级比命题逻辑中的任何逻辑运算符都高。
+- 量词具有辖域（scope），比如 $\forall{x} P(x) \to Q(x)$ 和 $\forall{x} (P(x) \to Q(x))$ 是有区别的。
+- 求解 prenex normal form，一个常用的技巧是 rename bounded variables（见下文的例子）。
+
+??? example "求解 prenex normal form 的例子"
+
+    <div style="text-align: center;">
+    <img src="/assets/images/math/discrete/1.png" style="width: 60%;">
+    </div>
+
+???+ note "一些补充公式"
+
+    <div style="text-align: center;">
+    <img src="/assets/images/math/discrete/3.png" style="width: 70%;">
+    <br>
+    <img src="/assets/images/math/discrete/2.png" style="width: 80%;">
+    </div>
+
+## Basic Structures: Sets and Functions
+
+### 集合论补充
+
+- 对称差（symmetric difference）有两种等价的定义：
+    - $A \oplus B = ( A - B ) \cup ( B - A )$
+    - $A \oplus B = ( A \cup B ) - ( B \cap A )$
+- 笛卡尔积集（Cartesian product）：
+    - 如果两个集合有限，则其笛卡尔积集有限；
+    - 如果一个集合无限，另一个集合非空，则其笛卡尔积集无限；
+- 幂集（power set）可以写作 $P(S)$ 或 $2^S$，$2 ^S=\lbrace T \mid T \subset S \rbrace$
+- 两个集合等势（基数相同），当且仅当它们之间存在一一映射（one-to-one correspondence, or bijection）（不一定唯一）。
+- 一个无限集是可数的（countable），当且仅当它和自然数集等势。
