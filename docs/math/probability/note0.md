@@ -116,3 +116,18 @@ $$
     2. 找出 $(Y \leq y)$ 的等价事件 $(X \in D)$，得到 $F_Y(y)=P(X \in D)$，解出 $Y$ 的概率分布函数；
     3. 进而求解 $Y$ 的概率密度函数 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{dy}} F_Y(y)$；<br />
        特别地，若解出概率分布函数为 $F_Y(y) = f_X(h(y))$，则概率密度函数也可写成 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{d(h(y))}} F_Y(y) \cdot \frac{\mathrm{d(h(y))}}{\mathrm{dy}} = f_X(h(y)) \cdot h^{\prime}(y)$；
+
+## 多元随机变量及其分布
+
+### 二维离散型随机变量补充
+
+对于任何分布律都有两条性质（对联合、边际、条件分布律都成立）：
+
+- $p_{ij} \geq 0, \; i,j=1,2,\dots$
+- $\sum_{i=1}^{\infty} \sum_{j=1}^{\infty} P_{ij} = 1$
+
+### 二维随机变量的分布函数补充
+
+- 联合分布函数 $F(x,y) = P(X \leq x, Y \leq y)$ 是二元函数
+- 边际分布函数 $F_X(x) = P(X \leq x) = lim_{y \rarr +\infty}F(x,y)$ 是关于 $x$ 的一元函数
+- 条件分布函数 $F_{X \mid Y}(x \mid y) = P(X \leq x \mid Y=y)$ 是关于 $x$ 的一元函数
