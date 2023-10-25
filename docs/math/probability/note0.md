@@ -41,6 +41,18 @@
 - 分布函数的分段写法，按照「左闭右开」的区间进行分段是一个较好的习惯（主要针对离散型随机变量的分布函数）
 - 支撑（support）指的是使概率分布为正的密度的随机变量的取值的集合，定义为 $ \lbrace x: f(x)>0\rbrace $
 
+### 概率密度函数理解
+
+有一个常见的误区，就是错把连续型随机变量的「概率密度函数的函数值」和连续型随机变量的「概率」直接划等号。事实上，概率密度函数的函数值代表的是概率分布函数的变化率（所以概率密度函数的函数值大于 $1$ 也是很合理的）；而连续型随机变量的概率，只有某段区间的概率是有意义的，而某个点的概率恒为 $0$。
+
+那么，概率密度函数和概率的联系到底是什么呢？结论是，某段区间上「概率密度函数的面积（积分）」等于随机变量落在这段区间上的概率。
+
+关于概率密度函数，我们有更加直观的解释。概率密度函数的函数值较大的地方，代表这个点附近的概率「密度」较大，也就是说随机变量落在这个点附近的单位长度区间上的概率较大。
+
+<div style="text-align: center;">
+<img src="/assets/images/math/probability/1.png" alt="概率密度函数图示" style="width: 50%;">
+</div>
+
 ### 指数分布的无记忆性
 
 假设 $t_0>0$，$t>0$，
@@ -89,3 +101,18 @@ P(X\leq b) & = \int_{-\infty}^{\frac{b-\mu}{\sigma}} \frac{1}{\sqrt{2\pi}} e^{-\
 $$
 
 换言之，当 $X\sim N(\mu,\sigma^2)$ 时，$\frac{X-\mu}{\sigma}\sim N(0,1)$
+
+!!! note "标准正态分布表"
+
+    [https://en.wikipedia.org/wiki/Standard_normal_table#Cumulative_(less_than_Z)](https://en.wikipedia.org/wiki/Standard_normal_table#Cumulative_(less_than_Z))
+
+### 随机变量的函数分布
+
+一般地，若已知 $X$ 的概率分布，$Y=g(X)$，求 $Y$ 的概率分布的思路为：先给出 $Y$ 的可能取值，再利用「等价事件」求解 $Y$ 的概率分布函数或概率密度函数。
+
+- 对于离散型随机变量，比较简单，在此不赘述；
+- 对于连续型随机变量，可以按照以下步骤求解：
+    1. 写出 $Y$ 的概率分布函数 $F_Y(y)=P(Y \leq y)$；
+    2. 找出 $(Y \leq y)$ 的等价事件 $(X \in D)$，得到 $F_Y(y)=P(X \in D)$，解出 $Y$ 的概率分布函数；
+    3. 进而求解 $Y$ 的概率密度函数 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{dy}} F_Y(y)$；<br />
+       特别地，若解出概率分布函数为 $F_Y(y) = f_X(h(y))$，则概率密度函数也可写成 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{d(h(y))}} F_Y(y) \cdot \frac{\mathrm{d(h(y))}}{\mathrm{dy}} = f_X(h(y)) \cdot h^{\prime}(y)$；
