@@ -114,8 +114,8 @@ $$
 - 对于连续型随机变量，可以按照以下步骤求解：
     1. 写出 $Y$ 的概率分布函数 $F_Y(y)=P(Y \leq y)$；
     2. 找出 $(Y \leq y)$ 的等价事件 $(X \in D)$，得到 $F_Y(y)=P(X \in D)$，解出 $Y$ 的概率分布函数；
-    3. 进而求解 $Y$ 的概率密度函数 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{dy}} F_Y(y)$；<br />
-       特别地，若解出概率分布函数为 $F_Y(y) = f_X(h(y))$，则概率密度函数也可写成 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{d(h(y))}} F_Y(y) \cdot \frac{\mathrm{d(h(y))}}{\mathrm{dy}} = f_X(h(y)) \cdot h^{\prime}(y)$；
+    3. 进而求解 $Y$ 的概率密度函数 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{d}y} F_Y(y)$；<br />
+       特别地，若解出概率分布函数为 $F_Y(y) = F_X(h(y))$，则概率密度函数也可写成 $f_Y(y) = \frac{\mathrm{d}}{\mathrm{d}(h(y))} F_X(h(y)) \cdot \frac{\mathrm{d}(h(y))}{\mathrm{d}y} = f_X(h(y)) \cdot h^{\prime}(y)$；
 
 ## 多元随机变量及其分布
 
