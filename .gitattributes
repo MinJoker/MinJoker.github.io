@@ -1,1 +1,4 @@
-*.md linguist-documentation=false linguist-detectable=true
+*.md linguist-language=Markdown linguist-vendored=false linguist-documentation=false linguist-detectable=true
+*.css linguist-language=CSS linguist-vendored=false linguist-documentation=false linguist-detectable=true
+*.js linguist-language=JavaScript linguist-vendored=false linguist-documentation=false linguist-detectable=true
+*.yml linguist-language=YAML linguist-vendored=false linguist-documentation=false linguist-detectable=true
