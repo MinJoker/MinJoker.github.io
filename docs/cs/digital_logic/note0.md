@@ -47,6 +47,8 @@
 - 香农公式（Shannon formula）
 - 逻辑函数分解（Shannon Expansion）
 
+---
+
 #### 香农公式
 
 基于 $X \overline{X} = 0$ 和 $X X = 1$ ，我们可以得到以下公式：
@@ -68,8 +70,6 @@ $$
 $$
 \overline{x} + f(  x, \overline{x}, y,... ) = \overline{x} + f( 1, 0, y,... )
 $$
-
----
 
 #### 逻辑函数分解
 
@@ -146,6 +146,8 @@ $$
 - 三态门（3-State Buffer）
 - 传输门（Transmission Gate）
 - 异或门 同或门
+
+---
 
 #### 缓冲器
 
