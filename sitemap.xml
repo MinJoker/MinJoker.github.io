@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://minjoker.github.io/cs/algorithms/lec3/</loc>
+         <lastmod>2023-10-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://minjoker.github.io/cs/digital_logic/</loc>
          <lastmod>2023-10-28</lastmod>
          <changefreq>daily</changefreq>
