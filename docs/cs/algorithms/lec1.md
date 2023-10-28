@@ -16,6 +16,14 @@ Union-Find算法，也就是并查集算法，主要用于解决「动态连通�
 
 ## 算法实现
 
+基本的 Union-Find API 如下：
+
+| public class UF | Descriptions |
+| :---: | :---: |
+| **UF(int N)** | initialize union-find data structure with N objects |
+| **void union(int p, int q)** | add connection between p and q |
+| **boolean isConnected(int p, int q)** | check if p and q are connected |
+
 ### Quick-Find
 
 - Data structure：
@@ -182,12 +190,12 @@ Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了�
 以下为加权和路径压缩优化后的并查集算法的 Java 实现。
 
 ```java linenums="1" title="Weighted Quick-Union with Path Compression (WQUPC)"
-public class WQUPC
+public class WeightedQuickUnionWithPathCompressionUF
 {
     private int[] id;
     private int[] sz;
 
-    public WQUPC(int N)
+    public WeightedQuickUnionWithPathCompressionUF(int N)
     {
         id = new int[N];
         sz = new int[N];
