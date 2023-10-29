@@ -27,7 +27,7 @@
 
     笔者认为，最值得关心的是，「是否允许重复」是区别不同 ADT 的一个重要特性，「数据的组织顺序」也是区别不同 ADT 的一个重要特性。
 
-### Stack
+### 栈
 
 基本的 Stack API 如下：
 
@@ -38,7 +38,33 @@
 | **String pop()** | remove and return the string most recently added |
 | **boolean isEmpty()** | check if the stack is empty |
 
-#### Linked-List
+??? example "客户端测试程序"
+
+    ```java linenums="1" title="Stack Test Client"
+    import java.util.Scanner;
+
+    public class StackTestClient
+    {
+        public static void main(String[] args)
+        {
+            StackOfStrings stack = new StackOfStrings();    // StackOfStrings: Linked, FixedCapacity, ResizingArray.
+            Scanner scanner = new Scanner(System.in);
+            while (scanner.hasNext()){
+                String s = scanner.next();
+                if (s.equals("-")){                         // when input is "-", pop the top string from stack.
+                    System.out.print(stack.pop() + " ");
+                } else{
+                    stack.push(s);
+                }
+            }
+            scanner.close();
+        }
+    }
+    ```
+
+---
+
+#### 链表实现
 
 - Data Structure：
     - 链表（linked-list）的每个节点（node）存储着节点的值和指向下个节点的引用（在 Java 中是引用，在 C 中应该是指针）；
@@ -87,7 +113,7 @@ public class LinkedStackOfStrings
 
 ---
 
-#### Array
+#### 数组实现
 
 - Data Structure：
     - 数组`s[]`，并用`N`来记录当前栈中的元素数量；
@@ -133,7 +159,7 @@ public class FixedCapacityStackOfStrings
 
 ---
 
-#### Resizing-Array
+#### 可变数组实现
 
 前面使用数组来实现栈的时候存在一个很大的问题，因为数组必须在使用之初就定义大小`capacity`，而`capacity`的值不可能是固定的，需要客户端根据数据量进行估计后输入`capacity`，这显然是不合理的，我们不希望客户端关心任何具体实现的问题。
 
@@ -200,7 +226,7 @@ public class ResizingArrayStackOfStrings
 }
 ```
 
-### Queue
+### 队列
 
 基本的 Queue API 如下：
 
@@ -211,7 +237,33 @@ public class ResizingArrayStackOfStrings
 | **String dequeue()** | remove and return the string least recently added |
 | **boolean isEmpty()** | check if the queue is empty |
 
-#### Linked-List
+??? example "客户端测试程序"
+
+    ```java linenums="1" title="Queue Test Client"
+    import java.util.Scanner;
+
+    public class QueueTestClient
+    {
+        public static void main(String[] args)
+        {
+            QueueOfStrings queue = new QueueOfStrings();    // QueueOfStrings: Linked, ResizingArray
+            Scanner scanner = new Scanner(System.in);
+            while (scanner.hasNext()){
+                String s = scanner.next();
+                if (s.equals("-")){                         // when input is "-", dequeue the top string from queue.
+                    System.out.print(queue.dequeue() + " ");
+                } else{
+                    queue.enqueue(s);
+                }
+            }
+            scanner.close();
+        }
+    }
+    ```
+
+---
+
+#### 链表实现
 
 - Data Structure：
     - 链表结构和 Linked-List Stack 一致；
@@ -270,7 +322,7 @@ public class LinkedQueueOfStrings
 
 ---
 
-#### Resizing-Array
+#### 可变数组实现
 
 - Data Structure：
     - 数组`q[]`，并用`head`和`tail`标记队列的头与尾，用`N`记录当前队列中的元素数量；
@@ -344,7 +396,7 @@ public class ResizingArrayQueueOfStrings
 }
 ```
 
-### L-List vs. R-Array
+### 链表&thinsp;vs.&thinsp;可变数组
 
 - 链表：
     - 每个操作总是消耗常数时间，即使是在最坏的情况下；
@@ -356,11 +408,94 @@ public class ResizingArrayQueueOfStrings
 同样是栈或者队列，链表实现和可变数组实现的确存在差别，客户端可以根据需求做出选择。如果想要保证每个操作能够较快完成，就使用链表实现；如果只是关心总的时间，那就可以用可变数组实现，因为这样总的时间效率会更高，绝大部分时候单个操作非常快。
 
 > 以下情形你不会想用可变数组实现：<br />
-> 你有一驾飞机进场等待降落，你不会想系统突然间不能高效运转；或者互联网上的一个路由器，数据包以很高的速度涌进来，你不会想因为某个操作突然变得很慢而丢失一些数据。
+> 有一驾飞机进场等待降落，你不会想系统突然间不能高效运转；或者互联网上的一个路由器，数据包以很高的速度涌进来，你不会想因为某个操作突然变得很慢而丢失一些数据。
 
 ## 泛型
 
-- [ ] ToDo
+你可能已经发现了，上文中我们实现的栈和队列，都把元素类型设定为字符串，比如说 StackOfStrings。那么，如果我们还想要 StackOfURLs，StackOfInts，StackOfVans 等其他类型呢？
+
+=== "简单粗暴"
+
+    最简单粗暴的方法就是为每种数据类型进行相应的代码实现，听起来就很麻烦而且愚蠢。
+
+    但不幸的是，早期的 Java 就是陷在这种模式里，事实上很多编程语言都无法摆脱这样的模式。
+
+=== "强制类型转换"
+
+    另一种广泛采用的方法是，使用强制类型转换，从而对不同数据类型重用代码。我们用 Object 类实现数据结构，而由于 Java 中所有的类都是 Object 的子类，当客户端使用强制类型转换的时候，就能将结果转为对应的类型。
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/algorithms/10.png" alt="强制类型转换代码示例" style="width: 45%;">
+    </div>
+
+    这样做的弊端很明显：
+
+    - 强制类型转换需要在客户端实现，这并不能让人满意；
+    - 当类型不匹配的时候，编译不会报错，把错误留到运行时再发生是很糟糕的；
+
+=== "泛型"
+
+    Java 给出了一种很优秀的解决方法，那就是使用泛型（generics）。
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/algorithms/11.png" alt="泛型代码示例" style="width: 60%;">
+    </div>
+
+    泛型解决了强制类型转换带来的弊端：
+
+    - 避免客户端进行强制类型转换；
+    - 当类型不匹配的时候，编译会报错，从而避免在运行时发生错误；
+
+---
+
+Java 泛型的优势是显著的。下面让我们来看看怎么用泛型来修改上文中的栈实现：
+
+=== "链表"
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/algorithms/12.png" alt="泛型栈的链表实现" style="width: 100%;">
+    </div>
+
+    非常简单，只需要把所有出现数据类型的地方更换成 Item 即可。
+
+=== "数组"
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/algorithms/13.png" alt="泛型栈的数组实现（错误版）" style="width: 100%;">
+    </div>
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/algorithms/14.png" alt="泛型栈的数组实现（正确版）" style="width: 100%;">
+    </div>
+
+    发生了什么？为什么泛型栈的数组实现不能和链表实现那样简洁自然？
+
+    原因在于，Java 不允许创建泛型数组！对于这个问题，有各种技术方面的问题，网络上也争议不断，这个我们不去讨论。我们的解决方案是，创建 Object 数组，然后强制类型转换为 Item 数组。
+
+    !!! tip
+
+        A good code has no cast.
+
+    笔者赞同这个观点，优秀的代码不应该使用强制类型转换，因为这确实在我们的实现中留下隐患。但在泛型这个问题上我们不得不这么做。
+
+    > 当我们编译这个程序的时候，Java 会发出警告信息，说我们在使用未经检查的强制类型转换。
+    > 好吧，他们应该在警告信息里加上“我们很抱歉让你这么做”。
+
+---
+
+上文中我们使用的泛型类型是针对 Object 及其子类的（比如 String）。那么基本数据类型呢（比如 int）？
+
+这时候我们需要使用 Java 的包装类（wrapper class），比如 Integer 是 int 类型的包装类。凭借 Java 的自动打包（autoboxing），我们可以实现同样的泛型功能，唯一的区别在于我们不使用 int 来作为 Item，而是使用其包装类 Integer：
+
+```java
+Stack<Integer> s = new Stack<Integer>();
+s.push(17);         // s.push(Integer.valueOf(17));
+int a = s.pop();    // int a = s.pop().intValue();
+```
+
+---
+
+总而言之，我们能实现适用于任何数据类型的泛型 API，而且有链表和数组的两种实现方式，并且对任何数据类型都能有良好的性能。
 
 ## 迭代器
 

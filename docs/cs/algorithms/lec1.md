@@ -26,32 +26,32 @@ Union-Find，也就是并查集，是一种存储不相交集合（disjoint set�
 | **void union(int p, int q)** | add connection between p and q |
 | **boolean isConnected(int p, int q)** | check if p and q are connected |
 
-客户端测试程序如下：
+??? example "客户端测试程序"
 
-```java linenums="1" title="Union-Find Test Client"
-import java.util.Scanner;
+    ```java linenums="1" title="Union-Find Test Client"
+    import java.util.Scanner;
 
-public class UnionFindTestClient
-{
-    public static void main(String[] args)
+    public class UnionFindTestClient
     {
-        Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
-        WeightedQuickUnionWithPathCompressionUF uf = new WeightedQuickUnionWithPathCompressionUF(N);
-        while(scanner.hasNext()){
-            int p = scanner.nextInt();
-            int q = scanner.nextInt();
-            if(!uf.isConnected(p, q)){
-                uf.union(p, q);
-                System.out.println(p + " " + q + " connected.");
-            } else{
-                System.out.println(p + " " + q + " already connected.");
+        public static void main(String[] args)
+        {
+            Scanner scanner = new Scanner(System.in);
+            int N = scanner.nextInt();
+            UF uf = new UF(N);                          // UF: QuickFind, QuickUnion, WeightedQuickUnionWithPathCompression.
+            while(scanner.hasNext()){
+                int p = scanner.nextInt();
+                int q = scanner.nextInt();
+                if(!uf.isConnected(p, q)){
+                    uf.union(p, q);
+                    System.out.println(p + " " + q + " connected.");
+                } else{
+                    System.out.println(p + " " + q + " already connected.");
+                }
             }
+            scanner.close();
         }
-        scanner.close();
     }
-}
-```
+    ```
 
 ### 快速查询
 
