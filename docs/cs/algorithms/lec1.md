@@ -6,8 +6,8 @@ Union-Find，也就是并查集，是一种存储不相交集合（disjoint set�
 
 顾名思义，并查集支持两种操作：
 
-- Union：连接两个节点；
-- Find：查询两节点是否连通；
+- 合并（Union）：连接两个节点；
+- 查询（Find）：查询两节点是否连通；
 
 「连通」是一种等价关系，具有以下性质：
 
@@ -53,7 +53,9 @@ public class UnionFindTestClient
 }
 ```
 
-### Quick-Find
+### 快速查询
+
+Quick-Find 算法是一种很自然的并查集实现思路。
 
 - Data structure：
     - 大小为`N`的数组`id[]`；
@@ -96,9 +98,9 @@ public class QuickFindUF
 }    
 ```
 
-### Quick-Union
+### 快速合并
 
-Quick-Union算法用「森林」来表达图的动态连通性。
+Quick-Union 算法用「森林」来表达图的动态连通性。
 
 - Data structure:
     - 大小为`N`的数组`id[]`；
@@ -149,14 +151,16 @@ public class QuickUnionUF
 
 ---
 
-#### Weighting
+#### 按秩合并
 
-Union-Find算法的一种优化方式是，通过衡量两棵树的大小(size of objects)来决定树的连接方式，从而避免生成过高的树状结构，甚至退化成链表。
+Quick-Union 算法的一种优化方式是，通过衡量两棵树的大小（size of objects）来决定树的连接方式，从而避免生成过高的树状结构，甚至退化成链表。
 
 !!! tip
     No reason not to. Keep tree almost completely flat.
 
-![Weighting对树的优化效果](/assets/images/cs/algorithms/1.png "Weighting对树的优化效果")
+<div style="text-align: center;">
+<img src="/assets/images/cs/algorithms/1.png" alt="按秩合并的优化效果图示" style="width: 90%;">
+</div>
 
 - Data structure:
     - 和 Quick-Union 一样, 但是需要额外维护一个数组`sz[]`，用来存储节点`i`所在的树的大小（size of objects）;
@@ -182,9 +186,9 @@ public void union(int p, int q)
 
 ---
 
-#### Path Compression
+#### 路径压缩
 
-Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了同一条路径上的所有节点，可以同时更新节点的父节点，从而将路径压缩。
+Quick-Union 算法的另一种优化方式是，由于寻找根节点时遍历了同一条路径上的所有节点，可以同时更新节点的父节点，从而将路径压缩。
 
 - Root:
     - 将路径上的所有节点指向它的父节点的父节点（grandparent），从而将路径长度减半；
@@ -214,9 +218,9 @@ Union-Find算法的另一种优化方式是，由于寻找根节点时遍历了�
     }
     ```
 
-### Java Implementation
+---
 
-以下为加权和路径压缩优化后的并查集算法的 Java 实现。
+以下为按秩合并和路径压缩优化后的快速合并算法的 Java 实现。
 
 ```java linenums="1" title="Weighted Quick-Union with Path Compression (WQUPC)"
 public class WeightedQuickUnionWithPathCompressionUF
