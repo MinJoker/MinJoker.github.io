@@ -9,7 +9,25 @@
 <img src="/assets/images/cs/algorithms/3.png" alt="栈和队列图示" style="width: 60%;">
 </div>
 
-## 算法实现
+栈和队列作为两种抽象数据类型（Abstract Data Type, or ADT），它们的思想和实现都非常相似，主要区别就只有后进先出还是先进先出。
+
+接下来我们将分析栈和队列的具体实现方法，你可以更深刻地认识到它们的相似性和差异性。
+
+???+ note "在开始之前……"
+
+    或许你会对标题中的 bags 感到疑惑。*Algorithms I* 的这一节内容中，仅在讲解迭代器的时候稍微提了一下这个概念：
+
+    > 事实上很多客户端并不关心我们返回元素的顺序，我们经常做的是直接插入元素，元素的顺序并不重要，接下来遍历已有的元素。这样的数据结构叫做背包……<br />
+    > 只需要将栈的出栈操作和队列的出队操作去掉，我们就能获得背包这个有用的数据结构的良好实现。
+
+    笔者并不满意这样的解释。下面是参考了 [Stack Overflow](https://stackoverflow.com/questions/43428114/reasons-for-using-a-bag-in-java) 后的一些观点：
+
+    > 任何能容纳元素的结构都是 Collection，其中不允许元素重复的称为 Set，允许元素重复的称为 Bag。<br />
+    > Stack 和 Queue 都属于 Bag，他们允许元素重复，但是按照一定的顺序组织数据。
+
+    我们注意到 Set 其实可以理解为并查集（Union-Find），而这一节（Bags, Queues and Stacks）正好与之呼应。我们接下去要介绍的栈和队列，在狭义上都是允许元素重复的数据结构（之所以是狭义，是因为你当然可以给它们添加不允许重复的约束条件）。
+
+    笔者认为，我们其实不用把这些概念的从属关系卡得太死。我们关心的是，「是否允许重复」是区别不同 ADT 的一个重要特性，「数据的组织顺序」也是区别不同 ADT 的一个重要特性。
 
 ### Stack
 
@@ -26,26 +44,20 @@
 
 - Data Structure：
     - 链表（linked-list）的每个节点（node）存储着节点的值和指向下个节点的引用（在 Java 中是引用，在 C 中应该是指针）；
-    - 维护一个引用`first`，使其始终指向链表的头节点；
-
-???+ note "Push and Pop"
-
-    **Push:**
-
-    <div style="text-align: left;">
-    <img src="/assets/images/cs/algorithms/5.png" alt="Push 图示" style="width: 50%;">
-    </div>
-
-    **Pop:**
-
-    <div style="text-align: left;">
-    <img src="/assets/images/cs/algorithms/4.png" alt="Pop 图示" style="width: 50%;">
-    </div>
+    - 维护一个引用`first`，使其始终指向链表的头节点（如果链表为空，则`first`为空；如果链表非空，则`first`为头节点的一个引用）；
+- Push：
+  <div style="text-align: left;">
+  <img src="/assets/images/cs/algorithms/5.png" alt="Push 图示" style="width: 50%;">
+  </div>
+- Pop：
+  <div style="text-align: left;">
+  <img src="/assets/images/cs/algorithms/4.png" alt="Pop 图示" style="width: 50%;">
+  </div>
 
 ```java linenums="1" title="Linked-List Stack: Java Implementation"
 public class LinkedStackOfStrings
 {
-    private Node first = null;
+    private Node first = null;  // top of stack (most recently added node), null if empty.
 
     private class Node          // private inner class.
     {
@@ -125,11 +137,11 @@ public class FixedCapacityStackOfStrings
 
 #### Resizing-Array
 
-前面使用数组来实现栈的时候存在一个很大的问题，因为数组必须在一开始就定义大小`capacity`，而让用户来决定要使用多大的数组是不合理的。
+前面使用数组来实现栈的时候存在一个很大的问题，因为数组必须在使用之初就定义大小`capacity`，而`capacity`的值不可能是固定的，需要客户端根据数据量进行估计后输入`capacity`，这显然是不合理的，我们不希望客户端关心任何具体实现的问题。
 
 我们可以利用可变数组（resizing-array）来解决这个问题。
 
-如何让数组自动变化大小呢？核心思路是，当数组满了的时候，我们创建一个新的两倍大小的数组，并将数据搬迁到新数组存储。这样的做法使得我们并不需要消耗很多的运行时间，就可以解决数组可变的问题。这里我们运用了均摊分析（amoritized analysis）来衡量时间消耗，虽然每次改变数组大小的时候都需要 $O(2^N)$ 的时间，但均摊到每个数组元素上其实只需要 $O(1)$ 的时间。
+如何让数组自动变化大小呢？核心思路是，当数组满了的时候，我们创建一个新的两倍大小的数组，并将数据搬迁到新数组存储。这样的做法使得我们并不需要消耗很多的运行时间，就可以解决数组可变的问题。这里我们运用了均摊分析（amoritized analysis）来衡量时间消耗，虽然每次改变数组大小的时候都需要 $O(N)$ 的时间，但均摊到每个数组元素上其实只需要 $O(1)$ 的时间。
 
 <div style="text-align: center;">
 <img src="/assets/images/cs/algorithms/6.png" alt="均摊分析图示" style="width: 80%;">
@@ -173,8 +185,8 @@ public class ResizingArrayStackOfStrings
     {
         String item = s[--N];
         s[N] = null;
-        if (N > 0 && N == s.length / 4){    // If the array is one-quarter full, resize it to half the size.
-            resize(s.length / 2);
+        if (N > 0 && N == s.length / 4){    // N > 0 to avoid resizing to 0.
+            resize(s.length / 2);           // If the array is one-quarter full, resize it to half the size.
         }
         return item;
     }
@@ -190,9 +202,151 @@ public class ResizingArrayStackOfStrings
 }
 ```
 
+### Queue
+
+基本的 Queue API 如下：
+
+| public class QueueOfStrings | Descriptions |
+| :---: | :---: |
+| **QueueOfStrings()** | create an empty queue |
+| **void enqueue(String item)** | insert a new string onto queue |
+| **String dequeue()** | remove and return the string least recently added |
+| **boolean isEmpty()** | check if the queue is empty |
+
+#### Linked-List
+
+- Data Structure：
+    - 链表结构和 Linked-List Stack 一致；
+    - 维护两个引用`first`和`last`，分别指向链表的头节点和尾节点；
+- Enqueue：
+  <div style="text-align: left;">
+  <img src="/assets/images/cs/algorithms/8.png" alt="Push 图示" style="width: 50%;">
+  </div>
+- Dequeue：
+  <div style="text-align: left;">
+  <img src="/assets/images/cs/algorithms/7.png" alt="Pop 图示" style="width: 50%;">
+  </div>
+
+值得注意的是，当我们使用单向链表的时候，enqueue 和 duqueue 分别位于哪里是很重要的。试想一下，如果我们不按上面图示的那样来做，而是改为在链表的头进行 enqueue，在链表的尾进行 dequeue。enqueue 并不会有什么问题，就像我们在 stack 中做的那样；但是 dequeue 出错了，如果我们把尾节点 dequeue 了，那么`last`就没有办法移动到新的尾节点，这是链表的单向性导致的。
+
+```java linenums="1" title="Linked-List Queue: Java Implementation"
+public class LinkedQueueOfStrings
+{
+    private Node first, last;       // null by default.
+
+    private class Node
+    {
+        String item;
+        Node next;
+    }
+
+    public boolean isEmpty()
+    {
+        return first == null;
+    }
+
+    public void enqueue(String item)
+    {
+        Node oldlast = last;
+        last = new Node();
+        last.item = item;
+        last.next = null;
+        if (isEmpty()){             // special case for empty queue.
+            first = last;
+        } else{
+            oldlast.next = last;
+        }
+    }
+
+    public String dequeue()
+    {
+        String item = first.item;
+        first = first.next;
+        if (isEmpty()){             // special case for empty queue.
+            last = null;
+        }
+        return item;
+    }
+}
+```
+
 ---
 
-#### L-List vs. R-Array
+#### Resizing-Array
+
+- Data Structure：
+    - 数组`q[]`，并用`head`和`tail`标记队列的头与尾，用`N`记录当前队列中的元素数量；
+    - 数组可变，
+- Enqueue：
+    - 添加一项`q[tail]`；
+- Dequeue：
+    - 移除一项`q[head]`；
+
+<div style="text-align: center;">
+<img src="/assets/images/cs/algorithms/9.png" alt="Resizing-Array Queue 图示" style="width: 80%;">
+</div>
+
+值得注意的是，队列的可变数组实现比栈要多一些细节。因为队列的头和尾都是会移动的，为了充分利用数组空间，我们使`head`和`tail`在抵达数组结尾的时候，重新回到数组开头。这非常有趣，你可以想象数组的头和尾之间有一个传送门，队列就像一条蛇一样，从数组的尾出去，又从数组的头回来。
+
+```java linenums="1" title="Resizing-Array Queue: Java Implementation"
+public class ResizingArrayQueueOfStrings
+{
+    private String[] s;
+    private int N = 0;                      // number of items in queue.
+    private int head = 0;
+    private int tail = 0;
+
+    public ResizingArrayQueueOfStrings()
+    {
+        s = new String[1];
+    }
+
+    public boolean isEmpty()
+    {
+        return N == 0;
+    }
+
+    public void enqueue(String item)
+    {
+        if (N == s.length){
+            resize(2 * s.length);
+        }
+        s[tail++] = item;
+        N++;
+        if (tail == s.length){              // wrap-around to the beginning.
+            tail = 0;
+        }
+    }
+
+    public String dequeue()
+    {
+        String item = s[head];
+        s[head] = null;
+        head++;
+        N--;
+        if (head == s.length){              // wrap-around to the beginning.
+            head = 0;
+        }
+        if (N > 0 && N == s.length / 4){
+            resize(s.length / 2);
+        }
+        return item;
+    }
+
+    private void resize(int capacity)
+    {
+        String[] copy = new String[capacity];
+        for (int i = 0; i < N; i++){        // copy elements from head to tail, wrap-around.
+            copy[i] = s[(head + i) % s.length];
+        }
+        s = copy;
+        head = 0;
+        tail = N;
+    }
+}
+```
+
+### L-List vs. R-Array
 
 - 链表：
     - 每个操作总是消耗常数时间，即使是在最坏的情况下；
@@ -201,7 +355,19 @@ public class ResizingArrayStackOfStrings
     - 均摊分析后具有更高的平均效率，但是消耗会集中在在临界状态（需要倍增或倍减数组时）发生；
     - 浪费更少的空间；
 
-同样是栈，链表实现和可变数组实现的确存在差别，客户端可以根据需求做出选择。如果想要保证每个操作能够较快完成，就使用链表实现；如果只是关心总的时间，那就可以用可变数组实现，因为这样总的时间效率会更高，单个操作非常快。
+同样是栈或者队列，链表实现和可变数组实现的确存在差别，客户端可以根据需求做出选择。如果想要保证每个操作能够较快完成，就使用链表实现；如果只是关心总的时间，那就可以用可变数组实现，因为这样总的时间效率会更高，绝大部分时候单个操作非常快。
 
 > 以下情形你不会想用可变数组实现：<br />
 > 你有一驾飞机进场等待降落，你不会想系统突然间不能高效运转；或者互联网上的一个路由器，数据包以很高的速度涌进来，你不会想因为某个操作突然变得很慢而丢失一些数据。
+
+## 泛型
+
+- [ ] ToDo
+
+## 迭代器
+
+- [ ] ToDo
+
+## 栈和队列的应用
+
+- [ ] ToDo
