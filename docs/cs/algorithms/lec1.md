@@ -35,12 +35,12 @@ public class UnionFindTestClient
 {
     public static void main(String[] args)
     {
-        Scanner scan = new Scanner(System.in);
-        int N = scan.nextInt();
-        UF uf = new UF(N);          // UF: QuickFindUF, QuickUnionUF, WeightedQuickUnionWithPathCompressionUF
-        while(scan.hasNext()){
-            int p = scan.nextInt();
-            int q = scan.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        WeightedQuickUnionWithPathCompressionUF uf = new WeightedQuickUnionWithPathCompressionUF(N);
+        while(scanner.hasNext()){
+            int p = scanner.nextInt();
+            int q = scanner.nextInt();
             if(!uf.isConnected(p, q)){
                 uf.union(p, q);
                 System.out.println(p + " " + q + " connected.");
@@ -48,7 +48,7 @@ public class UnionFindTestClient
                 System.out.println(p + " " + q + " already connected.");
             }
         }
-        scan.close();
+        scanner.close();
     }
 }
 ```
