@@ -1,11 +1,13 @@
 # Union-Find
 
-## 动态连通性问题
+## 并查集
 
-Union-Find算法，也就是并查集算法，主要用于解决「动态连通性」问题。
+Union-Find，也就是并查集，是一种存储不相交集合（disjoint set）的数据结构。
 
-- Union: 连接两个节点；
-- Find: 查询两节点是否连通；
+顾名思义，并查集支持两种操作：
+
+- Union：连接两个节点；
+- Find：查询两节点是否连通；
 
 「连通」是一种等价关系，具有以下性质：
 
@@ -23,6 +25,33 @@ Union-Find算法，也就是并查集算法，主要用于解决「动态连通�
 | **UF(int N)** | initialize union-find data structure with N objects |
 | **void union(int p, int q)** | add connection between p and q |
 | **boolean isConnected(int p, int q)** | check if p and q are connected |
+
+客户端测试程序如下：
+
+```java linenums="1" title="Union-Find Test Client"
+import java.util.Scanner;
+
+public class UnionFindTestClient
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        UF uf = new UF(N);          // UF: QuickFindUF, QuickUnionUF, WeightedQuickUnionWithPathCompressionUF
+        while(scan.hasNext()){
+            int p = scan.nextInt();
+            int q = scan.nextInt();
+            if(!uf.isConnected(p, q)){
+                uf.union(p, q);
+                System.out.println(p + " " + q + " connected.");
+            } else{
+                System.out.println(p + " " + q + " already connected.");
+            }
+        }
+        scan.close();
+    }
+}
+```
 
 ### Quick-Find
 
@@ -237,33 +266,59 @@ public class WeightedQuickUnionWithPathCompressionUF
 }
 ```
 
-## 算法分析及应用
+## 算法分析
 
-### 时间复杂度
+我们先来看看仅进行一次初始化、合并与查找操作所需的至多数组访问次数（$\intercal$ 指包含了寻找 root 的消耗）：
 
-$M$ union-find operations on a set of $N$ objects:
+| algorithm | initialize | union | isConnected |
+| :---: | :---: | :---: | :---: |
+| quick-find | $N$ | $N$ | 1 |
+| quick-union | $N$ | $N^{\;\intercal}$ | $N$ |
+| weighted QU | $N$ | $\lg N^{\;\intercal}$ | $\lg N$ |
+
+???+ note "为什么 weighted QU 的至多数组访问次数是对数呢？"
+
+    为什么 weighted QU 对于任何节点的访问深度都不会超过以 2 为底的对数呢？理解这个问题的关键在于节点的深度是在何时增加的。当某个节点所在的树合并到另一棵树上的时候，该节点的深度加一，而树的大小至少翻倍（因为只有当该节点所在的树小于等于另一棵树的时候才会发生这种合并）。所以，一棵树最多翻倍以二为底的对数次，就会把所有元素都纳入这棵树中，因而节点深度的加一也是至多发生以二为底的对数次。
+
+---
+
+对 $N$ 个元素进行 $M$ 次合并与查找操作所需的数组访问次数：
 
 | algorithm | worst-case time |
 | :---: | :---: |
-| quick-find | M N |
-| quick-union | M N |
-| weighted QU | N + M log N |
-| QU + path compression| N + M log N |
-| weighted QU + path compression | N + M lg\* N |
+| quick-find | $M N$ |
+| quick-union | $M N$ |
+| weighted QU | $N + M \log N$ |
+| QU + path compression| $N + M \log N$ |
+| weighted QU + path compression | $N + M \lg^{\*} N$ |
 
-[Hopcroft-Ulman,Tarjan]<br />
-从空的内含 $N$ 个元素的数据结构开始，任何 $M$ 次合并与查找操作都至多需要 $c(N+M lg^{\*} N)$ 次数组访问。其中，$lg^{\*}$ 是[迭代对数](https://en.wikipedia.org/wiki/Iterated_logarithm)，现实中可以看做是一个小于 $5$ 的数。
+[Hopcroft-Ulman, Tarjan]<br />
+从空的内含 $N$ 个元素的数据结构开始，任何 $M$ 次合并与查找操作都至多需要 $c(N+M \lg^{\*} N)$ 次数组访问。其中，$\lg^{\*}$ 是[迭代对数](https://en.wikipedia.org/wiki/Iterated_logarithm)，现实中可以看做是一个小于 $5$ 的数。
+
+事实上，WQUPC 算法的时间复杂度可以用 $N+M\alpha (M,N)$ 进一步逼近，$\alpha$ 为 Ackermann 函数的反函数，其增长比迭代对数还要缓慢。要证明这一点就更为复杂了，可以参考[这篇文章](https://oi-wiki.org/ds/dsu-complexity/)。至此我们意识到，原来一个简单的并查集算法竟然可以蕴含如此深刻的数学问题！
 
 [Fredman-Saks]<br />
 并查集问题不存在线性时间算法。
 
-> - In theory, WQUPC is not quite linear.
-> - In practice, WQUPC is linear.
+> In theory, WQUPC is not quite linear.<br />
+> In practice, WQUPC is linear.
 
-关于并查集算法，还有更多值得分析的地方... e.g. [OI Wiki](https://oi-wiki.org/ds/dsu-complexity/)
+## 并查集的应用
 
-- [ ] ToDo
+并查集有很多应用，其中最为著名的是最小生成树的 Kruskal 算法，最小生成树的重要性意味着并查集是许多算法的基础。并查集的其他应用列举如下：
 
-### 应用
+- Percolation.
+- Games (Go, Hex).
+- Dynamic connectivity.
+- Least common ancestor.
+- Equivalence of finite state automata.
+- Hoshen-Kopelman algorithm in physics.
+- Hinley-Milner polymorphic type inference.
+- Kruskal's minimum spanning tree algorithm.
+- Compiling equivalence statements in Fortran.
+- Morphological attribute openings and closings.
+- Matlab's `bwlabel()` function in image processing.
 
-- [ ] ToDo
+### 渗流理论
+
+- [ ] Todo: Project1
