@@ -499,7 +499,144 @@ int a = s.pop();    // int a = s.pop().intValue();
 
 ## 迭代器
 
-- [ ] ToDo
+我们已经通过泛型实现了适用于任何数据类型的栈和队列，我们有相应的添加和取出数据的方法。但是，很多时候客户端可能还想要遍历已有的数据。以栈为例，如何让客户端能够在不需要关心栈的具体实现的前提下，进行对栈的遍历呢？
+
+Java 的解决方案是`Iterable`接口。
+
+???+ note "什么是接口？"
+
+    接口（interface）是 Java 中的一种抽象方法的集合。一个类可以通过继承接口的方式，来继承接口的抽象方法。
+
+    具体来说，如果我们有一个类`Stack<Item>`（上文已经实现的泛型栈），我们可以让这个类继承`Iterable`接口，并在类中定义接口中所描述的方法，从而使这个类实现迭代功能（成为可遍历类）。
+
+    值得注意的是，接口和类的编写方式很像，但两者属于不同的概念。类描述对象的属性和方法，而接口仅仅描述一系列抽象方法，这些方法需要继承接口的类去具体实现。接口无法被实例化，但是可以被实现。一个类（抽象类除外）要实现接口，必须实现接口中描述的所有方法。
+
+我们来看一些概念，并分析为什么要用这些接口：
+
+=== "`Iterable`接口"
+
+    `Iterable`接口有一个方法，会返回一个`Iterator`（迭代器）。
+
+    ```java title="Iterable interface"
+    public interface Iterable<Item>
+    {
+        Iterator<Item> iterator();
+    }
+    ```
+
+=== "`Iterator`接口"
+
+    `Iterator`接口有两个方法，`hasNext()`检查是否还有可遍历的数据，`next()`读取数据并将迭代器移到下一位。Java 还提供了一个可选方法`remove()`，用于删除迭代器最后访问的数据，我们不认为这是个好特性，它可能成为调试隐患，这里不做更多讨论。
+
+    ```java title="Iterator interface"
+    public interface Iterator<Item>
+    {
+        boolean hasNext();
+        Item next();
+        void remove();  // optional; use at your own risk.
+    }
+    ```
+
+=== "客户端如何使用？"
+
+    看到这里你可能感到一头雾水，为什么我们要让数据结构实现`Iterable`接口呢？原因在于，一旦实现了这个接口，Java 可以支持极其优雅的客户端代码。
+
+    === "优雅的客户端代码"
+
+        ```java title="elegant client code"
+        for (String s : stack){
+            System.out.println(s);
+        }
+        ```
+    
+    === "等价的不优雅的写法"
+
+        ```java title="equivalent client code"
+        for (Iterator<String> i = stack.iterator(); i.hasNext(); ){
+            String s = i.next();
+            System.out.println(s);
+        }
+        ```
+
+    这是一种 Java 支持的 for-each 循环语句的写法，我们已经看到这种写法和迭代器配合使用后，能给我们提供方便而优雅的数据遍历功能。
+
+接下来我们以栈为例，来展示如何实现这些接口：
+
+=== "链表实现"
+
+    ```java linenums="1" title="Linked-List Stack: Java Implementation"
+    import java.util.Iterator;
+
+    public class LinkedStack<Item> implements Iterable<Item>
+    {
+        ...
+
+        public Iterator<Item> iterator()
+        {
+            return new LinkedIterator();
+        }
+
+        private class LinkedIterator implements Iterator<Item>
+        {
+            private Node current = first;
+
+            public boolean hasNext()
+            {
+                return current != null;
+            }
+
+            public Item next()          // throw NoSuchElementException if no more items in iteration.
+            {
+                Item item = current.item;
+                current = current.next;
+                return item;
+            }
+        }
+    } 
+    ```
+
+=== "数组实现"
+
+    ```java linenums="1" title="Resizing-Array Stack: Java Implementation"
+    import java.util.Iterator;
+
+    public class ArrayStack<Item> implements Iterable<Item>
+    {
+        ...
+
+        public Iterator<Item> iterator()
+        {
+            return new ArrayIterator();
+        }
+
+        private class ArrayIterator implements Iterator<Item>
+        {
+            private int i = N;
+
+            public boolean hasNext()
+            {
+                return i > 0;
+            }
+
+            public Item next()
+            {
+                return s[--i];
+            }
+        }
+    }
+    ```
+
+---
+
+!!! note "小结"
+
+    让我们来回顾一下我们是怎么引入迭代器这个概念的。起初我们希望为客户端提供一种遍历数据的方法，并确保他们不必关心具体实现问题。
+
+    其实我们完全可以不用什么花里胡哨的接口，而选择直接在我们定义的类中实现遍历机制，这也并不困难。但是我们有必要知道，Java 也很关心这个问题，并且提供了 `Iterable`接口，这个接口使得我们能使用 for-each 循环语句，从而把客户端的遍历操作实现得更加优雅。
+
+    > Implementing this interface allows an object to be the target of the "for-each loop" statement.
+    > <p style="text-align: right">———— Java Platform Standard Edition 8 Documentation</p>
+
 
 ## 栈和队列的应用
 
