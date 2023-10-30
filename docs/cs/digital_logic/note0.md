@@ -218,7 +218,7 @@ Buffer：$F=X$
 
 ???+ example "比如这个 $3-to-8$ 译码器"
 
-    ![](/assets/images/cs/digital_logics/8.png)
+    ![](/assets/images/cs/digital_logic/8.png){width="60%"}
 
 前面提到译码器本质上完成了枚举最小项的工作，如果我们在译码器的输出后面接上或门，就可以实现 SOM 的逻辑表达。因为 SOM 可以表达任何逻辑函数，所以译码器就可以实现任何的逻辑函数。
 
@@ -226,11 +226,11 @@ Buffer：$F=X$
 
 ???+ example "加法器"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/9.png){width="60%"}
 
 ???+ example "用 7 段数码管显示 BCD 码"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/10.png){width="60%"}
 
 #### 编码器
 
@@ -238,15 +238,15 @@ Buffer：$F=X$
 
 ???+ example "$10-to-4$ 编码器实现十进制转 BCD 码"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/11.png){width="60%"}
     
-    ![]()
+    ![](/assets/images/cs/digital_logic/12.png){width="60%"}
 
 优先编码器（Priority Encoder）可以解决上述问题。在优先编码器中，如果多个输入处在活动状态（输入为 `1`），则优先级高的输入将优先，而优先级低的输入将成为不定项（Don't Cares）。
 
-???+ example ""
+???+ example "优先编码器示例"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/13.png){width="80%"}
 
 编码器的逻辑表达式和具体电路实现，通常都比译码器更为复杂。
 
@@ -261,23 +261,23 @@ Buffer：$F=X$
 
 ???+ example "比如这个 $4-to-1$ MUX"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/14.png){width="60%"}
 
 当然，多路复用器不止可以选择单个数据信号，也可以选择一组数据信号（或称向量形式的数据信号），这组信号由 $m$ 个单个数据信号组成。这时候我们需要使用 $2^n \times m$ AND-OR 来实现。
 
 ???+ example "比如这个 $4-to-1$ MUX"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/15.png){width="80%"}
 
 除了多路复用器，选择器还有其他的电路实现方法，比如三态门和传输门。
 
 === "Three-state logic in place of AND-OR"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/16.png){width="50%"}
 
 === "Distributing the decoding across the three-state drivers"
 
-    ![]()
+    ![](/assets/images/cs/digital_logic/17.png){width="50%"}
 
 ---
 
