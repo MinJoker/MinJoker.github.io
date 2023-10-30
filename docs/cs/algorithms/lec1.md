@@ -323,6 +323,6 @@ public class WeightedQuickUnionWithPathCompressionUF
 - Morphological attribute openings and closings.
 - Matlab's `bwlabel()` function in image processing.
 
-### 渗流理论
+## Project 1
 
-- [ ] Todo: Project1
+- [ ] Todo: [Percolation](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php)

@@ -224,11 +224,11 @@ Buffer：$F=X$
 
 译码器的应用有很多，比如设计加法器、7 段数码管等。
 
-???+ example "加法器"
+=== "加法器"
 
     ![](/assets/images/cs/digital_logic/9.png){width="60%"}
 
-???+ example "用 7 段数码管显示 BCD 码"
+=== "用 7 段数码管显示 BCD 码"
 
     ![](/assets/images/cs/digital_logic/10.png){width="60%"}
 
@@ -263,9 +263,9 @@ Buffer：$F=X$
 
     ![](/assets/images/cs/digital_logic/14.png){width="60%"}
 
-当然，多路复用器不止可以选择单个数据信号，也可以选择一组数据信号（或称向量形式的数据信号），这组信号由 $m$ 个单个数据信号组成。这时候我们需要使用 $2^n \times m$ AND-OR 来实现。
+当然，多路复用器不止可以选择单个数据信号，也可以选择一组数据信号（或称向量形式的数据信号），这组信号由 $m$ 个单个数据信号组成。这时候我们需要使用 $m$ 个 $2^n \times 2$ AND-OR 来实现。
 
-???+ example "比如这个 $4-to-1$ MUX"
+???+ example "比如这个 $m-$wide $4-to-1$ MUX"
 
     ![](/assets/images/cs/digital_logic/15.png){width="80%"}
 
@@ -278,6 +278,8 @@ Buffer：$F=X$
 === "Distributing the decoding across the three-state drivers"
 
     ![](/assets/images/cs/digital_logic/17.png){width="50%"}
+
+    这个电路设计相当于，先进行四选二，再进行二选一，从而实现四选一。
 
 ---
 

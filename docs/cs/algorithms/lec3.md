@@ -632,7 +632,7 @@ Java 的解决方案是`Iterable`接口。
 
     让我们来回顾一下我们是怎么引入迭代器这个概念的。起初我们希望为客户端提供一种遍历数据的方法，并确保他们不必关心具体实现问题。
 
-    其实我们完全可以不用什么花里胡哨的接口，而选择直接在我们定义的类中实现遍历机制，这也并不困难。但是我们有必要知道，Java 也很关心这个问题，并且提供了 `Iterable`接口，这个接口使得我们能使用 for-each 循环语句，从而把客户端的遍历操作实现得更加优雅。
+    其实我们完全可以不用什么花里胡哨的接口，而选择直接在我们定义的类中实现遍历机制，这也并不困难。但是我们有必要知道，Java 也很关心这个问题，并且提供了`Iterable`接口，这个接口使得我们能使用 for-each 循环语句，从而把客户端的遍历操作实现得更加优雅。
 
     > Implementing this interface allows an object to be the target of the "for-each loop" statement.
     > <p style="text-align: right">———— Java Platform Standard Edition 8 Documentation</p>
@@ -640,4 +640,15 @@ Java 的解决方案是`Iterable`接口。
 
 ## 栈和队列的应用
 
-- [ ] ToDo
+Stack applications:
+
+- Parsing in a compiler.
+- Java virtual machine.
+- Undo in a word processor.
+- Back button in a Web browser.
+- PostScript language for printers.
+- Implementing function calls in a compiler.
+
+## Project 2
+
+- [ ] Todo: [Queues](https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php)
