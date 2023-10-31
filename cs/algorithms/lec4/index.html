@@ -5,12 +5,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="MinJoker 的笔记本" name="description"/>
 <meta content="MinJoker" name="author"/>
-<link href="https://minjoker.github.io/cs/algorithms/lec2/" rel="canonical"/>
-<link href="../lec1/" rel="prev"/>
-<link href="../lec3/" rel="next"/>
+<link href="https://minjoker.github.io/cs/algorithms/lec4/" rel="canonical"/>
+<link href="../lec3/" rel="prev"/>
+<link href="../../digital_logic/" rel="next"/>
 <link href="../../../assets/images/link/minjoker.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.7" name="generator"/>
-<title>Analysis of Algorithms - MinJoker's Notebook</title>
+<title>Elementary Sorts - MinJoker's Notebook</title>
 <link href="../../../assets/stylesheets/main.4b4a2bd9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <link href="../../../css/heti.css" rel="stylesheet"/>
@@ -38,7 +38,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#analysis-of-algorithms">
+<a class="md-skip" href="#elementary-sorts">
           Skip to content
         </a>
 </div>
@@ -62,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Analysis of Algorithms
+              Elementary Sorts
             
           </span>
 </div>
@@ -290,17 +290,31 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../lec2/">
+<span class="md-ellipsis">
+    Analysis of Algorithms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../lec3/">
+<span class="md-ellipsis">
+    Bags, Queues and Stacks
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Analysis of Algorithms
+    Elementary Sorts
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Analysis of Algorithms
+    Elementary Sorts
   </span>
 </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
@@ -311,23 +325,38 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    引入
+    排序问题
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    算法理论
+    选择排序
   </a>
-<nav aria-label="算法理论" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    时间复杂度
+    插入排序
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
-    空间复杂度
+    希尔排序
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    排序的简单应用
+  </a>
+<nav aria-label="排序的简单应用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    随即洗牌
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    凸包
   </a>
 </li>
 </ul>
@@ -335,20 +364,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../lec3/">
-<span class="md-ellipsis">
-    Bags, Queues and Stacks
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../lec4/">
-<span class="md-ellipsis">
-    Elementary Sorts
-  </span>
-</a>
 </li>
 </ul>
 </nav>
@@ -482,23 +497,38 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    引入
+    排序问题
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    算法理论
+    选择排序
   </a>
-<nav aria-label="算法理论" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    时间复杂度
+    插入排序
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
-    空间复杂度
+    希尔排序
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    排序的简单应用
+  </a>
+<nav aria-label="排序的简单应用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    随即洗牌
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+    凸包
   </a>
 </li>
 </ul>
@@ -511,54 +541,123 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="analysis-of-algorithms">Analysis of Algorithms<a class="headerlink" href="#analysis-of-algorithms" title="Permanent link">¶</a></h1>
+<h1 id="elementary-sorts">Elementary Sorts<a class="headerlink" href="#elementary-sorts" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>309<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>1<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>794<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>40<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>3<span class="heti-spacing"> </span></span>分钟</p>
 </div>
-<h2 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<p>影响程序运行时间的因素有以下两种：</p>
+<h2 id="_1">排序问题<a class="headerlink" href="#_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<p>一组数据是可排序的，那么它们一定是可以比较大小的，或者说它们满足全序关系（total order<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
 <ul>
-<li>
-<p>System independent effects -&gt; <strong>frequency</strong></p>
+<li>反对称性（antisymmetry<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：如果<span><span class="heti-spacing"> </span>$v\leq w$</span>，$w\leq v$，则<span><span class="heti-spacing"> </span>$v=w$</span>；</li>
+<li>传递性（transitivity<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：如果<span><span class="heti-spacing"> </span>$v\leq w$</span>，$w\leq x$，则<span><span class="heti-spacing"> </span>$v\leq x$</span>；</li>
+<li>完全性（totality<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：<span>$v\leq w$<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>$w\leq v$</span>，至少有一个成立；</li>
+</ul>
+<p>我们接下来要讨论的所有数据首先一定是可比较大小的。试想一下，如果我们要写一个<code>sort()</code>函数，那么其中必然会涉及数据的大小比较，而且很明显，这样的<code>sort()</code>是特化的，只能处理某一类特定类型的数据。我们希望<code>sort()</code>函数能够有很好的泛化属性，或者说我们希望它能够排序任何类型的数据。</p>
+<p>问题的关键在于，我们调用<code>sort()</code>的时候，只是把存储着数据的数组的引用作为参数传递给它，所以在<code>sort()</code>内部是无法知道数据的具体类型的。当然，我们可以多传递一个参数，用来描述数据的类型，但这样做还是有点麻烦。我们希望能在只传递数组引用的前提下，让<code>sort()</code>能够正常工作。</p>
+<p>解决这个问题的方法是使用回调（callback<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。回调是一段可执行代码的引用，它使得低层代码能够调用高层代码。<span>Java<span class="heti-spacing"> </span></span>通过<code>Comparable</code>接口实现回调，客户端把存储着对象的数组的引用作为参数传递给<code>sort()</code>，然后<code>sort()</code>回调数据对象的<code>compareTo()</code>方法来实现数据的大小比较，从而实现排序。</p>
+<details class="note">
+<summary>不同语言的回调实现</summary>
 <ul>
-<li>Algorithm</li>
-<li>Input</li>
+<li>Java: interface.</li>
+<li>C: function pointers.</li>
+<li>C++: class-type functors.</li>
+<li>C#: delegates.</li>
+<li>Python, Perl, ML, JavaScript: first-class functions.</li>
 </ul>
-</li>
-<li>
-<p>System dependent effects -&gt; <strong>cost</strong></p>
-<ul>
-<li>Machine</li>
-<li>Compiler</li>
-</ul>
-</li>
-</ul>
-<p>运行时间等于每种基本操作（operation）的成本（cost）与频次（frequency）的乘积。</p>
-<h2 id="_2">算法理论<a class="headerlink" href="#_2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<h3 id="_3">时间复杂度<a class="headerlink" href="#_3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/algorithms/2.png"><img alt="常用的时间复杂度分析符号" src="/assets/images/cs/algorithms/2.png" title="常用的时间复杂度分析符号"/></a></p>
-<p>对于复杂的问题，确定上下界是困难的，尤其吻合的上下界（$O \Omega$-&gt;$\Theta$<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。我们通过研究「持续下降的上界」来了解问题的计算难度，一些问题找到了最优算法，而还有很多问题的上下界之间仍有间隔。</p>
-<p>很多时候人们错把上界分析当作运行时间的近似模型。在这门课程中我们使用波浪记号（~）来表示近似模型。</p>
-<blockquote>
-<p>这里补充一些其他人的笔记：</p>
-<ol>
-<li><a href="https://note.tonycrane.cc/cs/algorithm/ds/topic1/">鹤翔万里的笔记本<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>数据结构基础<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>算法分析基础</a></li>
-<li><a href="https://www.yuque.com/oneko/something/org92s"><span>oneko<span class="heti-spacing"> </span></span>的语雀<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>数据结构基础<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>算法分析</a></li>
-</ol>
-</blockquote>
-<h3 id="_4">空间复杂度<a class="headerlink" href="#_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<blockquote>
-<p>干红华老师（我在<span class="heti-skip"><span class="heti-spacing"> </span>ZJU<span class="heti-spacing"> </span></span>的<span class="heti-skip"><span class="heti-spacing"> </span>FDS<span class="heti-spacing"> </span></span>老师）认为，空间复杂度相比时间复杂度更为不重要，因为在某种意义上，空间可以被认为是无限的，或者说可拓展至无限的，而时间则是绝对有限的。</p>
-</blockquote>
+</details>
+<p>我们来看看怎么实现这个接口：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><input id="__tabbed_1_3" name="__tabbed_1" type="radio"/><input id="__tabbed_1_4" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1"><code>Comparable</code>接口</label><label for="__tabbed_1_2">实现了<code>Comparable</code>接口的类</label><label for="__tabbed_1_3"><code>sort()</code></label><label for="__tabbed_1_4">客户端</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>Comparable</code>接口有一个方法，能够比较数据的大小，注意这个接口是泛化的。</p>
+<div class="highlight"><span class="filename">Comparable interface</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Item</span><span class="w"> </span><span class="n">that</span><span class="p">);</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>我们让描述某个数据类型（比如这里的<code>File</code>）的类实现<code>Comparable</code>接口。</p>
+<div class="highlight"><span class="filename">object implementation</span><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">File</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">File</span><span class="o">&gt;</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">{</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="p">...</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">File</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="p">{</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="p">...</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="p">...</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="p">...</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><code>sort()</code>函数接受的参数是<code>Comparable</code>类型数组，这意味数组中的对象需要实现<code>Comparable</code>接口。</p>
+<div class="highlight"><span class="filename">sort implementation</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">Comparable</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">{</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="hll"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span><span class="w">    </span><span class="c1">// no dependence on File data type!</span>
+</span><a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">                </span><span class="n">Comparable</span><span class="w"> </span><span class="n">swap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">swap</span><span class="p">;</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">            </span><span class="p">}</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="p">}</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>客户端调用<code>sort()</code>方法的时候只需要传递数组引用即可。</p>
+<div class="highlight"><span class="filename">client</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">File</span><span class="o">[]</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">Bubble</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">files</span><span class="p">);</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>值得强调一下的是，<code>compareTo()</code>的返回值分别代表什么意思，比如<code>v.compareTo(w)</code>：</p>
+<div style="text-align: center;">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/algorithms/15.png"><img alt="v.compareTo(w) 图示" src="/assets/images/cs/algorithms/15.png" style="width: 80%;"/></a>
+</div>
+<p>为了方便后续的排序函数的书写，我们进行一些封装（这里写这些是为了之后的<code>sort()</code>函数可以直接省略这些部分，从而书写得更加清晰简洁<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"/><input id="__tabbed_2_2" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1"><code>less()</code>方法</label><label for="__tabbed_2_2"><code>swap()</code>方法</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">less</span><span class="p">(</span><span class="n">Comparable</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">Comparable</span><span class="w"> </span><span class="n">w</span><span class="p">)</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">{</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="n">Comparable</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="p">{</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="n">Comparable</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr/>
+<p>至此，我们已经做好了所有准备工作。我们通过<code>Comparable</code>接口让所有数据类型自身就带上了比较大小的方法<code>compareTo()</code>（<span>Java<span class="heti-spacing"> </span></span>中的<span class="heti-skip"><span class="heti-spacing"> </span>Integer<span class="heti-spacing"> </span></span>等包装类已经实现了<code>Comparable</code>接口<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，这意味着我们的排序函数只需要专注于排序算法本身。下面，就让我们进入排序算法的世界！</p>
+<h2 id="_2">选择排序<a class="headerlink" href="#_2" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="_3">插入排序<a class="headerlink" href="#_3" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="_4">希尔排序<a class="headerlink" href="#_4" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="_5">排序的简单应用<a class="headerlink" href="#_5" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="_6">随即洗牌<a class="headerlink" href="#_6" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_7">凸包<a class="headerlink" href="#_7" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-17 23:07:24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-31 20:39:06</span>
 <br/>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-06 01:16:28</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-31 20:39:06</span>
 </small>
 </div>
 </article>
