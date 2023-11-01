@@ -116,12 +116,203 @@
 
 ## 选择排序
 
+选择排序（Selection sort）和插入排序（Insertion sort）都比较简单，或许你已经基本掌握了。但是，这里我们将采用另一个角度来解读选择排序和插入排序，或许会对你有所启发。
+
+我们来考虑选择排序的不变量（invariants）：
+
+- $\uparrow$ 及其左边的数据是固定的，不会再发生改变；
+- $\uparrow$ 右边的任意数据都大于 $\uparrow$ 左边的任意数据；
+
+<div style="text-align: left;">
+<img src="/assets/images/cs/algorithms/16.png" alt="选择排序的不变量图示" style="width: 50%;">
+</div>
+
+为了维持算法的不变量，每当 $\uparrow$ 向右移动一位的时候，就必须从右边所有待排数据中选出最小的，并把它交换到 $\uparrow$ 所在的位置，从而维持前面提到的不变量。这就是选择排序。
+
+---
+
+```java linenums="1" title="Selection Sort: Java Implementation"
+public class Selection
+{
+    public static void sort(Comparable[] a)
+    {
+        int N = a.length;
+        for (int i=0; i<N; i++){
+            int min = i;
+            for (int j=i+1; j<N; j++){
+                if (less(a[j], a[min])){
+                    min = j;
+                }
+            }
+            swap(a, i, min);
+        }
+    }
+
+    private static boolean less(Comparable v, Comparable w)
+    { /* as before */ }
+
+    private static void swap(Comparable[] a, int i, int j)
+    { /* as before */ }
+}
+```
+
+---
+
+我们来对选择排序进行一些算法分析：
+
+- 选择排序需要 $\sim N^2/2$ 次比较和 $N$ 次交换；
+- 运行时间与数据原本顺序无关，恒定为 $O(N^2)$，即使数据原本已经有序；
+
+下面通过动画来演示几种典型情况下选择排序的效率（点击动画上方的名称可以重播，点击 Play All 可以同步重播所有动画）：
+
+<!-- CSS for align .gif side by side -->
+
+<style>
+.row {
+  display: flex;
+}
+.column {
+  flex: 25%;
+  padding: 5px;
+}
+</style>
+
+<!-- end CSS -->
+
+<p style="text-align: center;">
+<a onclick="document.getElementById('selection_1').src='/assets/images/cs/algorithms/17.gif'; document.getElementById('selection_2').src='/assets/images/cs/algorithms/18.gif'; document.getElementById('selection_3').src='/assets/images/cs/algorithms/19.gif'; document.getElementById('selection_4').src='/assets/images/cs/algorithms/20.gif'">Play All</a>
+</p>
+
+<div class="row">
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('selection_1').src='/assets/images/cs/algorithms/17.gif'">Random</a>
+    </div>
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('selection_2').src='/assets/images/cs/algorithms/18.gif'">Nearly Sorted</a>
+    </div>
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('selection_3').src='/assets/images/cs/algorithms/19.gif'">Reversed</a>
+    </div>
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('selection_4').src='/assets/images/cs/algorithms/20.gif'">Few Unique</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column" style="text-align: center;">
+        <img id="selection_1" src="/assets/images/cs/algorithms/17.gif" style="width: 60%;">
+    </div>
+    <div class="column" style="text-align: center;">
+        <img id="selection_2" src="/assets/images/cs/algorithms/18.gif" style="width: 60%;">
+    </div>
+    <div class="column" style="text-align: center;">
+        <img id="selection_3" src="/assets/images/cs/algorithms/19.gif" style="width: 60%;">
+    </div>
+    <div class="column" style="text-align: center;">
+        <img id="selection_4" src="/assets/images/cs/algorithms/20.gif" style="width: 60%;">
+    </div>
+</div>
+
+!!! quote "Source: <a href="https://www.toptal.com/developers/sorting-algorithms/selection-sort">https://www.toptal.com/developers/sorting-algorithms/selection-sort</a>"
+
 ## 插入排序
+
+我们继续用不变量来考虑插入排序：
+
+- $\uparrow$ 及其左边的数据是升序的；
+- $\uparrow$ 右边的数据目前是不可见的；
+
+<div style="text-align: left;">
+<img src="/assets/images/cs/algorithms/21.png" alt="插入排序的不变量图示" style="width: 50%;">
+</div>
+
+为了维持算法的不变量，每当 $\uparrow$ 向右移动一位的时候，就必须把多出来的这一位数据与 $\uparrow$ 左边的数据从右往左逐个比较并交换，直到找到比自己小的数据才停下，从而确保 $\uparrow$ 左边保持升序。这就是插入排序。
+
+---
+
+```java linenums="1" title="Insertion Sort: Java Implementation"
+public class Insertion
+{
+    public static void sort(Comparable[] a)
+    {
+        int N = a.length;
+        for (int i=1; i<N; i++){
+            for (int j=i; j>0; j--){
+                if (less(a[j], a[j-1])){
+                    swap(a, j, j-1);
+                } else{
+                    break;
+                }
+            }
+        }
+    }
+
+    private static boolean less(Comparable v, Comparable w)
+    { /* as before */ }
+
+    private static void swap(Comparable[] a, int i, int j)
+    { /* as before */ }
+}
+```
+
+---
+
+我们来对插入排序进行一些算法分析：
+
+- 一般情况，排序一组随机顺序的无重复的数据，插入排序需要 $\sim N^2/4$ 次比较和 $\sim N^2/4$ 次交换；
+- 最优情况，数据原本有序，插入排序只需要 $N-1$ 次比较和 $0$ 次交换；
+- 最差情况，数据原本逆序，插入排序会需要 $\sim N^2/2$ 次比较和 $\sim N^2/2$ 次交换；
+
+??? note "如何证明插入排序在一般情况下的效率"
+
+    我们不去进行仔细的计算，也可以很好地理解为什么插入排序在一般情况下需要 $\sim N^2/4$ 次比较和交换。我们通过一幅图来直观地理解这个事情，图中黑色表示被比较过的，红色表示最终达到的位置。我们会发现对于随机顺序的大数组，移动到最终位置所需的距离平均是移动到最左端位置所需距离的一半，这意味着对角线下的元素有一半是黑色的。对角线下面有 $N^2/2$ 个元素，从而我们比较的次数是 $\sim N^2/4$，交换次数要比这个数多一点，但也是 $\sim N^2/4$。
+
+    <div style="text-align: center;">
+    <img src="/assets/images/cs/algorithms/26.png" alt="插入排序的不变量图示" style="width: 70%;">
+    </div>
+
+下面通过动画来演示几种典型情况下插入排序的效率（点击动画上方的名称可以重播，点击 Play All 可以同步重播所有动画）：
+
+<p style="text-align: center;">
+<a onclick="document.getElementById('insertion_1').src='/assets/images/cs/algorithms/22.gif'; document.getElementById('insertion_2').src='/assets/images/cs/algorithms/23.gif'; document.getElementById('insertion_3').src='/assets/images/cs/algorithms/24.gif'; document.getElementById('insertion_4').src='/assets/images/cs/algorithms/25.gif'">Play All</a>
+</p>
+
+<div class="row">
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('insertion_1').src='/assets/images/cs/algorithms/22.gif'">Random</a>
+    </div>
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('insertion_2').src='/assets/images/cs/algorithms/23.gif'">Nearly Sorted</a>
+    </div>
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('insertion_3').src='/assets/images/cs/algorithms/24.gif'">Reversed</a>
+    </div>
+    <div class="column" style="text-align: center;">
+        <a onclick="document.getElementById('insertion_4').src='/assets/images/cs/algorithms/25.gif'">Few Unique</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column" style="text-align: center;">
+        <img id="insertion_1" src="/assets/images/cs/algorithms/22.gif" style="width: 60%;">
+    </div>
+    <div class="column" style="text-align: center;">
+        <img id="insertion_2" src="/assets/images/cs/algorithms/23.gif" style="width: 60%;">
+    </div>
+    <div class="column" style="text-align: center;">
+        <img id="insertion_3" src="/assets/images/cs/algorithms/24.gif" style="width: 60%;">
+    </div>
+    <div class="column" style="text-align: center;">
+        <img id="insertion_4" src="/assets/images/cs/algorithms/25.gif" style="width: 60%;">
+    </div>
+</div>
+
+!!! quote "Source: <a href="https://www.toptal.com/developers/sorting-algorithms/insertion-sort">https://www.toptal.com/developers/sorting-algorithms/insertion-sort</a>"
 
 ## 希尔排序
 
 ## 排序的简单应用
 
-### 随即洗牌
+### 随机洗牌
 
 ### 凸包

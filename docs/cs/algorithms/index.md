@@ -15,7 +15,7 @@
 - [x] [Union-Find](lec1.md)
 - [x] [Analysis of Algorithms](lec2.md)
 - [x] [Bags, Queues and Stacks](lec3.md)
-- [ ] Elementary Sorts
+- [ ] [Elementary Sorts](lec4.md)
 - [ ] Mergesort
 - [ ] Quicksort
 - [ ] Priority Queues
