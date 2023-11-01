@@ -47,7 +47,7 @@
 
 那么，概率密度函数和概率的联系到底是什么呢？结论是，某段区间上「概率密度函数的面积（积分）」等于随机变量落在这段区间上的概率。
 
-关于概率密度函数，我们有更加直观的解释。概率密度函数的函数值较大的地方，代表这个点附近的概率「密度」较大，也就是说随机变量落在这个点附近的单位长度区间上的概率较大。
+关于概率密度函数，我们有更加直观的解释。概率密度函数的函数值较大的地方，代表这个点附近的概率「密度」较大，也就是说随机变量落在这个点附近的单位长度区间上的概率较大。用数学公式表示就是 $f(x) \Delta x = P = \Delta F(x)$。
 
 <div style="text-align: center;">
 <img src="/assets/images/math/probability/1.png" alt="概率密度函数图示" style="width: 50%;">
@@ -131,3 +131,28 @@ $$
 - 联合分布函数 $F(x,y) = P(X \leq x, Y \leq y)$ 是二元函数
 - 边际分布函数 $F_X(x) = P(X \leq x) = lim_{y \rarr +\infty}F(x,y)$ 是关于 $x$ 的一元函数
 - 条件分布函数 $F_{X \mid Y}(x \mid y) = P(X \leq x \mid Y=y)$ 是关于 $x$ 的一元函数
+    - $\lim_{\epsilon \rarr 0^+}P(X\leq x\mid y<Y\leq y+\epsilon)$ 也记为 $P(X \leq x \mid Y=y)$，请特别注意这个记号所带来的两种理解
+
+联合分布、边际分布、条件分布满足如下关系：
+
+<div style="text-align: left;">
+<img src="/assets/images/math/probability/2.png" alt="三个分布的关系图示" style="width: 40%;">
+</div>
+
+### 二维连续型随机变量补充
+
+- 条件密度函数的重要性质：
+    - $f(x,y) = f_{X|Y}(x|y)f_Y(y) = f_{Y|X}(y|x)f_X(x)$
+    - 直观意义：<br />
+      $f_{X|Y}(x \mid y) \Delta x = \frac{f(x,y)\Delta x \Delta y}{f_Y(y)\Delta y} \approx \frac{P(x<X\leq x+\Delta x, \; y<Y\leq y+\Delta y)}{P(y<Y\leq y+\Delta y)} = P(x<X\leq x+\Delta x \mid y<Y\leq y+\Delta y)$
+- 二维均匀分布的条件分布仍为均匀分布
+- 二维正态分布的记号：$(X,Y) \sim N({\mu}_1, \; {\mu_2}; \; {\sigma}_1^2, \; {\sigma}_2^2; \; \rho)$
+    - 二维正态分布的边际分布仍为正态分布（一维，与 $\rho$ 无关）
+
+### 随机变量的独立性补充
+
+- 若 $(X,Y)$ 是离散型随机变量，则 $X,Y$ 相互独立等价于 $p_{ij} = p_{i\cdot}p_{\cdot j}$ 对一切 $i,j$ 都成立
+- 若 $(X,Y)$ 是连续型随机变量，则 $X,Y$ 相互独立等价于 $f(x,y) = f_X(x)f_Y(y)$ 总是成立，平面上“面积”为零的集合除外（可以在不连续点上不相等）
+- $n$ 维随机变量独立性相关定理：
+    - 设 $(X_1,X_2,\cdots ,X_m)$ 与 $(Y_1,Y_2,\cdots ,Y_n)$ 相互独立，则 $X_i(i=1,2,\cdots ,m)$ 与 $Y_j(j=1,2,\cdots ,n)$ 相互独立
+    - 设 $(X_1,X_2,\cdots ,X_m)$ 与 $(Y_1,Y_2,\cdots ,Y_n)$ 相互独立，若 $h(x_1,x_2,\cdots ,x_m)$ 与 $g(y_1,y_2,\cdots ,y_n)$ 是连续函数，则 $h(X_1,X_2,\cdots ,X_m)$ 与 $g(Y_1,Y_2,\cdots ,Y_n)$ 相互独立
