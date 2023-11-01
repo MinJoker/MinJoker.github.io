@@ -408,6 +408,16 @@
     二维随机变量的分布函数补充
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+    二维连续型随机变量补充
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+    随机变量的独立性补充
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -576,6 +586,16 @@
     二维随机变量的分布函数补充
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+    二维连续型随机变量补充
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+    随机变量的独立性补充
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -588,7 +608,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="_1">课程笔记<a class="headerlink" href="#_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>1292<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>4<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>1693<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>6<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <div class="admonition quote">
 <p class="admonition-title">引用其他人的笔记</p>
@@ -632,7 +652,7 @@ $$</p>
 <h3 id="_7">概率密度函数理解<a class="headerlink" href="#_7" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>有一个常见的误区，就是错把连续型随机变量的「概率密度函数的函数值」和连续型随机变量的「概率」直接划等号。事实上，概率密度函数的函数值代表的是概率分布函数的变化率（所以概率密度函数的函数值大于<span class="heti-skip"><span class="heti-spacing"> </span>$1$<span class="heti-spacing"> </span></span>也是很合理的<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>；而连续型随机变量的概率，只有某段区间的概率是有意义的，而某个点的概率恒为<span><span class="heti-spacing"> </span>$0$</span>。</p>
 <p>那么，概率密度函数和概率的联系到底是什么呢？结论是，某段区间上「概率密度函数的面积（积分<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>」等于随机变量落在这段区间上的概率。</p>
-<p>关于概率密度函数，我们有更加直观的解释。概率密度函数的函数值较大的地方，代表这个点附近的概率「密度」较大，也就是说随机变量落在这个点附近的单位长度区间上的概率较大。</p>
+<p>关于概率密度函数，我们有更加直观的解释。概率密度函数的函数值较大的地方，代表这个点附近的概率「密度」较大，也就是说随机变量落在这个点附近的单位长度区间上的概率较大。用数学公式表示就是<span><span class="heti-spacing"> </span>$f(x) \Delta x = P = \Delta F(x)$</span>。</p>
 <div style="text-align: center;">
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/math/probability/1.png"><img alt="概率密度函数图示" src="/assets/images/math/probability/1.png" style="width: 50%;"/></a>
 </div>
@@ -700,14 +720,45 @@ $$</p>
 <ul>
 <li>联合分布函数<span class="heti-skip"><span class="heti-spacing"> </span>$F(x,y) = P(X \leq x, Y \leq y)$<span class="heti-spacing"> </span></span>是二元函数</li>
 <li>边际分布函数<span class="heti-skip"><span class="heti-spacing"> </span>$F_X(x) = P(X \leq x) = lim_{y \rarr +\infty}F(x,y)$<span class="heti-spacing"> </span></span>是关于<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>的一元函数</li>
-<li>条件分布函数<span class="heti-skip"><span class="heti-spacing"> </span>$F_{X \mid Y}(x \mid y) = P(X \leq x \mid Y=y)$<span class="heti-spacing"> </span></span>是关于<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>的一元函数</li>
+<li>条件分布函数<span class="heti-skip"><span class="heti-spacing"> </span>$F_{X \mid Y}(x \mid y) = P(X \leq x \mid Y=y)$<span class="heti-spacing"> </span></span>是关于<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>的一元函数<ul>
+<li><span>$\lim_{\epsilon \rarr 0^+}P(X\leq x\mid y&lt;Y\leq y+\epsilon)$<span class="heti-spacing"> </span></span>也记为<span><span class="heti-spacing"> </span>$P(X \leq x \mid Y=y)$</span>，请特别注意这个记号所带来的两种理解</li>
+</ul>
+</li>
+</ul>
+<p>联合分布、边际分布、条件分布满足如下关系：</p>
+<p></p><div style="text-align: left;">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/math/probability/2.png"><img alt="三个分布的关系图示" src="/assets/images/math/probability/2.png" style="width: 40%;"/></a>
+</div>
+<h3 id="_14">二维连续型随机变量补充<a class="headerlink" href="#_14" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>条件密度函数的重要性质：<ul>
+<li>$f(x,y) = f_{X|Y}(x|y)f_Y(y) = f_{Y|X}(y|x)f_X(x)$</li>
+<li>直观意义：<br/>
+  $f_{X|Y}(x \mid y) \Delta x = \frac{f(x,y)\Delta x \Delta y}{f_Y(y)\Delta y} \approx \frac{P(x&lt;X\leq x+\Delta x, \; y&lt;Y\leq y+\Delta y)}{P(y&lt;Y\leq y+\Delta y)} = P(x&lt;X\leq x+\Delta x \mid y&lt;Y\leq y+\Delta y)$</li>
+</ul>
+</li>
+<li>二维均匀分布的条件分布仍为均匀分布</li>
+<li>二维正态分布的记号：$(X,Y) \sim N({\mu}_1, \; {\mu_2}; \; {\sigma}_1^2, \; {\sigma}_2^2; \; \rho)$<ul>
+<li>二维正态分布的边际分布仍为正态分布（一维，与<span class="heti-skip"><span class="heti-spacing"> </span>$\rho$<span class="heti-spacing"> </span></span>无关）</li>
+</ul>
+</li>
+</ul>
+<h3 id="_15">随机变量的独立性补充<a class="headerlink" href="#_15" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>若<span class="heti-skip"><span class="heti-spacing"> </span>$(X,Y)$<span class="heti-spacing"> </span></span>是离散型随机变量，则<span class="heti-skip"><span class="heti-spacing"> </span>$X,Y$<span class="heti-spacing"> </span></span>相互独立等价于<span class="heti-skip"><span class="heti-spacing"> </span>$p_{ij} = p_{i\cdot}p_{\cdot j}$<span class="heti-spacing"> </span></span>对一切<span class="heti-skip"><span class="heti-spacing"> </span>$i,j$<span class="heti-spacing"> </span></span>都成立</li>
+<li>若<span class="heti-skip"><span class="heti-spacing"> </span>$(X,Y)$<span class="heti-spacing"> </span></span>是连续型随机变量，则<span class="heti-skip"><span class="heti-spacing"> </span>$X,Y$<span class="heti-spacing"> </span></span>相互独立等价于<span class="heti-skip"><span class="heti-spacing"> </span>$f(x,y) = f_X(x)f_Y(y)$<span class="heti-spacing"> </span></span>总是成立，平面上“面积”为零的集合除外（可以在不连续点上不相等）</li>
+<li><span>$n$<span class="heti-spacing"> </span></span>维随机变量独立性相关定理：<ul>
+<li>设<span class="heti-skip"><span class="heti-spacing"> </span>$(X_1,X_2,\cdots ,X_m)$<span class="heti-spacing"> </span></span>与<span class="heti-skip"><span class="heti-spacing"> </span>$(Y_1,Y_2,\cdots ,Y_n)$<span class="heti-spacing"> </span></span>相互独立，则<span class="heti-skip"><span class="heti-spacing"> </span>$X_i(i=1,2,\cdots ,m)$<span class="heti-spacing"> </span></span>与<span class="heti-skip"><span class="heti-spacing"> </span>$Y_j(j=1,2,\cdots ,n)$<span class="heti-spacing"> </span></span>相互独立</li>
+<li>设<span class="heti-skip"><span class="heti-spacing"> </span>$(X_1,X_2,\cdots ,X_m)$<span class="heti-spacing"> </span></span>与<span class="heti-skip"><span class="heti-spacing"> </span>$(Y_1,Y_2,\cdots ,Y_n)$<span class="heti-spacing"> </span></span>相互独立，若<span class="heti-skip"><span class="heti-spacing"> </span>$h(x_1,x_2,\cdots ,x_m)$<span class="heti-spacing"> </span></span>与<span class="heti-skip"><span class="heti-spacing"> </span>$g(y_1,y_2,\cdots ,y_n)$<span class="heti-spacing"> </span></span>是连续函数，则<span class="heti-skip"><span class="heti-spacing"> </span>$h(X_1,X_2,\cdots ,X_m)$<span class="heti-spacing"> </span></span>与<span class="heti-skip"><span class="heti-spacing"> </span>$g(Y_1,Y_2,\cdots ,Y_n)$<span class="heti-spacing"> </span></span>相互独立</li>
+</ul>
+</li>
 </ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-26 23:27:44</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-11-01 23:51:29</span>
 <br/>
         Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-10-07 23:37:22</span>
