@@ -411,3 +411,24 @@ $$
     </div>
 
 !!! quote "Source: <a href="https://en.wikipedia.org/wiki/Lookahead_carry_unit">https://en.wikipedia.org/wiki/Lookahead_carry_unit</a>"
+
+#### 加减法的溢出检查
+
+常见的加减法溢出情况是，同号相加和异号相减。下面给出两种最简单的溢出检查（overflow detection）：
+
+- 检查输出的符号位和加数或减数（top operand）的符号位是否一致
+- 对于 $n$ 位加减法，溢出可以表示为 $V=C_n\oplus C_{n-1}$，$V$ 为`1`表示溢出
+
+<div style="text-align: center;">
+<img src="/assets/images/cs/digital_logic/26.png" alt="溢出检查" style="width: 80%;">
+</div>
+
+#### 其他算数函数
+
+- 自增（incrementing）与自减（decrementing）
+    - 自增与自减运算可以通过对加减法器进行收缩（contraction）得到
+    - 具体而言就是把加减法器的其中一个输入设为常量（自增自减的步长）
+- 乘法与除法
+    - 与 $2^n$ 的乘数是最简单的，只需要通过移位就可以实现
+    - 任意常数的乘除的一种实现思路是，拆分成与若干个 $2^n$ 的乘除
+- 零扩展（zero fill）与符号位扩展（extension）
