@@ -145,14 +145,66 @@ $$
     - $f(x,y) = f_{X|Y}(x|y)f_Y(y) = f_{Y|X}(y|x)f_X(x)$
     - 直观意义：<br />
       $f_{X|Y}(x \mid y) \Delta x = \frac{f(x,y)\Delta x \Delta y}{f_Y(y)\Delta y} \approx \frac{P(x<X\leq x+\Delta x, \; y<Y\leq y+\Delta y)}{P(y<Y\leq y+\Delta y)} = P(x<X\leq x+\Delta x \mid y<Y\leq y+\Delta y)$
-- 二维均匀分布的条件分布仍为均匀分布
-- 二维正态分布的记号：$(X,Y) \sim N({\mu}_1, \; {\mu_2}; \; {\sigma}_1^2, \; {\sigma}_2^2; \; \rho)$
-    - 二维正态分布的边际分布仍为正态分布（一维，与 $\rho$ 无关）
+- 二维均匀分布的条件分布为一维均匀分布
+- 二维正态分布的边际分布和条件分布为一维正态分布（不依赖于 $\rho$）
+    - 二维正态分布的记号：$(X,Y) \sim N({\mu}_1, \; {\mu_2}; \; {\sigma}_1^2, \; {\sigma}_2^2; \; \rho)$
 
 ### 随机变量的独立性补充
 
 - 若 $(X,Y)$ 是离散型随机变量，则 $X,Y$ 相互独立等价于 $p_{ij} = p_{i\cdot}p_{\cdot j}$ 对一切 $i,j$ 都成立
 - 若 $(X,Y)$ 是连续型随机变量，则 $X,Y$ 相互独立等价于 $f(x,y) = f_X(x)f_Y(y)$ 总是成立，平面上“面积”为零的集合除外（可以在不连续点上不相等）
+    - 此外，$X,Y$ 相互独立也等价于存在一元函数 $m,n$，使得 $f(x,y)=m(x)n(y)\;,\;|x|<+\infty,|y|<-\infty$（注意：联合密度函数的函数式和定义域均须可分）
+    - 二维正态分布是独立的，等价于 $\rho = 0$
 - $n$ 维随机变量独立性相关定理：
     - 设 $(X_1,X_2,\cdots ,X_m)$ 与 $(Y_1,Y_2,\cdots ,Y_n)$ 相互独立，则 $X_i(i=1,2,\cdots ,m)$ 与 $Y_j(j=1,2,\cdots ,n)$ 相互独立
     - 设 $(X_1,X_2,\cdots ,X_m)$ 与 $(Y_1,Y_2,\cdots ,Y_n)$ 相互独立，若 $h(x_1,x_2,\cdots ,x_m)$ 与 $g(y_1,y_2,\cdots ,y_n)$ 是连续函数，则 $h(X_1,X_2,\cdots ,X_m)$ 与 $g(Y_1,Y_2,\cdots ,Y_n)$ 相互独立
+
+### 二维随机变量的函数分布
+
+- $Z=X+Y$ 的分布（这里讨论连续型，离散型只需把积分符号换成求和符号即可）
+    - $f_Z(z)=\int_{-\infty}^{+\infty}f(z-y,y)\mathrm{d}y=\int_{-\infty} ^ {+\infty}f(x,z-x)\mathrm{d}x$（$x$，$y$是对称的）<!-- pay attention to the second "^", "...^..." is wrong, but "... ^ ..." is right, the two spaces count! -->
+    - 当 $X$ 和 $Y$ 相互独立时，$Z$ 的密度函数公式也称为卷积公式：$f_X*f_Y=\int_{-\infty}^{+\infty}f_X(z-y)f_Y(y)\mathrm{d}y=\int_{-\infty} ^ {+\infty}f_X(x)f_Y(z-x)\mathrm{d}x$
+- $M=max(X,Y)$ 与 $N=min(X,Y)$ 的分布（基于 $X$ 和 $Y$ 相互独立）
+    - $F_{max}(z)=F_X(z)F_Y(z)$
+    - $F_{min}(z)=1-(1-F_X(z))(1-F_Y(z))$
+    - $n$ 个相互独立的随机变量同理
+
+### 常见分布的卷积
+
+分布的卷积问题，也即是分布的可加性问题。
+
+---
+
+1.二项分布的可加性：设 $X\sim B(n,p)$，$Y\sim B(m,p)$，$0<p<1$，$m$，$n$ 均为正整数，若 $X$ 与 $Y$ 独立，则
+
+$$
+X+Y\sim B(m+n,p)
+$$
+
+二项分布的可加性有助于理解二项分布与两点分布的可加性。
+
+---
+
+2.泊松分布的可加性：设 $X\sim P({\lambda}_1)$，$Y\sim P({\lambda}_2)$，${\lambda}_i>0$，$i=1,2$，若 $X$ 与 $Y$ 独立，则
+
+$$
+X+Y\sim P({\lambda}_1+{\lambda}_2)
+$$
+
+---
+
+3.正态分布的可加性：设 $X\sim N({\mu}_1,{\sigma}_1^2)$，$Y\sim N({\mu}_2,{\sigma}_2^2)$，$-\infty <{\mu}_i<+\infty$，${\sigma}_i>0$，$i=1,2$，若 $X$ 与 $Y$ 独立，则
+
+$$
+X+Y\sim N({\mu}_1+{\mu}_2,{\sigma}_1^2+{\sigma}_2 ^ 2)
+$$
+
+---
+
+4.$\Gamma$ 分布的可加性：设 $X\sim \Gamma ({\alpha}_1,\beta)$，$Y\sim \Gamma ({\alpha}_2,\beta)$，${\alpha}_i>0$，$i=1,2$，$\beta >0$ 均为正整数，若 $X$ 与 $Y$ 独立，则
+
+$$
+X+Y\sim \Gamma ({\alpha}_1+{\alpha}_2,\beta)
+$$
+
+指数分布是特殊的 $\Gamma$ 分布，$E(\lambda)=\Gamma (1,\lambda)$。
