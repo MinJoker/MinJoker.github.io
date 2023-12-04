@@ -2,7 +2,7 @@
 
 !!! info
 
-    一些朋友们的笔记本捏！欢迎留下友链交换！
+    一些好朋友们捏！欢迎留下友链交换！
 
 !!! quote ""
 
@@ -35,6 +35,16 @@
         <a href="https://stdquantum.github.io/" title="STDquantum's Blog" target="_blank">
             <div class="flink-item-name">STDquantum's Blog</div>
             <div class="flink-item-desc">神奇的小笑！</div>
+        </a>
+    </div>
+
+    <div class="flink-list-item">
+            <div class="flink-item-icon">
+                <img src="/assets/images/link/humble.jpg" alt="Humble">
+            </div>
+        <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=571007008&website=www.oicqzone.com" title="Humble's Qzone" target="_blank">
+            <div class="flink-item-name">Humble's Qzone</div>
+            <div class="flink-item-desc">😍尊尊😍</div>
         </a>
     </div>
 
