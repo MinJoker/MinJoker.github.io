@@ -28,4 +28,14 @@
         </a>
     </div>
 
+    <div class="flink-list-item">
+            <div class="flink-item-icon">
+                <img src="/assets/images/link/stdquantum.jpg" alt="STDquantum">
+            </div>
+        <a href="https://stdquantum.github.io/" title="STDquantum's Blog" target="_blank">
+            <div class="flink-item-name">STDquantum's Blog</div>
+            <div class="flink-item-desc">神奇的小笑！</div>
+        </a>
+    </div>
+
     </div>
