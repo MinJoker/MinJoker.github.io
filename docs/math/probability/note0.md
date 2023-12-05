@@ -171,7 +171,7 @@ $$
 
 ### 常见分布的卷积
 
-分布的卷积问题，也即是分布的可加性问题。
+分布的卷积问题，也即是分布的独立可加性问题。
 
 ---
 
@@ -208,3 +208,94 @@ X+Y\sim \Gamma ({\alpha}_1+{\alpha}_2,\beta)
 $$
 
 指数分布是特殊的 $\Gamma$ 分布，$E(\lambda)=\Gamma (1,\lambda)$。
+
+## 随机变量的数学特征
+
+### 常见分布的期望与方差
+
+| 分布 | 分布律或密度函数 | 数学期望 | 方差 |
+| :---: | :---: | :---: | :---: |
+| $0-1$ 分布 | $P(X=k)=p^k (1-p)^{1-k},\;\;k=0,1$ | $p$ | $p(1-p)$ |
+| 二项分布 $B(n,p)$ | $P(X=k)=C_n^k p^k (1-p)^{1-k},\;\;k=0,1,...,n$ | $np$ | $np(1-p)$ |
+| 泊松分布 $P(\lambda)$ | $P(X=k)=\frac{\lambda ^k e^{-k}}{k!},\;\;k=0,1,...$ | $\lambda$ | $\lambda$ |
+| 均匀分布 $U(a,b)$ | $f(x)=\begin{cases} \frac{1}{b-a} & ,a<x<b \cr 0 & ,\text{else} \end{cases}$ | $\frac{a+b}{2}$ | $\frac{(b-a)^2}{12}$ |
+| 指数分布 $E(\lambda)$ | $f(x)=\begin{cases} \lambda e^{-\lambda x} & ,x>0 \cr 0 & ,\text{else} \end{cases}$ | $\frac{1}{\lambda}$ | $\frac{1}{\lambda ^2}$ |
+| 正态分布 $N(\mu ,\sigma ^2)$ | $f(x)=\frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu) ^2 }{2\sigma ^2 }},\;\;-\infty<x<+\infty$ | $\mu$ | $\sigma ^2$ |
+
+### 数学期望与分布函数的关系
+
+设随机变量 $X$ 的分布函数为 $F(x)$，则分部积分法易证：
+
+$$
+E(X) = \int_{0}^{+\infty} (1-F(x))\mathrm{d}x-\int_{-\infty}^{0} F(x)\mathrm{d}x
+$$
+
+- 当 $X$ 为非负随机变量（即 $P(X\geq 0)=1$）时，有：$E(X)=\int _0^{+\infty} (1-F(x))\mathrm{d}x$；
+- 当 $X$ 为取非负整数值得随机变量时，有：$E(X)=\sum _{k=1}^{+\infty} P(X\geq k)$；
+
+### 二维随机变量函数的数学期望
+
+设 $Z$ 是随机变量 $X,Y$ 的函数：$Z=h(X,Y)$（$h$ 是连续函数）：
+
+- 若二维离散型随机变量 $(X,Y)$ 的分布律为 $P(X=x_i,Y=y_j)=p_{ij},\;\;i,j=1,2,...$，则有：$E(Z)=E[h(X,Y)]=\sum_{i=1}^{\infty} \sum_{i=1}^{\infty} h(x_i,y_j)p_{ij}$，这里设上式右边的级数绝对收敛；
+- 若二维连续型随机变量 $(X,Y)$ 的概率密度为 $f(x,y)$，则有：$E(Z)=E[h(X,Y)]=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} h(x,y)f(x,y)\mathrm{d}x\mathrm{d}y$，这里设上式右边的积分绝对收敛；
+- 特别地：
+    - $E(XY)=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} xyf(x,y)\mathrm{d}x\mathrm{d}y$；
+    - $E(X)=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} xf(x,y)\mathrm{d}x\mathrm{d}y$；
+    - $E(Y)=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} yf(x,y)\mathrm{d}x\mathrm{d}y$；
+
+### 条件数学期望
+
+若 $(X,Y)$ 为二维离散型随机变量，且在给定 $X=x$ 下，$Y$ 的条件分布律为 $P(Y=y_j | X=x)=p_j(x),\;\;j=1,2,...$；或者 $(X,Y)$ 为二维连续型随机变量，且在给定 $X=x$ 下，$Y$ 的条件概率密度函数为 $f_{Y|X}(y|x)$，则 $Y$ 的条件期望为：
+
+$$
+E(Y|X=x)= \begin{cases}
+\sum_{j=1}^{+\infty} y_j p_j(x) & ,\text{discrete} \cr
+\int_{-\infty}^{+\infty} y f_{Y|X}(y|x) \mathrm{d}y & ,\text{continuous}
+\end{cases}
+$$
+
+$(X,Y)$ 为二维随机变量，若 $E(Y)$ 存在，则有全期望公式（Total Expectation Formula）：
+
+$$
+E(Y) = E[E(Y|X)]
+$$
+
+### 标准化变量
+
+设随机变量 $X$ 具有数学期望 $E(X)=\mu$，方差 $D(X)=\sigma ^2 \neq 0$，记 $X^{\*} = \frac{X-\mu}{\sigma}$。$E(X^{\*} )=0$，$D(X^{\*})=1$，称 $X^{\*}$ 为 $X$ 的标准化变量。
+
+特别地，正态变量的标准化变量服从标准正态分布。
+
+### 独立性与相关性
+
+随机变量之间的相关性仅针对「线性关系」而言，$X,Y$ 不相关等价于 $Cov(X,Y)=0$。
+
+而独立性是一个很强的条件，随机变量相互独立，定义上要求其中任一变量的存在与否，都不会对其他变量的概率分布产生影响。$X,Y$ 独立等价于 $Cov(f(X),g(Y))=0$ 对任何函数 $f,g$ 都成立，也就是说要求 $X,Y$ 没有任何关系，包括线性的和非线性的。
+
+所以我们发现，独立性比相关性强得多，独立是不相关的充分不必要条件。通俗地讲，独立才是我们所说的“没有关系”，而不相关仅仅表达“没有线性关系”。
+
+二维正态变量 $(X,Y)$ 的独立性与相关性：
+
+- $\rho _{XY} = \rho$；
+- $X,Y$ 不相关 $\Harr$ $X,Y$ 相互独立；
+
+### 其它数字特征
+
+设 $X,Y$ 是随机变量：
+
+- 若 $E(X^k),\;\;k=1,2,...$ 存在，则称之为 $X$ 的 $k$ 阶（原点）矩；
+- 若 $E\lbrace [X-E(X)]^k \rbrace,\;\;k=1,2,...$ 存在，则称之为 $X$ 的 $k$ 阶中心矩；
+- 若 $E(X^k Y^l),\;\;k,l=1,2,...$ 存在，则称之为 $X,Y$ 的 $k+l$ 阶混合（原点）矩；
+- 若 $E\lbrace [X-E(X)]^k [Y-E(Y)]^l \rbrace,\;\;k,l=1,2,...$ 存在，则称之为 $X,Y$ 的 $k+l$ 阶混合中心矩；
+
+---
+
+设 $X$ 为连续型随机变量，其分布函数和概率密度函数分别为 $F(x)$ 和 $f(x)$，称满足条件 $P(X>x_{\alpha})=1-F(x_{\alpha})=\int_{x_{\alpha}}^{+\infty} f(x) \mathrm{d}x = \alpha$ 的实数 $x_{\alpha}$ 为随机变量 $X$ 的上 $x_{\alpha}$ 分位数。
+
+<div style="text-align: center;">
+<img src="/assets/images/math/probability/3.png" alt="上α分位数图示" style="width: 50%;">
+</div>
+
+- 当 $\alpha = 1/2$ 时，$x_{1/2}$ 称为 $X$ 的中位数；
+- 对于标准正态分布，$x_{1/2}=0$，$x_{1-\alpha}=-x_{\alpha}$；
