@@ -199,6 +199,12 @@ $$
 X+Y\sim N({\mu}_1+{\mu}_2,{\sigma}_1^2+{\sigma}_2 ^ 2)
 $$
 
+此外，若 $(X,Y)\sim N({\mu}_1,{\mu}_2,{\sigma}_1^2 ,{\sigma}_2^2 ,\rho)$，则不论 $X$ 与 $Y$ 是否独立（即 $\rho$ 是否为 $0$），都有：
+
+$$
+aX+bY+c\sim N(a{\mu}_1+b{\mu}_2+c,a^2 {\sigma}_1^2 +b^2 {\sigma}_2 ^ 2 + 2ab{\sigma}_1{\sigma}_2\rho)
+$$
+
 ---
 
 4.$\Gamma$ 分布的可加性：设 $X\sim \Gamma ({\alpha}_1,\beta)$，$Y\sim \Gamma ({\alpha}_2,\beta)$，${\alpha}_i>0$，$i=1,2$，$\beta >0$ 均为正整数，若 $X$ 与 $Y$ 独立，则
