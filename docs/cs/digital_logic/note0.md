@@ -441,5 +441,39 @@ $$
 
 ## Sequential Circuits
 
-### 同步与异步
+### 时序逻辑理解
 
+以下是 Wikipedia 对于时序逻辑、同步与异步的定义：
+
+> Sequential logic is a type of logic circuit whose output depends on the present value of its input signals and on the sequence of past inputs.<br />
+> That is, sequential logic has state (memory) while combinational logic does not.
+>
+> Digital sequential logic circuits are divided into synchronous and asynchronous types.<br />
+> In synchronous sequential circuits, the state of the device changes only at discrete times in response to a clock signal.<br />
+> In asynchronous circuits the state of the device can change at any time in response to changing inputs.
+>
+> <p style="text-align: right">———— Wikipedia</p>
+
+很自然地，异步时序逻辑是 input-driven 的，每当输入发生变化，就要进行状态的更新。但是，异步时序逻辑的弊端在于，当输入包含多个变量而它们的抵达有先后区分的时候，电路可能会偏离预期而进入错误的状态。
+
+同步时序逻辑可以解决这个问题。我们使用一个时钟信号来同步（synchronize, or clock）所有输入变量产生作用的时间，即使输入变量先后抵达，它们也得等待时钟信号来临时才能发生作用，从而更新电路的状态。
+
+工程应用中，同步时序逻辑往往更为普遍，因为其设计简单而且鲁棒性强。异步时序逻辑的设计通常更为复杂，多用于需要更高更新速度的场合（不像同步时序逻辑那样受限于时钟信号的频率）。
+
+=== "时序逻辑"
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/digital_logic/27.png" alt="时序逻辑电路抽象图示" style="width: 50%;">
+    </div>
+
+=== "同步时序逻辑"
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/digital_logic/28.png" alt="同步时序逻辑电路抽象图示" style="width: 50%;">
+    </div>
+
+=== "异步时序逻辑"
+
+    <div style="text-align: left;">
+    <img src="/assets/images/cs/digital_logic/29.png" alt="异步时序逻辑电路抽象图示" style="width: 50%;">
+    </div>
