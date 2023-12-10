@@ -8,14 +8,14 @@
 
 ## Digital Systems and Information
 
-### 两种逻辑系统
+### 基本概念补充
+
+两种逻辑系统：
 
 - 组合逻辑（Combinational Logic）：任意时刻的输出仅取决于该时刻的输入
 - 时序逻辑（Suquential Logic）：任意时刻的输出既取决于该时刻的输入，也取决于电路原来的状态
     - 同步（Synchronous）：State updated at discrete times
     - 异步（Asynchronous）：State updated at any time
-
-### Number System 与 Codes
 
 数字系统与编码的概念是不一样的，仔细思考就可以发现两者的不同之处：
 
@@ -24,7 +24,7 @@
 - 编码（Codes）：较为灵活，只要求一一映射即为合法编码
     - 编码系统的前导 `0` 不能省略
 
-### BCD 码与余三码
+### 常见编码补充
 
 余三码的一个关键点在于其解决了 BCD 码的加减法进位问题，我们可以通过一个例子来明白余三码做了什么：
 
@@ -32,7 +32,7 @@
 
     ![](/assets/images/cs/digital_logic/1.jpg){width="60%"}
 
-### 格雷码
+---
 
 格雷码的一种简单粗暴的写法，是通过「镜像」的技巧来倍增已知的格雷编码。
 
@@ -44,12 +44,7 @@
 
 ### 布尔代数补充公式
 
-- 香农公式（Shannon formula）
-- 逻辑函数分解（Shannon Expansion）
-
----
-
-#### 香农公式
+香农公式（Shannon formula）：
 
 基于 $X \overline{X} = 0$ 和 $X X = 1$ ，我们可以得到以下公式：
 
@@ -71,7 +66,9 @@ $$
 \overline{x} + f(  x, \overline{x}, y,... ) = \overline{x} + f( 1, 0, y,... )
 $$
 
-#### 逻辑函数分解
+---
+
+逻辑函数分解（Shannon Expansion）：
 
 $$
 \begin{aligned}
@@ -100,14 +97,18 @@ $$
 - 标准形式提供了一种布尔表达式化简的方向（但其形式并不唯一确定，即一个表达式可以有多个标准形式）
 - 规范形式提供了一种唯一确定的表达形式（这对于把复杂的逻辑运算交由机器去完成是很重要的）
 
-#### SOP 与 POS
+---
+
+SOP 与 POS：
 
 任何表达式都可以化成 SOP 和 POS 这样的标准形式。
 
 - SOP（Standard Sum-of-Products）即把表达式写成 `OR of AND` 的形式；
 - POS（Standard Product-of-Sums）即把表达式写成 `AND of OR` 的形式；
 
-#### SOM 与 POM
+---
+
+SOM 与 POM：
 
 SOM（Sum of Minterms）与 POM（Product of Maxterms）蕴含着一种精巧的对称性，具体体现有：
 
@@ -142,27 +143,22 @@ $$
 
 ### 经典组合电路补充
 
-- 缓冲器（Buffer）
-- 三态门（3-State Buffer）
-- 传输门（Transmission Gate）
-- 异或门 同或门
-
----
-
-#### 缓冲器
-
-Buffer：$F=X$
+缓冲器（Buffer）：$F=X$
 
 - buffer 可以作为放大器，提高电路的电压水平（回忆数字信号的宽进严出）
 - buffer 可以提高电路运行的速度
 
-#### 三态门
+---
+
+三态门（3-State Buffer）
 
 ??? example "三态门解决多路输出互联问题（multiplexed output line）的一个例子"
     
     ![](/assets/images/cs/digital_logic/2.jpg){width="60%"}
 
-#### 传输门
+---
+
+传输门（Transmission Gate）
 
 传输门可以视为一个开关，值得注意的是：
 
@@ -172,7 +168,9 @@ Buffer：$F=X$
 
 ![](/assets/images/cs/digital_logic/3.jpg)
 
-#### 异或门 同或门
+---
+
+异或门 同或门
 
 - 异或和同或可以用来实现奇校验和偶校验。
 - 而且观察其卡诺图的形状（棋盘形），可以发现，它们是天然优化的，即不可优化的。
@@ -205,7 +203,7 @@ Buffer：$F=X$
 
 ### 基本功能块补充
 
-#### 译码器
+译码器：
 
 译码器（Decoder）能将信息从 $n$ 个输入转换为 $2^n$ 个或更少的唯一输出。具体是怎么实现的呢？译码器实际上是在枚举 $n$ 个输入的所有排列方式（共 $2^n$ 种）。更进一步的，这可以理解为是在枚举最小项（minterms）。比如 $3-to-8$ 译码器，当输入为某个特定组合 `101` 时，只有相应的表示 `101`（或者说 $\sum_m(5)$）这个组合的输出是 `1`。
 
@@ -232,7 +230,9 @@ Buffer：$F=X$
 
     ![](/assets/images/cs/digital_logic/10.png){width="60%"}
 
-#### 编码器
+---
+
+编码器：
 
 编码器（Encoder）与译码器是对称的，能将信息从 $2^n$ 个或更少的输入转换为 $n$ 个输出。但和译码器不同的是，普通编码器必须要求输入是 one-hot 的，即只允许存在一个输入为 `1`，否则无法判断得出唯一输出。此外，编码器的逻辑表达式和具体电路实现，通常都比译码器更为复杂。
 
@@ -252,7 +252,9 @@ Buffer：$F=X$
 
     ![](/assets/images/cs/digital_logic/13.png){width="80%"}
 
-#### 多路复用器
+---
+
+多路复用器：
 
 多路复用器（Multiplexer，或称为数据选择器）可以通过 $n$ 个控制信号输入，对 $2^n$ 个或更少的数据信号输入做选择，并得到 $1$ 个选择结果输出。
 
@@ -321,7 +323,7 @@ MUX 的电路实现有一种优化方案，就是通过把一部分的控制端�
 
 ### 算术逻辑电路补充
 
-#### 超前进位加法器
+超前进位加法器：
 
 首先我们先把注意力放在一个全加器上。要把多个全加器连接起来形成能够计算更大数据的加法器，关键在于如何处理好全加器之间「进位」的问题。对于一个全加器而言，它向后一个全加器的进位（$C$，carry）有两个来源，一个是自身加法产生的进位，记为 $G$（generate），另一个是前一个全加器传递过来的进位，记为 $P$（propagate），我们有：
 
@@ -412,7 +414,9 @@ $$
 
 !!! quote "Source: <a href="https://en.wikipedia.org/wiki/Lookahead_carry_unit">https://en.wikipedia.org/wiki/Lookahead_carry_unit</a>"
 
-#### 加减法的溢出检查
+---
+
+加减法的溢出检查：
 
 常见的加减法溢出情况是，同号相加和异号相减。下面给出两种最简单的溢出检查（overflow detection）：
 
@@ -423,7 +427,9 @@ $$
 <img src="/assets/images/cs/digital_logic/26.png" alt="溢出检查" style="width: 80%;">
 </div>
 
-#### 其他算数函数
+---
+
+其他算数函数：
 
 - 自增（incrementing）与自减（decrementing）
     - 自增与自减运算可以通过对加减法器进行收缩（contraction）得到
@@ -432,3 +438,8 @@ $$
     - 与 $2^n$ 的乘数是最简单的，只需要通过移位就可以实现
     - 任意常数的乘除的一种实现思路是，拆分成与若干个 $2^n$ 的乘除
 - 零扩展（zero fill）与符号位扩展（extension）
+
+## Sequential Circuits
+
+### 同步与异步
+
