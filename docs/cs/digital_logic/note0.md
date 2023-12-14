@@ -571,3 +571,12 @@ $$
 
 - Latch 是异步的、透明的、脉冲触发的，在整个时钟信号为`1`的过程中均可写入信息并多次更新状态；
 - Flip-Flop 是同步的、非透明的、边沿触发的，一个时钟周期内仅在时钟信号的上升沿或下降沿进行一次状态的更新；
+
+除此以外，还有很多种其他的触发器设计，比如数逻课堂上提到的 $T$ Flip-Flop 和 $JK$ Flip-Flop，更多相关知识可以参考 [https://en.wikipedia.org/wiki/Flip-flop_(electronics)](https://en.wikipedia.org/wiki/Flip-flop_(electronics))。
+
+### 时序逻辑电路设计
+
+相关的题目并不难，套路性很强。建议考前找一些经典时序逻辑电路设计来复习。
+
+- 马德老师的数逻课件上的 Recognize 1101；
+- 数逻第四章作业中的几个经典的时序逻辑电路设计题；
