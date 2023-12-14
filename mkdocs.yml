@@ -58,6 +58,9 @@ extra_javascript:
 #  - javascripts/heti.js    # doesn't seem to work
 
 extra:
+  analytics:
+    provider: google
+    property: G-MXEBW4GPMY
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/MinJoker
