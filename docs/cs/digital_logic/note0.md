@@ -548,9 +548,13 @@ $$
 
     为了更好地理解 1s-catching，让我们回忆一下时序逻辑延迟分析中提到的 setup-time（如下图）。pulse-triggered 触发器之所以需要比 edge-triggered 触发器更长的 setup-time，就是为了确保时钟信号为`1`时触发器输入端总是稳定的，从而确保不会发生 1s-catching。
 
+    更进一步地，1s-catching 可以被认为是亚稳态（metastability）的一种表现。当我们没能在 setup-time 期间维持数据稳定，就会导致触发器陷入亚稳态。通常的解决思路是串联两层甚至更多层的触发器。
+
     <div style="text-align: center;">
     <img src="/assets/images/cs/digital_logic/38.png" alt="触发器延迟分析图示" style="width: 70%;">
     </div>
+
+    ---
 
     读到这里，或许你也和笔者一样，产生了如下的疑惑：<br />
     为什么我感觉 pulse-triggered 和 1s-catching 的概念更像是 Latch 的特性？<br />
