@@ -118,6 +118,7 @@ plugins:
       exclude:
         - index.md
         - link.md
+      strict: false
   - heti:
       disable_serve: false
       
@@ -137,11 +138,14 @@ nav:
     - 常用工具:
       - cs/tools/markdown.md
     - 数据结构与算法:
-      - cs/algorithms/index.md
-      - cs/algorithms/lec1.md
-      - cs/algorithms/lec2.md
-      - cs/algorithms/lec3.md
-      - cs/algorithms/lec4.md
+      - 数据结构基础:
+        - cs/algorithm/fds/index.md
+      - Algorithm &#x2160;:
+        - cs/algorithm/algorithm1/index.md
+        - cs/algorithm/algorithm1/lec1.md
+        - cs/algorithm/algorithm1/lec2.md
+        - cs/algorithm/algorithm1/lec3.md
+        - cs/algorithm/algorithm1/lec4.md
     - 数字逻辑设计:
       - cs/digital_logic/index.md
       - cs/digital_logic/note0.md
