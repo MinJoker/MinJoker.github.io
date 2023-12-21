@@ -305,3 +305,57 @@ $$
 
 - 当 $\alpha = 1/2$ 时，$x_{1/2}$ 称为 $X$ 的中位数；
 - 对于标准正态分布，$x_{1/2}=0$，$x_{1-\alpha}=-x_{\alpha}$；
+
+## 大数定律及中心极限定理
+
+### 大数定律补充
+
+大数定律揭示了一些随机事件在大数条件下呈现出的稳定性。不论是独立重复试验下的事件发生频率（伯努利大数定律），还是随机变量序列的算术平均（辛钦大数定律），都能依概率收敛到一个稳定值（分别是概率和期望）。
+
+> In probability theory, the law of large numbers (LLN) is a mathematical theorem that states that the average of the results obtained from a large number of independent and identical random samples converges to the true value, if it exists.
+
+在概率论与数理统计这门课程中：
+
+- 两个重要不等式中，切比雪夫不等式更为常用；
+- 常见的几种大数定律中，辛钦大数定律最为常用；
+    - 尤其是辛钦大数定律的推论，直接指出了一个随机变量的函数依概率收敛到其均值（不严谨，需要加上一些条件，详见其严格定义）；
+
+### 其他常见的大数定律
+
+马尔可夫大数定律
+
+设 $\lbrace X_i,i \geq 1 \rbrace$ 为一随机变量序列，若对所有的 $i \geq 1$，$X_i$ 的方差都存在，且 $lim_{n \rarr +\infty} \frac{1}{n^2} Var(\sum_{i=1}^{n} X_i) = 0$，则对 $\forall \epsilon > 0$，有：
+
+$$
+lim_{n \rarr +\infty} P \lbrace | \frac{1}{n} \sum_{i=1}^{n}X_i - \frac{1}{n}E(X_i) | \geq \epsilon \rbrace = 0
+$$
+
+成立，即随机变量 $\lbrace X_i,i \geq 1 \rbrace$ 服从大数定律。
+
+---
+
+切比雪夫大数定律
+
+设 $\lbrace X_i,i \geq 1 \rbrace$ 为相互独立的随机变量序列，若存在常数 $C$，使得 $Var(X_i) \leq C , i=1,2,...$，即所有的 $X_i$ 的方差有共同的上界，则对 $\forall \epsilon > 0$，有：
+
+$$
+lim_{n \rarr +\infty} P \lbrace | \frac{1}{n} \sum_{i=1}^{n}X_i - \frac{1}{n}E(X_i) | \geq \epsilon \rbrace = 0
+$$
+
+成立，即随机变量 $\lbrace X_i,i \geq 1 \rbrace$ 服从大数定律。
+
+---
+
+切比雪夫大数定律的推论：
+
+设 $\lbrace X_i,i \geq 1 \rbrace$ 为相互独立的随机变量序列，若它们的方差存在且相同（记为 ${\sigma}^2$），则随机变量 $\lbrace X_i,i \geq 1 \rbrace$ 服从大数定律。
+
+特别地（较常用，需要掌握），$\lbrace X_i,i \geq 1 \rbrace$ 为相互独立的随机变量序列，且它们具有相同的期望 $\mu$ 和相同的方差 ${\sigma}^2$，则 $\frac{1}{n} \sum_{i=1}^{n}X_i \xrightarrow{P} \mu \; , \; n \rarr +\infty$。
+
+### 中心极限定理补充
+
+有许多随机变量，它们是由大量的相互独立的随机变量的综合影响所形成的，而其中每个个别因素的作用都很小。这种随机变量往往服从或近似服从正态分布，或者说它的极限分布是正态分布。中心极限定理正是从数学上论证了这一现象。
+
+<div class="heti-skip">
+对于概率论与数理统计这门课程，我们只需要掌握独立同分布的中心极限定理（林德伯格-莱维中心极限定理）及其推论（二项分布的正态近似，即棣莫弗-拉普拉斯定理）即可。
+</div>
