@@ -5,24 +5,24 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="MinJoker 的笔记本" name="description"/>
 <meta content="MinJoker" name="author"/>
-<link href="https://minjoker.github.io/cs/algorithms/" rel="canonical"/>
-<link href="../tools/markdown/" rel="prev"/>
-<link href="lec1/" rel="next"/>
-<link href="../../assets/images/link/minjoker.png" rel="icon"/>
+<link href="https://minjoker.github.io/cs/algorithm/fds/" rel="canonical"/>
+<link href="../../tools/markdown/" rel="prev"/>
+<link href="../algorithm1/" rel="next"/>
+<link href="../../../assets/images/link/minjoker.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.5.2" name="generator"/>
-<title>数据结构与算法 - MinJoker's Notebook</title>
-<link href="../../assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
-<link href="../../css/heti.css" rel="stylesheet"/>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<link href="../../stylesheets/flink.css" rel="stylesheet"/>
+<title>Index - MinJoker's Notebook</title>
+<link href="../../../assets/stylesheets/main.50c56a3b.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../../css/heti.css" rel="stylesheet"/>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../../stylesheets/flink.css" rel="stylesheet"/>
 <link href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css" rel="stylesheet"/>
 <link href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-MXEBW4GPMY"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-MXEBW4GPMY",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-MXEBW4GPMY",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -33,21 +33,18 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="MinJoker's Notebook" class="md-header__button md-logo" data-md-component="logo" href="../.." title="MinJoker's Notebook">
+<a aria-label="MinJoker's Notebook" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="MinJoker's Notebook">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.11 19.45a6.948 6.948 0 0 1-4.4-5.1L2.05 6.54c-.24-1.08.45-2.14 1.53-2.37l9.77-2.07.03-.01c1.07-.21 2.12.48 2.34 1.54l.35 1.67 4.35.93h.03c1.05.24 1.73 1.3 1.51 2.36l-1.66 7.82a6.993 6.993 0 0 1-8.3 5.38 6.888 6.888 0 0 1-3.89-2.34M20 8.18 10.23 6.1l-1.66 7.82v.03c-.57 2.68 1.16 5.32 3.85 5.89 2.69.57 5.35-1.15 5.92-3.84L20 8.18m-4 8.32a2.962 2.962 0 0 1-3.17 1.39 2.974 2.974 0 0 1-2.33-2.55L16 16.5M8.47 5.17 4 6.13l1.66 7.81.01.03c.15.71.45 1.35.86 1.9-.1-.77-.08-1.57.09-2.37l.43-2c-.45-.08-.84-.33-1.05-.69.06-.61.56-1.15 1.25-1.31h.25l.78-3.81c.04-.19.1-.36.19-.52m6.56 7.06c.32-.53 1-.81 1.69-.66.69.14 1.19.67 1.28 1.29-.33.52-1 .8-1.7.64-.69-.13-1.19-.66-1.27-1.27m-4.88-1.04c.32-.53.99-.81 1.68-.66.67.14 1.2.68 1.28 1.29-.33.52-1 .81-1.69.68-.69-.17-1.19-.7-1.27-1.31m1.82-6.76 1.96.42-.16-.8-1.8.38Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -63,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              数据结构与算法
+              Index
             
           </span>
 </div>
@@ -128,7 +125,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+<a class="md-tabs__link" href="../../..">
           
   
     
@@ -138,7 +135,7 @@
         </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../">
+<a class="md-tabs__link" href="../../">
           
   
     
@@ -148,7 +145,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../math/">
+<a class="md-tabs__link" href="../../../math/">
           
   
     
@@ -158,7 +155,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../bci/">
+<a class="md-tabs__link" href="../../../bci/">
           
   
     
@@ -168,7 +165,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../photo/">
+<a class="md-tabs__link" href="../../../photo/">
           
   
     
@@ -178,7 +175,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../others/">
+<a class="md-tabs__link" href="../../../others/">
           
   
     
@@ -197,7 +194,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="MinJoker's Notebook" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="MinJoker's Notebook">
+<a aria-label="MinJoker's Notebook" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="MinJoker's Notebook">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.11 19.45a6.948 6.948 0 0 1-4.4-5.1L2.05 6.54c-.24-1.08.45-2.14 1.53-2.37l9.77-2.07.03-.01c1.07-.21 2.12.48 2.34 1.54l.35 1.67 4.35.93h.03c1.05.24 1.73 1.3 1.51 2.36l-1.66 7.82a6.993 6.993 0 0 1-8.3 5.38 6.888 6.888 0 0 1-3.89-2.34M20 8.18 10.23 6.1l-1.66 7.82v.03c-.57 2.68 1.16 5.32 3.85 5.89 2.69.57 5.35-1.15 5.92-3.84L20 8.18m-4 8.32a2.962 2.962 0 0 1-3.17 1.39 2.974 2.974 0 0 1-2.33-2.55L16 16.5M8.47 5.17 4 6.13l1.66 7.81.01.03c.15.71.45 1.35.86 1.9-.1-.77-.08-1.57.09-2.37l.43-2c-.45-.08-.84-.33-1.05-.69.06-.61.56-1.15 1.25-1.31h.25l.78-3.81c.04-.19.1-.36.19-.52m6.56 7.06c.32-.53 1-.81 1.69-.66.69.14 1.19.67 1.28 1.29-.33.52-1 .8-1.7.64-.69-.13-1.19-.66-1.27-1.27m-4.88-1.04c.32-.53.99-.81 1.68-.66.67.14 1.2.68 1.28 1.29-.33.52-1 .81-1.69.68-.69-.17-1.19-.7-1.27-1.31m1.82-6.76 1.96.42-.16-.8-1.8.38Z"></path></svg>
 </a>
     MinJoker's Notebook
@@ -216,7 +213,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
     Home
   </span>
@@ -232,7 +229,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../link/">
+<a class="md-nav__link" href="../../../link/">
 <span class="md-ellipsis">
     Friends
   </span>
@@ -244,7 +241,7 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     Computer Science
   </span>
@@ -260,7 +257,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../tools/markdown/">
+<a class="md-nav__link" href="../../tools/markdown/">
 <span class="md-ellipsis">
     常用工具
   </span>
@@ -269,55 +266,49 @@
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link md-nav__link--active" href="./">
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <span class="md-ellipsis">
     数据结构与算法
   </span>
-</a>
-<label class="md-nav__link md-nav__link--active" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
             数据结构与算法
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="lec1/">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Union-Find
+    数据结构基础
   </span>
 </a>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_1">
+<span class="md-nav__icon md-icon"></span>
+            数据结构基础
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="lec2/">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../algorithm1/">
 <span class="md-ellipsis">
-    Analysis of Algorithms
+    Algorithm Ⅰ
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="lec3/">
-<span class="md-ellipsis">
-    Bags, Queues and Stacks
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="lec4/">
-<span class="md-ellipsis">
-    Elementary Sorts
-  </span>
+<span class="md-nav__icon md-icon"></span>
 </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../digital_logic/">
+<a class="md-nav__link" href="../../digital_logic/">
 <span class="md-ellipsis">
     数字逻辑设计
   </span>
@@ -330,7 +321,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../math/">
+<a class="md-nav__link" href="../../../math/">
 <span class="md-ellipsis">
     Mathematics
   </span>
@@ -346,7 +337,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../../math/probability/">
+<a class="md-nav__link" href="../../../math/probability/">
 <span class="md-ellipsis">
     概率论与数理统计
   </span>
@@ -354,7 +345,7 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../../math/discrete/">
+<a class="md-nav__link" href="../../../math/discrete/">
 <span class="md-ellipsis">
     离散数学
   </span>
@@ -367,7 +358,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../bci/">
+<a class="md-nav__link" href="../../../bci/">
 <span class="md-ellipsis">
     BCI
   </span>
@@ -383,7 +374,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-<a class="md-nav__link" href="../../bci/bciai/">
+<a class="md-nav__link" href="../../../bci/bciai/">
 <span class="md-ellipsis">
     脑机接口导论
   </span>
@@ -396,7 +387,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../photo/">
+<a class="md-nav__link" href="../../../photo/">
 <span class="md-ellipsis">
     Photography
   </span>
@@ -414,7 +405,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../others/">
+<a class="md-nav__link" href="../../../others/">
 <span class="md-ellipsis">
     Others
   </span>
@@ -438,81 +429,31 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#lecture">
-<span class="md-ellipsis">
-      Lecture
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#project">
-<span class="md-ellipsis">
-      Project
-    </span>
-</a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="_1">数据结构与算法<a class="headerlink" href="#_1" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h1>
+<h1>Index</h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>148<span class="heti-spacing"> </span></span>个字 </p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>1<span class="heti-spacing"> </span></span>个字 </p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<ul>
-<li>课程名称： Princeton: Algorithms I</li>
-<li>课程网站： <a href="https://www.coursera.org/learn/algorithms-part1">Coursera: Algorithms, Part I</a></li>
-<li>学习时间： 2023.09.18 - ...</li>
-</ul>
 </div>
-<p>这门课程用以覆盖大二秋冬的数据结构基础，包括 <em>Algorithms I</em> 和 <em>Algorithms II</em> 两部分课程组成。</p>
-<p>课程使用<span class="heti-skip"><span class="heti-spacing"> </span>Java<span class="heti-spacing"> </span></span>进行教学，笔者目前同时进行课程学习和<span class="heti-skip"><span class="heti-spacing"> </span>Java<span class="heti-spacing"> </span></span>碎片化学习，所以可能在<span class="heti-skip"><span class="heti-spacing"> </span>Java<span class="heti-spacing"> </span></span>实现上会有所纰漏，欢迎指正！</p>
-<h2 id="lecture">Lecture<a class="headerlink" href="#lecture" title="Permanent link">¶</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> <a href="lec1/">Union-Find</a></li>
-<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> <a href="lec2/">Analysis of Algorithms</a></li>
-<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> <a href="lec3/">Bags, Queues and Stacks</a></li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> <a href="lec4/">Elementary Sorts</a></li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Mergesort</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Quicksort</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Priority Queues</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Elementary Symbol Tables</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Balanced Search Tree</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Geometric Applications of BSTs</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Hash Tables</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Symbol Table Applications</li>
-</ul>
-<h2 id="project">Project<a class="headerlink" href="#project" title="Permanent link">¶</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> <a href="lec1/#project-1">Percolation</a></li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> <a href="lec3/#project-2">Queues</a></li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Collinear Points</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Slider Puzzle</li>
-<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Kd-Trees</li>
-</ul>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-11-01 16:35:01</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-12-21 23:05:51</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="Created">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-09-30 17:54:48</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-12-21 23:05:51</span>
 </span>
 </aside>
 </article>
@@ -553,9 +494,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.prune", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "header.autohide", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
-<script src="../../javascripts/katex.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.prune", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "header.autohide", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+<script src="../../../javascripts/katex.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
