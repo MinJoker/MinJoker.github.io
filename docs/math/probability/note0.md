@@ -359,3 +359,28 @@ $$
 <div class="heti-skip">
 对于概率论与数理统计这门课程，我们只需要掌握独立同分布的中心极限定理（林德伯格-莱维中心极限定理）及其推论（二项分布的正态近似，即棣莫弗-拉普拉斯定理）即可。
 </div>
+
+## 统计量与抽样分布
+
+### 从概率论到数理统计
+
+概率论告诉我们，现实中的许多随机事件都会在大数条件下呈现出稳定性（规律性），因而理论上只要对随机现象进行足够多次观察，一定能清楚地计算出各种结果的规律性。但是，实际上所允许的观察永远是有限的，甚至是少量的。
+
+<div class="heti-skip">
+从有限的观察中推测无限观察才能得到的规律，以样本的信息来推断总体的信息，这就是数理统计学研究的问题之一。根据 Glivenko-Cantelli 定理，经验分布函数的收敛行为随着独立同分布的观测值数量的增加而增强，这也证明了数理统计学通过样本信息推断总体信息这一方法的可行性和正确性。
+</div>
+
+### 三大抽样分布表
+
+$\chi^{2}$ 分布（卡方分布）：<br />
+> [https://www.obhrm.net/index.php/卡方分布表_Chi-Square_Probabilities](https://www.obhrm.net/index.php/%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83%E8%A1%A8_Chi-Square_Probabilities)
+
+$t$ 分布（学生氏分布），关注 one-sided 部分即可：<br />
+> [https://en.wikipedia.org/wiki/Student%27s_t-distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution#Table_of_selected_values)
+
+$F$ 分布：<br />
+> [https://blog.csdn.net/sinat_34439107/article/details/78577412](https://blog.csdn.net/sinat_34439107/article/details/78577412)
+
+!!! note "碎碎念"
+
+    这三张分布表找得有点难受，很奇怪为什么 Wikipedia 不给出完整的分布表。以我的强迫症，如果网址和分布表不够优雅的话，我也许会自己来做这件事（逃。
