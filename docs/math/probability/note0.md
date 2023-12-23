@@ -419,6 +419,8 @@ $$
 
 前三行为一个正态总体，后三行为两个正态总体：
 
+<!-- "^ {}" is right, while "^{}" isn't. -->
+
 | 待估参数 | 其他参数 | 枢轴量及其分布 | 置信区间 | 单侧置信限 |
 | :---: | :---: | :---: | :---: | :---: |
 | $\mu$ | $\sigma^ {2}$ 已知 | $\frac{\overline{X}-\mu}{\sigma /\sqrt{n}} \sim N(0,1)$ | $\left( \overline{X} \pm \frac{\sigma}{\sqrt{n}}z_{\alpha /2} \right)$ | $\overline{X} \pm \frac{\sigma}{\sqrt{n}}z_{\alpha}$ |
@@ -427,5 +429,3 @@ $$
 | $\mu_{1}-\mu_{2}$ | $\sigma_{1}^ {2}, \sigma_{2}^ {2}$ 已知 | $\frac{(\overline{X}-\overline{Y})-(\mu_{1}-\mu_{2})}{\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}}} \sim N(0,1)$ | $\left( (\overline{X}-\overline{Y}) \pm z_{\alpha /2}\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}} \right)$ | $(\overline{X}-\overline{Y}) \pm z_{\alpha}\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}}$ |
 | $\mu_{1}-\mu_{2}$ | $\sigma_{1}^ {2}, \sigma_{2}^ {2}$ 未知 | $\frac{(\overline{X}-\overline{Y})-(\mu_{1}-\mu_{2})}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} \sim t(n_1+n_2-2)$ | $\left( (\overline{X}-\overline{Y}) \pm t_{\alpha /2}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}} \right)$ | $(\overline{X}-\overline{Y}) \pm t_{\alpha}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$ |
 | $\frac{\sigma_{1}^ {2}}{\sigma_{2}^ {2}}$ | $\mu_{1}, \mu_{2}$ 未知 | $\frac{S_1^ 2/S_2^ 2}{\sigma_{1}^ {2}/\sigma_{2}^ {2}} \sim F(n_1-1,n_2-1)$ | $\left( \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{\alpha /2}(n_1-1,n_2-1)}, \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{1-\alpha /2}(n_1-1,n_2-1)} \right)$ | $\frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{\alpha}(n_1-1,n_2-1)}, \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{1-\alpha}(n_1-1,n_2-1)}$ |
-
-<!-- "^ {}" is right, while "^{}" isn't. -->
