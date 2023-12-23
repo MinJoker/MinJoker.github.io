@@ -1315,15 +1315,6 @@ $$</p>
 
 前三行为一个正态总体，后三行为两个正态总体：
 
-| 待估参数 | 其他参数 | 枢轴量及其分布 | 置信区间 | 单侧置信限 |
-| :---: | :---: | :---: | :---: | :---: |
-| $\mu$ | $\sigma^ {2}$ 已知 | $\frac{\overline{X}-\mu}{\sigma /\sqrt{n}} \sim N(0,1)$ | $\left( \overline{X} \pm \frac{\sigma}{\sqrt{n}}z_{\alpha /2} \right)$ | $\overline{X} \pm \frac{\sigma}{\sqrt{n}}z_{\alpha}$ |
-| $\mu$ | $\sigma^ {2}$ 未知 | $\frac{\overline{X}-\mu}{S /\sqrt{n}} \sim t(n-1)$ | $\left( \overline{X} \pm \frac{S}{\sqrt{n}}t_{\alpha /2}(n-1) \right)$ | $\overline{X} \pm \frac{S}{\sqrt{n}}t_{\alpha}(n-1)$ |
-| $\sigma^ {2}$ | $\mu$ 未知 | $\frac{(n-1)S^ 2}{\sigma^{2}} \sim \chi^{2}(n-1)$ | $\left( \frac{(n-1)S^ 2}{\chi_{\alpha /2}^{2}(n-1)}, \frac{(n-1)S^2}{\chi_{1-\alpha /2}^{2}(n-1)} \right)$ | $\frac{(n-1)S^ 2}{\chi_{\alpha}^{2}(n-1)}, \frac{(n-1)S^ 2}{\chi_{1-\alpha}^{2}(n-1)}$ |
-| $\mu_{1}-\mu_{2}$ | $\sigma_{1}^ {2}, \sigma_{2}^ {2}$ 已知 | $\frac{(\overline{X}-\overline{Y})-(\mu_{1}-\mu_{2})}{\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}}} \sim N(0,1)$ | $\left( (\overline{X}-\overline{Y}) \pm z_{\alpha /2}\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}} \right)$ | $(\overline{X}-\overline{Y}) \pm z_{\alpha}\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}}$ |
-| $\mu_{1}-\mu_{2}$ | $\sigma_{1}^ {2}, \sigma_{2}^ {2}$ 未知 | $\frac{(\overline{X}-\overline{Y})-(\mu_{1}-\mu_{2})}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} \sim t(n_1+n_2-2)$ | $\left( (\overline{X}-\overline{Y}) \pm t_{\alpha /2}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}} \right)$ | $(\overline{X}-\overline{Y}) \pm t_{\alpha}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$ |
-| $\frac{\sigma_{1}^ {2}}{\sigma_{2}^ {2}}$ | $\mu_{1}, \mu_{2}$ 未知 | $\frac{S_1^ 2/S_2^ 2}{\sigma_{1}^ {2}/\sigma_{2}^ {2}} \sim F(n_1-1,n_2-1)$ | $\left( \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{\alpha /2}(n_1-1,n_2-1)}, \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{1-\alpha /2}(n_1-1,n_2-1)} \right)$ | $\frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{\alpha}(n_1-1,n_2-1)}, \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{1-\alpha}(n_1-1,n_2-1)}$ |
-
 <!-- "^ {}" is right, while "^{}" isn't. -->
 <ul>
 <li>当<span class="heti-skip"><span class="heti-spacing"> </span>$\alpha = ½$<span class="heti-spacing"> </span></span>时，<span>$x_{½}$<span class="heti-spacing"> </span></span>称为<span class="heti-skip"><span class="heti-spacing"> </span>$X$<span class="heti-spacing"> </span></span>的中位数；</li>
@@ -1409,6 +1400,7 @@ $$</p>
 <p>特别地，在下表中我们发现，这几个双侧置信限与单侧置信限的区别，恰恰是上<span class="heti-skip"><span class="heti-spacing"> </span>$x_{\alpha /2}$<span class="heti-spacing"> </span></span>分位数和上<span class="heti-skip"><span class="heti-spacing"> </span>$x_{\alpha}$<span class="heti-spacing"> </span></span>分位数的区别。</p>
 <h3 id="_37">正态总体参数区间估计表<a class="headerlink" href="#_37" title="Permanent link"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <p>前三行为一个正态总体，后三行为两个正态总体：</p>
+<!-- "^ {}" is right, while "^{}" isn't. -->
 <table>
 <thead>
 <tr>
@@ -1464,13 +1456,12 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<!-- "^ {}" is right, while "^{}" isn't. -->
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-12-23 14:49:50</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2023-12-23 14:54:54</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="Created">
