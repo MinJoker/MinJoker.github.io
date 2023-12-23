@@ -366,9 +366,13 @@ $$
 
 概率论告诉我们，现实中的许多随机事件都会在大数条件下呈现出稳定性（规律性），因而理论上只要对随机现象进行足够多次观察，一定能清楚地计算出各种结果的规律性。但是，实际上所允许的观察永远是有限的，甚至是少量的。
 
-<div class="heti-skip">
 从有限的观察中推测无限观察才能得到的规律，以样本的信息来推断总体的信息，这就是数理统计学研究的问题之一。根据 Glivenko-Cantelli 定理，经验分布函数的收敛行为随着独立同分布的观测值数量的增加而增强，这也证明了数理统计学通过样本信息推断总体信息这一方法的可行性和正确性。
-</div>
+
+上文提到的从样本出发推断总体，正是所谓的「统计推断」。R.A Fisher 将统计推断分为以下三种：
+
+- 抽样分布（统计量的分布）；
+- 参数估计；
+- 假设检验；
 
 ### 三大抽样分布表
 
@@ -384,3 +388,44 @@ $F$ 分布：<br />
 !!! note "碎碎念"
 
     这三张分布表找得有点难受，很奇怪为什么 Wikipedia 不给出完整的分布表。以我的强迫症，如果网址和分布表不够优雅的话，我也许会自己来做这件事（逃。
+
+## 参数估计
+
+### 纠偏方法
+
+无偏性是对估计量的一个最常见的重要要求，是“好”估计的标准之一。当估计量 $\hat{\theta}$ 不满足无偏性时，即 $E(\hat{\theta}) \not = \theta$ 时，我们可以对 $\hat{\theta}$ 进行微调，以使其满足无偏性，这一过程称为纠偏。
+
+这里给出一个最简单的纠偏情形：如果 $E(\hat{\theta})=a\theta +b$，其中 $a,b$ 为常数，且 $a\not =0$，则 $\frac{1}{a}(\hat{\theta}-b)$ 是对 $\theta$ 的无偏估计。
+
+### 枢轴量法补充
+
+用枢轴量发求解置信区间时，若常数 $a,b$ 是不唯一的，则根据 Neyman 原则，我们应该选择能使区间平均长度最短的 $a,b$。
+
+在实际应用中，为了方便，常取 $a,b$ 满足：
+
+$$
+P(G(X;\theta)\leq a) = P(G(X;\theta)\geq b) = \alpha /2
+$$
+
+这样得到的置信区间称为等尾置信区间。
+
+### 双侧置信与单侧置信
+
+注意区分双侧置信和单侧置信，在相同条件下，双侧置信区间的下限（或上限）并不等同于单侧置信下限（或上限）。
+
+特别地，在下表中我们发现，这几个双侧置信限与单侧置信限的区别，恰恰是上 $x_{\alpha /2}$ 分位数和上 $x_{\alpha}$ 分位数的区别。
+
+### 正态总体参数区间估计表
+
+前三行为一个正态总体，后三行为两个正态总体：
+
+| 待估参数 | 其他参数 | 枢轴量及其分布 | 置信区间 | 单侧置信限 |
+| :---: | :---: | :---: | :---: | :---: |
+| $\mu$ | $\sigma^ {2}$ 已知 | $\frac{\overline{X}-\mu}{\sigma /\sqrt{n}} \sim N(0,1)$ | $\left( \overline{X} \pm \frac{\sigma}{\sqrt{n}}z_{\alpha /2} \right)$ | $\overline{X} \pm \frac{\sigma}{\sqrt{n}}z_{\alpha}$ |
+| $\mu$ | $\sigma^ {2}$ 未知 | $\frac{\overline{X}-\mu}{S /\sqrt{n}} \sim t(n-1)$ | $\left( \overline{X} \pm \frac{S}{\sqrt{n}}t_{\alpha /2}(n-1) \right)$ | $\overline{X} \pm \frac{S}{\sqrt{n}}t_{\alpha}(n-1)$ |
+| $\sigma^ {2}$ | $\mu$ 未知 | $\frac{(n-1)S^ 2}{\sigma^{2}} \sim \chi^{2}(n-1)$ | $\left( \frac{(n-1)S^ 2}{\chi_{\alpha /2}^{2}(n-1)}, \frac{(n-1)S^2}{\chi_{1-\alpha /2}^{2}(n-1)} \right)$ | $\frac{(n-1)S^ 2}{\chi_{\alpha}^{2}(n-1)}, \frac{(n-1)S^ 2}{\chi_{1-\alpha}^{2}(n-1)}$ |
+| $\mu_{1}-\mu_{2}$ | $\sigma_{1}^ {2}, \sigma_{2}^ {2}$ 已知 | $\frac{(\overline{X}-\overline{Y})-(\mu_{1}-\mu_{2})}{\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}}} \sim N(0,1)$ | $\left( (\overline{X}-\overline{Y}) \pm z_{\alpha /2}\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}} \right)$ | $(\overline{X}-\overline{Y}) \pm z_{\alpha}\sqrt{\frac{\sigma_{1}^ {2}}{n_1}+\frac{\sigma_{2}^ {2}}{n_2}}$ |
+| $\mu_{1}-\mu_{2}$ | $\sigma_{1}^ {2}, \sigma_{2}^ {2}$ 未知 | $\frac{(\overline{X}-\overline{Y})-(\mu_{1}-\mu_{2})}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}} \sim t(n_1+n_2-2)$ | $\left( (\overline{X}-\overline{Y}) \pm t_{\alpha /2}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}} \right)$ | $(\overline{X}-\overline{Y}) \pm t_{\alpha}(n_1+n_2-2)S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$ |
+| $\frac{\sigma_{1}^ {2}}{\sigma_{2}^ {2}}$ | $\mu_{1}, \mu_{2}$ 未知 | $\frac{S_1^ 2/S_2^ 2}{\sigma_{1}^ {2}/\sigma_{2}^ {2}} \sim F(n_1-1,n_2-1)$ | $\left( \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{\alpha /2}(n_1-1,n_2-1)}, \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{1-\alpha /2}(n_1-1,n_2-1)} \right)$ | $\frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{\alpha}(n_1-1,n_2-1)}, \frac{S_1^ 2}{S_2^ 2}\frac{1}{F_{1-\alpha}(n_1-1,n_2-1)}$ |
+
+<!-- "^ {}" is right, while "^{}" isn't. -->
