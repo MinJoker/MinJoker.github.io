@@ -53,106 +53,99 @@
 
 ## 例：最大子序列和
 
-### O(N&#x00b3;)
+- $\Omicron(N^ 3)$，直接枚举开头结尾，并计算中间子序列和：
 
-直接枚举开头结尾，并计算中间子序列和：
-
-```c
-int MaxSubsequenceSum(const int a[], int N)
-{
-    int res = 0;
-    for (int i = 0; i < N; ++i) {
-        for (int j = i; j < N; ++j) {
-            int tmp = 0;
-            for (int k = i; k <= j; ++k) {
-                tmp += a[k];
+    ```c
+    int MaxSubsequenceSum(const int a[], int N)
+    {
+        int res = 0;
+        for (int i = 0; i < N; ++i) {
+            for (int j = i; j < N; ++j) {
+                int tmp = 0;
+                for (int k = i; k <= j; ++k) {
+                    tmp += a[k];
+                }
+                res = max(res, tmp);
             }
+        }
+        return res;
+    }
+    ```
+
+- $\Omicron(N^ 2)$，同样枚举开头结尾，但在枚举的同时计算子序列和，省去最内层循环：
+
+    ```c
+    int MaxSubsequenceSum(const int a[], int N)
+    {
+        int res = 0;
+        for (int i = 0; i < N; ++i) {
+            int tmp = 0;
+            for (int j = i; j < N; ++j) {
+                tmp += a[j];
+                res = max(res, tmp);
+            }
+        }
+        return res;
+    }
+    ```
+
+  - $\Omicron(N\log N)$，使用分治算法，$T(N)=2T(N/2)+cN$，符合主定理第三种情况，取 $k=0$：
+
+    ```c
+    int MaxSubsequenceSum(const int a[], int N)
+    {
+        return MaxSubSum(a, 0, N-1);
+    }
+
+    int MaxSubSum(const int a[], int left, int right)
+    {
+        if (left == right){
+            if (a[left] > 0){
+                return a[left];
+            } else {
+                return 0;
+            }
+        }
+        int mid = (left + right) / 2;
+        int sumLeft = MaxSubSum(a, left, mid);
+        int sumRight = MaxSubSum(a, mid+1, right);
+        int sumLeftBorder = 0, sumRightBorder = 0;
+        for (int i = mid, int tmp = 0; i >= left; --i) {
+            tmp += a[i];
+            sumLeftBorder = max2(sumLeftBorder, tmp);
+        }
+        for (int i = mid+1, int tmp = 0; i <= right; ++i) {
+            tmp += a[i];
+            sumRightBorder = max2(sumRightBorder, tmp);
+        }
+        return max3(sumLeft, sumRight, sumLeftBorder + sumRightBorder);
+    }
+    ```
+
+- $\Omicron(N)$，动态规划思想：
+
+    ```c
+    int MaxSubsequenceSum(const int a[], int N)
+    {
+        int res = 0, tmp = 0;
+        for (int i = 0; i < N; ++i) {
+            tmp += a[i];
             res = max(res, tmp);
+            tmp = max(tmp, 0);
         }
+        return res;
     }
-    return res;
-}
-```
-
-### O(N&#x00b2;)
-
-同样枚举开头结尾，但在枚举的同时计算子序列和，省去最内层循环：
-
-```c
-int MaxSubsequenceSum(const int a[], int N)
-{
-    int res = 0;
-    for (int i = 0; i < N; ++i) {
-        int tmp = 0;
-        for (int j = i; j < N; ++j) {
-            tmp += a[j];
-            res = max(res, tmp);
-        }
-    }
-    return res;
-}
-```
-
-### O(NlogN)
-
-使用分治算法，$T(N)=2T(N/2)+cN$，符合主定理第三种情况，取 $k=0$：
-
-```c
-int MaxSubsequenceSum(const int a[], int N)
-{
-    return MaxSubSum(a, 0, N-1);
-}
-
-int MaxSubSum(const int a[], int left, int right)
-{
-    if (left == right){
-        if (a[left] > 0){
-            return a[left];
-        } else {
-            return 0;
-        }
-    }
-    int mid = (left + right) / 2;
-    int sumLeft = MaxSubSum(a, left, mid);
-    int sumRight = MaxSubSum(a, mid+1, right);
-    int sumLeftBorder = 0, sumRightBorder = 0;
-    for (int i = mid, int tmp = 0; i >= left; --i) {
-        tmp += a[i];
-        sumLeftBorder = max2(sumLeftBorder, tmp);
-    }
-    for (int i = mid+1, int tmp = 0; i <= right; ++i) {
-        tmp += a[i];
-        sumRightBorder = max2(sumRightBorder, tmp);
-    }
-    return max3(sumLeft, sumRight, sumLeftBorder + sumRightBorder);
-}
-```
-
-### O(N)
-
-动态规划思想：
-
-```c
-int MaxSubsequenceSum(const int a[], int N)
-{
-    int res = 0, tmp = 0;
-    for (int i = 0; i < N; ++i) {
-        tmp += a[i];
-        res = max(res, tmp);
-        tmp = max(tmp, 0);
-    }
-    return res;
-}
-```
+    ```
 
 ## 例：对数复杂度有关问题
 
 - 对分查找：$\Omicron(\log(N))$
 - 欧几里得算法：$\Omicron(\log(N))$，因为 $\text{if}\;m>n,\;\text{then}\;m\;\text{mod}\;n<m/2$
-- 整数次幂：$\Omicron(\log(N))$
 
-```c title="gcd"
-int gcd(int a, int b) {
-    return b == 0 ? a : gcd(b, a % b);
-}
-```
+    ```c title="gcd"
+    int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    ```
+    
+- 整数次幂：$\Omicron(\log(N))$
