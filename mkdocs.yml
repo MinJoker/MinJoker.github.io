@@ -140,6 +140,7 @@ nav:
     - 数据结构与算法:
       - 数据结构基础:
         - cs/algorithm/fds/index.md
+        - cs/algorithm/fds/note1.md
       - Algorithm &#x2160;:
         - cs/algorithm/algorithm1/index.md
         - cs/algorithm/algorithm1/lec1.md
