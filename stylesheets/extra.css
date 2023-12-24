@@ -215,13 +215,43 @@ h6:before {
 
 
 
-/* Better Headings */
+/* Better Font-Size, copy from TonyCrane: https://github.com/TonyCrane/note/blob/master/docs/css/custom.css */
 
+@media screen and (min-width: 960px) {
+    /* body {
+      zoom: 1.1;
+    } */
+    html {
+      font-size: 137.5%;
+    }
+}
+@media screen and (min-width: 100em) {
+    html {
+      font-size: 137.5%;
+    }
+}
+@media screen and (min-width: 125em) {
+    html {
+      font-size: 137.5%;
+    }
+}
 .md-typeset h1, .md-typeset h2 {
     font-weight: 600;
 }
 .md-typeset h3 {
     font-weight: 500;
+}
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
+    letter-spacing: 0;
+}
+.md-typeset {
+    font-size: .7rem;
+}
+.md-typeset h3 {
+    font-weight: 600;
+}
+.md-typeset code:not(pre code) {
+    font-size: inherit;
 }
 
 /* end Better Headings */
