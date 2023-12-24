@@ -79,6 +79,7 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 4
+      permalink_title: anchor link to this section for reference
   #Python Markdown Extensions
 #  - pymdownx.arithmatex:
 #      generic: true
