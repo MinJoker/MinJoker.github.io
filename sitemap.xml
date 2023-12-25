@@ -2,127 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://minjoker.github.io/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/link/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/bci/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/bci/bciai/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/bci/bciai/ch3/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/bci/bciai/ch4/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/bci/bciai/ch5/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/algorithm/algorithm1/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/algorithm/algorithm1/lec1/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/algorithm/algorithm1/lec2/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/algorithm/algorithm1/lec3/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/algorithm/algorithm1/lec4/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/algorithm/fds/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/algorithm/fds/note1/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://minjoker.github.io/cs/algorithm/fds/note2/</loc>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/digital_logic/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/digital_logic/note0/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/cs/tools/markdown/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/math/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/math/discrete/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/math/discrete/note0/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/math/probability/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/math/probability/note0/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/others/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://minjoker.github.io/photo/</loc>
-         <lastmod>2023-12-24</lastmod>
+         <lastmod>2023-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
