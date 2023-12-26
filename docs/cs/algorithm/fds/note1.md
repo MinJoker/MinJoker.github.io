@@ -8,7 +8,7 @@
     - Output
     - Definiteness
     - Finiteness
-    - Effectiveness ( Feasibility )
+    - Effectiveness (Feasibility)
 - 注意，和 algorithm 不同，program 不需要 finite（例如操作系统）
 - 算法分析内容：
     - 运行时间：与机器和编译器有关
@@ -53,7 +53,7 @@
 
 ## 例：最大子序列和
 
-- $\Omicron(N^ 3)$，直接枚举开头结尾，并计算中间子序列和：
+- $\Omicron(N^ 3)$，直接枚举开头结尾，并计算中间子序列和
 
     ```c
     int MaxSubsequenceSum(const int a[], int N)
@@ -72,7 +72,7 @@
     }
     ```
 
-- $\Omicron(N^ 2)$，同样枚举开头结尾，但在枚举的同时计算子序列和，省去最内层循环：
+- $\Omicron(N^ 2)$，同样枚举开头结尾，但在枚举的同时计算子序列和，省去最内层循环
 
     ```c
     int MaxSubsequenceSum(const int a[], int N)
@@ -89,7 +89,7 @@
     }
     ```
 
-  - $\Omicron(N\log N)$，使用分治算法，$T(N)=2T(N/2)+cN$，符合主定理第三种情况，取 $k=0$：
+  - $\Omicron(N\log N)$，使用分治算法，$T(N)=2T(N/2)+cN$，符合主定理第三种情况，取 $k=0$
 
     ```c
     int MaxSubsequenceSum(const int a[], int N)
@@ -122,7 +122,7 @@
     }
     ```
 
-- $\Omicron(N)$，动态规划思想：
+- $\Omicron(N)$，动态规划思想
 
     ```c
     int MaxSubsequenceSum(const int a[], int N)
