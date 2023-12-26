@@ -148,4 +148,34 @@
     }
     ```
     
-- 整数次幂：$\Omicron(\log(N))$
+- 快速幂：$\Omicron(\log(N))$，即二进制取幂
+
+    === "非递归实现"
+
+        ```c
+        long long binPow(long long a, long long b)
+        {
+            long long res = 1;
+            while (b > 0) {
+                if (b & 1) res = res * a;
+                a = a * a;
+                b >>= 1;
+            }
+            return res;
+        }
+        ```
+
+    === "递归实现"
+
+        ```c
+        long long binPow(long long a, long long b)
+        {
+            if (0 == b) return 1;
+            long long res = binPow(a, b / 2);
+            if (b % 2) {
+                return res * res * a;
+            } else {
+                return res * res;
+            }
+        }
+        ```
