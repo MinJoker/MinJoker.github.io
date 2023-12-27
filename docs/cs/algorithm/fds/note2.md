@@ -19,8 +19,8 @@
 
     ```c
     struct Stack {
-        int capacity;
-        int topOfStack;
+        int Capacity;
+        int TopOfStack;
         ElementType *Array;
     }
     ```
@@ -33,8 +33,8 @@
 
     ```c
     struct Queue {
-        int capacity;
-        int front, rear;
+        int Capacity;
+        int Front, Rear;
         ElementType *Array;
     }
     ```
@@ -67,7 +67,7 @@
     - 自右向左扫描表达式
     - 左括号和右括号相反
     - 左结合操作符和右结合操作符相反，体现在优先级相等时的处理
-- 表达式树是一种二叉树，叶子节点均为操作数，其余节点均为操作符
+- 表达式树（expression tree）是一种二叉树，叶子节点均为操作数，其余节点均为操作符
 - 中缀表达式建树，维护两个栈，optr 栈存储操作符，expt 栈存储表达式树根节点
     1. 读到操作数，生成一个只有根节点的表达式树，入栈 expt
     2. 读到操作符，将其与 optr 栈顶操作符比较优先级
@@ -76,3 +76,38 @@
         - 注意，读到左括号直接入栈，读到右括号将栈中元素依次出栈直至左括号，丢弃这对括号
         - 注意，上述针对左结合操作符，对于右结合操作符（如 $\text{\textasciicircum}$），优先级相等时直接入栈
     3. 表达式读完后，将 expt 栈顶元素出栈，即为表达式树
+
+## 树
+
+### 基础概念
+
+- 树由根节点（root），以及 0 个或多个非空子树与根通过一条有向边（edge）连接组成
+- 一棵树是 $N$ 个节点和 $N-1$ 条边的集合
+- 节点的子树数量称为节点的度（degree）
+- 一棵树的度是这棵树里所有节点度的最大值
+- 有不止一个子树的节点称为父亲（parent）
+- 父亲的每棵子树的根节点称为儿子（children）
+- 有相同父亲的儿子称为兄弟（siblings）
+- 没有子树的节点称为树叶（leaf）
+- 从节点 $n_1$ 到 $n_k$ 的路径（path）是唯一的，其长度（length）是路径上边的数量
+- 节点 $n_i$ 的深度（depth）是从根到 $n_i$ 的唯一路径的长度
+- 节点 $n_i$ 的高度（height）是从 $n_i$ 到一个叶节点的最长长度
+- 树的高度 / 深度 = 根节点的高度 = 最深叶节点的深度
+- 一个节点的祖先（ancestor）是从根到这个节点的路径上的所有节点
+- 一个节点的后裔（descendants）是这个节点的子树中的所有节点
+
+### 二叉树
+
+- 树的表示：
+    - 列表表示，子节点个数未知，不易表示
+    - FirstChild-NextSibling 表示，因为儿子顺序不定，所以一棵树的表示方式不唯一
+
+        ```c
+        struct TreeNode {
+            ElementType Element;
+            PtrToNode FirstChild, NextSibling;
+        };
+        typedef struct TreeNode *PtrToNode;
+        ```
+    - 将 FirstChild-NextSibling 表示的树顺时针旋转 $45\degree$，可以得到二叉树
+- 二叉树（binary tree）是每个节点最多有两个儿子的树
