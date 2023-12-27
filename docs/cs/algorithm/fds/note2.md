@@ -2,7 +2,7 @@
 
 ## 栈和队列
 
-### 线性表基础
+### 线性表
 
 - 数组实现
 - 链表实现
@@ -13,7 +13,7 @@
 - 补充，链表的游标实现（no pointer）
     - 使用全局结构体数组来实现链表，维护其中一个分区 freelist 来实现 malloc 和 free
 
-### 栈和队列
+### 基础概念
 
 - 栈（stack）是 last-in-first-out (LIFO) 的
 
@@ -109,5 +109,6 @@
         };
         typedef struct TreeNode *PtrToNode;
         ```
+
     - 将 FirstChild-NextSibling 表示的树顺时针旋转 $45\degree$，可以得到二叉树
 - 二叉树（binary tree）是每个节点最多有两个儿子的树
