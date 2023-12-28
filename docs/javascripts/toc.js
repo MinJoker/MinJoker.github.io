@@ -1,3 +1,5 @@
+// copy from TonyCrane: https://github.com/TonyCrane/note/blob/master/docs/js/toc.js
+
 (function (window, document) {
   function register($toc) {
     const currentInView = new Set();
