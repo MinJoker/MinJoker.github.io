@@ -19,9 +19,9 @@
 
     ```c
     struct Stack {
-        int Capacity;
-        int TopOfStack;
-        ElementType *Array;
+        int capacity;
+        int topOfStack;
+        ElementType *array;
     }
     ```
 
@@ -33,9 +33,9 @@
 
     ```c
     struct Queue {
-        int Capacity;
-        int Front, Rear;
-        ElementType *Array;
+        int capacity;
+        int front, rear;
+        ElementType *array;
     }
     ```
 
@@ -103,13 +103,131 @@
     - FirstChild-NextSibling 表示，因为儿子顺序不定，所以一棵树的表示方式不唯一
 
         ```c
-        struct TreeNode {
-            ElementType Element;
-            PtrToNode FirstChild, NextSibling;
-        };
         typedef struct TreeNode *PtrToNode;
+        struct TreeNode {
+            ElementType element;
+            PtrToNode firstChild, nextSibling;
+        };
         ```
 
     - 将 FirstChild-NextSibling 表示的树顺时针旋转 $45\degree$，可以得到二叉树
     
 - 二叉树（binary tree）是每个节点最多有两个儿子的树
+    - 二叉树的左右两个儿子是有序的，即交换左右子树后二叉树可能会改变
+- 二叉树的性质：
+    - 第 $i$ 层的节点数最多为 $2^ {i-1}$
+    - 深度为 $k$ 的二叉树最多有 $2^ k$ 个节点
+    - 记 $n_0$ 表示叶节点数，$n_2$ 表示度为 $2$ 的节点数，则 $n_0 = n_2 + 1$
+- 斜二叉树（skewed binary tree）
+    - 所有节点都只有左子树的二叉树称为左斜树
+    - 所有节点都只有右子树的二叉树称为右斜树
+- 满二叉树（full binary tree）
+    - 最后一层都是叶节点，其余每层上的所有节点都有两个子树
+    - 一个二叉树是满的，当且仅当其有 $k$ 层和 $2^ k-1$ 个节点
+- 完全二叉树（complete binary tree）
+    - 除了最后一层，每一层都是满的
+    - 最后一层的节点靠左排列
+- 补充，二叉树可以通过数组来表示
+    - 根为 tree[1]
+    - 节点 tree[i] 的左儿子为 tree[2i]，右儿子为 tree[2i+1]
+    - 完全二叉树的数组中节点布满 1 ~ n
+
+### 遍历
+
+- 先序遍历（preorder traversal）
+    - 根 $\rightarrow$ 左 $\rightarrow$ 右
+
+        ```c
+        void preorder(tree_ptr tree)
+        {
+            if (tree) {
+                visit(tree);
+                for (each child C of tree)
+                    preorder(C);
+            }
+        }
+        ```
+
+- 后序遍历（postorder traversal）
+    - 左 $\rightarrow$ 右 $\rightarrow$ 根
+
+        ```c
+        void postorder(tree_ptr tree)
+        {
+            if (tree) {
+                for (each child C of tree)
+                    postorder(C);
+                visit(tree);
+            }
+        }
+        ```
+
+- 中序遍历（inorder traversal）
+    - 左 $\rightarrow$ 根 $\rightarrow$ 右
+    - 只适用于二叉树
+
+        === "递归实现"
+
+            ```c
+            void inorder(tree_ptr tree)
+            {
+                if (tree) {
+                    inorder(tree->left);
+                    visit(tree->element);
+                    inorder(tree->right);
+                }
+            }
+            ```
+
+        === "迭代实现"
+
+            ```c
+            void iter_inorder(tree_ptr tree)
+            {
+                Stack S = createStack();
+                for (;;) {
+                    for (; tree; tree = tree->left)
+                        push(tree, S);
+                    tree = top(S); pop(S);
+                    if (!tree) break;
+                    visit(tree->element);
+                    tree = tree->right;
+                }
+            }
+            ```
+
+- 层序遍历（level order traversal）
+    - 从上到下，从左到右
+
+        ```c
+        void levelorder(tree_ptr tree)
+        {
+            enqueue(tree);
+            while (queue is not empty) {
+                visit(T = dequeue());
+                for (each child C of tree)
+                    enqueue(C);
+            }
+        }
+        ```
+
+- 线索二叉树（threaded binary tree）
+    - 如果一个节点的左儿子为空，那么它的左指针指向它的中序遍历前驱（predecessor）节点
+    - 如果一个节点的右儿子为空，那么它的右指针指向它的中序遍历后继（successor）节点
+    - 线索二叉树必须有一个 head node，其左儿子为根，右儿子为自身
+    - 使用 head node 是为了让中序遍历的始末两个节点分别能有左儿子和右儿子（即 head node）
+
+        ```c
+        typedef struct ThreadedTreeNode *PtrToThreadedNode;
+        typedef struct PtrToThreadedNode ThreadedTree;
+        struct ThreadedTreeNode {
+            int leftThread, rightThread;  // 0 for child, 1 for thread.
+            ThreadTree left, right;
+            ElementType element;
+        }
+        ```
+
+- 线索二叉树能线性地遍历二叉树，从而比递归的中序遍历更快
+- 使用线索二叉树能够方便地找到一个节点的父节点
+
+### 二叉搜索树
