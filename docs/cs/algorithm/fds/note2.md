@@ -116,17 +116,16 @@
     - 二叉树的左右两个儿子是有序的，即交换左右子树后二叉树可能会改变
 - 二叉树的性质：
     - 第 $i$ 层的节点数最多为 $2^ {i-1}$
-    - 深度为 $k$ 的二叉树最多有 $2^ k$ 个节点
+    - 高度为 $k$ 的二叉树最多有 $2^ {k+1}-1$ 个节点，此时称为完美二叉树（perfect binary tree）
     - 记 $n_0$ 表示叶节点数，$n_2$ 表示度为 $2$ 的节点数，则 $n_0 = n_2 + 1$
 - 斜二叉树（skewed binary tree）
     - 所有节点都只有左子树的二叉树称为左斜树
     - 所有节点都只有右子树的二叉树称为右斜树
 - 满二叉树（full binary tree）
-    - 最后一层都是叶节点，其余每层上的所有节点都有两个子树
-    - 一个二叉树是满的，当且仅当其有 $k$ 层和 $2^ k-1$ 个节点
+    - 每个节点的度都是 0 或 2
 - 完全二叉树（complete binary tree）
-    - 除了最后一层，每一层都是满的
-    - 最后一层的节点靠左排列
+    - 只有最下面两层节点的度可以小于 2
+    - 最后一层的节点都集中在左边的连续位置上
 - 补充，二叉树可以通过数组来表示
     - 根为 tree[1]
     - 节点 tree[i] 的左儿子为 tree[2i]，右儿子为 tree[2i+1]
@@ -238,24 +237,25 @@
     - 一个节点的右子树中所有节点的 key 都大于该节点的 key
     - 左子树和右子树也都是二叉搜索树
 - 二叉搜索树的中序遍历是有序的
-- 查找：
+- 查找
     - 从根节点开始，如果 key 小于当前节点的 key，往左子树找，否则往右子树找
     - 直到找到 key 相等的节点，或者找到空节点
-    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度，即 $\Omicron(\log N)$
+    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度
+        - 理想情况下即 $\Omicron(\log n)$，最坏情况下退化为 $\Omicron(n)$（例如斜树）
 - 查询最小值：遍历到最左边的节点
 - 查询最大值：遍历到最右边的节点
-- 插入：
+- 插入
     - 从根节点开始，如果 key 小于当前节点的 key，往左子树找，否则往右子树找
     - 直到找到空节点，然后插入；或者找到 key 相等的节点，忽略本次插入
-    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度，即 $\Omicron(\log N)$
+    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度
 - 对于同一序列，插入的顺序不同，生成的二叉搜索树的高度也不同
-- 删除：
+- 删除
     - 删除叶节点：直接删除即可
     - 删除度为 1 的节点：用唯一的儿子替代它
     - 删除度为 2 的节点：
         - 用左子树的最大值（或右子树的最小值）替代它
         - 对左子树的最大值（或右子树的最小值）执行删除操作
-    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度，即 $\Omicron(\log N)$
+    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度
 
         ```c
         SearchTree delete(ElementType X, SearchTree T)
@@ -282,3 +282,94 @@
 
 - 当删除操作不多时，可以使用懒惰（lazy）方法
     - 用 flag 标记每个节点是否被删除，访问时忽略，删除时不必 free，重新插入时不必 malloc
+
+## 堆
+
+- 堆（heap）也称作优先队列（priority queue）
+- 二叉堆（binary heap）是一种完全二叉树，满足：
+    - 父节点的 key 总是不小于（或不大于）其子节点的 key（即大根堆或小根堆）
+
+        ```c
+        struct MinHeap {
+            int size;
+            ElementType elements[MAX_SIZE];  // elements[0] is a sentinel.
+        }
+        ```
+
+- 大根堆的根节点存有最大 key，小根堆的根节点存有最小 key
+- 插入
+    - 先放到最后一个位置，然后和父节点比较 key，不满足堆条件则和父节点交换
+    - 直到满足堆条件为止
+    - 时间复杂度 $\Omicron(\log n)$
+
+        ```c
+        void insert(ElementType X, MinHeap H)
+        {
+            if (isFull(H)) {
+                error("full heap");
+                return;
+            }
+            int i = ++H->size;  /* percolate up */
+            for (; H->elements[i/2] > X; i /= 2)
+                H->elements[i] = H->elements[i/2];
+            H->elements[i] = X;
+        }
+        ```
+    
+- 删除
+    - 先把最后一个叶节点放到根节点，然后和子节点比较 key，不满足堆条件则和最小（或最大）子节点交换
+    - 直到满足堆条件为止
+    - 时间复杂度 $\Omicron(\log n)$
+
+        ```c
+        ElementType deleteMin(MinHeap H)
+        {
+            if (isEmpty(H)) {
+                error("empty heap");
+                return H->elements[0];
+            }
+            int i, child;  /* percolate down */
+            ElementType minElement = H->elements[1];
+            ElementType lastElement = H->elements[H->size--];
+            for (i = 1; i * 2 <= H-> size; i = child) {
+                child = i * 2;
+                if (child != H->size && H->elements[child + 1] < H->elements[child])
+                    child++;
+                if (lastElement > H->elements[child])
+                    H->elements[i] = H->elements[child];
+                else break;
+            }
+            H->elements[i] = lastElement;
+            return minElement;
+        }
+        ```
+
+- 向上调整（percolate up）：自下而上堆化，即这个元素可能会向上移动
+    - 第 $k$ 层节点向上调整的复杂度为 $\Omicron(k)$
+- 向下调整（percolate down）：自上而下堆化，即这个元素可能会向下移动
+    - 第 $k$ 层节点向下调整的复杂度为 $\Omicron(\log n-k)$
+- 增加或减少某个节点的 key，只需要相应地 percolate up 或 down 一次即可
+- 删除某个非最大最小值节点
+    - 先把这个节点的 key 增加（或减少）到最大（或最小）
+    - 删除最大（或最小）节点
+- 建堆
+    - 从一个空的堆开始，插入 n 个元素，不考虑顺序，时间复杂度为 $\Omicron(n\log n)$
+    - 直接将这个序列当做二叉树，通过调整实现堆化
+        - 方法一，从根开始，按 BFS 序向上调整，时间复杂度为 $\Omicron(n\log n)$
+
+            ```c
+            void buildHeap1(void) {
+                for (i = 1; i <= n; i++) percolateUp(i);
+            }
+            ```
+
+        - 方法二，从最后一个叶节点开始，进行向下调整，时间复杂度为 $\Omicron(n)$
+
+            ```c
+            void buildHeap2(void) {
+                for (i = n; i >= 1; i--) percolateDown(i);
+            }
+            ```
+
+        - 方法二即线性建堆，可以理解为每次合并两个已经调整好的堆
+        - 之所以能线性建对，是因为堆性质很弱（不同于排序的强条件），二叉堆不是唯一的
