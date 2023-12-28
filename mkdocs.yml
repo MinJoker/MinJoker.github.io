@@ -47,6 +47,7 @@ extra_css:
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+#  - stylesheets/toc.css
 
 extra_javascript:
 #  - javascripts/mathjax.js
@@ -56,6 +57,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 #  - javascripts/heti.js    # doesn't seem to work
+  - javascripts/toc.js
 
 extra:
   analytics:
