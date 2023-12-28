@@ -11,6 +11,7 @@ copyright: Copyright <span style="font-family:Arial;">&copy;</span> 2023 <a href
 theme:
   name: material
   custom_dir: overrides
+  language: zh
   icon:
     logo: material/drama-masks
   favicon: assets/images/link/minjoker.png
@@ -115,9 +116,9 @@ plugins:
   - statistics
 #      page_check_metadata: <metadata>  # strict indentation ( tab )
   - git-revision-date-localized:
-      type: iso_datetime
+      type: datetime
       timezone: Asia/Shanghai
-      locale: en
+      locale: zh
       enable_creation_date: true
       exclude:
         - index.md
