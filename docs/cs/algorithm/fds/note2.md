@@ -135,7 +135,7 @@
 ### 遍历
 
 - 先序遍历（preorder traversal）
-    - 根 $\rightarrow$ 左 $\rightarrow$ 右
+    - 根 -> 左 -> 右
 
         ```c
         void preorder(tree_ptr tree)
@@ -149,7 +149,7 @@
         ```
 
 - 后序遍历（postorder traversal）
-    - 左 $\rightarrow$ 右 $\rightarrow$ 根
+    - 左 -> 右 -> 根
 
         ```c
         void postorder(tree_ptr tree)
@@ -163,7 +163,7 @@
         ```
 
 - 中序遍历（inorder traversal）
-    - 左 $\rightarrow$ 根 $\rightarrow$ 右
+    - 左 -> 根 -> 右
     - 只适用于二叉树
 
         === "递归实现"
@@ -231,3 +231,54 @@
 - 使用线索二叉树能够方便地找到一个节点的父节点
 
 ### 二叉搜索树
+
+- 二叉搜索树（binary search tree）是一种二叉树，非空时满足下列性质：
+    - 每个节点都有不同的 key（整数型）
+    - 一个节点的左子树中所有节点的 key 都小于该节点的 key
+    - 一个节点的右子树中所有节点的 key 都大于该节点的 key
+    - 左子树和右子树也都是二叉搜索树
+- 二叉搜索树的中序遍历是有序的
+- 查找：
+    - 从根节点开始，如果 key 小于当前节点的 key，往左子树找，否则往右子树找
+    - 直到找到 key 相等的节点，或者找到空节点
+    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度，即 $\Omicron(\log N)$
+- 查询最小值：遍历到最左边的节点
+- 查询最大值：遍历到最右边的节点
+- 插入：
+    - 从根节点开始，如果 key 小于当前节点的 key，往左子树找，否则往右子树找
+    - 直到找到空节点，然后插入；或者找到 key 相等的节点，忽略本次插入
+    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度，即 $\Omicron(\log N)$
+- 对于同一序列，插入的顺序不同，生成的二叉搜索树的高度也不同
+- 删除：
+    - 删除叶节点：直接删除即可
+    - 删除度为 1 的节点：用唯一的儿子替代它
+    - 删除度为 2 的节点：
+        - 用左子树的最大值（或右子树的最小值）替代它
+        - 对左子树的最大值（或右子树的最小值）执行删除操作
+    - 时间复杂度 $\Omicron(h)$，$h$ 为树的高度，即 $\Omicron(\log N)$
+
+        ```c
+        SearchTree delete(ElementType X, SearchTree T)
+        {
+            Position TmpCell;
+            if (T == NULL) error("not found");
+            else if (X < T->element) T->left = delete(X, T->left);
+            else if (X > T->element) T->right = delete(X, T->right);
+            else {  /* found element to be deleted */
+                if (T->left && T->right) {
+                    TmpCell = findMin(T->right);
+                    T->element = TmpCell->element;
+                    T->right = delete(T->element, T->right);
+                } else {
+                    TmpCell = T;
+                    if (T->left == NULL) T = T->right;
+                    else if (T->right == NULL) T = T->left;
+                    free(TmpCell);
+                }
+            }
+            return T;
+        }
+        ```
+
+- 当删除操作不多时，可以使用懒惰（lazy）方法
+    - 用 flag 标记每个节点是否被删除，访问时忽略，删除时不必 free，重新插入时不必 malloc
