@@ -130,7 +130,7 @@
     - 根为 tree[1]
     - 节点 tree[i] 的父亲为 tree[i/2]
     - 节点 tree[i] 的左儿子为 tree[2i]，右儿子为 tree[2i+1]
-    - 完全二叉树的数组中节点布满 tree[1]~tree[n]
+    - 完全二叉树的数组中节点布满 tree[1] ~ tree[n]
 
 ### 遍历
 
@@ -377,7 +377,77 @@
 - d-heap，是满足堆性质的 d 叉树
     - 根为 elements[1]
     - 节点 elements[i] 的父亲为 elements[(i+d-2)/d]
-    - 节点 elements[i] 的儿子为 elements[(i-1)d+2]~elements[id+1]
+    - 节点 elements[i] 的儿子为 elements[(i-1)d+2] ~ elements[id+1]
     - 插入与删除，时间复杂度为 $\Omicron(\log _{d}n)=\Omicron(\log n/\log d)$
 
 ## 并查集
+
+- 等价关系满足：
+    - 自反性（reflexive）
+    - 对称性（symmetric）
+    - 传递性（transitive）
+- 并查集（disjoint set）用于管理元素所属集合（等价类），支持以下操作：
+    - 合并（union）：合并两个集合
+    - 查询（find）：查询两个元素是否属于同一集合
+- 用树（森林）表示一个集合，树中的节点表示对应集合中的元素
+- 用数组实现并查集
+    - s[root] = 0
+    - s[i] 记录 i 这个节点的父节点
+- 查找
+
+    ```c
+    SetType find(ElementType X, DisjSet S) {
+        for (; S[X] > 0; X = S[X]) ;
+        return X;
+    }
+    ```
+
+- 合并：先查找两个元素所在树的根节点，然后将其中一个根节点设为另一个根节点的儿子
+
+    ```c
+    void union(DisjSet S, ElementType X1, ElementType X2){
+        S[find(X2, S)] = find(X1, S);
+    }
+    ```
+
+- 路径压缩（path-compression）
+    - 将查找过程中遍历到的所有节点，都直接连接到根节点
+
+        === "递归实现"
+
+            ```c
+            SetType find(ElementType X, DisjSet S) {
+                return S[X] <= 0 ? X : S[X] = find(S[X], S)
+            }
+            ```
+
+        === "非递归实现"
+
+            ```c
+            SetType find(ElementType X, DisjSet S)
+            {
+                ElementType root, trail, lead;
+                for (root = X; S[root] > 0; root = S[root]) ;
+                for (trail = X; trail != root; trail = lead) {
+                    lead = S[trail];
+                    S[trail] = root;
+                }
+                return root;
+            }
+            ```
+
+- 按大小合并（union-by-size）
+    - 始终将小的树合并到大的树上
+    - s[root] = -size，size 表示树的大小（树上的节点总数）
+    - 按大小合并得到的树，高度不超过 $\lfloor \log N \rfloor +1$
+    - $N$ 次 union 和 $M$ 次 find 操作的时间复杂度为 $\Omicron(N+M\log N)$
+- 按高度合并（union-by-height）
+    - 始终将矮的树合并到高的树上
+    - 只有当两棵等高的树合并时，树的高度才会增加 1
+    - $N$ 次 union 和 $M$ 次 find 操作的时间复杂度为 $\Omicron(N+M\log N)$
+    - 注意，路径压缩会改变树的高度，导致 height 频繁更新
+        - 可以用估计值 rank 来替代确切的 height，rank 是 height 的一个上界
+        - 只在合并时更新 rank，查找操作会改变 height，但不会引起 rank 的更新
+- 使用路径压缩和按秩合并的并查集，时间复杂度为 $\Theta(N+M\alpha (M,N))$
+    - $\alpha$ 是 Ackermann 函数的反函数
+    - $\alpha$ 的增长比迭代对数 $\log ^*$ 更缓慢
