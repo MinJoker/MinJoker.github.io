@@ -1,0 +1,5 @@
+mkdocs-material==9.5.3
+mkdocs-glightbox==0.3.4
+mkdocs-statistics-plugin==0.1.2
+mkdocs-git-revision-date-localized-plugin==1.2.1
+mkdocs-heti-plugin==0.1.6
