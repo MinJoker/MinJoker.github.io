@@ -911,10 +911,6 @@ jobs:
 
     Material for MkDocs 中已经包含了相应版本的 MkDocs，如果忘记了这件事的话，上文看起来可能会有些奇怪。
 
-!!! warning "最新发现"
-
-    上文提到的 `run: pip install mkdocs-material==9.4.6` 这种写法是有问题的，可能会导致部署出来的网站无法正确显示。
-
 ### 文件路径应该怎么写
 
 MkDocs 在 [1.5.0](https://www.mkdocs.org/about/release-notes/#version-150-2023-07-26) 的版本中更新了对链接有效性的约束规则，一些不规范的路径写法会被报告出来，比如：
