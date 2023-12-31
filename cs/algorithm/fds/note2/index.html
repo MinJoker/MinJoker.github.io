@@ -410,6 +410,24 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      图
+    </span>
+</a>
+<nav aria-label="图" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      基础概念
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -639,6 +657,24 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      图
+    </span>
+</a>
+<nav aria-label="图" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      基础概念
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -648,7 +684,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="_1">基础数据结构<a class="headerlink" href="#_1" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>2138<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>148<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>9<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>2869<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>148<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>11<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <h2 id="_2">栈和队列<a class="headerlink" href="#_2" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <h3 id="_3">线性表<a class="headerlink" href="#_3" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
@@ -1228,6 +1264,80 @@
 </ul>
 </li>
 </ul>
+<h2 id="_13">图<a class="headerlink" href="#_13" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="_14">基础概念<a class="headerlink" href="#_14" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>图（graph）常用<span class="heti-skip"><span class="heti-spacing"> </span>$G(V,E)$<span class="heti-spacing"> </span></span>表示，<span>$V$<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$E$<span class="heti-spacing"> </span></span>分别表示有限的点集和边集</li>
+<li>无向图（undirected graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：<span>$E$<span class="heti-spacing"> </span></span>中的元素为无序数对<span><span class="heti-spacing"> </span>$(u,v)$</span></li>
+<li>有向图（directed graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：<span>$E$<span class="heti-spacing"> </span></span>中的元素为有序数对<span><span class="heti-spacing"> </span>$\lang u,v\rang$</span></li>
+<li>不考虑自环（self loop）和多重边（multigraph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，即只考虑简单图（simple graph）</li>
+<li>完全图（complete graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：任意两点之间都有一条无向边或两条有向边<ul>
+<li>相同节点数的简单图中，完全图边数最多</li>
+</ul>
+</li>
+<li><span>$u,v$<span class="heti-spacing"> </span></span>之间有一条无向边<span><span class="heti-spacing"> </span>$(u,v)$</span>，称：<ul>
+<li><span>$u,v$<span class="heti-spacing"> </span></span>是相邻的（adjacent）</li>
+</ul>
+</li>
+<li>有一条从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的有向边<span><span class="heti-spacing"> </span>$\lang u,v\rang$</span>，称：<ul>
+<li>$u$ is adjacent to $v$</li>
+<li>$v$ is adjacent from $u$</li>
+</ul>
+</li>
+<li>子图（subgraph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：点集和边集都是原图的子集</li>
+<li>简单路径（simple path<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：路径上没有重复的点</li>
+<li>环（cycle<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：起点和终点相同的简单路径</li>
+<li>对于无向图：<ul>
+<li>如果存在一条从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的路径，则称<span class="heti-skip"><span class="heti-spacing"> </span>$u,v$<span class="heti-spacing"> </span></span>是连通的（connected）</li>
+<li>如果任意一对点都是连通的，则称这个无向图是连通的</li>
+<li>连通分量（connected component<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：无向图的极大连通子图</li>
+</ul>
+</li>
+<li>对于有向图：<ul>
+<li>如果存在一条从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的路径，则称从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>是可达的（reachable）</li>
+<li>如果任意一对点都相互可达，则称这个有向图是强连通的（strongly connected）</li>
+<li>强连通分量：有向图的极大强连通子图</li>
+<li>如果一张有向图不是强连通的，但把它的边替换为无向边后可以得到一张连通图，则称原来这个图是弱连通的（weakly connected）</li>
+</ul>
+</li>
+<li>树是连通的无环图</li>
+<li>DAG（directed acyclic graph）即有向无环图</li>
+<li>度（degree）<ul>
+<li>节点的度被定义为与这个节点关联（incident）的边的条数</li>
+<li>对于无向图，节点<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的度等于与<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>相邻的节点数</li>
+<li>对于有向图，节点<span><span class="heti-spacing"> </span>$v$</span>：<ul>
+<li>入度（in-degree）是以<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>为终点的边的条数</li>
+<li>出度（out-degree）是以<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>为起点的边的条数</li>
+</ul>
+</li>
+<li>所有节点的度的和等于图的总边数的两倍，即<span><span class="heti-spacing"> </span>$\sum_{v\in V}d(v)=2|E|$</span></li>
+</ul>
+</li>
+<li>图的邻接矩阵表示<ul>
+<li>如果存在一条从<span class="heti-skip"><span class="heti-spacing"> </span>$v_i$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v_j$<span class="heti-spacing"> </span></span>的边，则<span><span class="heti-spacing"> </span>$a_{ij}=1$</span>，否则<span><span class="heti-spacing"> </span>$a_{ij}=0$</span></li>
+<li>无向图的邻接矩阵是对称矩阵，可以只存储一半矩阵的信息：<ul>
+<li>$a^{\prime}[\frac{n(n+1)}{2}]=\lbrace a_{11},a_{21},a_{22},...,a_{n1},...,a_{nn} \rbrace$</li>
+</ul>
+</li>
+<li>对于非稠密图来说非常浪费空间</li>
+</ul>
+</li>
+<li>图的邻接表表示<ul>
+<li>对于每个节点，存储一个链表来记录所有和它相邻的节点</li>
+<li>无向图的邻接表会将每个边重复存储两次</li>
+<li>有向图的邻接表无法遍历入度，解决思路有：<ul>
+<li>额外存储一个逆邻接表</li>
+<li>使用多重链表<span><span class="heti-spacing"> </span>multilist</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>带权图<ul>
+<li>邻接矩阵：<span>$a_{ij}$<span class="heti-spacing"> </span></span>存储边<span class="heti-skip"><span class="heti-spacing"> </span>$(v_i,v_j)$<span class="heti-spacing"> </span></span>的权值</li>
+<li>邻接表：每个链表节点存储边的权值</li>
+</ul>
+</li>
+</ul>
 <!-- taken from 
 https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/override-a-theme/#example-mkdocs-material-theme -->
 <hr/>
@@ -1236,7 +1346,7 @@ https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/overri
 <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月30日 00:08:35</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月31日 23:54:14</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月25日 23:50:11</span>
