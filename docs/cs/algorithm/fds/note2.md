@@ -701,3 +701,28 @@
 
 ### 深度优先搜索
 
+- 深度优先搜索（DFS）是一种用于遍历或搜索树或图的算法
+- 深度优先搜索是先序遍历的一种推广
+
+    ```c
+    void dfs(Vertex V) {
+        visited[V] = true;
+        for (each W adjacent to V)
+            if (!visited[W]) dfs(W);
+    }
+    ```
+
+- 双连通性（biconnectivity）
+    - 如果删去一个点，剩下的图可以分成至少两个连通分量，则称这个点是割点（articulation point）
+    - 如果一个图是连通的，且不存在割点，则称这个图是双连通的
+    - 双连通分量（biconnected component）是极大的双连通子图
+- 求连通无向图的割点：Tarjan 算法
+    - 首先对原图进行 DFS，得到一个生成树
+        - dfn[x] 表示 x 在 DFS 中是第几个被访问的，从 0 开始
+    - 追溯值 low[x]
+        - 初始 low[x] = dfn[x]
+        - 如果从 x 到 y 的边在生成树上，则 low[x] = min(low[x], low[y])
+        - 如果从 x 到 y 的边不在生成树上（回边），则 low[x] = min(low[x], dfn[y])
+    - 判断割点
+        - 如果 u 是生成树的根，则 u 是割点当且仅当 u 有至少两个儿子
+        - 如果 u 不是生成树的根，则 u 是割点当且仅当存在一个儿子 v，满足 dfn[u] <= low[v]
