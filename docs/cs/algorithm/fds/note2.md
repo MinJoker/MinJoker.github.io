@@ -504,3 +504,31 @@
 
 ### 拓扑排序
 
+- AOV 网络是一种 DAG，节点表示事件，边表示事件的先后关系
+- 如果存在一条从 $u$ 到 $v$ 的路径，则称 $u$ 是 $v$ 的前驱（predecessor），$v$ 是 $u$ 的后继（successor）
+- 如果存在一条边 $\lang u,v\rang$，则称 $u$ 是 $v$ 的直接（immediate）前驱，$v$ 是 $u$ 的直接后继
+- AOV 网络中事件的先后关系是一种偏序关系，具有传递性与非自反性（无环）
+- 拓扑排序（topological order）是一个图的点集的线性序列，满足：
+    - 对于任意一对节点 $u,v$，如果 $u$ 是 $v$ 的前驱，序列中 $u$ 排在 $v$ 的前面
+- 注意，对于同一张图，拓扑排序不一定是唯一的
+- 拓扑排序算法，时间复杂度为 $\Omicron(|V|+|E|)$
+
+    ```c
+    void topSort(Graph G)
+    {
+        Queue Q = createQueue();
+        int cnt = 0;
+        Vertex V, W;
+        for (each vertex V)
+            if (indegree[V] == 0) enqueue(V);
+        while (!isEmpty(Q)) {
+            V = dequeue(Q);
+            topNum[V] = ++cnt;
+            for (each W adjacent to V)
+                if (--indegree[W] == 0) enqueue(W, Q);
+        }
+        if (cnt != numVertex)
+            error("graph has a cycle");
+        free(Q);
+    }
+    ```
