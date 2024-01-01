@@ -439,6 +439,20 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      网络流
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      最小生成树
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -700,6 +714,20 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      网络流
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      最小生成树
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -712,7 +740,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="_1">基础数据结构<a class="headerlink" href="#_1" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>3850<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>231<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>16<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>4148<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>231<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>17<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <h2 id="_2">栈和队列<a class="headerlink" href="#_2" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <h3 id="_3">线性表<a class="headerlink" href="#_3" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
@@ -1495,7 +1523,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>带负权边：<span>SPFA<span class="heti-spacing"> </span></span>算法，复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|E|\cdot|V|)$</span></p>
+<p>带负权边：<span>SPFA<span class="heti-spacing"> </span></span>算法，复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|E||V|)$</span></p>
 <ul>
 <li>上文无权图单源最短路问题的队列优化算法，可以看作<span class="heti-skip"><span class="heti-spacing"> </span>SPFA<span class="heti-spacing"> </span></span>的特殊情形</li>
 </ul>
@@ -1547,6 +1575,45 @@
 </ul>
 </li>
 </ul>
+<h3 id="_17">网络流<a class="headerlink" href="#_17" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>网络流定义在一个有向图上：<ul>
+<li>每条边都存在一个被称为容量（capacity）的权值，当<span class="heti-skip"><span class="heti-spacing"> </span>$(u,v)\notin E$<span class="heti-spacing"> </span></span>时，定义<span><span class="heti-spacing"> </span>$c(u,v)=0$</span></li>
+<li>网络中存在唯一的源点（source）和唯一的汇点（sink）</li>
+</ul>
+</li>
+<li>
+<p>最大流问题：给定一个有向图，求从源点到汇点的最大流量</p>
+<ol>
+<li>
+<p>建立残差图（residual graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，设<span class="heti-skip"><span class="heti-spacing"> </span>$f$<span class="heti-spacing"> </span></span>是图<span class="heti-skip"><span class="heti-spacing"> </span>$G=(V,E)$<span class="heti-spacing"> </span></span>的一个流，则残差图的边权为：</p>
+<p>$$
+c_f(u,v)=\begin{cases}
+c(u,v)-f(u,v)\;\;&amp;(u,v)\in E \cr
+f(v,u)&amp;(v,u)\in E \cr
+0&amp;\text{else}
+\end{cases}
+$$</p>
+</li>
+<li>
+<p>重复进行如下的增广操作，不断叠加网络的流，直到找不到增广路为止：</p>
+<ul>
+<li>寻找残差图中从源点到汇点的一条路径，称为增广路（augmenting path）</li>
+<li>增广路的流量为增广路上的最小边权，创建这样一条流，并更新残差图</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>寻找增广路</p>
+<ul>
+<li>BFS，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|V||E|^ 2)$</span></li>
+<li><span>Dinic<span class="heti-spacing"> </span></span>算法，当前弧优化下时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|V|^ 2|E|)$</span></li>
+</ul>
+</li>
+<li>最小费用流：费用指流经过边的代价，对于所有可能的最大流，求其中总费用最小的一条流</li>
+</ul>
+<h3 id="_18">最小生成树<a class="headerlink" href="#_18" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <!-- taken from 
 https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/override-a-theme/#example-mkdocs-material-theme -->
 <hr/>
@@ -1555,7 +1622,7 @@ https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/overri
 <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月1日 20:24:43</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月1日 21:46:53</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月25日 23:50:11</span>
