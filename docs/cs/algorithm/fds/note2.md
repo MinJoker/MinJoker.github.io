@@ -504,10 +504,12 @@
 
 ### 拓扑排序
 
-- AOV 网络是一种 DAG，节点表示事件，边表示事件的先后关系
+- AOV（activity on vertex）网络是一种有向无环图，节点表示事件，边表示事件的先后关系
 - 如果存在一条从 $u$ 到 $v$ 的路径，则称 $u$ 是 $v$ 的前驱（predecessor），$v$ 是 $u$ 的后继（successor）
 - 如果存在一条边 $\lang u,v\rang$，则称 $u$ 是 $v$ 的直接（immediate）前驱，$v$ 是 $u$ 的直接后继
 - AOV 网络中事件的先后关系是一种偏序关系，具有传递性与非自反性（无环）
+- AOV 网络中不应该出现环，否则网络表示的工程是不可实现的
+    - 检查 AOV 网络是否带环的方式是构造拓扑序列，观察是否包含所有节点
 - 拓扑排序（topological order）是一个图的点集的线性序列，满足：
     - 对于任意一对节点 $u,v$，如果 $u$ 是 $v$ 的前驱，序列中 $u$ 排在 $v$ 的前面
 - 注意，对于同一张图，拓扑排序不一定是唯一的
@@ -517,8 +519,7 @@
     void topSort(Graph G)
     {
         Queue Q = createQueue();
-        int cnt = 0;
-        Vertex V, W;
+        int cnt = 0; Vertex V, W;
         for (each vertex V)
             if (indegree[V] == 0) enqueue(V);
         while (!isEmpty(Q)) {
@@ -532,3 +533,125 @@
         free(Q);
     }
     ```
+
+### 最短路
+
+- 单源最短路：给定一个有向图和一个源点，求从源点到图中每个点的最短路径
+- 无权图的单源最短路：BFS 即可
+
+    === "队列优化"
+
+        ```c
+        void unweighted(Table T)
+        {   /* T is initialized with the source vertex S given */
+            Queue Q = createQueue(); Vertex V, W;
+            enqueue(S, Q);
+            while (!isEmpty(Q)) {
+                V = dequeue(Q);
+                for (each W adjacent to V) {
+                    if (T[W].dist == INFINITY) {
+                        T[W].dist = T[V].dist + 1;
+                        T[W].path = V;
+                        enqueue(W, Q);
+                    }
+                }
+            }
+            free(Q);
+        }
+        ```
+
+    === "广度优先搜索（BFS）"
+
+        ```c
+        void unweighted(Table T)
+        {
+            int currDist = 0; Vertex V, W;
+            for (; currDist < numVertex; currDist++) {
+                for (each vertex V) {
+                    if (!T[V].known && T[V].dist == currDist) {
+                        T[V].known = true;
+                        for (each W adjacent to V) {
+                            if (T[W].dist == INFINITY) {
+                                T[W].dist = currDist + 1;
+                                T[W].path = V;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        ```
+
+- 带权图的单源最短路：Dijkstra 算法（只适用于非负权图）
+    1. 将节点分为两个集合：已确定最短路的点集 S 和未确定最短路的点集 T；起初所有节点都属于 T
+    2. 初始化 dis[s] = 0，其他 dis = $\infty$
+    3. 重复以下操作，直到 T 为空
+        1. 从 T 中选取一个最短路长度最小的节点，移到 S 中
+        2. 对刚刚加入 S 的节点的所有出边执行松弛（relax）操作：<br />
+           对于边 (u,v)，松弛操作为 dis[v] = min(dis[v], dis[u] + weight(u,v))
+- Dijkstra 算法堆优化复杂度为 $\Omicron(|E|\log |V|)$
+    1. 用标记节点是否已访问来表示 S，用一个小根堆来表示 T
+    2. 初始化 dis[s] = 0，其他 dis = $\infty$
+    3. 重复以下操作，直到堆为空
+        1. 从堆中选取 dis[u] 最小的且未被访问过的 u，将 u 标记为已访问
+        2. 扫描 u 的所有出边 (u,v)，执行松弛操作：<br />
+           若 dis[v] > dis[u] + weight(u,v)，则用后者更新 dis[v]，并将 {v, dis[v]} 压入堆中（或者直接更新堆中的 v 并向上调整）
+    
+    ```c
+    void Dijkstra(Table T)
+    {
+        Heap H = createHeap(T); Vertex V, W;
+        while (!isEmpty(H)) {
+            V = deleteMin(H);
+            if (T[V].known) continue;
+            T[V].known = true;
+            for (each W adjacent to V) {
+                if (T[W].dist > T[V].dist + weight(V, W)) {
+                    T[W].dist = T[V].dist + weight(V, W);
+                    T[W].path = V;
+                    insert({W, T[W].dist}, H);
+                    /* or: decrease(T[W].dist to T[V].dist + weight(V, W)) */
+                }
+            }
+        }
+        free(H);
+    }
+    ```
+
+- 带负权边：SPFA 算法，复杂度为 $\Omicron(|E|\cdot|V|)$
+    - 上文无权图单源最短路问题的队列优化算法，可以看作 SPFA 的特殊情形
+
+    ```c
+    void negweighted(Table T)
+    {   /* T is initialized with the source vertex S given */
+        Queue Q = createQueue(); Vertex V, W;
+        enqueue(S, Q);
+        while (!isEmpty(Q)) {
+            V = dequeue(Q);
+            for (each W adjacent to V) {
+                if (T[W].dist > T[V].dist + weight(V, W)) {
+                    T[W].dist = T[V].dist + weight(V, W);
+                    T[W].path = V;
+                    if (W is not already in Q) enqueue(W, Q);
+                }
+            }
+        }
+        free(Q);
+    }
+    ```
+
+- AOE（activity on edge）网络是一个带权的有向无环图，节点表示事件，带权边表示活动持续的时间
+- AOE 网络用于解决工程最短时间问题
+    - 完成整个工程的最短时间是从源点到汇点的最长活动路径长度
+- 每个节点代表的事件存在一个最早完成时间（EC）和最晚完成时间（LC）
+    - EC 从源点开始向后计算，$EC[w]=max_{\lang v,w\rang \in E}\lbrace EC[v] + weight(v,w)\rbrace$
+    - LC 从汇点开始向前计算，$LC[w]=min_{\lang v,w\rang \in E}\lbrace LC[v] - weight(v,w)\rbrace$
+- 每条边代表的活动存在一个持续时间（即边权）和一个松弛时间（slack time）
+    - 边 $\lang v,w\rang$ 的松弛时间为 $LC[w]-EC[v]-weight(v,w)$
+- 关键路径（critical path）是 AOE 网络中的最长活动路径
+    - 关键路径中所有边的松弛时间都是零
+- 任意两点间最短路
+    - 以每个节点作为源点，分别计算单源最短路，适合于稀疏图
+    - Floyd 算法，三个 for 循环即可实现，适合于任何图（无负环）
+        - 定义 f[k][v][w] 表示在只允许经过节点 1~k 的限制下，从节点 v 到 w 的最短路
+        - f[k][v][w] = min(f[k-1][v][w], f[k][v][k] + f[k][k][w])
