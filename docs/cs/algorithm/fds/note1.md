@@ -59,10 +59,10 @@
     int MaxSubsequenceSum(const int a[], int N)
     {
         int res = 0;
-        for (int i = 0; i < N; ++i) {
-            for (int j = i; j < N; ++j) {
+        for (int i = 0; i < N; i++) {
+            for (int j = i; j < N; j++) {
                 int tmp = 0;
-                for (int k = i; k <= j; ++k) {
+                for (int k = i; k <= j; k++) {
                     tmp += a[k];
                 }
                 res = max(res, tmp);
@@ -78,9 +78,9 @@
     int MaxSubsequenceSum(const int a[], int N)
     {
         int res = 0;
-        for (int i = 0; i < N; ++i) {
+        for (int i = 0; i < N; i++) {
             int tmp = 0;
-            for (int j = i; j < N; ++j) {
+            for (int j = i; j < N; j++) {
                 tmp += a[j];
                 res = max(res, tmp);
             }
@@ -114,7 +114,7 @@
             tmp += a[i];
             sumLeftBorder = max2(sumLeftBorder, tmp);
         }
-        for (int i = mid+1, int tmp = 0; i <= right; ++i) {
+        for (int i = mid+1, int tmp = 0; i <= right; i++) {
             tmp += a[i];
             sumRightBorder = max2(sumRightBorder, tmp);
         }
@@ -128,7 +128,7 @@
     int MaxSubsequenceSum(const int a[], int N)
     {
         int res = 0, tmp = 0;
-        for (int i = 0; i < N; ++i) {
+        for (int i = 0; i < N; i++) {
             tmp += a[i];
             res = max(res, tmp);
             tmp = max(tmp, 0);
