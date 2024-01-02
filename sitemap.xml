@@ -81,6 +81,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://minjoker.github.io/cs/algorithm/fds/note3/</loc>
+         <lastmod>2024-01-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://minjoker.github.io/cs/digital_logic/</loc>
          <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
