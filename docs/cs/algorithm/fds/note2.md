@@ -368,6 +368,7 @@
             ```c
             void buildHeap2(void) {
                 for (i = n; i >= 1; i--) percolateDown(i);
+                /* for (i = n / 2 to 1) is enough */
             }
             ```
 
