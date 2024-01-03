@@ -92,3 +92,53 @@ void insertionSort(ElementType arr[], int n)
 
 - 堆排序的平均、最好、最坏复杂度均为 $\Omicron(N\log N)$
 - 堆排序的平均复杂度是优秀的，但在实际应用时往往不如基于 Sedgewick 增量序列的希尔排序
+
+### 归并排序
+
+- 归并排序基于分治思想，将数据分段排序后再依次合并
+- 关键的操作是合并两个有序序列成为一个有序序列，可以在 $\Omicron(N)$ 时间内完成
+- 需要额外的空间来辅助合并，通常使用与原数组等长的辅助数组
+- $T(N)=2T(\frac{N}{2})+\Omicron(N)$，时间复杂度为 $\Omicron(N\log N)$
+- 递归实现
+
+    ```c
+    void mergeSort(ElementType arr[], int n) {
+        ElementType *tmp = malloc(sizeof(ElementType) * n);
+        if (tmp != NULL) {
+            mergeSortHelper(arr, tmp, 0, n - 1);
+            free(tmp);
+        } else { /* need O(N) extra space */
+            printf("no space for tmp array");
+        }
+    }
+
+    void mergeSortHelper(ElementType arr[], ElementType tmp[], int left, int right) {
+        if (left < right) {
+            int center = (left + right) / 2;
+            mergeSortHelper(arr, tmp, left, center);
+            mergeSortHelper(arr, tmp, center + 1, right);
+            merge(arr, tmp, left, center + 1, right);
+        }
+    }
+
+    void merge(ElementType arr[], ElementType tmp[], int leftPos, int rightPos, int rightEnd) {
+        int leftEnd = rightPos - 1;
+        int tmpPos = leftPos;
+        int numElements = rightEnd - leftPos + 1;
+        while (leftPos <= leftEnd && rightPos <= rightEnd) {
+            if (arr[leftPos] <= arr[rightPos])
+                tmp[tmpPos++] = arr[leftPos++];
+            else
+                tmp[tmpPos++] = arr[rightPos++];
+        }
+        while (leftPos <= leftEnd)
+            tmp[tmpPos++] = arr[leftPos++];
+        while (rightPos <= rightEnd)
+            tmp[tmpPos++] = arr[rightPos++];
+        for (int i = 0; i < numElements; i++, rightEnd--)
+            arr[rightEnd] = tmp[rightEnd];
+    }
+    ```
+
+- 也可以迭代实现，从长度 1 开始不断倍增分割长度，并依次合并
+- 归并排序需要额外的辅助空间并多次复制整个数组，所以通常不用于内排序（internal sort），但常用于外排序（external sort）
