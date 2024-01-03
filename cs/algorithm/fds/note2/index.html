@@ -1213,7 +1213,9 @@
 <li>删除最大（或最小）节点</li>
 </ul>
 </li>
-<li>建堆<ul>
+<li>
+<p>建堆</p>
+<ul>
 <li>从一个空的堆开始，插入<span class="heti-skip"><span class="heti-spacing"> </span>n<span class="heti-spacing"> </span></span>个元素，不考虑顺序，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(n\log n)$</span></li>
 <li>
 <p>直接将这个序列当作二叉树，原地调整实现堆化</p>
@@ -1236,15 +1238,17 @@
 <p>方法二即线性建堆，可以理解为每次合并两个已经调整好的堆</p>
 </li>
 <li>之所以能线性建对，是因为堆性质很弱（不同于排序的强条件<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，二叉堆不是唯一的</li>
-<li>d-heap，是满足堆性质的<span class="heti-skip"><span class="heti-spacing"> </span>d<span class="heti-spacing"> </span></span>叉树<ul>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>d-heap，是满足堆性质的<span class="heti-skip"><span class="heti-spacing"> </span>d<span class="heti-spacing"> </span></span>叉树</p>
+<ul>
 <li>根为<span><span class="heti-spacing"> </span>elements[1]</span></li>
 <li>节点<span class="heti-skip"><span class="heti-spacing"> </span>elements[i]<span class="heti-spacing"> </span></span>的父亲为<span><span class="heti-spacing"> </span>elements[(i+d-2)/d]</span></li>
 <li>节点<span class="heti-skip"><span class="heti-spacing"> </span>elements[i]<span class="heti-spacing"> </span></span>的儿子为<span><span class="heti-spacing"> </span>elements[(i-1)d+2] ~ elements[id+1]</span></li>
 <li>插入与删除，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(\log _{d}n)=\Omicron(\log n/\log d)$</span></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -1742,7 +1746,7 @@ https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/overri
 <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月2日 11:32:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月3日 14:06:57</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年12月25日 23:50:11</span>
