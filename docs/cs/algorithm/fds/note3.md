@@ -107,7 +107,7 @@ void insertionSort(ElementType arr[], int n)
         if (tmp != NULL) {
             mergeSortHelper(arr, tmp, 0, n - 1);
             free(tmp);
-        } else { /* need O(N) extra space */
+        } else {  /* need O(N) extra space */
             printf("no space for tmp array");
         }
     }
@@ -142,3 +142,58 @@ void insertionSort(ElementType arr[], int n)
 
 - 也可以迭代实现，从长度 1 开始不断倍增分割长度，并依次合并
 - 归并排序需要额外的辅助空间并多次复制整个数组，所以通常不用于内排序（internal sort），但常用于外排序（external sort）
+
+### 快速排序
+
+- 快速排序是已知的实际运行最快的排序算法
+- 选择一个基准元素（pivot），将待排序列分成两部分，左边的元素都小于等于基准元素，右边的元素都大于等于基准元素，然后递归地对左右两部分继续使用快速排序
+    - 注意，左右两部分分别进行排序之后，不需要合并操作，因为此时序列已经完全有序
+- 选取 pivot
+    - 错误方法：pivot = arr[0]，对于已经有序的序列仍会消耗 $\Omicron(N^ 2)$ 的时间
+    - 安全方法：pivot = random element in arr，然而随机数的生成也有开销
+    - 三数中值：pivot = (left + center + right) / 3
+- 递归实现
+
+    ```c
+    void quickSort(ElemenType arr[], int n) {
+        quickSortHelper(arr, 0, n - 1);
+    }
+
+    void quickSortHelper(ElementType arr[], int left, int right) {
+        ElementType pivot = median3(arr, left, right);
+        int i = left, j = right - 1;
+        for (;;) {
+            while (arr[++i] < pivot) continue;
+            while (arr[--j] > pivot) continue;
+            if (i < j)
+                swap(&arr[i], &arr[j]);
+            else
+                break;
+        }
+        swap(&arr[i], &arr[right - 1]);
+        quickSortHelper(arr, left, i - 1);
+        quickSortHelper(arr, i + 1, right);
+    }
+
+    ElementType median3(ElementType arr[], int left, int right) {
+        int center = (left + right) / 2;
+        if (arr[left] > arr[center])  swap(&arr[left], &arr[center]);
+        if (arr[left] > arr[right])   swap(&arr[left], &arr[right]);
+        if (arr[center] > arr[right]) swap(&arr[center], &arr[right]);
+        swap(&arr[center], &arr[right - 1]);    /* hide pivot */
+        /* only need to sort arr[left + 1] ... arr[right - 2] */
+        return arr[right - 1];
+    }
+    ```
+
+- 最坏情况：每次选取的 pivot 总是序列的最值，复杂度 $\Omicron(N^ 2)$
+- 最好情况：每次选取的 pivot 总是序列的中位数，复杂度 $\Omicron(N\log N)$
+- 平均情况：每次选取的 pivot 是随机的，复杂度 $\Omicron(N\log N)$
+- 对于小规模数据（$N\leq 20$），快排慢于插入排序
+    - 可以在快排递归到 $N$ 较小的情况下改用插入排序
+- 线性找第 k 大的数
+    - 利用快排，每次用 pivot 划分数据的时候，根据左右的元素个数，判断第 k 大的数是在哪一边，从而只对左边或右边继续递归快排
+    - 如果每次选取的 pivot 是随机的，复杂度为 $\Omicron(N)$
+- 基于比较的排序算法，最坏情况下复杂度下界为 $\Omega(N\log N)$
+    - 基于比较的排序算法：冒泡、选择、插入、希尔、堆排序、归并、快排等
+    - 非基于比较的排序算法：桶排序、基数排序、计数排序等
