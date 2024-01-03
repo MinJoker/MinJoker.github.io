@@ -8,9 +8,9 @@
 - 最好情况：待排序列是有序的，复杂度 $\Omicron(N)$
 
 ```c
-void insertionSort(ElementType arr[], int N)
+void insertionSort(ElementType arr[], int n)
 {
-    for (int i = 1; i < N; i++) {
+    for (int i = 1; i < n; i++) {
         ElementType tmp = arr[i];
         int j = i;
         for (; j > 0 && arr[j - 1] > tmp; j--)
@@ -37,10 +37,10 @@ void insertionSort(ElementType arr[], int N)
     - 最坏情况：只在 $h_1$-sort 时进行了排序，复杂度 $\Omicron(N^ 2)$
 
     ```c
-    void shellSort(ElementType arr[], int N)
+    void shellSort(ElementType arr[], int n)
     {
-        for (int inc = N/2; inc > 0; inc /= 2) {
-            for (int i = inc; i < N; i++) {
+        for (int inc = n / 2; inc > 0; inc /= 2) {
+            for (int i = inc; i < n; i++) {
                 ElementType tmp = arr[i];
                 int j = i;
                 for (; j >= inc; j -= inc) {
@@ -64,3 +64,31 @@ void insertionSort(ElementType arr[], int N)
 - 希尔排序是一种简单的排序算法（即使其分析相当复杂），适合于中等规模（数万）数据的排序
 
 ### 堆排序
+
+- 算法一：
+    - 将待排数据以线性时间建小根堆，然后依次从堆顶取出最小元素
+    - 时间复杂度 $\Omicron(N\log N)$
+    - 但是空间消耗翻倍了（从堆中取最小元素后需要额外的空间存放排好序的序列）
+- 算法二：
+    - 将待排数据以线性时间建大根堆，并重复如下操作：
+        - 将堆顶元素与堆尾元素交换（相当于删除了最大值），并进行向下调整
+        - 将堆顶元素与堆尾元素交换（相当于删除了次大值），并进行向下调整
+        - 如此循环 N-1 次后，得到一个从小到大的有序序列
+    
+    ```c
+    void heapSort(ElementType arr[], int n)
+    {   /* arr[0] is a sential */
+        for (int i = n / 2; i >= 1; i--)
+            percolateDown(arr, n, i);
+        for (int i = n; i > 1; i--) {
+            swap(&arr[1], &arr[i]);
+            percolateDown(arr, i - 1, 1);
+        }
+    }
+    ```
+
+    - 对于相异元素的随机序列，堆排序的平均比较次数为 $2N\log N-\Omicron(N\log \log N)$
+    - 算法二实现的堆排序是原地排序，没有消耗额外的空间
+
+- 堆排序的平均、最好、最坏复杂度均为 $\Omicron(N\log N)$
+- 堆排序的平均复杂度是优秀的，但在实际应用时往往不如基于 Sedgewick 增量序列的希尔排序
