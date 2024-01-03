@@ -79,7 +79,7 @@
     /* disable border */
     .md-typeset .admonition,
     .md-typeset details {
-        border: none;
+      border-width: 0;
     }
 }
 
