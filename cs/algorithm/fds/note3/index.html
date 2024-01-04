@@ -399,6 +399,24 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      哈希
+    </span>
+</a>
+<nav aria-label="哈希" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      哈希表
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -610,6 +628,24 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      哈希
+    </span>
+</a>
+<nav aria-label="哈希" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      哈希表
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -619,7 +655,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="_1">排序与哈希<a class="headerlink" href="#_1" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>2005<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>100<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>8<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>2360<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>100<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>9<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <h2 id="_2">排序<a class="headerlink" href="#_2" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <h3 id="_3">插入排序<a class="headerlink" href="#_3" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
@@ -918,6 +954,29 @@
 </ul>
 </li>
 </ul>
+<h2 id="_11">哈希<a class="headerlink" href="#_11" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h3 id="_12">哈希表<a class="headerlink" href="#_12" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>哈希表（hash table）也称为散列表，以<span class="heti-skip"><span class="heti-spacing"> </span>(key, value)<span class="heti-spacing"> </span></span>的形式存储数据，即任意的关键字<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>都唯一对应到内存中的某个位置，只要输入查找的关键字，就可以快速地找到相应的<span><span class="heti-spacing"> </span>value</span><ul>
+<li>可以把哈希表理解为一种高级的数组，这种数组的下标可以是很大的整数、浮点数、字符串甚至结构体</li>
+<li>关键字也称标识符（identifier）</li>
+</ul>
+</li>
+<li>通常用一个数组来实现，可以有多个槽（slot<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，即多个关键字对应同一个位置时，将不同关键字存在同一个位置的不同槽中</li>
+<li>对于关键字<span><span class="heti-spacing"> </span>$x$</span>，定义一个哈希函数<span class="heti-skip"><span class="heti-spacing"> </span>$f(x)$<span class="heti-spacing"> </span></span>表示<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>在哈希表<span class="heti-skip"><span class="heti-spacing"> </span>ht[]<span class="heti-spacing"> </span></span>中的位置（索引）</li>
+<li>设哈希表<span class="heti-skip"><span class="heti-spacing"> </span>ht[]<span class="heti-spacing"> </span></span>的大小为<span><span class="heti-spacing"> </span>$b$</span>（即<span class="heti-skip"><span class="heti-spacing"> </span>$f(x)$<span class="heti-spacing"> </span></span>值域为<span><span class="heti-spacing"> </span>$[0,b-1]$</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，最多有<span class="heti-skip"><span class="heti-spacing"> </span>$s$<span class="heti-spacing"> </span></span>个槽，则定义以下值：<ul>
+<li><span>$T$<span class="heti-spacing"> </span></span>表示<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>可能的不同取值个数</li>
+<li><span>$n$<span class="heti-spacing"> </span></span>表示<span class="heti-skip"><span class="heti-spacing"> </span>ht[]<span class="heti-spacing"> </span></span>中关键字的个数</li>
+<li>标识符密度（identifier density）定义为<span><span class="heti-spacing"> </span>$\frac{n}{T}$</span></li>
+<li>装载密度（loading density）定义为<span><span class="heti-spacing"> </span>$\lambda=\frac{n}{sb}$</span></li>
+</ul>
+</li>
+<li>当存在<span class="heti-skip"><span class="heti-spacing"> </span>$i_1\not =i_2$<span class="heti-spacing"> </span></span>且<span class="heti-skip"><span class="heti-spacing"> </span>$f(i_1)=f(i_2)$<span class="heti-spacing"> </span></span>的情况，则称为发生了碰撞（collision）</li>
+<li>当将一个新的关键字映射到一个满的位置时（即槽已经被填满<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，则称为发生了溢出（overflow）<ul>
+<li>当<span class="heti-skip"><span class="heti-spacing"> </span>$s=1$<span class="heti-spacing"> </span></span>时，碰撞和溢出将同时发生</li>
+</ul>
+</li>
+</ul>
 <!-- taken from 
 https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/override-a-theme/#example-mkdocs-material-theme -->
 <hr/>
@@ -926,7 +985,7 @@ https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/overri
 <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月3日 23:30:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月4日 16:32:13</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月2日 23:35:58</span>
