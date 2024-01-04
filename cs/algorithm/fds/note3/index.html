@@ -414,6 +414,59 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      哈希函数
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      分离链接
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      开放寻址
+    </span>
+</a>
+<nav aria-label="开放寻址" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      线性探测
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      平方探测
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      双哈希
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      再哈希
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -643,6 +696,59 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      哈希函数
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      分离链接
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      开放寻址
+    </span>
+</a>
+<nav aria-label="开放寻址" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      线性探测
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      平方探测
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      双哈希
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      再哈希
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -655,7 +761,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="_1">排序与哈希<a class="headerlink" href="#_1" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>2360<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>100<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>9<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>3367<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>183<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>14<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <h2 id="_2">排序<a class="headerlink" href="#_2" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
 <h3 id="_3">插入排序<a class="headerlink" href="#_3" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
@@ -958,6 +1064,7 @@
 <h3 id="_12">哈希表<a class="headerlink" href="#_12" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <ul>
 <li>哈希表（hash table）也称为散列表，以<span class="heti-skip"><span class="heti-spacing"> </span>(key, value)<span class="heti-spacing"> </span></span>的形式存储数据，即任意的关键字<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>都唯一对应到内存中的某个位置，只要输入查找的关键字，就可以快速地找到相应的<span><span class="heti-spacing"> </span>value</span><ul>
+<li>假设用数组<span class="heti-skip"><span class="heti-spacing"> </span>a<span class="heti-spacing"> </span></span>存放数据，哈希函数是<span><span class="heti-spacing"> </span>f</span>，则<span class="heti-skip"><span class="heti-spacing"> </span>(key, value)<span class="heti-spacing"> </span></span>就应该放在<span class="heti-skip"><span class="heti-spacing"> </span>a[f(key)]<span class="heti-spacing"> </span></span>上</li>
 <li>可以把哈希表理解为一种高级的数组，这种数组的下标可以是很大的整数、浮点数、字符串甚至结构体</li>
 <li>关键字也称标识符（identifier）</li>
 </ul>
@@ -971,9 +1078,182 @@
 <li>装载密度（loading density）定义为<span><span class="heti-spacing"> </span>$\lambda=\frac{n}{sb}$</span></li>
 </ul>
 </li>
-<li>当存在<span class="heti-skip"><span class="heti-spacing"> </span>$i_1\not =i_2$<span class="heti-spacing"> </span></span>且<span class="heti-skip"><span class="heti-spacing"> </span>$f(i_1)=f(i_2)$<span class="heti-spacing"> </span></span>的情况，则称为发生了碰撞（collision）</li>
+<li>当存在<span class="heti-skip"><span class="heti-spacing"> </span>$i_1\not =i_2$<span class="heti-spacing"> </span></span>且<span class="heti-skip"><span class="heti-spacing"> </span>$f(i_1)=f(i_2)$<span class="heti-spacing"> </span></span>的情况，则称为发生了冲突（collision）</li>
 <li>当将一个新的关键字映射到一个满的位置时（即槽已经被填满<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，则称为发生了溢出（overflow）<ul>
-<li>当<span class="heti-skip"><span class="heti-spacing"> </span>$s=1$<span class="heti-spacing"> </span></span>时，碰撞和溢出将同时发生</li>
+<li>当<span class="heti-skip"><span class="heti-spacing"> </span>$s=1$<span class="heti-spacing"> </span></span>时，冲突和溢出将同时发生</li>
+<li>不考虑溢出，复杂度<span><span class="heti-spacing"> </span>$T_{search}=T_{insert}=T_{delete}=\Omicron(1)$</span></li>
+</ul>
+</li>
+</ul>
+<h3 id="_13">哈希函数<a class="headerlink" href="#_13" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>哈希函数应该易于计算，且减少冲突的可能性</li>
+<li>哈希函数应该是<span class="heti-skip"><span class="heti-spacing"> </span>unbiased<span class="heti-spacing"> </span></span>的，即<span><span class="heti-spacing"> </span>$P(f(x)=i)=\frac{1}{b}$</span>，这样的函数称为均匀哈希函数（uniform hash function）</li>
+<li>对于整数的哈希，可以取<span><span class="heti-spacing"> </span>$f(x) = x \bmod tableSize$</span><ul>
+<li>其中<span class="heti-skip"><span class="heti-spacing"> </span>tableSize<span class="heti-spacing"> </span></span>最好取一个质数，这样对于随机输入，关键字的分布更均匀</li>
+</ul>
+</li>
+<li>
+<p>对于字符串的哈希，可以取<span><span class="heti-spacing"> </span>$f(x)=(\sum x[N-i-1] \times 32^ i) \bmod tableSize$</span></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">Index</span><span class="w"> </span><span class="nf">hash</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tableSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">hashVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">'\0'</span><span class="p">)</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">        </span><span class="n">hashVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">hashVal</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">++</span><span class="p">);</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">hashVal</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">tableSize</span><span class="p">;</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="_14">分离链接<a class="headerlink" href="#_14" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>解决冲突的一种方法是分离链接（separate chaining）</li>
+<li>在每个存放数据的地方开一个链表，如果有多个关键字索引到同一个位置，只需要把它们都放到那个位置的链表里即可（链表实现的槽）</li>
+<li>建议：设计哈希表与哈希函数，使<span><span class="heti-spacing"> </span>$\lambda \approx 1$</span></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">;</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="w"> </span><span class="o">*</span><span class="n">Position</span><span class="p">;</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HashTbl</span><span class="p">;</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HashTbl</span><span class="w"> </span><span class="o">*</span><span class="n">HashTable</span><span class="p">;</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">element</span><span class="p">;</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="p">};</span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">typedef</span><span class="w"> </span><span class="n">Position</span><span class="w"> </span><span class="n">List</span><span class="p">;</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HashTbl</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tableSize</span><span class="p">;</span>
+<a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="o">*</span><span class="n">theLists</span><span class="p">;</span>
+<a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="p">};</span>
+<a href="#__codelineno-6-14" id="__codelineno-6-14" name="__codelineno-6-14"></a>
+<a href="#__codelineno-6-15" id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="n">HashTable</span><span class="w"> </span><span class="nf">initializeTable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">tableSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-16" id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tableSize</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">minTableSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-17" id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">        </span><span class="n">error</span><span class="p">(</span><span class="s">"table size too small"</span><span class="p">);</span>
+<a href="#__codelineno-6-18" id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a href="#__codelineno-6-19" id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-6-20" id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">    </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">HashTbl</span><span class="p">));</span>
+<a href="#__codelineno-6-21" id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="n">fatalError</span><span class="p">(</span><span class="s">"out of space"</span><span class="p">);</span>
+<a href="#__codelineno-6-22" id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nextPrime</span><span class="p">(</span><span class="n">tableSize</span><span class="p">);</span><span class="w">  </span><span class="c1">// better be prime.</span>
+<a href="#__codelineno-6-23" id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theLists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">List</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="p">);</span>
+<a href="#__codelineno-6-24" id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theLists</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="n">fatalError</span><span class="p">(</span><span class="s">"out of space"</span><span class="p">);</span>
+<a href="#__codelineno-6-25" id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-26" id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">        </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theLists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">));</span>
+<a href="#__codelineno-6-27" id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theLists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="n">fatalError</span><span class="p">(</span><span class="s">"out of space"</span><span class="p">);</span>
+<a href="#__codelineno-6-28" id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theLists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a href="#__codelineno-6-29" id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-6-30" id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">H</span><span class="p">;</span>
+<a href="#__codelineno-6-31" id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="p">}</span>
+<a href="#__codelineno-6-32" id="__codelineno-6-32" name="__codelineno-6-32"></a>
+<a href="#__codelineno-6-33" id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="n">Position</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-34" id="__codelineno-6-34" name="__codelineno-6-34"></a><span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theLists</span><span class="p">[</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="p">)];</span>
+<a href="#__codelineno-6-35" id="__codelineno-6-35" name="__codelineno-6-35"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a href="#__codelineno-6-36" id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">P</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">P</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">P</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a href="#__codelineno-6-37" id="__codelineno-6-37" name="__codelineno-6-37"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">P</span><span class="p">;</span>
+<a href="#__codelineno-6-38" id="__codelineno-6-38" name="__codelineno-6-38"></a><span class="p">}</span>
+<a href="#__codelineno-6-39" id="__codelineno-6-39" name="__codelineno-6-39"></a>
+<a href="#__codelineno-6-40" id="__codelineno-6-40" name="__codelineno-6-40"></a><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-41" id="__codelineno-6-41" name="__codelineno-6-41"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="p">);</span>
+<a href="#__codelineno-6-42" id="__codelineno-6-42" name="__codelineno-6-42"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-43" id="__codelineno-6-43" name="__codelineno-6-43"></a><span class="w">        </span><span class="n">Position</span><span class="w"> </span><span class="n">newCell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">));</span>
+<a href="#__codelineno-6-44" id="__codelineno-6-44" name="__codelineno-6-44"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newCell</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="n">fatalError</span><span class="p">(</span><span class="s">"out of space"</span><span class="p">);</span>
+<a href="#__codelineno-6-45" id="__codelineno-6-45" name="__codelineno-6-45"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-6-46" id="__codelineno-6-46" name="__codelineno-6-46"></a><span class="w">            </span><span class="n">List</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theLists</span><span class="p">[</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="p">)];</span>
+<a href="#__codelineno-6-47" id="__codelineno-6-47" name="__codelineno-6-47"></a><span class="w">            </span><span class="n">newCell</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a href="#__codelineno-6-48" id="__codelineno-6-48" name="__codelineno-6-48"></a><span class="w">            </span><span class="n">newCell</span><span class="o">-&gt;</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<a href="#__codelineno-6-49" id="__codelineno-6-49" name="__codelineno-6-49"></a><span class="w">            </span><span class="n">L</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newCell</span><span class="p">;</span>
+<a href="#__codelineno-6-50" id="__codelineno-6-50" name="__codelineno-6-50"></a><span class="w">        </span><span class="p">}</span>
+<a href="#__codelineno-6-51" id="__codelineno-6-51" name="__codelineno-6-51"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-6-52" id="__codelineno-6-52" name="__codelineno-6-52"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_15">开放寻址<a class="headerlink" href="#_15" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>解决冲突的另一种方法是开放寻址（open addressing）</li>
+<li>当有冲突发生时，尝试选择其他位置，直到找到空的位置为止</li>
+<li>建议：设计哈希表与哈希函数，使<span><span class="heti-spacing"> </span>$\lambda &lt; 0.5$</span></li>
+<li>可以视作使用了多个哈希函数<span><span class="heti-spacing"> </span>$h_0(x),h_1(x),...$</span>，其中<span><span class="heti-spacing"> </span>$h_i(x)=(hash(x)+f(i)) \bmod tableSize$</span><ul>
+<li>其中<span class="heti-skip"><span class="heti-spacing"> </span>$f(i)$<span class="heti-spacing"> </span></span>为增量函数，有多种选取的方式</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">collision</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">        </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">tableSize</span><span class="p">;</span>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">table</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">full</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">table</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">full</span><span class="p">)</span><span class="w"> </span><span class="n">error</span><span class="p">(</span><span class="s">"no space left"</span><span class="p">);</span>
+<a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">table</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="_16">线性探测<a class="headerlink" href="#_16" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<ul>
+<li>线性探测（linear probing）使用增量函数<span><span class="heti-spacing"> </span>$f(i)=i$</span></li>
+<li>即冲突了就往后一个一个找，直到找到空的位置为止</li>
+<li>会导致一次聚集（primary clustering<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，即如果某个位置发生了冲突，那么后面插入在附近的元素也都很容易发生冲突，需要不断往后寻址，导致插入和搜索开销都大幅增加<ul>
+<li>理解：any key that hashes into the cluster will add to the cluster after several attempts to resolve the collision.</li>
+<li>对于插入和不成功的搜索，探测次数约为<span><span class="heti-spacing"> </span>$\frac{1}{2}(1+\frac{1}{(1-\lambda)^ 2})$</span></li>
+<li>对于成功的搜索，探测次数约为<span><span class="heti-spacing"> </span>$\frac{1}{2}(1+\frac{1}{1-\lambda})$</span></li>
+</ul>
+</li>
+</ul>
+<h4 id="_17">平方探测<a class="headerlink" href="#_17" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<ul>
+<li>平方探测（quadratic probing）使用增量函数<span><span class="heti-spacing"> </span>$f(i)=i^ 2$</span></li>
+<li>对于使用平方探测的开放寻址法，如果<span class="heti-skip"><span class="heti-spacing"> </span>tableSize<span class="heti-spacing"> </span></span>为质数，且至少一半为空，则总能成功插入一个新的元素</li>
+<li>如果<span class="heti-skip"><span class="heti-spacing"> </span>tableSize<span class="heti-spacing"> </span></span>为形如<span class="heti-skip"><span class="heti-spacing"> </span>4k+3<span class="heti-spacing"> </span></span>的质数，则平方探测的探测范围可以覆盖整个表</li>
+<li>
+<p>搜索</p>
+<ul>
+<li>$f(i) = f(i-1) + i^ 2 - (i-1)^ 2 = f(i-1) + 2i - 1$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">Position</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">currentPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="p">);</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">collisionNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theCells</span><span class="p">[</span><span class="n">currentPos</span><span class="p">].</span><span class="n">info</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Empty</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theCells</span><span class="p">[</span><span class="n">currentPos</span><span class="p">].</span><span class="n">element</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">        </span><span class="n">currentPos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">++</span><span class="n">collisionNum</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentPos</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="p">)</span><span class="w"> </span><span class="n">currentPos</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">tableSize</span><span class="p">;</span><span class="w">  </span><span class="c1">// faster than mod.</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">currentPos</span><span class="p">;</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>插入</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="p">);</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theCells</span><span class="p">[</span><span class="n">pos</span><span class="p">].</span><span class="n">info</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Legitimate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">        </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theCells</span><span class="p">[</span><span class="n">pos</span><span class="p">].</span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Legitimate</span><span class="p">;</span>
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">        </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">theCells</span><span class="p">[</span><span class="n">pos</span><span class="p">].</span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="p">}</span>
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>会导致二次聚集（secondary clustering<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，即如果某个位置发生多次冲突，后来发生的冲突会需要不断往后寻址，导致插入和搜索开销都大幅增加</p>
+<ul>
+<li>理解：keys that hash to the same position will probe the same alternative cells.</li>
+</ul>
+</li>
+</ul>
+<h4 id="_18">双哈希<a class="headerlink" href="#_18" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<ul>
+<li>双哈希（double hashing）使用增量函数<span><span class="heti-spacing"> </span>$f(i)=i\times hash_2(x)$</span>，其中<span class="heti-skip"><span class="heti-spacing"> </span>$hash_2$<span class="heti-spacing"> </span></span>是另一个哈希函数</li>
+<li>一个不错的选取方案：$hash_2(x)=R-(x\bmod R)$，其中<span class="heti-skip"><span class="heti-spacing"> </span>$R$<span class="heti-spacing"> </span></span>为一个小于<span class="heti-skip"><span class="heti-spacing"> </span>tableSize<span class="heti-spacing"> </span></span>的质数</li>
+<li>线性探测与平方探测都会导致<span class="heti-skip"><span class="heti-spacing"> </span>cluster<span class="heti-spacing"> </span></span>的出现，这对于开放寻址法的性能有很大的影响，双哈希可以避免这个问题</li>
+<li>但在实际应用中，由于平方探测不需要使用第二个哈希函数，所以通常更加简单快速</li>
+</ul>
+<h3 id="_19">再哈希<a class="headerlink" href="#_19" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>开放寻址法对于<span class="heti-skip"><span class="heti-spacing"> </span>$\lambda &lt; 0.5$<span class="heti-spacing"> </span></span>是适用的，但当表中的元素过多时，操作时间会很长，而且很可能插入失败</li>
+<li>解决方法是使用再哈希（rehashing）<ol>
+<li>建立一个两倍大的哈希表</li>
+<li>扫描原始哈希表</li>
+<li>用一个新的哈希函数把原始哈希表中的元素映射到新的哈希表中</li>
+</ol>
+</li>
+<li>如果原始哈希表中有<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>个元素，则再哈希的时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(N)$</span></li>
+<li>什么时候进行再哈希：<ul>
+<li>表填满一半了</li>
+<li>插入失败</li>
+<li>当哈希表达到某个特定的装载密度时</li>
 </ul>
 </li>
 </ul>
@@ -985,7 +1265,7 @@ https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/overri
 <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月4日 16:32:13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月4日 21:18:01</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月2日 23:35:58</span>
