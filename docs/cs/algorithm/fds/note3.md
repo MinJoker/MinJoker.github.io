@@ -251,6 +251,7 @@ void insertionSort(ElementType arr[], int n)
 ### 哈希表
 
 - 哈希表（hash table）也称为散列表，以 (key, value) 的形式存储数据，即任意的关键字 key 都唯一对应到内存中的某个位置，只要输入查找的关键字，就可以快速地找到相应的 value
+    - 假设用数组 a 存放数据，哈希函数是 f，则 (key, value) 就应该放在 a\[f(key)\] 上
     - 可以把哈希表理解为一种高级的数组，这种数组的下标可以是很大的整数、浮点数、字符串甚至结构体
     - 关键字也称标识符（identifier）
 - 通常用一个数组来实现，可以有多个槽（slot），即多个关键字对应同一个位置时，将不同关键字存在同一个位置的不同槽中
@@ -260,6 +261,169 @@ void insertionSort(ElementType arr[], int n)
     - $n$ 表示 ht[] 中关键字的个数
     - 标识符密度（identifier density）定义为 $\frac{n}{T}$
     - 装载密度（loading density）定义为 $\lambda=\frac{n}{sb}$
-- 当存在 $i_1\not =i_2$ 且 $f(i_1)=f(i_2)$ 的情况，则称为发生了碰撞（collision）
+- 当存在 $i_1\not =i_2$ 且 $f(i_1)=f(i_2)$ 的情况，则称为发生了冲突（collision）
 - 当将一个新的关键字映射到一个满的位置时（即槽已经被填满），则称为发生了溢出（overflow）
-    - 当 $s=1$ 时，碰撞和溢出将同时发生
+    - 当 $s=1$ 时，冲突和溢出将同时发生
+    - 不考虑溢出，复杂度 $T_{search}=T_{insert}=T_{delete}=\Omicron(1)$
+
+### 哈希函数
+
+- 哈希函数应该易于计算，且减少冲突的可能性
+- 哈希函数应该是 unbiased 的，即 $P(f(x)=i)=\frac{1}{b}$，这样的函数称为均匀哈希函数（uniform hash function）
+- 对于整数的哈希，可以取 $f(x) = x \bmod tableSize$
+    - 其中 tableSize 最好取一个质数，这样对于随机输入，关键字的分布更均匀
+- 对于字符串的哈希，可以取 $f(x)=(\sum x[N-i-1] \times 32^ i) \bmod tableSize$
+    
+    ```c
+    Index hash(const char *x, int tableSize) {
+        unsigned int hashVal = 0;
+        while (*x != '\0')
+            hashVal = (hashVal << 5) + *(x++);
+        return hashVal % tableSize;
+    }
+    ```
+
+### 分离链接
+
+- 解决冲突的一种方法是分离链接（separate chaining）
+- 在每个存放数据的地方开一个链表，如果有多个关键字索引到同一个位置，只需要把它们都放到那个位置的链表里即可（链表实现的槽）
+- 建议：设计哈希表与哈希函数，使 $\lambda \approx 1$
+
+```c
+struct ListNode;
+typedef struct ListNode *Position;
+struct HashTbl;
+typedef struct HashTbl *HashTable;
+struct ListNode {
+    ElementType element;
+    Position next;
+};
+typedef Position List;
+struct HashTbl {
+    int tableSize;
+    List *theLists;
+};
+
+HashTable initializeTable(int tableSize) {
+    if (tableSize < minTableSize) {
+        error("table size too small");
+        return NULL;
+    }
+    HashTable H = malloc(sizeof(struct HashTbl));
+    if (H == NULL) fatalError("out of space");
+    H->tableSize = nextPrime(tableSize);  // better be prime.
+    H->theLists = malloc(sizeof(List) * H->tableSize);
+    if (H->theLists == NULL) fatalError("out of space");
+    for (int i = 0; i < H->tableSize; i++) {
+        H->theLists[i] = malloc(sizeof(struct ListNode));
+        if (H->theLists[i] == NULL) fatalError("out of space");
+        else H->theLists[i]->next = NULL;
+    }
+    return H;
+}
+
+Position find(ElementType key, HashTable H) {
+    List L = H->theLists[hash(key, H->tableSize)];
+    Position P = L->next;
+    while (P != NULL && P->element != key) P = P->next;
+    return P;
+}
+
+void insert(ElementType key, HashTable H) {
+    Position pos = find(key, H);
+    if (pos == NULL) {
+        Position newCell = malloc(sizeof(struct ListNode));
+        if (newCell == NULL) fatalError("out of space");
+        else {
+            List L = H->theLists[hash(key, H->tableSize)];
+            newCell->next = L->next;
+            newCell->element = key;
+            L->next = newCell;
+        }
+    }
+}
+```
+
+### 开放寻址
+
+- 解决冲突的另一种方法是开放寻址（open addressing）
+- 当有冲突发生时，尝试选择其他位置，直到找到空的位置为止
+- 建议：设计哈希表与哈希函数，使 $\lambda < 0.5$
+- 可以视作使用了多个哈希函数 $h_0(x),h_1(x),...$，其中 $h_i(x)=(hash(x)+f(i)) \bmod tableSize$
+    - 其中 $f(i)$ 为增量函数，有多种选取的方式
+
+```c
+void insert(ElementType key) {
+    index = hash(key); int i = 0;
+    while (collision at index) {
+        index = (hash(key) + f(i)) % tableSize;
+        if (table is full) break;
+        else i++;
+    }
+    if (table is full) error("no space left");
+    else table[index] = key;
+}
+```
+
+#### 线性探测
+
+- 线性探测（linear probing）使用增量函数 $f(i)=i$
+- 即冲突了就往后一个一个找，直到找到空的位置为止
+- 会导致一次聚集（primary clustering），即如果某个位置发生了冲突，那么后面插入在附近的元素也都很容易发生冲突，需要不断往后寻址，导致插入和搜索开销都大幅增加
+    - 理解：any key that hashes into the cluster will add to the cluster after several attempts to resolve the collision.
+    - 对于插入和不成功的搜索，探测次数约为 $\frac{1}{2}(1+\frac{1}{(1-\lambda)^ 2})$
+    - 对于成功的搜索，探测次数约为 $\frac{1}{2}(1+\frac{1}{1-\lambda})$
+
+#### 平方探测
+
+- 平方探测（quadratic probing）使用增量函数 $f(i)=i^ 2$
+- 对于使用平方探测的开放寻址法，如果 tableSize 为质数，且至少一半为空，则总能成功插入一个新的元素
+- 如果 tableSize 为形如 4k+3 的质数，则平方探测的探测范围可以覆盖整个表
+- 搜索
+    - $f(i) = f(i-1) + i^ 2 - (i-1)^ 2 = f(i-1) + 2i - 1$
+
+    ```c
+    Position find(ElementType key, HashTable H) {
+        Position currentPos = hash(key, H->tableSize); int collisionNum = 0;
+        while (H->theCells[currentPos].info != Empty && H->theCells[currentPos].element != key) {
+            currentPos += 2 * ++collisionNum - 1;
+            if (currentPos >= H->tableSize) currentPos -= H->tableSize;  // faster than mod.
+        }
+        return currentPos;
+    }
+    ```
+
+- 插入
+
+    ```c
+    void insert(ElementType key, HashTable H) {
+        Position pos = find(key, H);
+        if (H->theCells[pos].info != Legitimate) {
+            H->theCells[pos].info = Legitimate;
+            H->theCells[pos].element = key;
+        }
+    }
+    ```
+
+- 会导致二次聚集（secondary clustering），即如果某个位置发生多次冲突，后来发生的冲突会需要不断往后寻址，导致插入和搜索开销都大幅增加
+    - 理解：keys that hash to the same position will probe the same alternative cells.
+
+#### 双哈希
+
+- 双哈希（double hashing）使用增量函数 $f(i)=i\times hash_2(x)$，其中 $hash_2$ 是另一个哈希函数
+- 一个不错的选取方案：$hash_2(x)=R-(x\bmod R)$，其中 $R$ 为一个小于 tableSize 的质数
+- 线性探测与平方探测都会导致 cluster 的出现，这对于开放寻址法的性能有很大的影响，双哈希可以避免这个问题
+- 但在实际应用中，由于平方探测不需要使用第二个哈希函数，所以通常更加简单快速
+
+### 再哈希
+
+- 开放寻址法对于 $\lambda < 0.5$ 是适用的，但当表中的元素过多时，操作时间会很长，而且很可能插入失败
+- 解决方法是使用再哈希（rehashing）
+    1. 建立一个两倍大的哈希表
+    2. 扫描原始哈希表
+    3. 用一个新的哈希函数把原始哈希表中的元素映射到新的哈希表中
+- 如果原始哈希表中有 $N$ 个元素，则再哈希的时间复杂度为 $\Omicron(N)$
+- 什么时候进行再哈希：
+    - 表填满一半了
+    - 插入失败
+    - 当哈希表达到某个特定的装载密度时
