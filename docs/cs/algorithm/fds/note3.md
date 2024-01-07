@@ -264,7 +264,7 @@ void insertionSort(ElementType arr[], int n)
 - 当存在 $i_1\not =i_2$ 且 $f(i_1)=f(i_2)$ 的情况，则称为发生了冲突（collision）
 - 当将一个新的关键字映射到一个满的位置时（即槽已经被填满），则称为发生了溢出（overflow）
     - 当 $s=1$ 时，冲突和溢出将同时发生
-    - 不考虑溢出，复杂度 $T_{search}=T_{insert}=T_{delete}=\Omicron(1)$
+- 不考虑溢出，复杂度 $T_{search}=T_{insert}=T_{delete}=\Omicron(1)$
 
 ### 哈希函数
 
