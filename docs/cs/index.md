@@ -7,4 +7,4 @@
 ## 更新中
 
 - [数据结构与算法](algorithm/fds/index.md)
-- [数字逻辑设计](digital_logic/index.md)
+- [数字逻辑设计](system/digital_logic/index.md)

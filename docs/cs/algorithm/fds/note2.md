@@ -310,8 +310,8 @@
                 return;
             }
             int i = ++H->size;  /* percolate up */
-            for (; H->elements[i/2] > X; i /= 2)
-                H->elements[i] = H->elements[i/2];
+            for (; H->elements[i / 2] > X; i /= 2)
+                H->elements[i] = H->elements[i / 2];
             H->elements[i] = X;
         }
         ```
