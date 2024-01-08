@@ -140,8 +140,6 @@ nav:
 
   - Computer Science:
     - cs/index.md
-    - 常用工具:
-      - cs/tools/markdown.md
     - 数据结构与算法:
       - 数据结构基础:
         - cs/algorithm/fds/index.md
@@ -155,9 +153,14 @@ nav:
         - cs/algorithm/algorithm1/lec2.md
         - cs/algorithm/algorithm1/lec3.md
         - cs/algorithm/algorithm1/lec4.md
-    - 数字逻辑设计:
-      - cs/digital_logic/index.md
-      - cs/digital_logic/note0.md
+    - 计算机系统:
+      - 数字逻辑设计:
+        - cs/system/digital_logic/index.md
+        - cs/system/digital_logic/note1.md
+        - cs/system/digital_logic/note2.md
+        - cs/system/digital_logic/note3.md
+    - 工具相关:
+      - cs/tools/markdown.md
 
   - Mathematics:
     - math/index.md
