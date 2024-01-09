@@ -20,7 +20,7 @@ theme:
 #    - navigation.instant   # seems to cause formula rendering difficulty ( need one more refresh )
     - navigation.tracking
     - navigation.tabs
-    - navigation.prune
+#    - navigation.prune
     - navigation.indexes
     - navigation.top
     - search.suggest
