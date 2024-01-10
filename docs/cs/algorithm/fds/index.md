@@ -5,9 +5,9 @@
     - 浙江大学《数据结构基础》课程笔记
     - 依据课件整理，内容比较简略，可以用作复习的提纲
     - 参考资料：
-        - [图灵班学习指南](https://zju-turing.github.io/TuringCourses/major_basic/data_structure/)
-        - [鹤翔万里的笔记本](https://note.tonycrane.cc/cs/algorithm/ds/)
-        - [OI Wiki](https://oi-wiki.org/)
+        - [图灵班学习指南](https://zju-turing.github.io/TuringCourses/major_basic/data_structure/){target="_blank"}
+        - [鹤翔万里的笔记本](https://note.tonycrane.cc/cs/algorithm/ds/){target="_blank"}
+        - [OI Wiki](https://oi-wiki.org/){target="_blank"}
 
 ## Table of Contents
 
