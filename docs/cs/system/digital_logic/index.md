@@ -16,3 +16,4 @@
     - 推荐阅读：从全加器到超前进位加法器
 - [时序逻辑设计](note3.md)
     - 推荐阅读：从锁存器到触发器
+- 教材配套的 [Companion Website](https://media.pearsoncmg.com/ph/wps-wraps/ecs_mano_lcdf_5/cw/){target="_blank"} 中有部分习题解答、补充阅读材料、Verilog 示例等，可供参考
