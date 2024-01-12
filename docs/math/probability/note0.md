@@ -223,7 +223,7 @@ $$
 | :---: | :---: | :---: | :---: |
 | $0-1$ 分布 | $P(X=k)=p^k (1-p)^{1-k},\;\;k=0,1$ | $p$ | $p(1-p)$ |
 | 二项分布 $B(n,p)$ | $P(X=k)=C_n^k p^k (1-p)^{1-k},\;\;k=0,1,...,n$ | $np$ | $np(1-p)$ |
-| 泊松分布 $P(\lambda)$ | $P(X=k)=\frac{\lambda ^k e^{-k}}{k!},\;\;k=0,1,...$ | $\lambda$ | $\lambda$ |
+| 泊松分布 $P(\lambda)$ | $P(X=k)=\frac{\lambda ^k e^{-\lambda}}{k!},\;\;k=0,1,...$ | $\lambda$ | $\lambda$ |
 | 均匀分布 $U(a,b)$ | $f(x)=\begin{cases} \frac{1}{b-a} & ,a<x<b \cr 0 & ,\text{else} \end{cases}$ | $\frac{a+b}{2}$ | $\frac{(b-a)^2}{12}$ |
 | 指数分布 $E(\lambda)$ | $f(x)=\begin{cases} \lambda e^{-\lambda x} & ,x>0 \cr 0 & ,\text{else} \end{cases}$ | $\frac{1}{\lambda}$ | $\frac{1}{\lambda ^2}$ |
 | 正态分布 $N(\mu ,\sigma ^2)$ | $f(x)=\frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu) ^2 }{2\sigma ^2 }},\;\;-\infty<x<+\infty$ | $\mu$ | $\sigma ^2$ |
