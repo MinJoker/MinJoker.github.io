@@ -190,7 +190,13 @@
 
     !!! success ""
 
-        TRUE.
+        结论是，线性建堆最多需要 $N-1$ 次 percolate down 操作。每次 percolate down 操作都需要进行两次比较，所以最多需要 $2N-2$ 次比较。
+
+        关于这个结论的证明，我还没有完全复现，总觉得有一些小问题没解决，这里先贴几个参考链接罢：
+
+        - [OI Wiki](https://oi-wiki.org/ds/binary-heap/#%E6%96%B9%E6%B3%95%E4%BA%8C%E4%BD%BF%E7%94%A8%E5%90%91%E4%B8%8B%E8%B0%83%E6%95%B4)
+        - [Stack Overflow](https://stackoverflow.com/questions/49774237/prove-that-binary-heap-build-max-comparsion-is-2n-2)
+        - [Wikipedia](https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap)
 
 ## 图
 
