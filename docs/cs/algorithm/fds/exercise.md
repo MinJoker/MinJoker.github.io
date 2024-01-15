@@ -8,6 +8,11 @@
     }
 </style>
 
+这篇笔记收集一些值得留意的题目，用于 FDS 应试，题目来源：
+
+- 课程配套 PTA 习题，包括 Homework 1 ~ 15 和 Midterm Examination
+- 王道《2023年数据结构考研复习指导》，作为补充
+
 ## 算法分析
 
 1. (HW1) The recurrent equations for the time complexities of program P1 and P2 are:<br />
@@ -61,7 +66,7 @@
 
 ## 栈和队列
 
-4. (HW3) Represent a queue by a singly linked list. Given the current status of the linked list as `1->2->3` where `x->y` means `y` is linked after `x`. Now if `4` is enqueued and then a dequeue is done, the resulting status must be:
+1. (HW3) Represent a queue by a singly linked list. Given the current status of the linked list as `1->2->3` where `x->y` means `y` is linked after `x`. Now if `4` is enqueued and then a dequeue is done, the resulting status must be:
 
     <div style="display: flex">
     <div style="width: 100%">A. `1->2->3`</div>
@@ -76,7 +81,7 @@
 
         队列用 first 和 last 两个指针来标记头和尾，假设我们把入队和出队的位置互换一下：入队在链表的头进行，这并没有问题；但出队在链表的尾进行则会出错，如果我们把尾节点删除了，那么 last 就没有办法移动到新的尾节点，这是链表的单向性导致的。
 
-5. (Midterm) If a stack is used to convert the infix expression `a+b*c+(d*e+f)*g` into a postfix expression, what will be in the stack (listing from bottom up) when `f` is read?
+2. (Midterm) If a stack is used to convert the infix expression `a+b*c+(d*e+f)*g` into a postfix expression, what will be in the stack (listing from bottom up) when `f` is read?
 
     <div style="display: flex">
     <div style="width: 100%">A. +(*+</div>
@@ -103,13 +108,13 @@
 
 ## 树
 
-6. (HW4) It is always possible to represent a tree by a one-dimensional integer array. (TRUE of FALSE)
+1. (HW4) It is always possible to represent a tree by a one-dimensional integer array. (TRUE of FALSE)
 
     !!! success ""
 
         二叉树可以用一维数组表示，而任何树都可以转变成二叉树（使用 FirstChild-NextSibling 表示法，并旋转 $45\degree$ 即得），所以任何树都可以用一维数组表示。
 
-7. (HW4) If a general tree T is converted into a binary tree BT, then which of the following BT traversals gives the same sequence as that of the post-order traversal of T?
+2. (HW4) If a general tree T is converted into a binary tree BT, then which of the following BT traversals gives the same sequence as that of the post-order traversal of T?
 
     <div style="display: flex">
     <div style="width: 100%">A. pre-order</div>
@@ -124,7 +129,7 @@
 
         T 的先序遍历和 BT 的先序遍历是一样的，T 的后序遍历和 BT 的中序遍历是一样的。
 
-8. (HW4) There exists a binary tree with 2016 nodes in total, and with 16 nodes having only one child. (TRUE of FALSE)
+3. (HW4) There exists a binary tree with 2016 nodes in total, and with 16 nodes having only one child. (TRUE of FALSE)
 
     !!! success ""
 
@@ -136,7 +141,7 @@
 
         得到 $2n_2=1999$，除不尽，因此不存在这样的二叉树。
 
-9. (HW4) Given a tree of degree 3. Suppose that there are 3 nodes of degree 2 and 2 nodes of degree 3. Then the number of leaf nodes must be：
+4. (HW4) Given a tree of degree 3. Suppose that there are 3 nodes of degree 2 and 2 nodes of degree 3. Then the number of leaf nodes must be：
 
     <div style="display: flex">
     <div style="width: 100%">A. 5</div>
@@ -151,14 +156,18 @@
 
         这个性质可以用数学归纳法证明，思路比较简单，对于 d-1 叉树，考虑为各种 $n_i$ 节点添加子节点变成 $n_d$ 节点时公式的变化即可。
 
-10. (HW6) For a binary tree, if its pre-order travel sequence is {4,2,1,3,6,5,7}, and its in-order travel sequence is {1,2,3,4,5,6,7}, then which of the following statement is FALSE?
+5. (HW6) For a binary tree, if its pre-order travel sequence is {4,2,1,3,6,5,7}, and its in-order travel sequence is {1,2,3,4,5,6,7}, then which of the following statement is FALSE?
 
     <div style="display: flex">
     <div style="width: 100%">A. This is a complete binary tree.</div>
+    </div>
+    <div style="display: flex">
     <div style="width: 100%">B. 4 is the parent of 3.</div>
     </div>
     <div style="display: flex">
     <div style="width: 100%">C. All the odd numbers are at leaf nodes.</div>
+    </div>
+    <div style="display: flex">
     <div style="width: 100%">D. This is a binary search tree.</div>
     </div>
 
@@ -177,3 +186,163 @@
 
 ## 堆
 
+1. (Midterm) For binary heaps with $N$ elements, the BuildHeap function (which adjust an array of elements into a heap in linear time) does at most $2N−2$ comparisons between elements. (TRUE or FALSE)
+
+    !!! success ""
+
+        TRUE.
+
+## 图
+
+1. (HW8) Given an undirected graph G with 16 edges, where 3 vertices are of degree 4, 4 vertices are of degree 3, and all the other vertices are of degrees less than 3. Then G must have at least __ vertices.
+
+    <div style="display: flex">
+    <div style="width: 100%">A. 10</div>
+    <div style="width: 100%">B. 11</div>
+    <div style="width: 100%">C. 13</div>
+    <div style="width: 100%">D. 15</div>
+    </div>
+
+    !!! success ""
+
+        利用无向图的度的性质 $\sum_{v\in V}d(v)=2|E|$，最多有 11 个节点。
+
+2. (HW8) If a graph G is NOT connected and has 35 edges, then it must have at least __ vertices.
+
+    <div style="display: flex">
+    <div style="width: 100%">A. 7</div>
+    <div style="width: 100%">B. 8</div>
+    <div style="width: 100%">C. 9</div>
+    <div style="width: 100%">D. 10</div>
+    </div>
+
+    !!! success ""
+
+        包含 9 个节点的连通图最多有 C(9,2) = 36 条边（称为完全图），不满足题意，至少还需要再多一个节点才能形成非连通图，故选 D。
+
+3. (HW8) A graph with 90 vertices and 20 edges must have at least __ connected component(s).
+
+    <div style="display: flex">
+    <div style="width: 100%">A. 69</div>
+    <div style="width: 100%">B. 70</div>
+    <div style="width: 100%">C. 84</div>
+    <div style="width: 100%">D. 85</div>
+    </div>
+
+    !!! success ""
+
+        为了使连通分量最少，用 20 条边去连通尽可能多的节点。考虑用 20 条边形成一个生成树，即连通 21 个节点，还剩下 69 个孤立节点，所以共有 1 + 69 = 70 个连通分量。
+
+        或者也可以使用平面图的[欧拉定理](https://en.wikipedia.org/wiki/Planar_graph#Euler's_formula)来做（超纲）：
+
+        - 对于一个连通图，有 $v-e+f=2$
+        - 设题目中的图由 $k$ 个连通分量组成，则有 $V-E+(F+k-1)=2k$
+        - 由于 $F\geq 1$，故 $k\geq 70$
+
+4. (HW9) If besides finding the shortest path from `S` to every other vertices, we also need to count the number of different shortest paths, we can modify the Dijkstra algorithm in the following way: add an array `count[]` so that `count[V]` records the number of different shortest paths from `S` to `V`. Then `count[V]` shall be initialized as:
+
+    <div style="display: flex">
+    <div style="width: 100%">A. `count[S]=1` and `count[V]=0` for other `V`</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">B. `count[V]=1` for all vertices</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">C. `count[S]=0` and `count[V]=1` for other `V`</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">D. `count[V]=0` for all vertices</div>
+    </div>
+
+    !!! success ""
+
+        这题的关键是要理解最短路算法的更新操作（松弛操作）：对于某个节点，总是用其直接前驱的信息去更新该节点的信息（信息包括最短路、次短路等）。
+
+        设 u 是 v 的直接前驱，则更新操作在这道题中的表现为，用 count[u] 去更新 count[v]，即 count[v] += count[u]，稍加思考可以得出答案为 A。
+
+5. (HW11) Apply DFS to a directed acyclic graph, and output the vertex before the end of each recursion. The output sequence will be:
+
+    <div style="display: flex">
+    <div style="width: 100%">A. unsorted</div>
+    <div style="width: 100%">B. topologically sorted</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">C. reverse topologically sorted</div>
+    <div style="width: 100%">D. none of the above</div>
+    </div>
+
+    !!! success ""
+
+        题目中的 DFS 在递归返回时访问节点（类比后序遍历），因此输出序列是逆拓扑序列。
+
+## 排序
+
+1. (HW13) During the sorting, processing every element which is not yet at its final position is called a "run". Which of the following cannot be the result after the second run of quicksort?
+
+    <div style="display: flex">
+    <div style="width: 100%">A. 5, 2, 16, 12, 28, 60, 32, 72</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">B. 2, 16, 5, 28, 12, 60, 32, 72</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">C. 2, 12, 16, 5, 28, 32, 72, 60</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">D. 5, 2, 12, 28, 16, 32, 72, 60</div>
+    </div>
+
+    !!! success ""
+
+        根据题目定义的一趟（run）的含义，快排中每一趟都会将 pivot 放置在其最终位置。因此两趟之后应该已经有 1 + 2 = 3 个 pivot 处于其最终位置（注意，这里第二趟的时候左右两段序列视作并行，因此第二趟能确定 2 个 pivot 最终位置）或者 1 + 1 = 2 个 pivot 处于其最终位置（这种情况要求第一趟的 pivot 是第一个或最后一个元素）。
+        
+        pivot 的特点是其左侧元素都比它小，其右侧元素都比它大，四个选项的 pivot 如下：
+
+        - A. 5, 2, 16, 12, ***28***, 60, 32, ***72***
+        - B. ***2***, 16, 5, 28, 12, 60, 32, ***72***
+        - C. ***2***, 12, 16, 5, ***28***, ***32***, 72, 60
+        - D. 5, 2, ***12***, 28, 16, ***32***, 72, 60
+
+        所以 D 选项是不可能的。
+
+## 哈希
+
+1. (HW14) The average search time of searching a hash table with $N$ elements is:
+
+    <div style="display: flex">
+    <div style="width: 100%">A. $\Omicron(1)$</div>
+    <div style="width: 100%">B. $\Omicron(\log N)$</div>
+    <div style="width: 100%">C. $\Omicron(N)$</div>
+    <div style="width: 100%">D. not determined</div>
+    </div>
+
+    !!! success ""
+
+        这道题目有争议，稍微有点牵强。
+
+        > 根据课堂 PPT 的说法，不考虑溢出的情况下，平均搜索时间复杂度为 $\Omicron(1)$。
+
+        答案是 D，一种较为合适的解释是，与解决冲突的方法有关，不一定能达到 $\Omicron(1)$。
+
+2. (HW15) Suppose that the numbers {4371, 1323, 6173, 4199, 4344, 9679, 1989} are hashed into a table of size 10 with the hash function $h(X)=X\% 10$, and hence have indices {1, 3, 4, 9, 5, 0, 2}. What are their indices after rehashing using $h(X)=X\% TableSize$ with linear probing?
+
+    <div style="display: flex">
+    <div style="width: 100%">A. 11, 3, 13, 19, 4, 0, 9</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">B. 1, 3, 4, 9, 5, 0, 2</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">C. 1, 12, 9, 13, 20, 19, 11</div>
+    </div>
+    <div style="display: flex">
+    <div style="width: 100%">D. 1, 12, 17, 0, 13, 8, 14</div>
+    </div>
+
+    !!! success ""
+
+        这道题目有争议，极其令人无语。
+
+        答案是 C，目前看到的一种解释是，再哈希将 tableSize 变成两倍，即 20，并向上取一个质数，因此新的 tableSize 是 23。
+
+        值得注意的是，再哈希的对象应当是 key 值 {4371, 1323, ...}，而不是第一次哈希后得到的哈希值 {1, 3, ...}。
