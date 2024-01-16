@@ -182,7 +182,7 @@
 
         这种方法对于根据后序遍历和中序遍历结果确定一个二叉树同样适用（注意后序遍历序列中的最后一个数是二叉树的根节点）。
 
-        然而，根据先序遍历和后序遍历结果是不足以确定一个二叉树的，但可以唯一确定一个满二叉树，具体方法可以参考[这里](https://www.geeksforgeeks.org/full-and-complete-binary-tree-from-given-preorder-and-postorder-traversals/)。
+        然而，根据先序遍历和后序遍历结果是不足以确定一个二叉树的，但可以唯一确定一个满二叉树，具体方法可以参考[这里](https://www.geeksforgeeks.org/full-and-complete-binary-tree-from-given-preorder-and-postorder-traversals/){target="_blank"}。
 
 ## 堆
 
@@ -194,9 +194,9 @@
 
         关于这个结论的证明，我还没有完全复现，总觉得有一些小问题没解决，这里先贴几个参考链接罢：
 
-        - [OI Wiki](https://oi-wiki.org/ds/binary-heap/#%E6%96%B9%E6%B3%95%E4%BA%8C%E4%BD%BF%E7%94%A8%E5%90%91%E4%B8%8B%E8%B0%83%E6%95%B4)
-        - [Stack Overflow](https://stackoverflow.com/questions/49774237/prove-that-binary-heap-build-max-comparsion-is-2n-2)
-        - [Wikipedia](https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap)
+        - [OI Wiki](https://oi-wiki.org/ds/binary-heap/#%E6%96%B9%E6%B3%95%E4%BA%8C%E4%BD%BF%E7%94%A8%E5%90%91%E4%B8%8B%E8%B0%83%E6%95%B4){target="_blank"}
+        - [Stack Overflow](https://stackoverflow.com/questions/49774237/prove-that-binary-heap-build-max-comparsion-is-2n-2){target="_blank"}
+        - [Wikipedia](https://en.wikipedia.org/wiki/Binary_heap#Building_a_heap){target="_blank"}
 
 ## 图
 
@@ -239,7 +239,7 @@
 
         为了使连通分量最少，用 20 条边去连通尽可能多的节点。考虑用 20 条边形成一个生成树，即连通 21 个节点，还剩下 69 个孤立节点，所以共有 1 + 69 = 70 个连通分量。
 
-        或者也可以使用平面图的[欧拉定理](https://en.wikipedia.org/wiki/Planar_graph#Euler's_formula)来做（超纲）：
+        或者也可以使用平面图的[欧拉定理](https://en.wikipedia.org/wiki/Planar_graph#Euler's_formula){target="_blank"}来做（超纲）：
 
         - 对于一个连通图，有 $v-e+f=2$
         - 设题目中的图由 $k$ 个连通分量组成，则有 $V-E+(F+k-1)=2k$
