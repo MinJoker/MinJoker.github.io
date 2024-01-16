@@ -7,4 +7,3 @@
 ## 更新中
 
 - [概率论与数理统计](probability/index.md)
-- [离散数学](discrete/index.md)

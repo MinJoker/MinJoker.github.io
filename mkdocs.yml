@@ -147,12 +147,6 @@ nav:
         - cs/algorithm/fds/note2.md
         - cs/algorithm/fds/note3.md
         - cs/algorithm/fds/exercise.md
-      - Algorithm &#x2160;:
-        - cs/algorithm/algorithm1/index.md
-        - cs/algorithm/algorithm1/lec1.md
-        - cs/algorithm/algorithm1/lec2.md
-        - cs/algorithm/algorithm1/lec3.md
-        - cs/algorithm/algorithm1/lec4.md
     - 计算机系统:
       - 数字逻辑设计:
         - cs/system/digital_logic/index.md
@@ -167,9 +161,6 @@ nav:
     - 概率论与数理统计:
       - math/probability/index.md
       - math/probability/note0.md
-    - 离散数学:
-      - math/discrete/index.md
-      - math/discrete/note0.md
 
   - BCI:
     - bci/index.md
