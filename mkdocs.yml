@@ -158,9 +158,11 @@ nav:
 
   - Mathematics:
     - math/index.md
-    - 概率论与数理统计:
-      - math/probability/index.md
-      - math/probability/note0.md
+    - 概率论:
+      - 概率论与数理统计:
+        - math/probability/probability_statistics/index.md
+        - math/probability/probability_statistics/note1.md
+        - math/probability/probability_statistics/note2.md
 
   - BCI:
     - bci/index.md
