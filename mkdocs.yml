@@ -1,13 +1,12 @@
-# Project information
 site_name: MinJoker's Notebook
 site_url: https://minjoker.github.io
-repo_name: MinJoker.github.io
-repo_url: https://github.com/MinJoker/MinJoker.github.io
-site_description: MinJoker 的笔记本
 site_author: MinJoker
-copyright: Copyright <span style="font-family:Arial;">&copy;</span> 2023 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
 
-# Build directories
+repo_name: Minjoker/MinJoker.github.io
+repo_url: https://github.com/MinJoker/MinJoker.github.io
+
+copyright: Copyright <span style="font-family:Arial;">&copy;</span> 2023-2024 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
+
 theme:
   name: material
   custom_dir: overrides
@@ -29,21 +28,21 @@ theme:
     - content.code.copy
     - content.code.annotate
   palette:
-    # Palette toggle for light mode
+    # palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
+        name: switch to dark mode
+    # palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
+        name: switch to light mode
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/custom.css
   - stylesheets/flink.css
 #  - stylesheets/heti.css   # doesn't seem to work
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
@@ -113,8 +112,9 @@ markdown_extensions:
 plugins:
   - search
   - glightbox
-  - statistics
-#      page_check_metadata: <metadata>  # strict indentation ( tab )
+  - statistics:
+      words_per_minute: 250
+      codelines_per_minute: 80
   - git-revision-date-localized:
       type: datetime
       timezone: Asia/Shanghai
