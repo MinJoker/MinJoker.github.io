@@ -14,14 +14,14 @@ theme:
   custom_dir: overrides
   language: zh
   icon:
-    logo: material/drama-masks
+    logo: octicons/infinity-16
   favicon: assets/images/link/minjoker.png
-  font: false
+  font: false  # prevent typeface from loading from Google Fonts
   features: 
-#    - navigation.instant   # seems to cause formula rendering difficulty ( need one more refresh )
+    # - navigation.instant  # seems to cause formula rendering difficulty ( need one more refresh )
     - navigation.tracking
     - navigation.tabs
-#    - navigation.prune
+    # - navigation.prune
     - navigation.indexes
     - navigation.top
     - search.suggest
@@ -48,21 +48,15 @@ extra_css:
   - stylesheets/counter.css
   - stylesheets/toc.css
   - stylesheets/flink.css
-#  - stylesheets/heti.css   # doesn't seem to work
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-#  - stylesheets/toc.css
 
 extra_javascript:
-#  - javascripts/mathjax.js
-#  - https://polyfill.io/v3/polyfill.min.js?features=es6
-#  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+  - javascripts/toc.js
   - javascripts/katex.js 
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
-#  - javascripts/heti.js    # doesn't seem to work
-  - javascripts/toc.js
 
 extra:
   analytics:
@@ -75,7 +69,7 @@ extra:
       link: mailto:jokermin551008@gmail.com
 
 markdown_extensions:
-  #Python Markdown
+  # Python Markdown
   - abbr
   - admonition
   - attr_list
@@ -86,9 +80,7 @@ markdown_extensions:
       permalink: true
       toc_depth: 4
       permalink_title: anchor link to this section for reference
-  #Python Markdown Extensions
-#  - pymdownx.arithmatex:
-#      generic: true
+  # Python Markdown Extensions
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
@@ -114,10 +106,13 @@ markdown_extensions:
 
 plugins:
   - search
+  # https://github.com/blueswen/mkdocs-glightbox
   - glightbox
+  # https://github.com/TonyCrane/mkdocs-statistics-plugin
   - statistics:
       words_per_minute: 250
       codelines_per_minute: 80
+  # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
   - git-revision-date-localized:
       type: datetime
       timezone: Asia/Shanghai
@@ -127,13 +122,13 @@ plugins:
         - index.md
         - link.md
       strict: false
+  # https://github.com/TonyCrane/mkdocs-heti-plugin
   - heti:
       disable_serve: false
       
-
 validation:
   absolute_links: ignore
-#  unrecognized_links: ignore
+  # unrecognized_links: ignore
 
 # page tree
 nav:
