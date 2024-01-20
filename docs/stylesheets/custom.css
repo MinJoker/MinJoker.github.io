@@ -217,7 +217,7 @@
 /* mobile and tablet */
 @media screen and (max-width: 1399px) {
   html {
-    font-size: 100%;
+    font-size: 125%;
   }
 }
 /* laptop and desktop */
