@@ -12,6 +12,10 @@
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
   font-weight: 600;
 }
+/* emphasis */
+/* [data-md-color-scheme="slate"] .md-typeset strong {
+  color: var(--md-accent-fg-color);
+} */
 
 
 
@@ -123,7 +127,7 @@
   /* text */
   --md-typeset-color:                  var(--md-default-fg-color);
   /* html tag */
-  --md-typeset-a-color:                var(--md-default-fg-color);
+  --md-typeset-a-color:                var(--md-default-fg-color) !important;  /* important is necessary for override */
   --md-typeset-del-color:              var(--md-default-fg-color);
   --md-typeset-ins-color:              var(--md-default-fg-color);
   --md-typeset-kbd-color:              hsla(var(--md-hue), 15%, 90%, 0.12);
