@@ -1,4 +1,6 @@
-// copy from TonyCrane: https://github.com/TonyCrane/note/blob/master/docs/js/toc.js
+/* source: https://github.com/TonyCrane/note/blob/master/docs/js/toc.js */
+
+/* smooth jump */
 
 (function (window, document) {
   function register($toc) {

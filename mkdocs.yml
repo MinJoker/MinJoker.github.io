@@ -1,12 +1,14 @@
+# project information
 site_name: MinJoker's Notebook
 site_url: https://minjoker.github.io
 site_author: MinJoker
-
+# repository
 repo_name: Minjoker/MinJoker.github.io
 repo_url: https://github.com/MinJoker/MinJoker.github.io
-
+# copyright
 copyright: Copyright <span style="font-family:Arial;">&copy;</span> 2023-2024 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
 
+# configuration
 theme:
   name: material
   custom_dir: overrides
@@ -43,6 +45,8 @@ theme:
 
 extra_css:
   - stylesheets/custom.css
+  - stylesheets/counter.css
+  - stylesheets/toc.css
   - stylesheets/flink.css
 #  - stylesheets/heti.css   # doesn't seem to work
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
@@ -70,7 +74,6 @@ extra:
     - icon: fontawesome/brands/google
       link: mailto:jokermin551008@gmail.com
 
-# Formatting options
 markdown_extensions:
   #Python Markdown
   - abbr
@@ -128,11 +131,11 @@ plugins:
       disable_serve: false
       
 
-# Documentation layout
 validation:
   absolute_links: ignore
 #  unrecognized_links: ignore
 
+# page tree
 nav:
   - Home:
     - index.md
