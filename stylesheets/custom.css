@@ -4,6 +4,14 @@
   --md-text-font: "JetBrains Mono", "LXGW WenKai Screen";
   --md-code-font: "JetBrains Mono", "LXGW WenKai Screen";
 }
+/* text */
+.md-typeset {
+  font-size: 0.7rem;
+}
+/* headings */
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  font-weight: 600;
+}
 
 
 
@@ -74,8 +82,7 @@
   --md-warning-fg-color:              hsla(0, 0%, 0%, 0.87);
   --md-warning-bg-color:              hsla(60, 100%, 80%, 1);
   /* shadow */  /* something wrong */
-  /*
-  --md-shadow-z1:
+  /* --md-shadow-z1:
     0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.05),
     0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.1);
   --md-shadow-z2:
@@ -83,10 +90,8 @@
     0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.25);
   --md-shadow-z3:
     0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.2),
-    0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.35);
-  */
+    0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.35); */
 }
-
 /* dark mode */
 [data-md-color-scheme="slate"] {
   /* header */
@@ -147,10 +152,9 @@
   --md-code-hl-variable-color:         var(--md-default-fg-color--light);
   /* admonition */
   --md-admonition-fg-color:            var(--md-default-fg-color);
-  --md-admonition-bg-color:            rgba(44, 44, 44, 1);  /* conflict with code-bg */
+  --md-admonition-bg-color:            var(--md-default-bg-color);
   /* shadow */  /* something wrong */
-  /*
-  --md-shadow-z1:
+  /* --md-shadow-z1:
     0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.05),
     0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.1);
   --md-shadow-z2:
@@ -158,8 +162,7 @@
     0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.25);
   --md-shadow-z3:
     0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.4),
-    0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.35);
-  */
+    0 0              #{px2rem(1px)}  hsla(0, 0%, 0%, 0.35); */
 }
 
 
@@ -168,11 +171,26 @@
 
 /* light mode */
 [data-md-color-scheme="default"] input.md-search__input {
-  background-color:       hsla(0, 0%, 90%, 0.8);
+  background-color:       rgba(240, 240, 240, 0.8);
 }
 /* dark mode */
 [data-md-color-scheme="slate"] input.md-search__input {
-  background-color:       hsla(0, 0%, 10%, 1);
+  background-color:       rgba(36, 36, 36, 0.5);
+}
+
+
+
+/* admonition */
+
+/* light mode */
+[data-md-color-scheme="default"] .md-typeset .admonition, .md-typeset details {
+  border-width: 0;
+  box-shadow: var(--md-shadow-z1);
+}
+/* dark mode */
+[data-md-color-scheme="slate"] .md-typeset .admonition, .md-typeset details {
+  border-width: 0;
+  box-shadow: var(--md-shadow-z2);
 }
 
 
@@ -194,99 +212,10 @@
 
 
 
-/* disable border */
-.md-typeset .admonition,
-.md-typeset details {
-  border-width: 0;
-}
-
-
-
 /* media queries for responsive web design */
 
-/* mobile */
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 1400px) {
   html {
-      font-size: 87.5%;
+    font-size: 137.5%;
   }
-}
-/* tablet */
-@media screen and (min-width: 768px) {
-  html {
-      font-size: 100%;
-  }
-}
-/* laptop */
-@media screen and (min-width: 1024px) {
-  html {
-      font-size: 137.5%;
-  }
-}
-
-
-
-/* auto numbering */
-
-h1 {
-  counter-reset: h2;
-}
-h2 {
-  counter-reset: h3;
-}
-h3 {
-  counter-reset: h4;
-}
-h4 {
-  counter-reset: h5;
-}
-h5 {
-  counter-reset: h6;
-}
-h2:before {
-  counter-increment: h2;
-  content: counter(h2);
-  margin-right: 0.8rem;
-}
-h3:before {
-  counter-increment: h3;
-  content: counter(h2) "." counter(h3);
-  margin-right: 0.8rem;
-}
-h4:before {
-  counter-increment: h4;
-  content: counter(h2) "." counter(h3) "." counter(h4);
-  margin-right: 0.8rem;
-}
-h5:before {
-  counter-increment: h5;
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
-  margin-right: 0.8rem;
-}
-h6:before {
-  counter-increment: h6;
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
-  margin-right: 0.8rem;
-}
-
-
-
-/* better headings */
-
-.md-typeset h1, .md-typeset h2 {
-  font-weight: 600;
-}
-.md-typeset h3 {
-  font-weight: 500;
-}
-.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
-  letter-spacing: 0;
-}
-.md-typeset {
-  font-size: .7rem;
-}
-.md-typeset h3 {
-  font-weight: 600;
-}
-.md-typeset code:not(pre code) {
-  font-size: inherit;
 }
