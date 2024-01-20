@@ -79,8 +79,8 @@
   --md-admonition-fg-color:            var(--md-default-fg-color);
   --md-admonition-bg-color:            var(--md-default-bg-color);
   /* warning */
-  --md-warning-fg-color:              hsla(0, 0%, 0%, 0.87);
-  --md-warning-bg-color:              hsla(60, 100%, 80%, 1);
+  --md-warning-fg-color:               hsla(0, 0%, 0%, 0.87);
+  --md-warning-bg-color:               hsla(60, 100%, 80%, 1);
   /* shadow */  /* something wrong */
   /* --md-shadow-z1:
     0 #{px2rem(4px)} #{px2rem(10px)} hsla(0, 0%, 0%, 0.05),
@@ -214,6 +214,13 @@
 
 /* media queries for responsive web design */
 
+/* mobile and tablet */
+@media screen and (max-width: 1399px) {
+  html {
+    font-size: 100%;
+  }
+}
+/* laptop and desktop */
 @media screen and (min-width: 1400px) {
   html {
     font-size: 137.5%;
