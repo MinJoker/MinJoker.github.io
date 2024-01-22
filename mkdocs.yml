@@ -139,6 +139,9 @@ nav:
   - Computer Science:
     - cs/index.md
     - 数据结构与算法:
+      - Princeton:
+        - cs/algorithm/princeton/index.md
+        - cs/algorithm/princeton/note1.md
       - 数据结构基础:
         - cs/algorithm/fds/index.md
         - cs/algorithm/fds/note1.md
