@@ -41,7 +41,7 @@
 
 ### 代码
 
-???+ quote "Java Implementation"
+??? quote "Java Implementation"
 
     ```java linenums="1" title="Union-Find with Union-by-Rank and Path-Compression"
     package edu.princeton.cs.algs4;
@@ -116,3 +116,212 @@
     - 复杂度分析可进一步精确到 $N+M\alpha (M,N)$，$\alpha$ 是 Ackermann 函数的反函数，证明可以参考[这里](https://oi-wiki.org/ds/dsu-complexity/)
 - Fredman-Saks：并查集问题没有线性时间复杂度算法
 - - [ ] 上述复杂度分析的证明
+
+## 栈和队列
+
+- 栈和队列都是线性的数据结构
+    - 栈是后进先出的（LIFO: last in first out）
+    - 队列是先进先出的（FIFO: first in first out）
+
+### 实现
+
+- 链表实现
+- 可变数组实现
+    - 当数组满了的时候，新建一个两倍大小的数组，并把数据迁移到新数组
+    - 当数组四分之一满的时候，新建一个一半大小的数组，并把数据迁移到新数组
+        - 当数组半满的时候 resize 是不合理的，比如在半满位置反复执行 push 和 pop 操作会导致反复 resize，效率极低
+- 链表：
+    - 每个操作总是消耗常数时间，即使是在最坏的情况下；
+    - 需要消耗额外的时间和空间来处理链表结构；
+- 可变数组：
+    - 均摊分析后具有更高的平均效率，但是消耗会集中在在临界状态（需要倍增或倍减数组时）发生；
+    - 浪费更少的空间；
+
+### 代码
+
+- 注意：以下栈和队列的实现涉及 generic 泛型和 iterable 接口等 Java 特性
+
+??? quote "Stack: Java Implementation"
+
+    ```java linenums="1" title="Linked-List Stack of Generic Items"
+    package edu.princeton.cs.algs4;
+    import java.util.Iterator;
+    import java.util.NoSuchElementException;
+
+    public class Stack<Item> implements Iterable<Item> {
+        private Node<Item> first;     // top of stack
+        private int n;                // size of the stack
+
+        // helper linked list class
+        private static class Node<Item> {
+            private Item item;
+            private Node<Item> next;
+        }
+
+        public Stack() {
+            first = null;
+            n = 0;
+        }
+
+        public boolean isEmpty() {
+            return first == null;
+        }
+
+        public int size() {
+            return n;
+        }
+
+        public void push(Item item) {
+            Node<Item> oldfirst = first;
+            first = new Node<Item>();
+            first.item = item;
+            first.next = oldfirst;
+            n++;
+        }
+
+        public Item pop() {
+            if (isEmpty()) throw new NoSuchElementException("Stack underflow");
+            Item item = first.item;        // save item to return
+            first = first.next;            // delete first node
+            n--;
+            return item;                   // return the saved item
+        }
+
+        public Item peek() {
+            if (isEmpty()) throw new NoSuchElementException("Stack underflow");
+            return first.item;
+        }
+
+        //returns the sequence of items in this stack in LIFO order, separated by spaces
+        public String toString() {
+            StringBuilder s = new StringBuilder();
+            for (Item item : this) {
+                s.append(item);
+                s.append(' ');
+            }
+            return s.toString();
+        }
+
+        //returns an iterator that iterates through the items in this stack in LIFO order.
+        public Iterator<Item> iterator() {
+            return new LinkedIterator(first);
+        }
+
+        // the iterator
+        private class LinkedIterator implements Iterator<Item> {
+            private Node<Item> current;
+
+            public LinkedIterator(Node<Item> first) {
+                current = first;
+            }
+
+            // is there a next item?
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            // returns the next item
+            public Item next() {
+                if (!hasNext()) throw new NoSuchElementException();
+                Item item = current.item;
+                current = current.next;
+                return item;
+            }
+        }
+    }
+    ```
+
+??? quote "Queue: Java Implementation"
+
+    ```java linenums="1" title="Linked-List Queue of Generic Items"
+    package edu.princeton.cs.algs4;
+    import java.util.Iterator;
+    import java.util.NoSuchElementException;
+
+    public class Queue<Item> implements Iterable<Item> {
+        private Node<Item> first;    // beginning of queue
+        private Node<Item> last;     // end of queue
+        private int n;               // number of elements on queue
+
+        // helper linked list class
+        private static class Node<Item> {
+            private Item item;
+            private Node<Item> next;
+        }
+
+        public Queue() {
+            first = null;
+            last  = null;
+            n = 0;
+        }
+
+        public boolean isEmpty() {
+            return first == null;
+        }
+
+        public int size() {
+            return n;
+        }
+
+        public Item peek() {
+            if (isEmpty()) throw new NoSuchElementException("Queue underflow");
+            return first.item;
+        }
+
+        public void enqueue(Item item) {
+            Node<Item> oldlast = last;
+            last = new Node<Item>();
+            last.item = item;
+            last.next = null;
+            if (isEmpty()) first = last;
+            else           oldlast.next = last;
+            n++;
+        }
+
+        public Item dequeue() {
+            if (isEmpty()) throw new NoSuchElementException("Queue underflow");
+            Item item = first.item;
+            first = first.next;
+            n--;
+            if (isEmpty()) last = null;   // to avoid loitering
+            return item;
+        }
+
+        //returns the sequence of items in FIFO order, separated by spaces
+        public String toString() {
+            StringBuilder s = new StringBuilder();
+            for (Item item : this) {
+                s.append(item);
+                s.append(' ');
+            }
+            return s.toString();
+        }
+
+        //returns an iterator that iterates through the items in this queue in FIFO order.
+        public Iterator<Item> iterator()  {
+            return new LinkedIterator(first);
+        }
+
+        // the iterator
+        private class LinkedIterator implements Iterator<Item> {
+            private Node<Item> current;
+
+            public LinkedIterator(Node<Item> first) {
+                current = first;
+            }
+
+            // is there a next item?
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            // returns the next item
+            public Item next() {
+                if (!hasNext()) throw new NoSuchElementException();
+                Item item = current.item;
+                current = current.next;
+                return item;
+            }
+        }
+    }
+    ```
