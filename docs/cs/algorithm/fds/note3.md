@@ -31,7 +31,7 @@ void insertionSort(ElementType arr[], int n)
 - 希尔排序基于一个增量序列 $h_1<h_2<\cdots <h_t$，其中 $h_1 = 1$
 - 在原始序列中隔 $h_k-1$ 个元素取子序列，进行插入排序，称为 $h_k$-sort
 - 逐次进行 $h_t$-sort，$h_{t-1}$-sort，...，$h_1$-sort，排序完成
-    - $h_k$-sorted 的序列在 $h_{k-1}$-sort 后仍保持 $h_i$-sorted 的性质
+    - $h_k$-sorted 的序列在 $h_{k-1}$-sort 后仍保持 $h_k$-sorted 的性质
 - 希尔排序的复杂度和增量序列的选取有关
 - 希尔增量序列：$h_t=\lfloor N/2 \rfloor$，$h_k=\lfloor h_{k+1}/2 \rfloor$
     - 最坏情况：只在 $h_1$-sort 时进行了排序，复杂度 $\Omicron(N^ 2)$
@@ -55,7 +55,7 @@ void insertionSort(ElementType arr[], int n)
     }
     ```
 
-- Hibbard 增量序列：$h_k=2^ k-1$
+- Hibbard 增量序列：$h_k=2h_{k-1}+1$
     - 最坏情况复杂度为 $\Omicron(N^ {3/2})$
     - 平均情况复杂度为 $\Omicron(N^ {5/4})$
 - Sedgewick 增量序列：1,5,19,41,109,...

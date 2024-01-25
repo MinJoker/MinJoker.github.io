@@ -3,7 +3,7 @@ site_name: MinJoker's Notebook
 site_url: https://minjoker.github.io
 site_author: MinJoker
 # repository
-repo_name: Minjoker/MinJoker.github.io
+repo_name: MinJoker.github.io
 repo_url: https://github.com/MinJoker/MinJoker.github.io
 # copyright
 copyright: Copyright <span style="font-family:Arial;">&copy;</span> 2023-2024 <a href="https://github.com/MinJoker" target="_blank">MinJoker</a>
@@ -139,15 +139,15 @@ nav:
   - Computer Science:
     - cs/index.md
     - 数据结构与算法:
-      - Princeton:
-        - cs/algorithm/princeton/index.md
-        - cs/algorithm/princeton/note1.md
       - 数据结构基础:
         - cs/algorithm/fds/index.md
         - cs/algorithm/fds/note1.md
         - cs/algorithm/fds/note2.md
         - cs/algorithm/fds/note3.md
         - cs/algorithm/fds/exercise.md
+      - Princeton:
+        - cs/algorithm/princeton/index.md
+        - cs/algorithm/princeton/note1.md
     - 计算机系统:
       - 数字逻辑设计:
         - cs/system/digital_logic/index.md
