@@ -55,7 +55,7 @@ void insertionSort(ElementType arr[], int n)
     }
     ```
 
-- Hibbard 增量序列：$h_k=2h_{k-1}+1$
+- Hibbard 增量序列：$h_k=2^ k-1$
     - 最坏情况复杂度为 $\Omicron(N^ {3/2})$
     - 平均情况复杂度为 $\Omicron(N^ {5/4})$
 - Sedgewick 增量序列：1,5,19,41,109,...
