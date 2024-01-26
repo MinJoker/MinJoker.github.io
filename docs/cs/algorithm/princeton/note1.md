@@ -347,6 +347,11 @@
 - 分享一个很有意思的排序算法可视化网站：<br />
   [https://www.toptal.com/developers/sorting-algorithms](https://www.toptal.com/developers/sorting-algorithms){target="_blank"}
 
+### 排序复杂度
+
+- 基于（数值）比较的排序算法在最坏情况下至少需要 $\log (N!) \sim N\log N$ 次比较
+    - 证明：决策树 + [Stirling 近似](https://en.wikipedia.org/wiki/Stirling%27s_approximation){target="_blank"}
+
 ## 希尔排序
 
 - 希尔排序基于一个增量序列，不断对原始数据按一定间隔取子序列进行排序
@@ -354,6 +359,49 @@
     - 对于增量序列中的较大值，取出的每个子序列中数据数量都很少，小规模数据插入排序的表现并不差
     - 对于增量序列中的较小值，此时的数据已经几乎有序了，插入排序的表现非常好
         - 基于一个事实：大增量有序的数据在小增量排序后仍然是大增量有序的，证明可以参考[这里](https://oi-wiki.org/basic/shell-sort/#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6){target="_blank"}
+
+### 代码
+
+??? quote "Java Implementation"
+
+    ```java linenums="1" title="Shell Sort"
+    package edu.princeton.cs.algs4;
+
+    public class Shell {
+        // This class should not be instantiated.
+        private Shell() { }
+
+        public static void sort(Comparable[] a) {
+            int n = a.length;
+
+            // 3x+1 increment sequence:  1, 4, 13, 40, 121, 364, 1093, ...
+            int h = 1;
+            while (h < n/3) h = 3*h + 1;
+
+            while (h >= 1) {
+                // h-sort the array
+                for (int i = h; i < n; i++) {
+                    for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
+                        exch(a, j, j-h);
+                    }
+                }
+                h /= 3;
+            }
+        }
+
+        // is v < w ?
+        private static boolean less(Comparable v, Comparable w) {
+            return v.compareTo(w) < 0;
+        }
+
+        // exchange a[i] and a[j]
+        private static void exch(Object[] a, int i, int j) {
+            Object swap = a[i];
+            a[i] = a[j];
+            a[j] = swap;
+        }
+    }
+    ```
 
 ### 复杂度分析
 
@@ -371,3 +419,94 @@
 - 希尔排序在实际应用中很有价值
     - 对于小规模的数据，希尔排序的速度非常快
     - 希尔排序的代码规模很小，常用于嵌入式系统等
+
+## 归并排序
+
+- 归并排序是一种高效的、通用的、稳定的基于比较的算法
+- 关于归并排序的研究已经比较成熟，应用也非常广泛
+- 通常的归并排序需要 $\Omicron(N)$ 的辅助空间，但已经有很多研究提出了空间复杂度为 $\Omicron(1)$ 的原地归并，但它们的实现都非常繁琐复杂，在现实中很少被应用
+
+### 实现
+
+- 自上而下（top-down）递归实现
+    - 优化一：递归到小规模数据时改用插入排序
+    - 优化二：如果待合并的两串数据已经有序，则直接返回，减少合并操作的开销
+        - 比较前一串数据的最大值和后一串数据的最小值
+        - 处理几乎有序的数组效果很好
+    - 优化三：每次递归时交换输入数组和辅助数组的身份，可以节省多次复制数组的时间开销
+    - 下文的代码同时实现了这三种优化
+- 自下而上（bottom-up）迭代实现
+    - 一般情况下，自下而上迭代实现的归并排序要比自上而下递归实现的归并排序慢 10%
+
+### 代码
+
+??? quote "Top-Down: Java Implementation"
+
+    ```java linenums="1" title="Merge-Sort"
+    package edu.princeton.cs.algs4;
+
+    public class MergeX {
+        private static final int CUTOFF = 7;  // cutoff to insertion sort
+
+        // This class should not be instantiated.
+        private MergeX() { }
+
+        private static void merge(Comparable[] src, Comparable[] dst, int lo, int mid, int hi) {
+            int i = lo, j = mid+1;
+            for (int k = lo; k <= hi; k++) {
+                if      (i > mid)              dst[k] = src[j++];
+                else if (j > hi)               dst[k] = src[i++];
+                else if (less(src[j], src[i])) dst[k] = src[j++];   // to ensure stability
+                else                           dst[k] = src[i++];
+            }
+        }
+
+        private static void sort(Comparable[] src, Comparable[] dst, int lo, int hi) {
+            // if (hi <= lo) return;
+            if (hi <= lo + CUTOFF) {
+                insertionSort(dst, lo, hi);
+                return;
+            }
+            int mid = lo + (hi - lo) / 2;
+            sort(dst, src, lo, mid);
+            sort(dst, src, mid+1, hi);
+
+            // if (!less(src[mid+1], src[mid])) {
+            //    for (int i = lo; i <= hi; i++) dst[i] = src[i];
+            //    return;
+            // }
+
+            // using System.arraycopy() is a bit faster than the above loop
+            if (!less(src[mid+1], src[mid])) {
+                System.arraycopy(src, lo, dst, lo, hi - lo + 1);
+                return;
+            }
+
+            merge(src, dst, lo, mid, hi);
+        }
+
+        public static void sort(Comparable[] a) {
+            Comparable[] aux = a.clone();
+            sort(aux, a, 0, a.length-1);
+        }
+
+        // sort from a[lo] to a[hi] using insertion sort
+        private static void insertionSort(Comparable[] a, int lo, int hi) {
+            for (int i = lo; i <= hi; i++)
+                for (int j = i; j > lo && less(a[j], a[j-1]); j--)
+                    exch(a, j, j-1);
+        }
+
+        // exchange a[i] and a[j]
+        private static void exch(Object[] a, int i, int j) {
+            Object swap = a[i];
+            a[i] = a[j];
+            a[j] = swap;
+        }
+
+        // is a[i] < a[j]?
+        private static boolean less(Comparable a, Comparable b) {
+            return a.compareTo(b) < 0;
+        }
+    }
+    ```
