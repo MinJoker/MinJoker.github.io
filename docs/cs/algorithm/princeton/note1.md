@@ -735,3 +735,154 @@
         }
     }
     ```
+
+## 优先队列
+
+### 实现
+
+- 数组结构的二叉堆是一种常用的优先队列实现
+- d 叉堆是二叉堆优先队列的一种优化，在一些时候可以达到更好的效果
+- [斐波那契堆](https://en.wikipedia.org/wiki/Fibonacci_heap){target="_blank"}是一种高级数据结构，可以在常数时间内实现插入、在均摊 $\log N$ 时间内实现删除最大元，但由于实现太复杂而很少在实践中被使用
+
+### 堆排序
+
+- 优点：堆排序是一种能在最坏情况下保证 $N\log N$ 复杂度的原地排序
+- 缺点：
+    - 堆排序和归并的循环内操作太多，所以两者的速度都不如快排
+    - 堆排序需要跳跃式地访问数组，从而不像快排那样具有很好的内存访问局部性（make good use of cache memory）
+    - 堆排序和快排都是不稳定的
+
+### 代码
+
+??? quote "Max Heap: Java Implementation"
+
+    ```java linenums="1" title="Max Priority Queue with a Binary Heap"
+    package edu.princeton.cs.algs4;
+    import java.util.NoSuchElementException;
+
+    public class MaxPQ<Key> {
+        private Key[] pq;   // store items at indices 1 to n
+        private int n;      // number of items on priority queue
+
+        public MaxPQ(int initCapacity) {
+            pq = (Key[]) new Object[initCapacity + 1];
+            n = 0;
+        }
+
+        public boolean isEmpty() {
+            return n == 0;
+        }
+
+        public int size() {
+            return n;
+        }
+
+        public Key max() {
+            if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+            return pq[1];
+        }
+
+        // resize the underlying array to have the given capacity
+        private void resize(int capacity) {
+            assert capacity > n;
+            Key[] temp = (Key[]) new Object[capacity];
+            for (int i = 1; i <= n; i++) {
+                temp[i] = pq[i];
+            }
+            pq = temp;
+        }
+
+        public void insert(Key x) {
+            // double size of array if necessary
+            if (n == pq.length - 1) resize(2 * pq.length);
+            // add x, and percolate it up to maintain heap invariant
+            pq[++n] = x;
+            swim(n);
+        }
+
+        public Key delMax() {
+            if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+            Key max = pq[1];
+            exch(1, n--);
+            sink(1);
+            pq[n+1] = null;     // to avoid loitering and help with garbage collection
+            if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
+            return max;
+        }
+
+        private void swim(int k) {
+            while (k > 1 && less(k/2, k)) {
+                exch(k/2, k);
+                k = k/2;
+            }
+        }
+
+        private void sink(int k) {
+            while (2*k <= n) {
+                int j = 2*k;
+                if (j < n && less(j, j+1)) j++;
+                if (!less(k, j)) break;
+                exch(k, j);
+                k = j;
+            }
+        }
+
+        private boolean less(int i, int j) {
+            return pq[i].compareTo(pq[j]) < 0;
+        }
+
+        private void exch(int i, int j) {
+            Key swap = pq[i];
+            pq[i] = pq[j];
+            pq[j] = swap;
+        }
+    }
+    ```
+
+??? quote "Heap Sort: Java Implementation"
+
+    ```java linenums="1" title="Heap Sort"
+    package edu.princeton.cs.algs4;
+
+    public class Heap {
+        // This class should not be instantiated.
+        private Heap() { }
+
+        public static void sort(Comparable[] pq) {
+            int n = pq.length;
+
+            // heapify phase
+            for (int k = n/2; k >= 1; k--)
+                sink(pq, k, n);
+
+            // sortdown phase
+            int k = n;
+            while (k > 1) {
+                exch(pq, 1, k--);
+                sink(pq, 1, k);
+            }
+        }
+
+        private static void sink(Comparable[] pq, int k, int n) {
+            while (2*k <= n) {
+                int j = 2*k;
+                if (j < n && less(pq, j, j+1)) j++;
+                if (!less(pq, k, j)) break;
+                exch(pq, k, j);
+                k = j;
+            }
+        }
+
+        // indices are "off-by-one" to support 1-based indexing
+        private static boolean less(Comparable[] pq, int i, int j) {
+            return pq[i-1].compareTo(pq[j-1]) < 0;
+        }
+
+        // indices are "off-by-one" to support 1-based indexing
+        private static void exch(Object[] pq, int i, int j) {
+            Object swap = pq[i-1];
+            pq[i-1] = pq[j-1];
+            pq[j-1] = swap;
+        }
+    }
+    ```
