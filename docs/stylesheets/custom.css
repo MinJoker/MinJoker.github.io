@@ -233,6 +233,6 @@
 /* large desktop */
 @media screen and (min-width: 1800px) {
   html {
-    font-size: 175%;
+    font-size: 150%;
   }
 }
