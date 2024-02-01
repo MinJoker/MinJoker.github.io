@@ -230,3 +230,9 @@
     font-size: 137.5%;
   }
 }
+/* large desktop */
+@media screen and (min-width: 1800px) {
+  html {
+    font-size: 175%;
+  }
+}
