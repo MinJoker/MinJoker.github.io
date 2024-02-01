@@ -225,7 +225,7 @@
   }
 }
 /* laptop and desktop */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
   html {
     font-size: 137.5%;
   }
