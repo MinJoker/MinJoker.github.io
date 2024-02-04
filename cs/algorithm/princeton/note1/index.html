@@ -659,6 +659,52 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bst">
+<span class="md-ellipsis">
+      BST 的几何应用
+    </span>
+</a>
+<nav aria-label="BST 的几何应用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_38">
+<span class="md-ellipsis">
+      一维范围搜索
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_39">
+<span class="md-ellipsis">
+      二维正交线段相交问题
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_40">
+<span class="md-ellipsis">
+      一维区间搜索
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_41">
+<span class="md-ellipsis">
+      二维正交矩形相交问题
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kd">
+<span class="md-ellipsis">
+      Kd 树
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -1231,6 +1277,52 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bst">
+<span class="md-ellipsis">
+      BST 的几何应用
+    </span>
+</a>
+<nav aria-label="BST 的几何应用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_38">
+<span class="md-ellipsis">
+      一维范围搜索
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_39">
+<span class="md-ellipsis">
+      二维正交线段相交问题
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_40">
+<span class="md-ellipsis">
+      一维区间搜索
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_41">
+<span class="md-ellipsis">
+      二维正交矩形相交问题
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kd">
+<span class="md-ellipsis">
+      Kd 树
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -1240,7 +1332,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="algorithms-i">Algorithms I<a class="headerlink" href="#algorithms-i" title="anchor link to this section for reference">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>5513<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>1376<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>39<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>6464<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>1376<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>43<span class="heti-spacing"> </span></span>分钟</p>
 </div>
 <style>
     .md-sidebar--secondary .md-nav > .md-nav__list > li > a + .md-nav {
@@ -3551,7 +3643,7 @@
 </ul>
 </li>
 <li>分析：<ul>
-<li>对于包含<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>个键值的<span class="heti-skip"><span class="heti-spacing"> </span>$M$<span class="heti-spacing"> </span></span>阶<span class="heti-skip"><span class="heti-spacing"> </span>B<span class="heti-spacing"> </span></span>树，搜索和插入只需要<span><span class="heti-spacing"> </span>$\log</span> <em m_2="M/2">{M-1} N$ ~ $\log </em> <span>N$<span class="heti-spacing"> </span></span>次寻路</li>
+<li>对于包含<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>个键值的<span class="heti-skip"><span class="heti-spacing"> </span>$M$<span class="heti-spacing"> </span></span>阶<span class="heti-skip"><span class="heti-spacing"> </span>B<span class="heti-spacing"> </span></span>树，搜索和插入只需要<span class="heti-skip"><span class="heti-spacing"> </span>$\log _ {M-1} N \sim \log _ {M/2} N$<span class="heti-spacing"> </span></span>次寻路</li>
 <li>在实践中，寻路次数通常不超过<span class="heti-skip"><span class="heti-spacing"> </span>4<span class="heti-spacing"> </span></span>次，比如<span><span class="heti-spacing"> </span>M = 1024</span>，N = 62 billion</li>
 <li>优化：总是把根节点那一页数据块存储在内存中</li>
 </ul>
@@ -4488,6 +4580,74 @@
 <a id="__codelineno-11-461" name="__codelineno-11-461"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
+<h2 id="bst">BST 的几何应用<a class="headerlink" href="#bst" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<ul>
+<li>前面讨论的<span class="heti-skip"><span class="heti-spacing"> </span>BST<span class="heti-spacing"> </span></span>都是以数值作为键值的，下面讨论的<span class="heti-skip"><span class="heti-spacing"> </span>BST<span class="heti-spacing"> </span></span>会以几何对象作为键值，比如点、线段、区间等</li>
+</ul>
+<h3 id="_38">一维范围搜索<a class="headerlink" href="#_38" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>数据结构：二叉搜索树（BST）</li>
+<li>一维范围搜索（1d range search）研究的是一维分布的点，每个点对应一个<span class="heti-skip"><span class="heti-spacing"> </span>BST<span class="heti-spacing"> </span></span>节点</li>
+<li>除了基本的搜索、插入和删除操作外，还支持以下两种操作：<ul>
+<li>范围搜索：查询处于区间<span class="heti-skip"><span class="heti-spacing"> </span>[m, n]<span class="heti-spacing"> </span></span>之间的所有点</li>
+<li>范围计数：计算处于区间<span class="heti-skip"><span class="heti-spacing"> </span>[m, n]<span class="heti-spacing"> </span></span>之间点的个数</li>
+</ul>
+</li>
+<li>复杂度分析，<span>$R$<span class="heti-spacing"> </span></span>表示处于区间之间的点的个数<ul>
+<li>范围搜索复杂度为<span><span class="heti-spacing"> </span>$\Omicron(R+\log N)$</span></li>
+<li>范围计数复杂度为<span><span class="heti-spacing"> </span>$\Omicron(\log N)$</span>，通过<span class="heti-skip"><span class="heti-spacing"> </span>BST<span class="heti-spacing"> </span></span>的<a href="#_34"><span class="heti-skip"><span class="heti-spacing"> </span>rank<span class="heti-spacing"> </span></span>操作</a>实现</li>
+</ul>
+</li>
+</ul>
+<h3 id="_39">二维正交线段相交问题<a class="headerlink" href="#_39" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>算法：通过扫描线算法（sweep-line）转化为一维范围搜索问题</li>
+<li>二维正交线段相交问题（orthogonal line segment intersection）研究的是二维空间上正交的线段的交点</li>
+<li>具体实现：<ul>
+<li>用一条竖直的线自左向右扫描（以左右端点的横坐标定义事件，可以用优先队列或者排序实现）</li>
+<li>遇到水平线段的左端点，将其纵坐标插入<span><span class="heti-spacing"> </span>BST</span></li>
+<li>遇到水平线段的右端点，将其纵坐标从<span class="heti-skip"><span class="heti-spacing"> </span>BST<span class="heti-spacing"> </span></span>中删除</li>
+<li>遇到竖直线段，以其两端点纵坐标作为范围，对<span class="heti-skip"><span class="heti-spacing"> </span>BST<span class="heti-spacing"> </span></span>进行一维范围搜索，找到所有与其相交的线段</li>
+</ul>
+</li>
+<li>在<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>条正交线段中查询<span class="heti-skip"><span class="heti-spacing"> </span>$R$<span class="heti-spacing"> </span></span>个交点的时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(R+N\log N)$</span></li>
+</ul>
+<h3 id="_40">一维区间搜索<a class="headerlink" href="#_40" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>数据结构：<a href="https://en.wikipedia.org/wiki/Interval_tree" target="_blank">区间搜索树</a>（<span>BST<span class="heti-spacing"> </span></span>的一种变式）</li>
+<li>一维区间搜索（1d interval search）研究的是一维分布的区间，每个区间对应一个<span class="heti-skip"><span class="heti-spacing"> </span>BST<span class="heti-spacing"> </span></span>节点</li>
+<li>除了基本的搜索、插入和删除操作外，还支持以下操作：<ul>
+<li>相交区间查询：给定一个区间<span><span class="heti-spacing"> </span>[lo, hi]</span>，找到所有与这个区间有交集的区间</li>
+</ul>
+</li>
+<li>具体实现：<ul>
+<li>区间搜索树以区间左端点作为搜索的键值（假设所有区间的左端点都是相异的）</li>
+<li>区间搜索树上的每个节点需要额外存储一个值，表示其子树中所有区间的右端点的最大值</li>
+</ul>
+</li>
+<li>复杂度分析，<span>$R$<span class="heti-spacing"> </span></span>表示与给定区间有交集的区间个数<ul>
+<li>区间搜索树实现的一维区间搜索，查询任一满足条件的区间所需复杂度为<span><span class="heti-spacing"> </span>$\Omicron(\log N)$</span></li>
+<li>区间搜索树实现的一维区间搜索，查询所有满足条件的区间所需复杂度为<span><span class="heti-spacing"> </span>$\Omicron(R\log N)$</span><ul>
+<li>理论上最优复杂度为<span><span class="heti-spacing"> </span>$\Omicron(R+\log N)$</span>，不过<span class="heti-skip"><span class="heti-spacing"> </span>$\Omicron(R\log N)$<span class="heti-spacing"> </span></span>的实践表现也非常有效</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_41">二维正交矩形相交问题<a class="headerlink" href="#_41" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<ul>
+<li>算法：通过扫描线算法（sweep-line）转化为一维区间搜索问题</li>
+<li>二维正交矩形相交问题（orthongonal rectangle intersection）研究的是二维空间上正交的矩形的相交关系</li>
+<li>具体实现：<ul>
+<li>用一条竖直的线自左向右扫描（以左右边线的横坐标定义事件，可以用优先队列或者排序实现）</li>
+<li>将与扫描线相交的矩形维护在区间搜索树上（以纵坐标区间来表示）</li>
+<li>遇到矩形的左边线，以其纵坐标区间作为给定区间，对区间搜索树进行一维区间搜索，找到所有与其相交的矩形，并将其插入区间搜索树</li>
+<li>遇到矩形的右边线，将其从区间搜索树中删除</li>
+</ul>
+</li>
+<li>在<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>个正交矩形中查询<span class="heti-skip"><span class="heti-spacing"> </span>$R$<span class="heti-spacing"> </span></span>对相交关系的时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(R\log N+N\log N)$</span></li>
+</ul>
+<h3 id="kd">Kd 树<a class="headerlink" href="#kd" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
 <!-- source: https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/override-a-theme/#example-mkdocs-material-theme -->
 <hr/>
 <div class="md-source-file">
@@ -4495,7 +4655,7 @@
 <!-- mkdocs-git-revision-date-localized-plugin -->
     
     最后更新:
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月3日 20:04:38</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年2月4日 16:22:54</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年1月22日 18:59:45</span>
