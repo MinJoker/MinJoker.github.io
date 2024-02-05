@@ -47,16 +47,21 @@ extra_css:
   - stylesheets/custom.css
   - stylesheets/counter.css
   - stylesheets/toc.css
+  - stylesheets/katex.css
   - stylesheets/flink.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css  # from mkdocs material
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css  # from katex.org
 
 extra_javascript:
   - javascripts/toc.js
   - javascripts/katex.js 
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  # from mkdocs material
+  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js  # from mkdocs material
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js  # from katex.org
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js  # from katex.org
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js  # from katex.org, help copy tex to clipboard
 
 extra:
   analytics:
