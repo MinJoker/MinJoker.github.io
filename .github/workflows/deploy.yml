@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,3 +20,14 @@ jobs:
           python-version: 3.x
       - run: pip install -r library.txt
       - run: mkdocs gh-deploy --force
+      - run: checkout gh-pages
+      - name: deploy to server
+        uses: AEnterprise/rsync-deploy@v1.0
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ALIYUN }}
+          ARGS: -avz --delete
+          SEVER_PORT: 22
+          FOLDER: /
+          SERVER_IP: 121.40.177.242
+          USERNAME: root
+          SERVER_DESTINATION: /var/www/html
