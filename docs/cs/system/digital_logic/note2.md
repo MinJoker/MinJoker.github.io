@@ -129,7 +129,7 @@ $$
 具体电路实现如下图：
 
 <div style="text-align: center;">
-<img src="/assets/images/cs/digital_logic/21.png" alt="全加器电路实现图" style="width: 25%;">
+<img src="/assets/images/cs/digital_logic/21.png" alt="全加器电路实现图" style="width: 20%;">
 </div>
 
 最自然的想法是把全加器直接链式连接，即直接把前一个全加器的进位连接到后一个全加器上，这样的做法叫做行波加法器（ripple-carry adder）。行波加法器最大的弊端在于，后一个全加器需要等待前一个全加器的计算完毕后，才能把进位传递过来，当处理较大数据的加法时，行波加法器的效率就太低了。
