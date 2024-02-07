@@ -1,15 +1,22 @@
 name: test
 
-# when branch gh-pages is updated, the workflow will be triggered
 on:
   push:
     branches:
-      - gh-pages
+      - main
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0    # for mkdocs-git-revision-date-localized-plugin
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: pip install -r library.txt
+      - run: mkdocs build
       - uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
