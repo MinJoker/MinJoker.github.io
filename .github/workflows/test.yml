@@ -1,7 +1,10 @@
 name: test
 
+# when branch gh-pages is updated, the workflow will be triggered
 on:
-  page_build
+  push:
+    branches:
+      - gh-pages
 
 jobs:
   test:
