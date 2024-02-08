@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zh">
 <head>
+<!-- redirect -->
+<meta content="2; url='https://note.minjoker.top'" http-equiv="refresh"/>
+<!-- redirect -->
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="MinJoker" name="author"/>
@@ -897,32 +900,38 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="_1">基础数据结构<a class="headerlink" href="#_1" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h1>
+<!-- 
+
+  
+  
+
+
+<h1 id="_1">基础数据结构<a class="headerlink" href="#_1" title="anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>5143<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path></svg></span> <span>246<span class="heti-spacing"> </span></span>行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>24<span class="heti-spacing"> </span></span>分钟</p>
-</div>
-<h2 id="_2">栈和队列<a class="headerlink" href="#_2" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<h3 id="_3">线性表<a class="headerlink" href="#_3" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 5143 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"></path> 246 行代码 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>24<span class="heti-spacing"> </span></span>分钟
+</article></div>
+<h2 id="_2">栈和队列<a class="headerlink" href="#_2" title="anchor link to this section for reference">¶</a></h2>
+<h3 id="_3">线性表<a class="headerlink" href="#_3" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>数组实现</li>
 <li>链表实现<ul>
 <li>哨兵链表，双向循环链表</li>
 </ul>
 </li>
-<li>补充，稀疏矩阵（sparse matrix）是大部分元素均为<span class="heti-skip"><span class="heti-spacing"> </span>0<span class="heti-spacing"> </span></span>的矩阵<ul>
+<li>补充，稀疏矩阵（sparse matrix）是大部分元素均为 0 的矩阵<ul>
 <li>多维数组实现，空间浪费严重</li>
 <li>多重链表（multilist）实现，也称十字链表（orthogonal linked list）</li>
 </ul>
 </li>
 <li>补充，链表的游标实现（no pointer）<ul>
-<li>使用全局结构体数组来实现链表，维护其中一个分区<span class="heti-skip"><span class="heti-spacing"> </span>freelist<span class="heti-spacing"> </span></span>来实现<span class="heti-skip"><span class="heti-spacing"> </span>malloc<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>free</span></li>
+<li>使用全局结构体数组来实现链表，维护其中一个分区 freelist 来实现 malloc 和 free</li>
 </ul>
 </li>
 </ul>
-<h3 id="_4">栈和队列基础<a class="headerlink" href="#_4" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_4">栈和队列基础<a class="headerlink" href="#_4" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>
-<p>栈（stack）是<span class="heti-skip"><span class="heti-spacing"> </span>last-in-first-out (LIFO)<span class="heti-spacing"> </span></span>的</p>
+<p>栈（stack）是 last-in-first-out (LIFO) 的</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Stack</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">topOfStack</span><span class="p">;</span>
@@ -933,13 +942,13 @@
 <li>
 <p>栈的基本操作：</p>
 <ul>
-<li>入栈（push<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，将元素压入栈顶</li>
-<li>出栈（pop<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，将栈顶元素出栈</li>
+<li>入栈（push），将元素压入栈顶</li>
+<li>出栈（pop），将栈顶元素出栈</li>
 <li>查看栈顶元素（top）</li>
 </ul>
 </li>
 <li>
-<p>队列（queue）是<span class="heti-skip"><span class="heti-spacing"> </span>first-in-first-out (FIFO)<span class="heti-spacing"> </span></span>的</p>
+<p>队列（queue）是 first-in-first-out (FIFO) 的</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Queue</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacity</span><span class="p">;</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">front</span><span class="p">,</span><span class="w"> </span><span class="n">rear</span><span class="p">;</span>
@@ -950,13 +959,13 @@
 <li>
 <p>队列的基本操作：</p>
 <ul>
-<li>入队（enqueue<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，在队尾插入元素</li>
-<li>出队（dequeue<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，在队首弹出元素</li>
+<li>入队（enqueue），在队尾插入元素</li>
+<li>出队（dequeue），在队首弹出元素</li>
 </ul>
 </li>
 <li>循环队列</li>
 </ul>
-<h3 id="_5">中缀、后缀与前缀<a class="headerlink" href="#_5" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_5">中缀、后缀与前缀<a class="headerlink" href="#_5" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>后缀（postfix）表达式，所有操作符置于操作数的后面<ul>
 <li>后缀表达式不再考虑运算符的优先级，也不需要括号</li>
@@ -971,10 +980,10 @@
 <li>中缀表达式转后缀表达式，维护一个操作符栈<ol>
 <li>读到操作数，直接输出</li>
 <li>读到操作符，将其与栈顶操作符比较优先级<ul>
-<li>pre(top) &gt;= pre(tmp)，栈顶操作符出栈，并重复步骤<span><span class="heti-spacing"> </span>b.</span></li>
-<li><span>pre(top) &lt; pre(tmp)<span class="heti-spacing"> </span></span>或者栈为空，操作符直接入栈</li>
+<li>pre(top) &gt;= pre(tmp)，栈顶操作符出栈，并重复步骤 b.</li>
+<li>pre(top) &lt; pre(tmp) 或者栈为空，操作符直接入栈</li>
 <li>注意，读到左括号直接入栈，读到右括号将栈中元素依次出栈直至左括号，丢弃这对括号</li>
-<li>注意，上述针对左结合操作符，对于右结合操作符（如<span><span class="heti-spacing"> </span>$\text{\textasciicircum}$</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，优先级相等时直接入栈</li>
+<li>注意，上述针对左结合操作符，对于右结合操作符（如 $\text{\textasciicircum}$），优先级相等时直接入栈</li>
 </ul>
 </li>
 <li>表达式读完后，将栈中元素全部依次出栈</li>
@@ -992,34 +1001,34 @@
 </ul>
 </li>
 <li>表达式树（expression tree）是一种二叉树，叶子节点均为操作数，其余节点均为操作符</li>
-<li>中缀表达式建树，维护两个栈，<span>optr<span class="heti-spacing"> </span></span>栈存储操作符，<span>expt<span class="heti-spacing"> </span></span>栈存储表达式树根节点<ol>
-<li>读到操作数，生成一个只有根节点的表达式树，入栈<span><span class="heti-spacing"> </span>expt</span></li>
-<li>读到操作符，将其与<span class="heti-skip"><span class="heti-spacing"> </span>optr<span class="heti-spacing"> </span></span>栈顶操作符比较优先级<ul>
-<li>pre(top) &gt;= pre(tmp)，栈顶操作符出栈，将<span class="heti-skip"><span class="heti-spacing"> </span>expt<span class="heti-spacing"> </span></span>栈顶前两棵树出栈，生成以该操作符为根节点、以这两棵树为左右子树的表达式树，入栈<span><span class="heti-spacing"> </span>expt</span>；重复步骤<span><span class="heti-spacing"> </span>b.</span></li>
-<li><span>pre(top) &lt; pre(tmp)<span class="heti-spacing"> </span></span>或者栈为空，操作符直接入栈</li>
+<li>中缀表达式建树，维护两个栈，optr 栈存储操作符，expt 栈存储表达式树根节点<ol>
+<li>读到操作数，生成一个只有根节点的表达式树，入栈 expt</li>
+<li>读到操作符，将其与 optr 栈顶操作符比较优先级<ul>
+<li>pre(top) &gt;= pre(tmp)，栈顶操作符出栈，将 expt 栈顶前两棵树出栈，生成以该操作符为根节点、以这两棵树为左右子树的表达式树，入栈 expt；重复步骤 b.</li>
+<li>pre(top) &lt; pre(tmp) 或者栈为空，操作符直接入栈</li>
 <li>注意，读到左括号直接入栈，读到右括号将栈中元素依次出栈直至左括号，丢弃这对括号</li>
-<li>注意，上述针对左结合操作符，对于右结合操作符（如<span><span class="heti-spacing"> </span>$\text{\textasciicircum}$</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，优先级相等时直接入栈</li>
+<li>注意，上述针对左结合操作符，对于右结合操作符（如 $\text{\textasciicircum}$），优先级相等时直接入栈</li>
 </ul>
 </li>
-<li>表达式读完后，将<span class="heti-skip"><span class="heti-spacing"> </span>expt<span class="heti-spacing"> </span></span>栈顶元素出栈，即为表达式树</li>
+<li>表达式读完后，将 expt 栈顶元素出栈，即为表达式树</li>
 </ol>
 </li>
 </ul>
-<h2 id="_6">树<a class="headerlink" href="#_6" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<h3 id="_7">基础概念<a class="headerlink" href="#_7" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h2 id="_6">树<a class="headerlink" href="#_6" title="anchor link to this section for reference">¶</a></h2>
+<h3 id="_7">基础概念<a class="headerlink" href="#_7" title="anchor link to this section for reference">¶</a></h3>
 <ul>
-<li>树由根节点（root<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，以及<span class="heti-skip"><span class="heti-spacing"> </span>0<span class="heti-spacing"> </span></span>个或多个非空子树与根通过一条有向边（edge）连接组成</li>
-<li>一棵树是<span class="heti-skip"><span class="heti-spacing"> </span>$N$<span class="heti-spacing"> </span></span>个节点和<span class="heti-skip"><span class="heti-spacing"> </span>$N-1$<span class="heti-spacing"> </span></span>条边的集合</li>
+<li>树由根节点（root），以及 0 个或多个非空子树与根通过一条有向边（edge）连接组成</li>
+<li>一棵树是 $N$ 个节点和 $N-1$ 条边的集合</li>
 <li>节点的子树数量称为节点的度（degree）</li>
 <li>一棵树的度是这棵树里所有节点度的最大值</li>
 <li>至少有一个子树的节点称为父亲（parent）</li>
 <li>父亲的每棵子树的根节点称为儿子（children）</li>
 <li>有相同父亲的儿子称为兄弟（siblings）</li>
 <li>没有子树的节点称为树叶（leaf）</li>
-<li>从节点<span class="heti-skip"><span class="heti-spacing"> </span>$n_1$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$n_k$<span class="heti-spacing"> </span></span>的路径（path）是唯一的，其长度（length）是路径上边的数量</li>
-<li>节点<span class="heti-skip"><span class="heti-spacing"> </span>$n_i$<span class="heti-spacing"> </span></span>的深度（depth）是从根到<span class="heti-skip"><span class="heti-spacing"> </span>$n_i$<span class="heti-spacing"> </span></span>的唯一路径的长度</li>
-<li>节点<span class="heti-skip"><span class="heti-spacing"> </span>$n_i$<span class="heti-spacing"> </span></span>的高度（height）是从<span class="heti-skip"><span class="heti-spacing"> </span>$n_i$<span class="heti-spacing"> </span></span>到一个叶节点的最长长度</li>
-<li>树的高度<span class="heti-skip"><span class="heti-spacing"> </span>/<span class="heti-spacing"> </span></span>深度<span class="heti-skip"><span class="heti-spacing"> </span>=<span class="heti-spacing"> </span></span>根节点的高度<span class="heti-skip"><span class="heti-spacing"> </span>=<span class="heti-spacing"> </span></span>最深叶节点的深度</li>
+<li>从节点 $n_1$ 到 $n_k$ 的路径（path）是唯一的，其长度（length）是路径上边的数量</li>
+<li>节点 $n_i$ 的深度（depth）是从根到 $n_i$ 的唯一路径的长度</li>
+<li>节点 $n_i$ 的高度（height）是从 $n_i$ 到一个叶节点的最长长度</li>
+<li>树的高度 / 深度 = 根节点的高度 = 最深叶节点的深度</li>
 <li>一个节点的祖先（ancestor）是从根到这个节点的路径上的所有节点</li>
 <li>一个节点的后裔（descendants）是这个节点的子树中的所有节点</li>
 <li>
@@ -1027,7 +1036,7 @@
 <ul>
 <li>列表表示，子节点个数未知，不易表示</li>
 <li>
-<p><span>FirstChild-NextSibling<span class="heti-spacing"> </span></span>表示，因为儿子顺序不定，所以一棵树的表示方式不唯一</p>
+<p>FirstChild-NextSibling 表示，因为儿子顺序不定，所以一棵树的表示方式不唯一</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">PtrToNode</span><span class="p">;</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">element</span><span class="p">;</span>
@@ -1036,21 +1045,21 @@
 </code></pre></div>
 </li>
 <li>
-<p>将<span class="heti-skip"><span class="heti-spacing"> </span>FirstChild-NextSibling<span class="heti-spacing"> </span></span>表示的树顺时针旋转<span><span class="heti-spacing"> </span>$45\degree$</span>，可以得到二叉树</p>
+<p>将 FirstChild-NextSibling 表示的树顺时针旋转 $45\degree$，可以得到二叉树</p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="_8">二叉树<a class="headerlink" href="#_8" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_8">二叉树<a class="headerlink" href="#_8" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>二叉树（binary tree）是每个节点最多有两个儿子的树<ul>
 <li>二叉树的左右两个儿子是有序的，即交换左右子树后二叉树可能会改变</li>
 </ul>
 </li>
 <li>二叉树的性质：<ul>
-<li>第<span class="heti-skip"><span class="heti-spacing"> </span>$i$<span class="heti-spacing"> </span></span>层的节点数最多为<span><span class="heti-spacing"> </span>$2^ i$</span></li>
-<li>高度为<span class="heti-skip"><span class="heti-spacing"> </span>$k$<span class="heti-spacing"> </span></span>的二叉树最多有<span class="heti-skip"><span class="heti-spacing"> </span>$2^ {k+1}-1$<span class="heti-spacing"> </span></span>个节点，此时称为完美二叉树（perfect binary tree）</li>
-<li>记<span class="heti-skip"><span class="heti-spacing"> </span>$n_0$<span class="heti-spacing"> </span></span>表示叶节点数，<span>$n_2$<span class="heti-spacing"> </span></span>表示度为<span class="heti-skip"><span class="heti-spacing"> </span>$2$<span class="heti-spacing"> </span></span>的节点数，则<span><span class="heti-spacing"> </span>$n_0 = n_2 + 1$</span></li>
+<li>第 $i$ 层的节点数最多为 $2^ i$</li>
+<li>高度为 $k$ 的二叉树最多有 $2^ {k+1}-1$ 个节点，此时称为完美二叉树（perfect binary tree）</li>
+<li>记 $n_0$ 表示叶节点数，$n_2$ 表示度为 $2$ 的节点数，则 $n_0 = n_2 + 1$</li>
 </ul>
 </li>
 <li>斜二叉树（skewed binary tree）<ul>
@@ -1059,29 +1068,29 @@
 </ul>
 </li>
 <li>满二叉树（full binary tree）<ul>
-<li>每个节点的度都是<span class="heti-skip"><span class="heti-spacing"> </span>0<span class="heti-spacing"> </span></span>或<span><span class="heti-spacing"> </span>2</span></li>
+<li>每个节点的度都是 0 或 2</li>
 </ul>
 </li>
 <li>完全二叉树（complete binary tree）<ul>
-<li>只有最下面两层节点的度可以小于<span><span class="heti-spacing"> </span>2</span></li>
+<li>只有最下面两层节点的度可以小于 2</li>
 <li>最后一层的节点都集中在左边的连续位置上</li>
 </ul>
 </li>
 <li>补充，二叉树可以通过数组来表示<ul>
-<li>根为<span><span class="heti-spacing"> </span>tree[1]</span></li>
-<li>节点<span class="heti-skip"><span class="heti-spacing"> </span>tree[i]<span class="heti-spacing"> </span></span>的父亲为<span><span class="heti-spacing"> </span>tree[i/2]</span></li>
-<li>节点<span class="heti-skip"><span class="heti-spacing"> </span>tree[i]<span class="heti-spacing"> </span></span>的左儿子为<span><span class="heti-spacing"> </span>tree[2i]</span>，右儿子为<span><span class="heti-spacing"> </span>tree[2i+1]</span></li>
-<li>完全二叉树的数组中节点布满<span><span class="heti-spacing"> </span>tree[1] ~ tree[n]</span></li>
+<li>根为 tree[1]</li>
+<li>节点 tree[i] 的父亲为 tree[i/2]</li>
+<li>节点 tree[i] 的左儿子为 tree[2i]，右儿子为 tree[2i+1]</li>
+<li>完全二叉树的数组中节点布满 tree[1] ~ tree[n]</li>
 </ul>
 </li>
 </ul>
-<h3 id="_9">遍历<a class="headerlink" href="#_9" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_9">遍历<a class="headerlink" href="#_9" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>
 <p>先序遍历（preorder traversal）</p>
 <ul>
 <li>
-<p>根<span class="heti-skip"><span class="heti-spacing"> </span>-&gt;<span class="heti-spacing"> </span></span>左<span class="heti-skip"><span class="heti-spacing"> </span>-&gt;<span class="heti-spacing"> </span></span>右</p>
+<p>根 -&gt; 左 -&gt; 右</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">preorder</span><span class="p">(</span><span class="n">tree_ptr</span><span class="w"> </span><span class="n">tree</span><span class="p">)</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">{</span>
 <a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1098,7 +1107,7 @@
 <p>后序遍历（postorder traversal）</p>
 <ul>
 <li>
-<p>左<span class="heti-skip"><span class="heti-spacing"> </span>-&gt;<span class="heti-spacing"> </span></span>右<span class="heti-skip"><span class="heti-spacing"> </span>-&gt;<span class="heti-spacing"> </span></span>根</p>
+<p>左 -&gt; 右 -&gt; 根</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">postorder</span><span class="p">(</span><span class="n">tree_ptr</span><span class="w"> </span><span class="n">tree</span><span class="p">)</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">{</span>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tree</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1114,7 +1123,7 @@
 <li>
 <p>中序遍历（inorder traversal）</p>
 <ul>
-<li>左<span class="heti-skip"><span class="heti-spacing"> </span>-&gt;<span class="heti-spacing"> </span></span>根<span class="heti-skip"><span class="heti-spacing"> </span>-&gt;<span class="heti-spacing"> </span></span>右</li>
+<li>左 -&gt; 根 -&gt; 右</li>
 <li>
 <p>只适用于二叉树</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">递归实现</label><label for="__tabbed_1_2">迭代实现</label></div>
@@ -1173,9 +1182,9 @@
 <ul>
 <li>如果一个节点的左儿子为空，那么它的左指针指向它的中序遍历前驱（predecessor）节点</li>
 <li>如果一个节点的右儿子为空，那么它的右指针指向它的中序遍历后继（successor）节点</li>
-<li>线索二叉树必须有一个<span><span class="heti-spacing"> </span>head node</span>，其左儿子为根，右儿子为自身</li>
+<li>线索二叉树必须有一个 head node，其左儿子为根，右儿子为自身</li>
 <li>
-<p>使用<span class="heti-skip"><span class="heti-spacing"> </span>head node<span class="heti-spacing"> </span></span>是为了让中序遍历的始末两个节点分别能有左儿子和右儿子（即<span><span class="heti-spacing"> </span>head node</span>）</p>
+<p>使用 head node 是为了让中序遍历的始末两个节点分别能有左儿子和右儿子（即 head node）</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadedTreeNode</span><span class="w"> </span><span class="o">*</span><span class="n">PtrToThreadedNode</span><span class="p">;</span>
 <a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">PtrToThreadedNode</span><span class="w"> </span><span class="n">ThreadedTree</span><span class="p">;</span>
 <a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadedTreeNode</span><span class="w"> </span><span class="p">{</span>
@@ -1192,21 +1201,21 @@
 </li>
 <li>使用线索二叉树能够方便地找到一个节点的父节点</li>
 </ul>
-<h3 id="_10">二叉搜索树<a class="headerlink" href="#_10" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_10">二叉搜索树<a class="headerlink" href="#_10" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>二叉搜索树（binary search tree）是一种二叉树，非空时满足下列性质：<ul>
-<li>每个节点都有不同的<span><span class="heti-spacing"> </span>key</span>（整数型）</li>
-<li>一个节点的左子树中所有节点的<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>都小于该节点的<span><span class="heti-spacing"> </span>key</span></li>
-<li>一个节点的右子树中所有节点的<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>都大于该节点的<span><span class="heti-spacing"> </span>key</span></li>
+<li>每个节点都有不同的 key（整数型）</li>
+<li>一个节点的左子树中所有节点的 key 都小于该节点的 key</li>
+<li>一个节点的右子树中所有节点的 key 都大于该节点的 key</li>
 <li>左子树和右子树也都是二叉搜索树</li>
 </ul>
 </li>
 <li>二叉搜索树的中序遍历是有序的</li>
 <li>查找<ul>
-<li>从根节点开始，如果<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>小于当前节点的<span><span class="heti-spacing"> </span>key</span>，往左子树找，否则往右子树找</li>
-<li>直到找到<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>相等的节点，或者找到空节点</li>
-<li>时间复杂度<span><span class="heti-spacing"> </span>$\Omicron(h)$</span>，<span>$h$<span class="heti-spacing"> </span></span>为树的高度<ul>
-<li>理想情况下即<span><span class="heti-spacing"> </span>$\Omicron(\log n)$</span>，最坏情况下退化为<span><span class="heti-spacing"> </span>$\Omicron(n)$</span>（例如斜树）</li>
+<li>从根节点开始，如果 key 小于当前节点的 key，往左子树找，否则往右子树找</li>
+<li>直到找到 key 相等的节点，或者找到空节点</li>
+<li>时间复杂度 $\Omicron(h)$，$h$ 为树的高度<ul>
+<li>理想情况下即 $\Omicron(\log n)$，最坏情况下退化为 $\Omicron(n)$（例如斜树）</li>
 </ul>
 </li>
 </ul>
@@ -1214,9 +1223,9 @@
 <li>查询最小值：遍历到最左边的节点</li>
 <li>查询最大值：遍历到最右边的节点</li>
 <li>插入<ul>
-<li>从根节点开始，如果<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>小于当前节点的<span><span class="heti-spacing"> </span>key</span>，往左子树找，否则往右子树找</li>
-<li>直到找到空节点，然后插入；或者找到<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>相等的节点，忽略本次插入</li>
-<li>时间复杂度<span><span class="heti-spacing"> </span>$\Omicron(h)$</span>，<span>$h$<span class="heti-spacing"> </span></span>为树的高度</li>
+<li>从根节点开始，如果 key 小于当前节点的 key，往左子树找，否则往右子树找</li>
+<li>直到找到空节点，然后插入；或者找到 key 相等的节点，忽略本次插入</li>
+<li>时间复杂度 $\Omicron(h)$，$h$ 为树的高度</li>
 </ul>
 </li>
 <li>对于同一序列，插入的顺序不同，生成的二叉搜索树的高度也不同</li>
@@ -1224,14 +1233,14 @@
 <p>删除</p>
 <ul>
 <li>删除叶节点：直接删除即可</li>
-<li>删除度为<span class="heti-skip"><span class="heti-spacing"> </span>1<span class="heti-spacing"> </span></span>的节点：用唯一的儿子替代它</li>
-<li>删除度为<span class="heti-skip"><span class="heti-spacing"> </span>2<span class="heti-spacing"> </span></span>的节点：<ul>
+<li>删除度为 1 的节点：用唯一的儿子替代它</li>
+<li>删除度为 2 的节点：<ul>
 <li>用左子树的最大值（或右子树的最小值）替代它</li>
 <li>对左子树的最大值（或右子树的最小值）执行删除操作</li>
 </ul>
 </li>
 <li>
-<p>时间复杂度<span><span class="heti-spacing"> </span>$\Omicron(h)$</span>，<span>$h$<span class="heti-spacing"> </span></span>为树的高度</p>
+<p>时间复杂度 $\Omicron(h)$，$h$ 为树的高度</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">SearchTree</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">SearchTree</span><span class="w"> </span><span class="n">T</span><span class="p">)</span>
 <a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">{</span>
 <a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">TmpCell</span><span class="p">;</span>
@@ -1259,18 +1268,18 @@
 <li>
 <p>当删除操作不多时，可以使用懒惰（lazy）方法</p>
 <ul>
-<li>用<span class="heti-skip"><span class="heti-spacing"> </span>flag<span class="heti-spacing"> </span></span>标记每个节点是否被删除，访问时忽略，删除时不必<span><span class="heti-spacing"> </span>free</span>，重新插入时不必<span><span class="heti-spacing"> </span>malloc</span></li>
+<li>用 flag 标记每个节点是否被删除，访问时忽略，删除时不必 free，重新插入时不必 malloc</li>
 </ul>
 </li>
 </ul>
-<h2 id="_11">堆<a class="headerlink" href="#_11" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="_11">堆<a class="headerlink" href="#_11" title="anchor link to this section for reference">¶</a></h2>
 <ul>
 <li>堆（heap）也称作优先队列（priority queue）</li>
 <li>
 <p>二叉堆（binary heap）是一种完全二叉树，满足：</p>
 <ul>
 <li>
-<p>父节点的<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>总是不小于（或不大于）其子节点的<span><span class="heti-spacing"> </span>key</span>（即大根堆或小根堆）</p>
+<p>父节点的 key 总是不小于（或不大于）其子节点的 key（即大根堆或小根堆）</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">MinHeap</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
 <a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">elements</span><span class="p">[</span><span class="n">MAX_SIZE</span><span class="p">];</span><span class="w">  </span><span class="c1">// elements[0] is a sentinel.</span>
@@ -1280,15 +1289,15 @@
 </ul>
 </li>
 <li>
-<p>大根堆的根节点存有最大<span><span class="heti-spacing"> </span>key</span>，小根堆的根节点存有最小<span><span class="heti-spacing"> </span>key</span></p>
+<p>大根堆的根节点存有最大 key，小根堆的根节点存有最小 key</p>
 </li>
 <li>
 <p>插入</p>
 <ul>
-<li>先放到最后一个位置，然后和父节点比较<span><span class="heti-spacing"> </span>key</span>，不满足堆条件则和父节点交换</li>
+<li>先放到最后一个位置，然后和父节点比较 key，不满足堆条件则和父节点交换</li>
 <li>直到满足堆条件为止</li>
 <li>
-<p>时间复杂度<span><span class="heti-spacing"> </span>$\Omicron(\log n)$</span></p>
+<p>时间复杂度 $\Omicron(\log n)$</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">MinHeap</span><span class="w"> </span><span class="n">H</span><span class="p">)</span>
 <a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">{</span>
 <a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isFull</span><span class="p">(</span><span class="n">H</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -1307,10 +1316,10 @@
 <li>
 <p>删除</p>
 <ul>
-<li>先把最后一个叶节点放到根节点，然后和子节点比较<span><span class="heti-spacing"> </span>key</span>，不满足堆条件则和最小（或最大）子节点交换</li>
+<li>先把最后一个叶节点放到根节点，然后和子节点比较 key，不满足堆条件则和最小（或最大）子节点交换</li>
 <li>直到满足堆条件为止</li>
 <li>
-<p>时间复杂度<span><span class="heti-spacing"> </span>$\Omicron(\log n)$</span></p>
+<p>时间复杂度 $\Omicron(\log n)$</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">ElementType</span><span class="w"> </span><span class="nf">deleteMin</span><span class="p">(</span><span class="n">MinHeap</span><span class="w"> </span><span class="n">H</span><span class="p">)</span>
 <a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="p">{</span>
 <a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isEmpty</span><span class="p">(</span><span class="n">H</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -1336,37 +1345,37 @@
 </ul>
 </li>
 <li>
-<p>向上调整（percolate up<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：自下而上堆化，即这个元素可能会向上移动</p>
+<p>向上调整（percolate up）：自下而上堆化，即这个元素可能会向上移动</p>
 <ul>
-<li>第<span class="heti-skip"><span class="heti-spacing"> </span>$k$<span class="heti-spacing"> </span></span>层节点向上调整的复杂度为<span><span class="heti-spacing"> </span>$\Omicron(k)$</span></li>
+<li>第 $k$ 层节点向上调整的复杂度为 $\Omicron(k)$</li>
 </ul>
 </li>
-<li>向下调整（percolate down<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：自上而下堆化，即这个元素可能会向下移动<ul>
-<li>第<span class="heti-skip"><span class="heti-spacing"> </span>$k$<span class="heti-spacing"> </span></span>层节点向下调整的复杂度为<span><span class="heti-spacing"> </span>$\Omicron(\log n-k)$</span></li>
+<li>向下调整（percolate down）：自上而下堆化，即这个元素可能会向下移动<ul>
+<li>第 $k$ 层节点向下调整的复杂度为 $\Omicron(\log n-k)$</li>
 </ul>
 </li>
-<li>增加或减少某个节点的<span><span class="heti-spacing"> </span>key</span>，只需要相应地<span class="heti-skip"><span class="heti-spacing"> </span>percolate up<span class="heti-spacing"> </span></span>或<span class="heti-skip"><span class="heti-spacing"> </span>down<span class="heti-spacing"> </span></span>一次即可</li>
+<li>增加或减少某个节点的 key，只需要相应地 percolate up 或 down 一次即可</li>
 <li>删除某个非最大最小值节点<ul>
-<li>先把这个节点的<span class="heti-skip"><span class="heti-spacing"> </span>key<span class="heti-spacing"> </span></span>增加（或减少）到最大（或最小）</li>
+<li>先把这个节点的 key 增加（或减少）到最大（或最小）</li>
 <li>删除最大（或最小）节点</li>
 </ul>
 </li>
 <li>
 <p>建堆</p>
 <ul>
-<li>从一个空的堆开始，插入<span class="heti-skip"><span class="heti-spacing"> </span>n<span class="heti-spacing"> </span></span>个元素，不考虑顺序，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(n\log n)$</span></li>
+<li>从一个空的堆开始，插入 n 个元素，不考虑顺序，时间复杂度为 $\Omicron(n\log n)$</li>
 <li>
 <p>直接将这个序列当作二叉树，原地调整实现堆化</p>
 <ul>
 <li>
-<p>方法一，从根开始，按<span class="heti-skip"><span class="heti-spacing"> </span>BFS<span class="heti-spacing"> </span></span>序向上调整，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(n\log n)$</span></p>
+<p>方法一，从根开始，按 BFS 序向上调整，时间复杂度为 $\Omicron(n\log n)$</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">buildHeap1</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">percolateUp</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="p">}</span>
 </code></pre></div>
 </li>
 <li>
-<p>方法二，从最后一个叶节点开始，逐个向下调整，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(n)$</span></p>
+<p>方法二，从最后一个叶节点开始，逐个向下调整，时间复杂度为 $\Omicron(n)$</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">buildHeap2</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="n">percolateDown</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="cm">/* for (i = n / 2 to 1) is enough */</span>
@@ -1376,22 +1385,22 @@
 <li>
 <p>方法二即线性建堆，可以理解为每次合并两个已经调整好的堆</p>
 </li>
-<li>之所以能线性建对，是因为堆性质很弱（不同于排序的强条件<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，二叉堆不是唯一的</li>
+<li>之所以能线性建对，是因为堆性质很弱（不同于排序的强条件），二叉堆不是唯一的</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>d-heap，是满足堆性质的<span class="heti-skip"><span class="heti-spacing"> </span>d<span class="heti-spacing"> </span></span>叉树</p>
+<p>d-heap，是满足堆性质的 d 叉树</p>
 <ul>
-<li>根为<span><span class="heti-spacing"> </span>elements[1]</span></li>
-<li>节点<span class="heti-skip"><span class="heti-spacing"> </span>elements[i]<span class="heti-spacing"> </span></span>的父亲为<span><span class="heti-spacing"> </span>elements[(i+d-2)/d]</span></li>
-<li>节点<span class="heti-skip"><span class="heti-spacing"> </span>elements[i]<span class="heti-spacing"> </span></span>的儿子为<span><span class="heti-spacing"> </span>elements[(i-1)d+2] ~ elements[id+1]</span></li>
-<li>插入与删除，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(\log _{d}n)=\Omicron(\log n/\log d)$</span></li>
+<li>根为 elements[1]</li>
+<li>节点 elements[i] 的父亲为 elements[(i+d-2)/d]</li>
+<li>节点 elements[i] 的儿子为 elements[(i-1)d+2] ~ elements[id+1]</li>
+<li>插入与删除，时间复杂度为 $\Omicron(\log _{d}n)=\Omicron(\log n/\log d)$</li>
 </ul>
 </li>
 </ul>
-<h2 id="_12">并查集<a class="headerlink" href="#_12" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<h2 id="_12">并查集<a class="headerlink" href="#_12" title="anchor link to this section for reference">¶</a></h2>
 <ul>
 <li>等价关系满足：<ul>
 <li>自反性（reflexive）</li>
@@ -1399,15 +1408,15 @@
 <li>传递性（transitive）</li>
 </ul>
 </li>
-<li>并查集（disjoint set）用于管理元素所属集合（等价类<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，支持以下操作：<ul>
-<li>合并（union<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：合并两个集合</li>
-<li>查询（find<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：查询两个元素是否属于同一集合</li>
+<li>并查集（disjoint set）用于管理元素所属集合（等价类），支持以下操作：<ul>
+<li>合并（union）：合并两个集合</li>
+<li>查询（find）：查询两个元素是否属于同一集合</li>
 </ul>
 </li>
 <li>用树（森林）表示一个集合，树中的节点表示对应集合中的元素</li>
 <li>用数组实现并查集<ul>
 <li>s[root] = 0</li>
-<li><span>s[i]<span class="heti-spacing"> </span></span>记录<span class="heti-skip"><span class="heti-spacing"> </span>i<span class="heti-spacing"> </span></span>这个节点的父节点</li>
+<li>s[i] 记录 i 这个节点的父节点</li>
 </ul>
 </li>
 <li>
@@ -1460,59 +1469,59 @@
 <p>按大小合并（union-by-size）</p>
 <ul>
 <li>始终将小的树合并到大的树上</li>
-<li>s[root] = -size，<span>size<span class="heti-spacing"> </span></span>表示树的大小（树上的节点总数）</li>
-<li>按大小合并得到的树，高度不超过<span><span class="heti-spacing"> </span>$\lfloor \log N \rfloor +1$</span></li>
-<li><span>$N$<span class="heti-spacing"> </span></span>次<span class="heti-skip"><span class="heti-spacing"> </span>union<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$M$<span class="heti-spacing"> </span></span>次<span class="heti-skip"><span class="heti-spacing"> </span>find<span class="heti-spacing"> </span></span>操作的时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(N+M\log N)$</span></li>
+<li>s[root] = -size，size 表示树的大小（树上的节点总数）</li>
+<li>按大小合并得到的树，高度不超过 $\lfloor \log N \rfloor +1$</li>
+<li>$N$ 次 union 和 $M$ 次 find 操作的时间复杂度为 $\Omicron(N+M\log N)$</li>
 </ul>
 </li>
 <li>按高度合并（union-by-height）<ul>
 <li>始终将矮的树合并到高的树上</li>
-<li>只有当两棵等高的树合并时，树的高度才会增加<span><span class="heti-spacing"> </span>1</span></li>
-<li><span>$N$<span class="heti-spacing"> </span></span>次<span class="heti-skip"><span class="heti-spacing"> </span>union<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$M$<span class="heti-spacing"> </span></span>次<span class="heti-skip"><span class="heti-spacing"> </span>find<span class="heti-spacing"> </span></span>操作的时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(N+M\log N)$</span></li>
-<li>注意，路径压缩会改变树的高度，导致<span class="heti-skip"><span class="heti-spacing"> </span>height<span class="heti-spacing"> </span></span>频繁更新<ul>
-<li>可以用估计值<span class="heti-skip"><span class="heti-spacing"> </span>rank<span class="heti-spacing"> </span></span>来替代确切的<span><span class="heti-spacing"> </span>height</span>，<span>rank<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>height<span class="heti-spacing"> </span></span>的一个上界</li>
-<li>只在合并时更新<span><span class="heti-spacing"> </span>rank</span>，查找操作会改变<span><span class="heti-spacing"> </span>height</span>，但不会引起<span class="heti-skip"><span class="heti-spacing"> </span>rank<span class="heti-spacing"> </span></span>的更新</li>
+<li>只有当两棵等高的树合并时，树的高度才会增加 1</li>
+<li>$N$ 次 union 和 $M$ 次 find 操作的时间复杂度为 $\Omicron(N+M\log N)$</li>
+<li>注意，路径压缩会改变树的高度，导致 height 频繁更新<ul>
+<li>可以用估计值 rank 来替代确切的 height，rank 是 height 的一个上界</li>
+<li>只在合并时更新 rank，查找操作会改变 height，但不会引起 rank 的更新</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>使用路径压缩和按秩合并的并查集，时间复杂度为<span><span class="heti-spacing"> </span>$\Theta(N+M\alpha (M,N))$</span><ul>
-<li><span>$\alpha$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>Ackermann<span class="heti-spacing"> </span></span>函数的反函数</li>
-<li><span>$\alpha$<span class="heti-spacing"> </span></span>的增长比迭代对数<span class="heti-skip"><span class="heti-spacing"> </span>$\log ^*$<span class="heti-spacing"> </span></span>更缓慢</li>
+<li>使用路径压缩和按秩合并的并查集，时间复杂度为 $\Theta(N+M\alpha (M,N))$<ul>
+<li>$\alpha$ 是 Ackermann 函数的反函数</li>
+<li>$\alpha$ 的增长比迭代对数 $\log ^*$ 更缓慢</li>
 </ul>
 </li>
 </ul>
-<h2 id="_13">图<a class="headerlink" href="#_13" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<h3 id="_14">基础概念<a class="headerlink" href="#_14" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h2 id="_13">图<a class="headerlink" href="#_13" title="anchor link to this section for reference">¶</a></h2>
+<h3 id="_14">基础概念<a class="headerlink" href="#_14" title="anchor link to this section for reference">¶</a></h3>
 <ul>
-<li>图（graph）常用<span class="heti-skip"><span class="heti-spacing"> </span>$G(V,E)$<span class="heti-spacing"> </span></span>表示，<span>$V$<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$E$<span class="heti-spacing"> </span></span>分别表示有限的点集和边集</li>
-<li>无向图（undirected graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：<span>$E$<span class="heti-spacing"> </span></span>中的元素为无序数对<span><span class="heti-spacing"> </span>$(u,v)$</span></li>
-<li>有向图（directed graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：<span>$E$<span class="heti-spacing"> </span></span>中的元素为有序数对<span><span class="heti-spacing"> </span>$\lang u,v\rang$</span></li>
-<li>不考虑自环（self loop）和多重边（multigraph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，即只考虑简单图（simple graph）</li>
-<li>完全图（complete graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：任意两点之间都有一条无向边或两条有向边<ul>
+<li>图（graph）常用 $G(V,E)$ 表示，$V$ 和 $E$ 分别表示有限的点集和边集</li>
+<li>无向图（undirected graph）：$E$ 中的元素为无序数对 $(u,v)$</li>
+<li>有向图（directed graph）：$E$ 中的元素为有序数对 $\lang u,v\rang$</li>
+<li>不考虑自环（self loop）和多重边（multigraph），即只考虑简单图（simple graph）</li>
+<li>完全图（complete graph）：任意两点之间都有一条无向边或两条有向边<ul>
 <li>相同节点数的简单图中，完全图边数最多</li>
 </ul>
 </li>
-<li><span>$u,v$<span class="heti-spacing"> </span></span>之间有一条无向边<span><span class="heti-spacing"> </span>$(u,v)$</span>，称：<ul>
-<li><span>$u,v$<span class="heti-spacing"> </span></span>是相邻的（adjacent）</li>
+<li>$u,v$ 之间有一条无向边 $(u,v)$，称：<ul>
+<li>$u,v$ 是相邻的（adjacent）</li>
 </ul>
 </li>
-<li>有一条从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的有向边<span><span class="heti-spacing"> </span>$\lang u,v\rang$</span>，称：<ul>
+<li>有一条从 $u$ 到 $v$ 的有向边 $\lang u,v\rang$，称：<ul>
 <li>$u$ is adjacent to $v$</li>
 <li>$v$ is adjacent from $u$</li>
 </ul>
 </li>
-<li>子图（subgraph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：点集和边集都是原图的子集</li>
-<li>简单路径（simple path<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：路径上没有重复的点</li>
-<li>环（cycle<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：起点和终点相同的简单路径</li>
+<li>子图（subgraph）：点集和边集都是原图的子集</li>
+<li>简单路径（simple path）：路径上没有重复的点</li>
+<li>环（cycle）：起点和终点相同的简单路径</li>
 <li>对于无向图：<ul>
-<li>如果存在一条从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的路径，则称<span class="heti-skip"><span class="heti-spacing"> </span>$u,v$<span class="heti-spacing"> </span></span>是连通的（connected）</li>
+<li>如果存在一条从 $u$ 到 $v$ 的路径，则称 $u,v$ 是连通的（connected）</li>
 <li>如果任意一对点都是连通的，则称这个无向图是连通的</li>
-<li>连通分量（connected component<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：无向图的极大连通子图</li>
+<li>连通分量（connected component）：无向图的极大连通子图</li>
 </ul>
 </li>
 <li>对于有向图：<ul>
-<li>如果存在一条从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的路径，则称从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>是可达的（reachable）</li>
+<li>如果存在一条从 $u$ 到 $v$ 的路径，则称从 $u$ 到 $v$ 是可达的（reachable）</li>
 <li>如果任意一对点都相互可达，则称这个有向图是强连通的（strongly connected）</li>
 <li>强连通分量：有向图的极大强连通子图</li>
 <li>如果一张有向图不是强连通的，但把它的边替换为无向边后可以得到一张连通图，则称原来这个图是弱连通的（weakly connected）</li>
@@ -1522,18 +1531,18 @@
 <li>DAG（directed acyclic graph）即有向无环图</li>
 <li>度（degree）<ul>
 <li>节点的度被定义为与这个节点关联（incident）的边的条数</li>
-<li>对于无向图，节点<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的度等于与<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>相邻的节点数</li>
-<li>对于有向图，节点<span><span class="heti-spacing"> </span>$v$</span>：<ul>
-<li>入度（in-degree）是以<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>为终点的边的条数</li>
-<li>出度（out-degree）是以<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>为起点的边的条数</li>
+<li>对于无向图，节点 $v$ 的度等于与 $v$ 相邻的节点数</li>
+<li>对于有向图，节点 $v$：<ul>
+<li>入度（in-degree）是以 $v$ 为终点的边的条数</li>
+<li>出度（out-degree）是以 $v$ 为起点的边的条数</li>
 <li>所有节点的总入度和总出度相等，有向图的总度数是总入度和总出度的和</li>
 </ul>
 </li>
-<li>所有节点的度的和等于图的总边数的两倍，即<span><span class="heti-spacing"> </span>$\sum_{v\in V}d(v)=2|E|$</span></li>
+<li>所有节点的度的和等于图的总边数的两倍，即 $\sum_{v\in V}d(v)=2|E|$</li>
 </ul>
 </li>
 <li>图的邻接矩阵表示<ul>
-<li>如果存在一条从<span class="heti-skip"><span class="heti-spacing"> </span>$v_i$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v_j$<span class="heti-spacing"> </span></span>的边，则<span><span class="heti-spacing"> </span>$a_{ij}=1$</span>，否则<span><span class="heti-spacing"> </span>$a_{ij}=0$</span></li>
+<li>如果存在一条从 $v_i$ 到 $v_j$ 的边，则 $a_{ij}=1$，否则 $a_{ij}=0$</li>
 <li>无向图的邻接矩阵是对称矩阵，可以只存储一半矩阵的信息：<ul>
 <li>$a^{\prime}[\frac{n(n+1)}{2}]=\lbrace a_{11},a_{21},a_{22},...,a_{n1},...,a_{nn} \rbrace$</li>
 </ul>
@@ -1546,34 +1555,34 @@
 <li>无向图的邻接表会将每个边重复存储两次</li>
 <li>有向图的邻接表无法遍历入度，解决思路有：<ul>
 <li>额外存储一个逆邻接表</li>
-<li>使用多重链表<span><span class="heti-spacing"> </span>multilist</span></li>
+<li>使用多重链表 multilist</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>带权图<ul>
-<li>邻接矩阵：<span>$a_{ij}$<span class="heti-spacing"> </span></span>存储边<span class="heti-skip"><span class="heti-spacing"> </span>$(v_i,v_j)$<span class="heti-spacing"> </span></span>的权值</li>
+<li>邻接矩阵：$a_{ij}$ 存储边 $(v_i,v_j)$ 的权值</li>
 <li>邻接表：每个链表节点存储边的权值</li>
 </ul>
 </li>
 </ul>
-<h3 id="_15">拓扑排序<a class="headerlink" href="#_15" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_15">拓扑排序<a class="headerlink" href="#_15" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>AOV（activity on vertex）网络是一种有向无环图，节点表示事件，边表示事件的先后关系</li>
-<li>如果存在一条从<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的路径，则称<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的前驱（predecessor<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，<span>$v$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>的后继（successor）</li>
-<li>如果存在一条边<span><span class="heti-spacing"> </span>$\lang u,v\rang$</span>，则称<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的直接（immediate）前驱，<span>$v$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>的直接后继</li>
-<li><span>AOV<span class="heti-spacing"> </span></span>网络中事件的先后关系是一种偏序关系，具有传递性与非自反性（无环）</li>
-<li><span>AOV<span class="heti-spacing"> </span></span>网络中不应该出现环，否则网络表示的工程是不可实现的<ul>
-<li>检查<span class="heti-skip"><span class="heti-spacing"> </span>AOV<span class="heti-spacing"> </span></span>网络是否带环的方式是构造拓扑序列，观察是否包含所有节点</li>
+<li>如果存在一条从 $u$ 到 $v$ 的路径，则称 $u$ 是 $v$ 的前驱（predecessor），$v$ 是 $u$ 的后继（successor）</li>
+<li>如果存在一条边 $\lang u,v\rang$，则称 $u$ 是 $v$ 的直接（immediate）前驱，$v$ 是 $u$ 的直接后继</li>
+<li>AOV 网络中事件的先后关系是一种偏序关系，具有传递性与非自反性（无环）</li>
+<li>AOV 网络中不应该出现环，否则网络表示的工程是不可实现的<ul>
+<li>检查 AOV 网络是否带环的方式是构造拓扑序列，观察是否包含所有节点</li>
 </ul>
 </li>
 <li>拓扑排序（topological order）是一个图的点集的线性序列，满足：<ul>
-<li>对于任意一对节点<span><span class="heti-spacing"> </span>$u,v$</span>，如果<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的前驱，序列中<span class="heti-skip"><span class="heti-spacing"> </span>$u$<span class="heti-spacing"> </span></span>排在<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的前面</li>
+<li>对于任意一对节点 $u,v$，如果 $u$ 是 $v$ 的前驱，序列中 $u$ 排在 $v$ 的前面</li>
 </ul>
 </li>
 <li>注意，对于同一张图，拓扑排序不一定是唯一的</li>
 <li>
-<p>拓扑排序算法，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|V|+|E|)$</span></p>
+<p>拓扑排序算法，时间复杂度为 $\Omicron(|V|+|E|)$</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">topSort</span><span class="p">(</span><span class="n">Graph</span><span class="w"> </span><span class="n">G</span><span class="p">)</span>
 <a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="p">{</span>
 <a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span><span class="n">Queue</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createQueue</span><span class="p">();</span>
@@ -1593,11 +1602,11 @@
 </code></pre></div>
 </li>
 </ul>
-<h3 id="_16">最短路<a class="headerlink" href="#_16" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_16">最短路<a class="headerlink" href="#_16" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>单源最短路：给定一个有向图和一个源点，求从源点到图中每个点的最短路径</li>
 <li>
-<p>无权图的单源最短路：<span>BFS<span class="heti-spacing"> </span></span>即可</p>
+<p>无权图的单源最短路：BFS 即可</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">队列优化</label><label for="__tabbed_3_2">广度优先搜索（BFS）</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1643,26 +1652,26 @@
 </div>
 </li>
 <li>
-<p>带权图的单源最短路：<span>Dijkstra<span class="heti-spacing"> </span></span>算法（只适用于非负权图）</p>
+<p>带权图的单源最短路：Dijkstra 算法（只适用于非负权图）</p>
 <ol>
-<li>将节点分为两个集合：已确定最短路的点集<span class="heti-skip"><span class="heti-spacing"> </span>S<span class="heti-spacing"> </span></span>和未确定最短路的点集<span><span class="heti-spacing"> </span>T</span>；起初所有节点都属于<span><span class="heti-spacing"> </span>T</span></li>
-<li>初始化<span><span class="heti-spacing"> </span>dis[s] = 0</span>，其他<span><span class="heti-spacing"> </span>dis = $\infty$</span></li>
-<li>重复以下操作，直到<span class="heti-skip"><span class="heti-spacing"> </span>T<span class="heti-spacing"> </span></span>为空<ol>
-<li>从<span class="heti-skip"><span class="heti-spacing"> </span>T<span class="heti-spacing"> </span></span>中选取一个最短路长度最小的节点，移到<span class="heti-skip"><span class="heti-spacing"> </span>S<span class="heti-spacing"> </span></span>中</li>
-<li>对刚刚加入<span class="heti-skip"><span class="heti-spacing"> </span>S<span class="heti-spacing"> </span></span>的节点的所有出边执行松弛（relax）操作：<br/>
+<li>将节点分为两个集合：已确定最短路的点集 S 和未确定最短路的点集 T；起初所有节点都属于 T</li>
+<li>初始化 dis[s] = 0，其他 dis = $\infty$</li>
+<li>重复以下操作，直到 T 为空<ol>
+<li>从 T 中选取一个最短路长度最小的节点，移到 S 中</li>
+<li>对刚刚加入 S 的节点的所有出边执行松弛（relax）操作：<br/>
    对于边 (u,v)，松弛操作为 dis[v] = min(dis[v], dis[u] + weight(u,v))</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>
-<p><span>Dijkstra<span class="heti-spacing"> </span></span>算法堆优化复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|E|\log |V|)$</span></p>
+<p>Dijkstra 算法堆优化复杂度为 $\Omicron(|E|\log |V|)$</p>
 <ol>
-<li>用标记节点是否已访问来表示<span><span class="heti-spacing"> </span>S</span>，用一个小根堆来表示<span><span class="heti-spacing"> </span>T</span></li>
-<li>初始化<span><span class="heti-spacing"> </span>dis[s] = 0</span>，其他<span><span class="heti-spacing"> </span>dis = $\infty$</span></li>
+<li>用标记节点是否已访问来表示 S，用一个小根堆来表示 T</li>
+<li>初始化 dis[s] = 0，其他 dis = $\infty$</li>
 <li>重复以下操作，直到堆为空<ol>
-<li>从堆中选取<span class="heti-skip"><span class="heti-spacing"> </span>dis[u]<span class="heti-spacing"> </span></span>最小的且未被访问过的<span><span class="heti-spacing"> </span>u</span>，将<span class="heti-skip"><span class="heti-spacing"> </span>u<span class="heti-spacing"> </span></span>标记为已访问</li>
-<li>扫描<span class="heti-skip"><span class="heti-spacing"> </span>u<span class="heti-spacing"> </span></span>的所有出边<span><span class="heti-spacing"> </span>(u,v)</span>，执行松弛操作：<br/>
+<li>从堆中选取 dis[u] 最小的且未被访问过的 u，将 u 标记为已访问</li>
+<li>扫描 u 的所有出边 (u,v)，执行松弛操作：<br/>
    若 dis[v] &gt; dis[u] + weight(u,v)，则用后者更新 dis[v]，并将 {v, dis[v]} 压入堆中（或者直接更新堆中的 v 并向上调整）</li>
 </ol>
 </li>
@@ -1688,9 +1697,9 @@
 </code></pre></div>
 </li>
 <li>
-<p>带负权边：<span>SPFA<span class="heti-spacing"> </span></span>算法，复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|E||V|)$</span></p>
+<p>带负权边：SPFA 算法，复杂度为 $\Omicron(|E||V|)$</p>
 <ul>
-<li>上文无权图单源最短路问题的队列优化算法，可以看作<span class="heti-skip"><span class="heti-spacing"> </span>SPFA<span class="heti-spacing"> </span></span>的特殊情形</li>
+<li>上文无权图单源最短路问题的队列优化算法，可以看作 SPFA 的特殊情形</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">negweighted</span><span class="p">(</span><span class="n">Table</span><span class="w"> </span><span class="n">T</span><span class="p">)</span>
 <a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="p">{</span><span class="w">   </span><span class="cm">/* T is initialized with the source vertex S given */</span>
@@ -1713,37 +1722,37 @@
 <li>
 <p>AOE（activity on edge）网络是一个带权的有向无环图，节点表示事件，带权边表示活动持续的时间</p>
 </li>
-<li><span>AOE<span class="heti-spacing"> </span></span>网络用于解决工程最短时间问题<ul>
+<li>AOE 网络用于解决工程最短时间问题<ul>
 <li>完成整个工程的最短时间是从源点到汇点的最长活动路径长度</li>
 </ul>
 </li>
 <li>每个节点代表的事件存在一个最早完成时间（EC）和最晚完成时间（LC）<ul>
-<li><span>EC<span class="heti-spacing"> </span></span>从源点开始向后计算，$EC[w]=max_{\lang v,w\rang \in E}\lbrace EC[v] + weight(v,w)\rbrace$</li>
-<li><span>LC<span class="heti-spacing"> </span></span>从汇点开始向前计算，$LC[w]=min_{\lang v,w\rang \in E}\lbrace LC[v] - weight(v,w)\rbrace$</li>
+<li>EC 从源点开始向后计算，$EC[w]=max_{\lang v,w\rang \in E}\lbrace EC[v] + weight(v,w)\rbrace$</li>
+<li>LC 从汇点开始向前计算，$LC[w]=min_{\lang v,w\rang \in E}\lbrace LC[v] - weight(v,w)\rbrace$</li>
 </ul>
 </li>
 <li>每条边代表的活动存在一个持续时间（即边权）和一个松弛时间（slack time）<ul>
-<li>边<span class="heti-skip"><span class="heti-spacing"> </span>$\lang v,w\rang$<span class="heti-spacing"> </span></span>的松弛时间为<span><span class="heti-spacing"> </span>$LC[w]-EC[v]-weight(v,w)$</span></li>
+<li>边 $\lang v,w\rang$ 的松弛时间为 $LC[w]-EC[v]-weight(v,w)$</li>
 </ul>
 </li>
-<li>关键路径（critical path）是<span class="heti-skip"><span class="heti-spacing"> </span>AOE<span class="heti-spacing"> </span></span>网络中的最长活动路径<ul>
+<li>关键路径（critical path）是 AOE 网络中的最长活动路径<ul>
 <li>关键路径中所有边的松弛时间都是零</li>
 </ul>
 </li>
 <li>任意两点间最短路<ul>
 <li>以每个节点作为源点，分别计算单源最短路，适合于稀疏图</li>
-<li><span>Floyd<span class="heti-spacing"> </span></span>算法，三个<span class="heti-skip"><span class="heti-spacing"> </span>for<span class="heti-spacing"> </span></span>循环即可实现，适合于任何图（无负环）<ul>
-<li>定义<span class="heti-skip"><span class="heti-spacing"> </span>f[k][v][w]<span class="heti-spacing"> </span></span>表示在只允许经过节点<span class="heti-skip"><span class="heti-spacing"> </span>1~k<span class="heti-spacing"> </span></span>的限制下，从节点<span class="heti-skip"><span class="heti-spacing"> </span>v<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>w<span class="heti-spacing"> </span></span>的最短路</li>
+<li>Floyd 算法，三个 for 循环即可实现，适合于任何图（无负环）<ul>
+<li>定义 f[k][v][w] 表示在只允许经过节点 1~k 的限制下，从节点 v 到 w 的最短路</li>
 <li>f[k][v][w] = min(f[k-1][v][w], f[k][v][k] + f[k][k][w])</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="_17">网络流<a class="headerlink" href="#_17" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_17">网络流<a class="headerlink" href="#_17" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>网络流定义在一个有向图上：<ul>
-<li>每条边都存在一个被称为容量（capacity）的权值，当<span class="heti-skip"><span class="heti-spacing"> </span>$(u,v)\notin E$<span class="heti-spacing"> </span></span>时，定义<span><span class="heti-spacing"> </span>$c(u,v)=0$</span></li>
+<li>每条边都存在一个被称为容量（capacity）的权值，当 $(u,v)\notin E$ 时，定义 $c(u,v)=0$</li>
 <li>网络中存在唯一的源点（source）和唯一的汇点（sink）</li>
 </ul>
 </li>
@@ -1751,7 +1760,7 @@
 <p>最大流问题：给定一个有向图，求从源点到汇点的最大流量</p>
 <ol>
 <li>
-<p>建立残差图（residual graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，设<span class="heti-skip"><span class="heti-spacing"> </span>$f$<span class="heti-spacing"> </span></span>是图<span class="heti-skip"><span class="heti-spacing"> </span>$G=(V,E)$<span class="heti-spacing"> </span></span>的一个流，则残差图的边权为：</p>
+<p>建立残差图（residual graph），设 $f$ 是图 $G=(V,E)$ 的一个流，则残差图的边权为：</p>
 <p>$$
 c_f(u,v)=\begin{cases}
 c(u,v)-f(u,v)\;\;&amp;(u,v)\in E \cr
@@ -1772,40 +1781,40 @@ $$</p>
 <li>
 <p>寻找增广路</p>
 <ul>
-<li>BFS，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|V||E|^ 2)$</span></li>
-<li><span>Dinic<span class="heti-spacing"> </span></span>算法，当前弧优化下时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|V|^ 2|E|)$</span></li>
+<li>BFS，时间复杂度为 $\Omicron(|V||E|^ 2)$</li>
+<li>Dinic 算法，当前弧优化下时间复杂度为 $\Omicron(|V|^ 2|E|)$</li>
 </ul>
 </li>
 <li>最小费用流：费用指流经过边的代价，对于所有可能的最大流，求其中总费用最小的一条流</li>
 </ul>
-<h3 id="_18">最小生成树<a class="headerlink" href="#_18" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_18">最小生成树<a class="headerlink" href="#_18" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>生成树（spanning tree）是连通无向图的一个生成子图，同时满足树的特征<ul>
 <li>生成子图是图的一个子图，包含原图的所有节点</li>
-<li>生成树相当于在原图的边集中选择<span class="heti-skip"><span class="heti-spacing"> </span>n-1<span class="heti-spacing"> </span></span>条，将所有节点连通</li>
+<li>生成树相当于在原图的边集中选择 n-1 条，将所有节点连通</li>
 </ul>
 </li>
 <li>最小生成树：给定一个连通无向图，找一个边权和最小的生成树</li>
 <li>连通图一定存在一个最小生成树</li>
 <li>向生成树中添加一个额外的边，则一定会存在一个环</li>
-<li><span>Prim<span class="heti-spacing"> </span></span>算法<ul>
-<li>从一个节点开始，不断向<span class="heti-skip"><span class="heti-spacing"> </span>T<span class="heti-spacing"> </span></span>中添加节点，直到包含所有节点</li>
-<li>添加节点时，总是选择与<span class="heti-skip"><span class="heti-spacing"> </span>T<span class="heti-spacing"> </span></span>中的某个节点相邻且加入<span class="heti-skip"><span class="heti-spacing"> </span>T<span class="heti-spacing"> </span></span>后不会形成环的最小权边对应的节点</li>
-<li>寻找最小边权节点，可以进行堆优化（类似于<span class="heti-skip"><span class="heti-spacing"> </span>Dijkstra<span class="heti-spacing"> </span></span>算法）</li>
+<li>Prim 算法<ul>
+<li>从一个节点开始，不断向 T 中添加节点，直到包含所有节点</li>
+<li>添加节点时，总是选择与 T 中的某个节点相邻且加入 T 后不会形成环的最小权边对应的节点</li>
+<li>寻找最小边权节点，可以进行堆优化（类似于 Dijkstra 算法）</li>
 </ul>
 </li>
-<li><span>Kruskal<span class="heti-spacing"> </span></span>算法<ul>
-<li>按边权从小到大向<span class="heti-skip"><span class="heti-spacing"> </span>T<span class="heti-spacing"> </span></span>中添加边，直到加满<span class="heti-skip"><span class="heti-spacing"> </span>n-1<span class="heti-spacing"> </span></span>条边</li>
-<li>添加边时，总是选择加入<span class="heti-skip"><span class="heti-spacing"> </span>T<span class="heti-spacing"> </span></span>后不会形成环的最小权边</li>
-<li>可以通过并查集来维护，时间复杂度为<span><span class="heti-spacing"> </span>$\Omicron(|E|\log |E|)$</span><ul>
-<li>按边权从小到大遍历所有边，若边两端的节点不在同一集合，则将它们合并，并将边加入<span><span class="heti-spacing"> </span>T</span></li>
+<li>Kruskal 算法<ul>
+<li>按边权从小到大向 T 中添加边，直到加满 n-1 条边</li>
+<li>添加边时，总是选择加入 T 后不会形成环的最小权边</li>
+<li>可以通过并查集来维护，时间复杂度为 $\Omicron(|E|\log |E|)$<ul>
+<li>按边权从小到大遍历所有边，若边两端的节点不在同一集合，则将它们合并，并将边加入 T</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><span>Prim<span class="heti-spacing"> </span></span>算法适合稠密图（dense graph<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，<span>Kruskal<span class="heti-spacing"> </span></span>算法适合稀疏图（sparse graph）</li>
+<li>Prim 算法适合稠密图（dense graph），Kruskal 算法适合稀疏图（sparse graph）</li>
 </ul>
-<h3 id="_19">深度优先搜索<a class="headerlink" href="#_19" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_19">深度优先搜索<a class="headerlink" href="#_19" title="anchor link to this section for reference">¶</a></h3>
 <ul>
 <li>深度优先搜索（DFS）是一种用于遍历或搜索树或图的算法</li>
 <li>
@@ -1825,20 +1834,20 @@ $$</p>
 <li>双连通分量（biconnected component）是极大的双连通子图</li>
 </ul>
 </li>
-<li>寻找连通无向图的割点：<span>Tarjan<span class="heti-spacing"> </span></span>算法<ul>
-<li>首先对原图进行<span><span class="heti-spacing"> </span>DFS</span>，得到一个生成树<ul>
-<li><span>dfn[x]<span class="heti-spacing"> </span></span>表示<span class="heti-skip"><span class="heti-spacing"> </span>x<span class="heti-spacing"> </span></span>在<span class="heti-skip"><span class="heti-spacing"> </span>DFS<span class="heti-spacing"> </span></span>中是第几个被访问的，从<span class="heti-skip"><span class="heti-spacing"> </span>0<span class="heti-spacing"> </span></span>开始</li>
+<li>寻找连通无向图的割点：Tarjan 算法<ul>
+<li>首先对原图进行 DFS，得到一个生成树<ul>
+<li>dfn[x] 表示 x 在 DFS 中是第几个被访问的，从 0 开始</li>
 </ul>
 </li>
-<li>追溯值<span><span class="heti-spacing"> </span>low[x]</span><ul>
-<li>初始<span><span class="heti-spacing"> </span>low[x] = dfn[x]</span></li>
-<li>如果从<span class="heti-skip"><span class="heti-spacing"> </span>x<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>y<span class="heti-spacing"> </span></span>的边在生成树上，则<span><span class="heti-spacing"> </span>low[x] = min(low[x], low[y])</span></li>
-<li>如果从<span class="heti-skip"><span class="heti-spacing"> </span>x<span class="heti-spacing"> </span></span>到<span class="heti-skip"><span class="heti-spacing"> </span>y<span class="heti-spacing"> </span></span>的边不在生成树上（回边<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，则<span><span class="heti-spacing"> </span>low[x] = min(low[x], dfn[y])</span></li>
+<li>追溯值 low[x]<ul>
+<li>初始 low[x] = dfn[x]</li>
+<li>如果从 x 到 y 的边在生成树上，则 low[x] = min(low[x], low[y])</li>
+<li>如果从 x 到 y 的边不在生成树上（回边），则 low[x] = min(low[x], dfn[y])</li>
 </ul>
 </li>
 <li>判断割点<ul>
-<li>如果<span class="heti-skip"><span class="heti-spacing"> </span>u<span class="heti-spacing"> </span></span>是生成树的根，则<span class="heti-skip"><span class="heti-spacing"> </span>u<span class="heti-spacing"> </span></span>是割点当且仅当<span class="heti-skip"><span class="heti-spacing"> </span>u<span class="heti-spacing"> </span></span>有至少两个儿子</li>
-<li>如果<span class="heti-skip"><span class="heti-spacing"> </span>u<span class="heti-spacing"> </span></span>不是生成树的根，则<span class="heti-skip"><span class="heti-spacing"> </span>u<span class="heti-spacing"> </span></span>是割点当且仅当存在一个儿子<span><span class="heti-spacing"> </span>v</span>，满足<span><span class="heti-spacing"> </span>dfn[u] &lt;= low[v]</span></li>
+<li>如果 u 是生成树的根，则 u 是割点当且仅当 u 有至少两个儿子</li>
+<li>如果 u 不是生成树的根，则 u 是割点当且仅当存在一个儿子 v，满足 dfn[u] &lt;= low[v]</li>
 </ul>
 </li>
 </ul>
@@ -1852,16 +1861,16 @@ $$</p>
 </li>
 <li>对于有向图<ul>
 <li>有向图有欧拉回路当且仅当图是弱连通的且每个节点出度等于入度</li>
-<li>有向图有欧拉通路当且仅当图是弱连通的且有且仅有一个节点的出度比入度大<span><span class="heti-spacing"> </span>1</span>，有且仅有一个节点的入度比出度大<span><span class="heti-spacing"> </span>1</span>，其余节点出度等于入度</li>
+<li>有向图有欧拉通路当且仅当图是弱连通的且有且仅有一个节点的出度比入度大 1，有且仅有一个节点的入度比出度大 1，其余节点出度等于入度</li>
 </ul>
 </li>
 <li>
 <p>寻找欧拉回路或通路：DFS</p>
 <ul>
-<li>从某个节点出发，进行<span><span class="heti-spacing"> </span>DFS</span></li>
+<li>从某个节点出发，进行 DFS</li>
 <li>每次沿着某条边从一个节点移动到另一个节点时，删除这条边</li>
 <li>如果某个节点没有可走的边，则将该节点入队，并返回</li>
-<li><span>DFS<span class="heti-spacing"> </span></span>结束后，队列中的节点序列即欧拉回路或通路</li>
+<li>DFS 结束后，队列中的节点序列即欧拉回路或通路</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">Vertex</span><span class="w"> </span><span class="n">V</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">each</span><span class="w"> </span><span class="n">W</span><span class="w"> </span><span class="n">adjacent</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">V</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1893,15 +1902,22 @@ $$</p>
 <!-- mkdocs-git-revision-date-plugin -->
 </small>
 </div>
-</article>
+
+  
+
+
+
+ --&gt;
+                  <!-- redirect -->
+<h1>MinJoker's Notebook 已迁移，正在为您重定向...</h1>
+<!-- redirect -->
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
+</main></div>
 <button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
   回到页面顶部
 </button>
-</main>
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
@@ -1927,7 +1943,6 @@ $$</p>
 </div>
 </div>
 </footer>
-</div>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>

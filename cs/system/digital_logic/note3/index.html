@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zh">
 <head>
+<!-- redirect -->
+<meta content="2; url='https://note.minjoker.top'" http-equiv="refresh"/>
+<!-- redirect -->
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="MinJoker" name="author"/>
@@ -649,125 +652,133 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="_1">时序逻辑设计<a class="headerlink" href="#_1" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h1>
+<!-- 
+
+  
+  
+
+
+<h1 id="_1">时序逻辑设计<a class="headerlink" href="#_1" title="anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>1976<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>8<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1976 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
-<h2 id="_2">时序逻辑理解<a class="headerlink" href="#_2" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<p>以下是<span class="heti-skip"><span class="heti-spacing"> </span>Wikipedia<span class="heti-spacing"> </span></span>对于时序逻辑、同步与异步的定义：</p>
+<h2 id="_2">时序逻辑理解<a class="headerlink" href="#_2" title="anchor link to this section for reference">&para;</a></h2>
+<p>以下是 Wikipedia 对于时序逻辑、同步与异步的定义：</p>
 <blockquote>
-<p>Sequential logic is a type of logic circuit whose output depends on the present value of its input signals and on the sequence of past inputs.<br/>
+<p>Sequential logic is a type of logic circuit whose output depends on the present value of its input signals and on the sequence of past inputs.<br />
 That is, sequential logic has state (memory) while combinational logic does not.</p>
-<p>Digital sequential logic circuits are divided into synchronous and asynchronous types.<br/>
-In synchronous sequential circuits, the state of the device changes only at discrete times in response to a clock signal.<br/>
+<p>Digital sequential logic circuits are divided into synchronous and asynchronous types.<br />
+In synchronous sequential circuits, the state of the device changes only at discrete times in response to a clock signal.<br />
 In asynchronous circuits the state of the device can change at any time in response to changing inputs.</p>
 </blockquote>
-<p>很自然地，异步时序逻辑是<span class="heti-skip"><span class="heti-spacing"> </span>input-driven<span class="heti-spacing"> </span></span>的，每当输入发生变化，就要进行状态的更新。但是，异步时序逻辑的弊端在于，当输入包含多个变量而它们的抵达有先后区分的时候，电路可能会偏离预期而进入错误的状态。</p>
+<p>很自然地，异步时序逻辑是 input-driven 的，每当输入发生变化，就要进行状态的更新。但是，异步时序逻辑的弊端在于，当输入包含多个变量而它们的抵达有先后区分的时候，电路可能会偏离预期而进入错误的状态。</p>
 <p>同步时序逻辑可以解决这个问题。我们使用一个时钟信号来同步（synchronize, or clock）所有输入变量产生作用的时间，即使输入变量先后抵达，它们也得等待时钟信号来临时才能发生作用，从而更新电路的状态。</p>
-<p>工程应用中，同步时序逻辑往往更为普遍，因为其设计简单而且鲁棒性强。异步时序逻辑的设计通常更为复杂，多用于需要更高更新速度的场合（不像同步时序逻辑那样受限于时钟信号的频率<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"/><input id="__tabbed_1_2" name="__tabbed_1" type="radio"/><input id="__tabbed_1_3" name="__tabbed_1" type="radio"/><div class="tabbed-labels"><label for="__tabbed_1_1">时序逻辑</label><label for="__tabbed_1_2">同步时序逻辑</label><label for="__tabbed_1_3">异步时序逻辑</label></div>
+<p>工程应用中，同步时序逻辑往往更为普遍，因为其设计简单而且鲁棒性强。异步时序逻辑的设计通常更为复杂，多用于需要更高更新速度的场合（不像同步时序逻辑那样受限于时钟信号的频率）。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">时序逻辑</label><label for="__tabbed_1_2">同步时序逻辑</label><label for="__tabbed_1_3">异步时序逻辑</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p></p><div style="text-align: left;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/27.png"><img alt="时序逻辑电路抽象图示" src="/assets/images/cs/digital_logic/27.png" style="width: 50%;"/></a>
-</div>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: left;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/28.png"><img alt="同步时序逻辑电路抽象图示" src="/assets/images/cs/digital_logic/28.png" style="width: 50%;"/></a>
-</div>
+<p><div style="text-align: left;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/27.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/27.png" alt="时序逻辑电路抽象图示" style="width: 50%;"></a>
+</div></p>
 </div>
 <div class="tabbed-block">
-<p></p><div style="text-align: left;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/29.png"><img alt="异步时序逻辑电路抽象图示" src="/assets/images/cs/digital_logic/29.png" style="width: 50%;"/></a>
+<p><div style="text-align: left;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/28.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/28.png" alt="同步时序逻辑电路抽象图示" style="width: 50%;"></a>
+</div></p>
+</div>
+<div class="tabbed-block">
+<p><div style="text-align: left;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/29.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/29.png" alt="异步时序逻辑电路抽象图示" style="width: 50%;"></a>
+</div></p>
 </div>
 </div>
 </div>
-</div>
-<h2 id="_3">从锁存器到触发器<a class="headerlink" href="#_3" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"/><input id="__tabbed_2_2" name="__tabbed_2" type="radio"/><input id="__tabbed_2_3" name="__tabbed_2" type="radio"/><input id="__tabbed_2_4" name="__tabbed_2" type="radio"/><input id="__tabbed_2_5" name="__tabbed_2" type="radio"/><div class="tabbed-labels"><label for="__tabbed_2_1">Buffer as a Storage</label><label for="__tabbed_2_2">$SR$ Latch with NOR Gates</label><label for="__tabbed_2_3">$\overline{S} \overline{R}$ Latch with NAND Gates</label><label for="__tabbed_2_4">$SR$ Latch with Control Input</label><label for="__tabbed_2_5">$D$ Latch</label></div>
+<h2 id="_3">从锁存器到触发器<a class="headerlink" href="#_3" title="anchor link to this section for reference">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Buffer as a Storage</label><label for="__tabbed_2_2">$SR$ Latch with NOR Gates</label><label for="__tabbed_2_3">$\overline{S} \overline{R}$ Latch with NAND Gates</label><label for="__tabbed_2_4">$SR$ Latch with Control Input</label><label for="__tabbed_2_5">$D$ Latch</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/30.png"><img alt="buffer 用作存储元件图示" src="/assets/images/cs/digital_logic/30.png" style="width: 50%;"/></a>
-</div>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/31.png"><img alt="SR Latch 图示" src="/assets/images/cs/digital_logic/31.png" style="width: 60%;"/></a>
-</div>
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/30.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/30.png" alt="buffer 用作存储元件图示" style="width: 50%;"></a>
+</div></p>
 </div>
 <div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/32.png"><img alt="S_R_ Latch 图示" src="/assets/images/cs/digital_logic/32.png" style="width: 60%;"/></a>
-</div>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/33.png"><img alt="Clocked SR Latch 图示" src="/assets/images/cs/digital_logic/33.png" style="width: 60%;"/></a>
-</div>
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/31.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/31.png" alt="SR Latch 图示" style="width: 60%;"></a>
+</div></p>
 </div>
 <div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/34.png"><img alt="D Latch 图示" src="/assets/images/cs/digital_logic/34.png" style="width: 60%;"/></a>
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/32.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/32.png" alt="S_R_ Latch 图示" style="width: 60%;"></a>
+</div></p>
+</div>
+<div class="tabbed-block">
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/33.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/33.png" alt="Clocked SR Latch 图示" style="width: 60%;"></a>
+</div></p>
+</div>
+<div class="tabbed-block">
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/34.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/34.png" alt="D Latch 图示" style="width: 60%;"></a>
+</div></p>
 </div>
 </div>
 </div>
-</div>
-<p>某种意义上，延迟可以用于实现信息存储。对于一个存在<span class="heti-skip"><span class="heti-spacing"> </span>$t_G$<span class="heti-spacing"> </span></span>延迟的<span class="heti-skip"><span class="heti-spacing"> </span>buffer<span class="heti-spacing"> </span></span>而言，我们可以认为信息在<span class="heti-skip"><span class="heti-spacing"> </span>$t_G$<span class="heti-spacing"> </span></span>这段时间内是不变的，即被短暂地存储了（如图<span><span class="heti-spacing"> </span>a</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。进一步地，把<span class="heti-skip"><span class="heti-spacing"> </span>buffer<span class="heti-spacing"> </span></span>的输出和输入相连，可以实现信息的长久存储（如图<span><span class="heti-spacing"> </span>bc</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。但是，对于这个信息存储单元而言，修改存储的信息内容是不方便的。</p>
-<p>我们把组成<span class="heti-skip"><span class="heti-spacing"> </span>buffer<span class="heti-spacing"> </span></span>的非门（如图<span><span class="heti-spacing"> </span>d</span>）替换成或非门或者与非门，就可以方便地修改存储的信息内容，这就是<span><span class="heti-spacing"> </span>$SR$ Latch</span>。稍加思考不难发现，这样的一个<span class="heti-skip"><span class="heti-spacing"> </span>$SR$ Latch<span class="heti-spacing"> </span></span>其实是异步的，因而输入<span class="heti-skip"><span class="heti-spacing"> </span>S<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>R<span class="heti-spacing"> </span></span>的先后抵达可能导致电路偏离预期而进入错误的状态。我们可以通过增加一个使能控制端<span class="heti-skip"><span class="heti-spacing"> </span>C<span class="heti-spacing"> </span></span>来确保<span class="heti-skip"><span class="heti-spacing"> </span>S<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>R<span class="heti-spacing"> </span></span>都到位时再使能，这就是<span><span class="heti-spacing"> </span>$SR$ Latch with Control Input</span>（注意这并不是严格意义上的同步，当<span class="heti-skip"><span class="heti-spacing"> </span>C<span class="heti-spacing"> </span></span>置<code>1</code>时其仍然是异步的<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。但是，这个<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>仍然存在一种未定义状态，即<span><span class="heti-spacing"> </span>C</span>、<span>S<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>R<span class="heti-spacing"> </span></span>均置<code>1</code>。</p>
-<p>对于<span class="heti-skip"><span class="heti-spacing"> </span>$SR$ Latch with Control Input<span class="heti-spacing"> </span></span>而言，用<span class="heti-skip"><span class="heti-spacing"> </span>S<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>R<span class="heti-spacing"> </span></span>均置<code>0</code>来表示保持态是多余的（因为<span class="heti-skip"><span class="heti-spacing"> </span>C<span class="heti-spacing"> </span></span>置<code>0</code>即可表示保持态<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，而且上述的未定义状态也很麻烦。所以，我们把<span class="heti-skip"><span class="heti-spacing"> </span>S<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>R<span class="heti-spacing"> </span></span>强制设定为相反的两个输入，用<span class="heti-skip"><span class="heti-spacing"> </span>$D$<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$\overline{D}$<span class="heti-spacing"> </span></span>来代替<span class="heti-skip"><span class="heti-spacing"> </span>$S$<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>$R$</span>，这就是<span><span class="heti-spacing"> </span>$D$ Latch</span>。</p>
-<p>总结一下，我们从<span class="heti-skip"><span class="heti-spacing"> </span>buffer<span class="heti-spacing"> </span></span>出发，逐步解决信息存储和修改的问题，最终设计出了<span><span class="heti-spacing"> </span>$D$ Latch</span>。然而，<span>$D$ Latch<span class="heti-spacing"> </span></span>也并不是完美的。事实上，<span>$D$ Latch<span class="heti-spacing"> </span></span>存在的问题，也是所有的<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>都无法规避的问题，即透明（transparent, which means its input value can be seen from the outputs while the control input is <code>1</code><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
-<p>透明为什么会产生问题呢？在时序逻辑电路中，总是存在从信息存储单元到组合逻辑电路的反馈路径，因此对于一个<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>而言，其输入总是部分来自自身或其他<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>的输出。由于<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>是透明的，在同一个时钟周期内，输出可能会反过来修改输入，从而导致<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>的状态更新发生了不止一次。这个问题是很严重的，对于透明的<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>而言，一个时钟周期内状态更新的次数，取决于时钟周期的长短和反馈路径的组合电路延迟，导致我们无法确定这个时钟周期结束后<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>究竟处在什么状态。</p>
-<hr/>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><input id="__tabbed_3_3" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">$SR$ Master-Slave Flip-Flop</label><label for="__tabbed_3_2">Negative-Edge-Triggered $D$ Flip-Flop</label><label for="__tabbed_3_3">Positive-Edge-Triggered $D$ Flip-Flop</label></div>
+<p>某种意义上，延迟可以用于实现信息存储。对于一个存在 $t_G$ 延迟的 buffer 而言，我们可以认为信息在 $t_G$ 这段时间内是不变的，即被短暂地存储了（如图 a）。进一步地，把 buffer 的输出和输入相连，可以实现信息的长久存储（如图 bc）。但是，对于这个信息存储单元而言，修改存储的信息内容是不方便的。</p>
+<p>我们把组成 buffer 的非门（如图 d）替换成或非门或者与非门，就可以方便地修改存储的信息内容，这就是 $SR$ Latch。稍加思考不难发现，这样的一个 $SR$ Latch 其实是异步的，因而输入 S 和 R 的先后抵达可能导致电路偏离预期而进入错误的状态。我们可以通过增加一个使能控制端 C 来确保 S 和 R 都到位时再使能，这就是 $SR$ Latch with Control Input（注意这并不是严格意义上的同步，当 C 置<code>1</code>时其仍然是异步的）。但是，这个 Latch 仍然存在一种未定义状态，即 C、S 和 R 均置<code>1</code>。</p>
+<p>对于 $SR$ Latch with Control Input 而言，用 S 和 R 均置<code>0</code>来表示保持态是多余的（因为 C 置<code>0</code>即可表示保持态），而且上述的未定义状态也很麻烦。所以，我们把 S 和 R 强制设定为相反的两个输入，用 $D$ 和 $\overline{D}$ 来代替 $S$ 和 $R$，这就是 $D$ Latch。</p>
+<p>总结一下，我们从 buffer 出发，逐步解决信息存储和修改的问题，最终设计出了 $D$ Latch。然而，$D$ Latch 也并不是完美的。事实上，$D$ Latch 存在的问题，也是所有的 Latch 都无法规避的问题，即透明（transparent, which means its input value can be seen from the outputs while the control input is <code>1</code>）。</p>
+<p>透明为什么会产生问题呢？在时序逻辑电路中，总是存在从信息存储单元到组合逻辑电路的反馈路径，因此对于一个 Latch 而言，其输入总是部分来自自身或其他 Latch 的输出。由于 Latch 是透明的，在同一个时钟周期内，输出可能会反过来修改输入，从而导致 Latch 的状态更新发生了不止一次。这个问题是很严重的，对于透明的 Latch 而言，一个时钟周期内状态更新的次数，取决于时钟周期的长短和反馈路径的组合电路延迟，导致我们无法确定这个时钟周期结束后 Latch 究竟处在什么状态。</p>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">$SR$ Master-Slave Flip-Flop</label><label for="__tabbed_3_2">Negative-Edge-Triggered $D$ Flip-Flop</label><label for="__tabbed_3_3">Positive-Edge-Triggered $D$ Flip-Flop</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/35.png"><img alt="SR Master-Slave Flip-Flop 图示" src="/assets/images/cs/digital_logic/35.png" style="width: 50%;"/></a>
-</div>
-</div>
-<div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/36.png"><img alt="Negative-Edge-Triggered D Flip-Flop 图示" src="/assets/images/cs/digital_logic/36.png" style="width: 50%;"/></a>
-</div>
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/35.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/35.png" alt="SR Master-Slave Flip-Flop 图示" style="width: 50%;"></a>
+</div></p>
 </div>
 <div class="tabbed-block">
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/37.png"><img alt="Positive-Edge-Triggered D Flip-Flop 图示" src="/assets/images/cs/digital_logic/37.png" style="width: 50%;"/></a>
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/36.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/36.png" alt="Negative-Edge-Triggered D Flip-Flop 图示" style="width: 50%;"></a>
+</div></p>
+</div>
+<div class="tabbed-block">
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/37.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/37.png" alt="Positive-Edge-Triggered D Flip-Flop 图示" style="width: 50%;"></a>
+</div></p>
 </div>
 </div>
 </div>
-</div>
-<p>上文提到，<span>Latch<span class="heti-spacing"> </span></span>是透明的，所以无法确定一个时钟周期内状态更新的次数。我们希望设计一个非透明的信息存储单元，确保一个时钟周期内仅发生一次状态更新。通常的解决方法是，把两个<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>串联起来，当时钟信号为<code>1</code>时，主<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>写入，从<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>只读；当时钟信号为<code>0</code>时，主<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>只读，从<span class="heti-skip"><span class="heti-spacing"> </span>Latch<span class="heti-spacing"> </span></span>写入。因此，在一个时钟周期内，前一半时间更新主<span><span class="heti-spacing"> </span>Latch</span>，后一半时间更新从<span><span class="heti-spacing"> </span>Latch</span>，从而对于整体而言，仅发生一次状态更新，这就是主从触发器（Master-Slave Flip-Flop<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
+<p>上文提到，Latch 是透明的，所以无法确定一个时钟周期内状态更新的次数。我们希望设计一个非透明的信息存储单元，确保一个时钟周期内仅发生一次状态更新。通常的解决方法是，把两个 Latch 串联起来，当时钟信号为<code>1</code>时，主 Latch 写入，从 Latch 只读；当时钟信号为<code>0</code>时，主 Latch 只读，从 Latch 写入。因此，在一个时钟周期内，前一半时间更新主 Latch，后一半时间更新从 Latch，从而对于整体而言，仅发生一次状态更新，这就是主从触发器（Master-Slave Flip-Flop）。</p>
 <details class="note" open="open">
 <summary>教材中的传统观点</summary>
-<p><em>Logic and Computer Design Fundamentals</em> 教材中认为，主从触发器有两种实现方法：<span>pulse-triggered<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>edge-triggered</span>。</p>
-<p><span>$SR$<span class="heti-spacing"> </span></span>触发器就属于前者。但是，<span>$SR$<span class="heti-spacing"> </span></span>触发器存在一个很大的问题，即<span><span class="heti-spacing"> </span>1s-catching</span>。当时钟信号为<code>1</code>时，<span>S<span class="heti-spacing"> </span></span>或<span class="heti-skip"><span class="heti-spacing"> </span>R<span class="heti-spacing"> </span></span>短暂的置<code>1</code>均会被<span class="heti-skip"><span class="heti-spacing"> </span>Master<span class="heti-spacing"> </span></span>捕捉到，并在时钟信号为<code>0</code>时传递给从<span><span class="heti-spacing"> </span>Slave</span>。由于时序逻辑电路总是存在反馈路径，所以同一个时钟周期内<span class="heti-skip"><span class="heti-spacing"> </span>Master<span class="heti-spacing"> </span></span>的状态可能会更新多次，虽然对于触发器整体而言仍然仅有一次状态更新（因为<span class="heti-skip"><span class="heti-spacing"> </span>Slave<span class="heti-spacing"> </span></span>仅更新一次<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，但是这种情况下我们无法确保<span class="heti-skip"><span class="heti-spacing"> </span>Master<span class="heti-spacing"> </span></span>传递给<span class="heti-skip"><span class="heti-spacing"> </span>Slave<span class="heti-spacing"> </span></span>的信息和我们起初写入<span class="heti-skip"><span class="heti-spacing"> </span>Master<span class="heti-spacing"> </span></span>的信息是否一致。</p>
-<p>为了更好地理解<span><span class="heti-spacing"> </span>1s-catching</span>，让我们回忆一下时序逻辑延迟分析中提到的<span><span class="heti-spacing"> </span>setup-time</span>（如下图<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。<span>pulse-triggered<span class="heti-spacing"> </span></span>触发器之所以需要比<span class="heti-skip"><span class="heti-spacing"> </span>edge-triggered<span class="heti-spacing"> </span></span>触发器更长的<span><span class="heti-spacing"> </span>setup-time</span>，就是为了确保时钟信号为<code>1</code>时触发器输入端总是稳定的，从而确保不会发生<span><span class="heti-spacing"> </span>1s-catching</span>。</p>
-<p>更进一步地，<span>1s-catching<span class="heti-spacing"> </span></span>可以被认为是亚稳态（metastability）的一种表现。当我们没能在<span class="heti-skip"><span class="heti-spacing"> </span>setup-time<span class="heti-spacing"> </span></span>期间维持数据稳定，就会导致触发器陷入亚稳态。通常的解决思路是串联两层甚至更多层的触发器。</p>
-<p></p><div style="text-align: center;">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/cs/digital_logic/38.png"><img alt="触发器延迟分析图示" src="/assets/images/cs/digital_logic/38.png" style="width: 70%;"/></a>
-</div>
-<hr/>
-<p>读到这里，或许你也和笔者一样，产生了如下的疑惑：<br/>
-为什么我感觉 pulse-triggered 和 1s-catching 的概念更像是 Latch 的特性？<br/>
-如果我把注意力集中在时钟信号边沿，难道 pulse-triggered 不也具有 edge-triggered 特性吗？<br/>
+<p><em>Logic and Computer Design Fundamentals</em> 教材中认为，主从触发器有两种实现方法：pulse-triggered 和 edge-triggered。</p>
+<p>$SR$ 触发器就属于前者。但是，$SR$ 触发器存在一个很大的问题，即 1s-catching。当时钟信号为<code>1</code>时，S 或 R 短暂的置<code>1</code>均会被 Master 捕捉到，并在时钟信号为<code>0</code>时传递给从 Slave。由于时序逻辑电路总是存在反馈路径，所以同一个时钟周期内 Master 的状态可能会更新多次，虽然对于触发器整体而言仍然仅有一次状态更新（因为 Slave 仅更新一次），但是这种情况下我们无法确保 Master 传递给 Slave 的信息和我们起初写入 Master 的信息是否一致。</p>
+<p>为了更好地理解 1s-catching，让我们回忆一下时序逻辑延迟分析中提到的 setup-time（如下图）。pulse-triggered 触发器之所以需要比 edge-triggered 触发器更长的 setup-time，就是为了确保时钟信号为<code>1</code>时触发器输入端总是稳定的，从而确保不会发生 1s-catching。</p>
+<p>更进一步地，1s-catching 可以被认为是亚稳态（metastability）的一种表现。当我们没能在 setup-time 期间维持数据稳定，就会导致触发器陷入亚稳态。通常的解决思路是串联两层甚至更多层的触发器。</p>
+<p><div style="text-align: center;">
+<a class="glightbox" href="/assets/images/cs/digital_logic/38.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/cs/digital_logic/38.png" alt="触发器延迟分析图示" style="width: 70%;"></a>
+</div></p>
+<hr />
+<p>读到这里，或许你也和笔者一样，产生了如下的疑惑：<br />
+为什么我感觉 pulse-triggered 和 1s-catching 的概念更像是 Latch 的特性？<br />
+如果我把注意力集中在时钟信号边沿，难道 pulse-triggered 不也具有 edge-triggered 特性吗？<br />
 难道 pulse-triggered flip-flop 不是伪命题吗？</p>
 </details>
-<hr/>
-<p>现代观点认为，触发器并不存在所谓的<span><span class="heti-spacing"> </span>pulse-triggered</span>（or level-triggered）类型。正如马德老师在课堂上一再强调的，真正存在实用价值的是边沿触发式（edge-triggered）触发器，比如广泛使用的<span class="heti-skip"><span class="heti-spacing"> </span>$D$<span class="heti-spacing"> </span></span>触发器。严格来说，在数字逻辑设计这门课中，我们所说的<span class="heti-skip"><span class="heti-spacing"> </span>$D$<span class="heti-spacing"> </span></span>触发器其实是边沿触发式<span class="heti-skip"><span class="heti-spacing"> </span>$D$<span class="heti-spacing"> </span></span>主从触发器（Master-Slave Edge-Triggered $D$ Flip-Flop<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
-<p>以下是<span class="heti-skip"><span class="heti-spacing"> </span>Wikipedia<span class="heti-spacing"> </span></span>对于触发器的描述：</p>
+<hr />
+<p>现代观点认为，触发器并不存在所谓的 pulse-triggered（or level-triggered）类型。正如马德老师在课堂上一再强调的，真正存在实用价值的是边沿触发式（edge-triggered）触发器，比如广泛使用的 $D$ 触发器。严格来说，在数字逻辑设计这门课中，我们所说的 $D$ 触发器其实是边沿触发式 $D$ 主从触发器（Master-Slave Edge-Triggered $D$ Flip-Flop）。</p>
+<p>以下是 Wikipedia 对于触发器的描述：</p>
 <blockquote>
 <p>The term flip-flop has historically referred generically to both level-triggered (asynchronous, transparent, or opaque) and edge-triggered (synchronous, or clocked) circuits that store a single bit of data using gates.</p>
 <p>Modern authors reserve the term flip-flop exclusively for edge-triggered storage elements and latches for level-triggered ones.</p>
 </blockquote>
 <p>总结一下：</p>
 <ul>
-<li><span>Latch<span class="heti-spacing"> </span></span>是异步的、透明的、脉冲触发的，在整个时钟信号为<code>1</code>的过程中均可写入信息并多次更新状态；</li>
-<li><span>Flip-Flop<span class="heti-spacing"> </span></span>是同步的、非透明的、边沿触发的，一个时钟周期内仅在时钟信号的上升沿或下降沿进行一次状态的更新；</li>
+<li>Latch 是异步的、透明的、脉冲触发的，在整个时钟信号为<code>1</code>的过程中均可写入信息并多次更新状态；</li>
+<li>Flip-Flop 是同步的、非透明的、边沿触发的，一个时钟周期内仅在时钟信号的上升沿或下降沿进行一次状态的更新；</li>
 </ul>
-<p>除此以外，还有很多种其他的触发器设计，比如数逻课堂上提到的<span class="heti-skip"><span class="heti-spacing"> </span>$T$ Flip-Flop<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>$JK$ Flip-Flop</span>，更多相关知识可以参考<a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics)"><span><span class="heti-spacing"> </span>https://en.wikipedia.org/wiki/Flip-flop_(electronics)</span></a>。</p>
+<p>除此以外，还有很多种其他的触发器设计，比如数逻课堂上提到的 $T$ Flip-Flop 和 $JK$ Flip-Flop，更多相关知识可以参考 <a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics)">https://en.wikipedia.org/wiki/Flip-flop_(electronics)</a>。</p>
+
+
 <!-- source: https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/override-a-theme/#example-mkdocs-material-theme -->
 <hr/>
 <div class="md-source-file">
@@ -782,6 +793,15 @@ In asynchronous circuits the state of the device can change at any time in respo
 <!-- mkdocs-git-revision-date-plugin -->
 </small>
 </div>
+
+  
+
+
+
+ --&gt;
+                  <!-- redirect -->
+<h1><span>MinJoker's Notebook<span class="heti-spacing"> </span></span>已迁移，正在为您重定向<span><span class="heti-spacing"> </span>...</span></h1>
+<!-- redirect -->
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

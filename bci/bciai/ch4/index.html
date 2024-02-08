@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zh">
 <head>
+<!-- redirect -->
+<meta content="2; url='https://note.minjoker.top'" http-equiv="refresh"/>
+<!-- redirect -->
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="MinJoker" name="author"/>
@@ -927,34 +930,40 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="_1">信号处理<a class="headerlink" href="#_1" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h1>
+<!-- 
+
+  
+  
+
+
+<h1 id="_1">信号处理<a class="headerlink" href="#_1" title="anchor link to this section for reference">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"></path></svg></span> 约<span class="heti-skip"><span class="heti-spacing"> </span>2558<span class="heti-spacing"> </span></span>个字 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"></path></svg></span> 预计阅读时间<span class="heti-skip"><span class="heti-spacing"> </span>10<span class="heti-spacing"> </span></span>分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2558 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">摘要</p>
 <p>无论是采用侵入式还是非侵入式技术记录到的大脑信号，一般都会含有多种噪声或者来自多个神经元的混合信号，本章介绍了从原始信号中提取有用信号的常用方法。</p>
 <ul>
 <li>对于侵入式技术，锋电位分类将单个神经元产生的锋电位从混合信号中提取出来；</li>
-<li>对于非侵入式技术，有多种特征提取技术可用，这些基于频域、时域或小波分析的技术可与空间滤波技术相结合，以实现降维（PCA<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>、从混合信号中分离出源信号（ICA）或增加输出的不同类别信号的可区分度（CSP<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>；</li>
+<li>对于非侵入式技术，有多种特征提取技术可用，这些基于频域、时域或小波分析的技术可与空间滤波技术相结合，以实现降维（PCA）、从混合信号中分离出源信号（ICA）或增加输出的不同类别信号的可区分度（CSP）；</li>
 <li>其中部分技术还能用于去除源于大脑外部的伪迹；</li>
 </ul>
-<p>总而言之，没有一种最佳技术普适于所有<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>应用，需要根据特定的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>范式和任务类型来选择。</p>
+<p>总而言之，没有一种最佳技术普适于所有BCI应用，需要根据特定的BCI范式和任务类型来选择。</p>
 </div>
-<h2 id="_2">锋电位分类<a class="headerlink" href="#_2" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<p>用于<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>的侵入式技术通常依赖于由微电极阵列记录到的锋电位，这些信号通常是电极附近数个神经元所产生的神经混合信号。传统的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>输入信号形式期望是来自单个神经元的锋电位，所以需要<strong>通过锋电位分类将单个神经元产生的锋电位从混合信号中提取出来</strong>。</p>
+<h2 id="_2">锋电位分类<a class="headerlink" href="#_2" title="anchor link to this section for reference">&para;</a></h2>
+<p>用于BCI的侵入式技术通常依赖于由微电极阵列记录到的锋电位，这些信号通常是电极附近数个神经元所产生的神经混合信号。传统的BCI输入信号形式期望是来自单个神经元的锋电位，所以需要<strong>通过锋电位分类将单个神经元产生的锋电位从混合信号中提取出来</strong>。</p>
 <p>锋电位分类具有以下几种常用方法：</p>
 <ul>
 <li>依据幅值幅度的分类</li>
 <li>窗型鉴别器（人工）</li>
-<li>自动归类（最新的趋势<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，依据锋电位波形的特征（特征提取方法：小波分析、主成分分析等）</li>
+<li>自动归类（最新的趋势），依据锋电位波形的特征（特征提取方法：小波分析、主成分分析等）</li>
 </ul>
-<h2 id="_3">频域分析<a class="headerlink" href="#_3" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<p>诸如<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>的非侵入式技术基于能反映数千个神经元活动的信号，这些信号能捕捉<a href="../ch3/#_9">具有特定频率范围的“脑电波”</a>，因此对信号进行频域分析特别有用。</p>
-<h3 id="_4">傅里叶分析<a class="headerlink" href="#_4" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<p>傅里叶分析的基本思想是将一个信号分解为不同频率的正弦和余弦波的加权和，幅值<span class="heti-skip"><span class="heti-spacing"> </span>$a_n$<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$b_n$<span class="heti-spacing"> </span></span>能由输入信号计算得到。信号分解使我们可以进行基于频率的多种类型的滤波处理。</p>
+<h2 id="_3">频域分析<a class="headerlink" href="#_3" title="anchor link to this section for reference">&para;</a></h2>
+<p>诸如EEG的非侵入式技术基于能反映数千个神经元活动的信号，这些信号能捕捉<a href="../ch3/#_9">具有特定频率范围的“脑电波”</a>，因此对信号进行频域分析特别有用。</p>
+<h3 id="_4">傅里叶分析<a class="headerlink" href="#_4" title="anchor link to this section for reference">&para;</a></h3>
+<p>傅里叶分析的基本思想是将一个信号分解为不同频率的正弦和余弦波的加权和，幅值 $a_n$ 和 $b_n$ 能由输入信号计算得到。信号分解使我们可以进行基于频率的多种类型的滤波处理。</p>
 <details class="quote">
-<summary>时域信号<span class="heti-skip"><span class="heti-spacing"> </span>$s(t)$<span class="heti-spacing"> </span></span>的傅里叶级数展开</summary>
+<summary>时域信号 $s(t)$ 的傅里叶级数展开</summary>
 <p>$$
 s(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_0 cos(2\pi nft) + \sum_{n=1}^\infty b_0 sin(2\pi nft)
 $$</p>
@@ -985,9 +994,9 @@ $$</p>
 s(t) = \sum_{n = -\infty}^{+\infty} c_n e^{-jn\omega t}
 $$</p>
 </details>
-<h4 id="_5">离散傅里叶变换<a class="headerlink" href="#_5" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h4>
-<p><span>BCI<span class="heti-spacing"> </span></span>应用中，通常是在离散时间间隔对大脑信号进行采样，相应的可以使用离散傅里叶变换（DFT<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
-<p>许多<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>系统从一段时间间隔内大脑信号的功率谱中提取特征，计算信号的功率谱<span class="heti-skip"><span class="heti-spacing"> </span>$P(n)$<span class="heti-spacing"> </span></span>即计算信号幅值的平方。</p>
+<h4 id="_5">离散傅里叶变换<a class="headerlink" href="#_5" title="anchor link to this section for reference">&para;</a></h4>
+<p>BCI应用中，通常是在离散时间间隔对大脑信号进行采样，相应的可以使用离散傅里叶变换（DFT）。</p>
+<p>许多BCI系统从一段时间间隔内大脑信号的功率谱中提取特征，计算信号的功率谱 $P(n)$ 即计算信号幅值的平方。</p>
 <details class="quote">
 <summary>离散傅里叶变换及功率谱</summary>
 <p>$$
@@ -997,31 +1006,31 @@ $$</p>
 P(n) = Re(C(n)^2) + Im(C(n)^2)
 $$</p>
 </details>
-<h4 id="_6">快速傅里叶变换<a class="headerlink" href="#_6" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h4>
-<p><span>DFT<span class="heti-spacing"> </span></span>的时间复杂度为<span><span class="heti-spacing"> </span>$O(T^2)$</span> ，当数据量较大时运算速度很不理想。快速傅里叶变换（FFT）是计算<span class="heti-skip"><span class="heti-spacing"> </span>DFT<span class="heti-spacing"> </span></span>的一种更高效的方法，时间复杂度为<span><span class="heti-spacing"> </span>$O(T\log T)$</span> 。</p>
-<p>最通用的<span class="heti-skip"><span class="heti-spacing"> </span>FFT<span class="heti-spacing"> </span></span>算法是<code>Cooley-Tukey FFT算法</code>，采用了“分而治之”的策略，用递归的方法将一个<span class="heti-skip"><span class="heti-spacing"> </span>DFT<span class="heti-spacing"> </span></span>分成许多更小型的<span><span class="heti-spacing"> </span>DFT</span>。</p>
-<p><strong><span>FFT<span class="heti-spacing"> </span></span>是将时变信号变换到频域的最常用方法</strong>。</p>
-<h3 id="_7">小波分析<a class="headerlink" href="#_7" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h4 id="_6">快速傅里叶变换<a class="headerlink" href="#_6" title="anchor link to this section for reference">&para;</a></h4>
+<p>DFT的时间复杂度为 $O(T^2)$ ，当数据量较大时运算速度很不理想。快速傅里叶变换（FFT）是计算DFT的一种更高效的方法，时间复杂度为 $O(T\log T)$ 。</p>
+<p>最通用的FFT算法是<code>Cooley-Tukey FFT算法</code>，采用了“分而治之”的策略，用递归的方法将一个DFT分成许多更小型的DFT。</p>
+<p><strong>FFT是将时变信号变换到频域的最常用方法</strong>。</p>
+<h3 id="_7">小波分析<a class="headerlink" href="#_7" title="anchor link to this section for reference">&para;</a></h3>
 <p>自然界的信号几乎都是非平稳的，但是傅里叶变换处理非平稳信号时效果较差，它只能获取信号总体上包含哪些频率的成分，但是对各成分出现的时刻并无所知。</p>
 <details class="example">
 <summary>时频相差很大的两个信号，可能拥有一样的傅里叶频谱图</summary>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/2.jpg"><img alt="傅里叶变换在平稳及非平稳条件下的表现" src="/assets/images/bci/bciai/2.jpg" title="傅里叶变换在平稳及非平稳条件下的表现"/></a></p>
+<p><a class="glightbox" href="/assets/images/bci/bciai/2.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="傅里叶变换在平稳及非平稳条件下的表现" src="/assets/images/bci/bciai/2.jpg" title="傅里叶变换在平稳及非平稳条件下的表现" /></a></p>
 </details>
-<p>一种简单可行的优化方法是加窗，在短时窗内（近似平稳）进行傅里叶分析，这就是短时傅里叶分析（STFT<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。但是<span class="heti-skip"><span class="heti-spacing"> </span>STFT<span class="heti-spacing"> </span></span>在选择窗口宽度时很难协调时间分辨率和频率分辨率之间的矛盾。</p>
+<p>一种简单可行的优化方法是加窗，在短时窗内（近似平稳）进行傅里叶分析，这就是短时傅里叶分析（STFT）。但是STFT在选择窗口宽度时很难协调时间分辨率和频率分辨率之间的矛盾。</p>
 <p>小波变换（WT）可以更好地解决这一问题。</p>
-<p>小波变换的基函数不再是正弦和余弦函数，而是<strong>有限长的会衰减的小波基</strong>。小波函数由一个母小波通过伸缩和平移得到。尺度<span class="heti-skip"><span class="heti-spacing"> </span>$\alpha$<span class="heti-spacing"> </span></span>控制小波函数的伸缩，平移量<span class="heti-skip"><span class="heti-spacing"> </span>$\tau$<span class="heti-spacing"> </span></span>控制小波函数的平移，尺度对应频率，平移量对应时间。</p>
+<p>小波变换的基函数不再是正弦和余弦函数，而是<strong>有限长的会衰减的小波基</strong>。小波函数由一个母小波通过伸缩和平移得到。尺度 $\alpha$ 控制小波函数的伸缩，平移量 $\tau$ 控制小波函数的平移，尺度对应频率，平移量对应时间。</p>
 <p>$$
 WT(\alpha, \tau) = \frac{1}{\sqrt[]{\alpha}} \int_{-\infty}^{+\infty} {f(t) \times \psi(\frac{t-\tau}{\alpha}) dt}
 $$</p>
 <p>小波分析信号处理不仅可以知道信号由怎样频率的成分，而且知道其在时域上对应的具体位置。傅里叶变换只能得到一个频谱，而小波变换可以得到一个时频谱。</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/3.png"><img alt="小波变换能同时确定时间和频率" src="/assets/images/bci/bciai/3.png" title="小波变换能同时确定时间和频率"/></a></p>
+<p><a class="glightbox" href="/assets/images/bci/bciai/3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="小波变换能同时确定时间和频率" src="/assets/images/bci/bciai/3.png" title="小波变换能同时确定时间和频率" /></a></p>
 <p>此外，小波变换在处理突变信号时也优于傅里叶变换，因为傅里叶变换存在吉布斯效应，对突变信号的拟合效果不够理想。</p>
-<p><strong>但是，小波分析的难点在于寻找母小波（尺度函数<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，这是构造小波变换的关键所在。</strong></p>
-<h2 id="_8">时域分析<a class="headerlink" href="#_8" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
-<h3 id="hjorth"><span>Hjorth<span class="heti-spacing"> </span></span>参数<a class="headerlink" href="#hjorth" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<p><span>Hjorth<span class="heti-spacing"> </span></span>参数对于计算时变信号的三个重要特征提供了一种快速的方法，这三个特征为：平均功率、均方根频率以及均方根频率展开。</p>
+<p><strong>但是，小波分析的难点在于寻找母小波（尺度函数），这是构造小波变换的关键所在。</strong></p>
+<h2 id="_8">时域分析<a class="headerlink" href="#_8" title="anchor link to this section for reference">&para;</a></h2>
+<h3 id="hjorth">Hjorth参数<a class="headerlink" href="#hjorth" title="anchor link to this section for reference">&para;</a></h3>
+<p>Hjorth参数对于计算时变信号的三个重要特征提供了一种快速的方法，这三个特征为：平均功率、均方根频率以及均方根频率展开。</p>
 <details class="quote">
-<summary>三个<span class="heti-skip"><span class="heti-spacing"> </span>Hjorth<span class="heti-spacing"> </span></span>参数</summary>
+<summary>三个Hjorth参数</summary>
 <p>$$
 A = a_0
 $$</p>
@@ -1031,44 +1040,44 @@ $$</p>
 <p>$$
 C = \sqrt[]{\frac{a_4}{a_0}}
 $$</p>
-<p>其中，<span>$a_0$<span class="heti-spacing"> </span></span>表示所测量时段内信号的方差（相当于平均功率<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，<span>$a_2$<span class="heti-spacing"> </span></span>表示信号一阶导数的方差，<span>$a_4$<span class="heti-spacing"> </span></span>表示信号二阶导数的方差。</p>
+<p>其中，$a_0$ 表示所测量时段内信号的方差（相当于平均功率），$a_2$ 表示信号一阶导数的方差，$a_4$ 表示信号二阶导数的方差。</p>
 </details>
-<p>基于方差的<span class="heti-skip"><span class="heti-spacing"> </span>Hjorth<span class="heti-spacing"> </span></span>参数比其他方法拥有更快的计算速度，因而其在<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>分析中应用得十分普遍，<strong>适用于需要快速持续地获取时变信号特征的应用场合</strong>。</p>
-<h3 id="_9">分形维数<a class="headerlink" href="#_9" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<p>一般来说，如果一个信号表现出自相似性，则认为它是分形的。分形维数是对这种相似性的定量测量。常用于大脑信号（尤其是<span><span class="heti-spacing"> </span>EEG</span>）的分形维数测量基于<code>Higuchi</code>提出的方法。</p>
-<p>这种方法产生的分形维数<span class="heti-skip"><span class="heti-spacing"> </span>D<span class="heti-spacing"> </span></span>在<span class="heti-skip"><span class="heti-spacing"> </span>1~2<span class="heti-spacing"> </span></span>之间，对于简单曲线（例如平坦<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，<span>D<span class="heti-spacing"> </span></span>接近于<span><span class="heti-spacing"> </span>1</span>，对于遍布整个二维平面的高度不规则曲线，<span>D<span class="heti-spacing"> </span></span>接近于<span><span class="heti-spacing"> </span>2</span>。</p>
-<p>诸如<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>的大脑信号的分形维数<span class="heti-skip"><span class="heti-spacing"> </span>D<span class="heti-spacing"> </span></span>一般在<span class="heti-skip"><span class="heti-spacing"> </span>1.4~1.7<span class="heti-spacing"> </span></span>之间，值越大表明发生了高锋电位的活动，例如癫痫。在典型的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>应用中，使用滑窗计算<span class="heti-skip"><span class="heti-spacing"> </span>D<span class="heti-spacing"> </span></span>值，并将其<strong>用于描绘时变脑信号“复杂度”的局部特征</strong>。</p>
-<h3 id="_10">自回归模型<a class="headerlink" href="#_10" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>基于方差的Hjorth参数比其他方法拥有更快的计算速度，因而其在EEG分析中应用得十分普遍，<strong>适用于需要快速持续地获取时变信号特征的应用场合</strong>。</p>
+<h3 id="_9">分形维数<a class="headerlink" href="#_9" title="anchor link to this section for reference">&para;</a></h3>
+<p>一般来说，如果一个信号表现出自相似性，则认为它是分形的。分形维数是对这种相似性的定量测量。常用于大脑信号（尤其是EEG）的分形维数测量基于<code>Higuchi</code>提出的方法。</p>
+<p>这种方法产生的分形维数D在1~2之间，对于简单曲线（例如平坦），D接近于1，对于遍布整个二维平面的高度不规则曲线，D接近于2。</p>
+<p>诸如EEG的大脑信号的分形维数D一般在1.4~1.7之间，值越大表明发生了高锋电位的活动，例如癫痫。在典型的BCI应用中，使用滑窗计算D值，并将其<strong>用于描绘时变脑信号“复杂度”的局部特征</strong>。</p>
+<h3 id="_10">自回归模型<a class="headerlink" href="#_10" title="anchor link to this section for reference">&para;</a></h3>
 <p>自回归模型（AR）基于这样的事实：自然信号在时间上有相关联的趋势，因此常常能够利用之前的一些测量值来预测下一个测量值。</p>
-<p>传统的<span class="heti-skip"><span class="heti-spacing"> </span>AR<span class="heti-spacing"> </span></span>模型基于之前的测量值并利用一组系数<span class="heti-skip"><span class="heti-spacing"> </span>$a_i$<span class="heti-spacing"> </span></span>来预测当前的信号值<span><span class="heti-spacing"> </span>$x_i$</span> ：</p>
+<p>传统的AR模型基于之前的测量值并利用一组系数 $a_i$ 来预测当前的信号值 $x_i$ ：</p>
 <p>$$
 x_i = \sum_{i=1}^p a_i x_{t-i} + \epsilon
 $$</p>
-<p>传统的<span class="heti-skip"><span class="heti-spacing"> </span>AR<span class="heti-spacing"> </span></span>模型假设信号的统计特性是平稳的，但是大脑信号是非平稳的，因而需要一组时变的系数<span><span class="heti-spacing"> </span>$a_{i,  t}$</span> ，这就产生了自适应自回归（AAR）模型：</p>
+<p>传统的AR模型假设信号的统计特性是平稳的，但是大脑信号是非平稳的，因而需要一组时变的系数 $a_{i,  t}$ ，这就产生了自适应自回归（AAR）模型：</p>
 <p>$$
 x_i = \sum_{i=1}^p a_{i,  t} x_{t-i} + \epsilon _t
 $$</p>
-<p>用卡尔曼滤波等方法可以实时更新时变系数<span><span class="heti-spacing"> </span>$a_{i,  t}$</span> 。由于系数随时间而变化，它<strong>包含了信号的局部统计结构，在<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>中可以用作进一步处理的特征</strong>。</p>
-<h3 id="_11">贝叶斯滤波<a class="headerlink" href="#_11" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<p>前面讨论的时域方法不能明确保持对在时域计算的信号特性的不确定性估计。在<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>中，保持对信号不确定性的表示是很重要的。<strong>贝叶斯滤波技术提供了一种对信号特性及其不确定性进行估计的统计上合理的方法</strong>。</p>
-<p>首先给出概率与统计学中一条重要的定理，即<strong>贝叶斯定理</strong>（贝叶斯法则<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<p>用卡尔曼滤波等方法可以实时更新时变系数 $a_{i,  t}$ 。由于系数随时间而变化，它<strong>包含了信号的局部统计结构，在BCI中可以用作进一步处理的特征</strong>。</p>
+<h3 id="_11">贝叶斯滤波<a class="headerlink" href="#_11" title="anchor link to this section for reference">&para;</a></h3>
+<p>前面讨论的时域方法不能明确保持对在时域计算的信号特性的不确定性估计。在BCI中，保持对信号不确定性的表示是很重要的。<strong>贝叶斯滤波技术提供了一种对信号特性及其不确定性进行估计的统计上合理的方法</strong>。</p>
+<p>首先给出概率与统计学中一条重要的定理，即<strong>贝叶斯定理</strong>（贝叶斯法则）：</p>
 <p>$$
 P(x|y) = \frac{P(y|x) P(x)}{P(y)}
 $$</p>
-<p>其中，<span>$P(x|y)$<span class="heti-spacing"> </span></span>称为给定<span class="heti-skip"><span class="heti-spacing"> </span>$y$<span class="heti-spacing"> </span></span>条件下<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>的后验概率，<span>$P(y|x)$<span class="heti-spacing"> </span></span>称为似然函数，<span>$P(x)$<span class="heti-spacing"> </span></span>是<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>的先验概率。</p>
-<p>贝叶斯定理对信号特性的统计估计有着深远的影响，因为它指出了测量值<span class="heti-skip"><span class="heti-spacing"> </span>$P(y|x)$<span class="heti-spacing"> </span></span>如何能与先验知识<span class="heti-skip"><span class="heti-spacing"> </span>$P(x)$<span class="heti-spacing"> </span></span>相结合。以<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>为例，<span>$y$<span class="heti-spacing"> </span></span>为<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>测量值，<span>$x$<span class="heti-spacing"> </span></span>为可引起大脑反应的刺激，先验概率<span class="heti-skip"><span class="heti-spacing"> </span>$P(x)$<span class="heti-spacing"> </span></span>可由实验员事先给定。研究人员感兴趣的是找到产生测量到的<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>信号的原因，这就相当于估计后验概率<span><span class="heti-spacing"> </span>$P(x|y)$</span>  。</p>
-<p>然后我们通过一堆噼里啪啦的分析即可得到一般形式的<strong>贝叶斯滤波</strong>（更新规则<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：</p>
+<p>其中，$P(x|y)$ 称为给定 $y$ 条件下 $x$ 的后验概率，$P(y|x)$ 称为似然函数，$P(x)$ 是 $x$ 的先验概率。</p>
+<p>贝叶斯定理对信号特性的统计估计有着深远的影响，因为它指出了测量值 $P(y|x)$ 如何能与先验知识 $P(x)$ 相结合。以EEG为例，$y$ 为EEG测量值，$x$ 为可引起大脑反应的刺激，先验概率 $P(x)$ 可由实验员事先给定。研究人员感兴趣的是找到产生测量到的EEG信号的原因，这就相当于估计后验概率 $P(x|y)$  。</p>
+<p>然后我们通过一堆噼里啪啦的分析即可得到一般形式的<strong>贝叶斯滤波</strong>（更新规则）：</p>
 <p>$$
 P(x_t|y_1,\cdots,y_t) = \alpha P(y_t|x_t) \sum_{x_{t-1}} P(x_t|x_{t-1}) P(x_{t-1}|y_1,\cdots,y_{t-1})
 $$</p>
 <p>$$
 \alpha = 1/P(y_t|y_1,\cdots,y_{t-1})
 $$</p>
-<p>贝叶斯滤波器说明了应如何将新的测量值<span class="heti-skip"><span class="heti-spacing"> </span>$y_t$<span class="heti-spacing"> </span></span>与之前的后验概率<span class="heti-skip"><span class="heti-spacing"> </span>$P(x_{t-1}|y_1,\cdots,y_{t-1})$<span class="heti-spacing"> </span></span>相结合，以求得<span class="heti-skip"><span class="heti-spacing"> </span>$t$<span class="heti-spacing"> </span></span>时刻后验概率的分布。常用的统计滤波方法，如卡尔曼滤波和粒子滤波，都是上式的特殊情况。</p>
-<p>在更一般的情况下，贝叶斯滤波可以被认为是在动态贝叶斯网格（DBN）中做概率推断。<span>DBN<span class="heti-spacing"> </span></span>是一种图模型，其中的节点代表随机变量（即前文中的状态<span class="heti-skip"><span class="heti-spacing"> </span>$x_t$<span class="heti-spacing"> </span></span>和观测值<span><span class="heti-spacing"> </span>$y_t$</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，从一个节点到另一个节点的箭头代表条件概率（即前文中的<span class="heti-skip"><span class="heti-spacing"> </span>$P(x_t|x_{t-1})$<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>$P(y_t|x_t)$</span><heti-adjacent class="heti-adjacent-half">）</heti-adjacent>。</p>
-<h4 id="_12">卡尔曼滤波<a class="headerlink" href="#_12" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p>贝叶斯滤波器说明了应如何将新的测量值 $y_t$ 与之前的后验概率 $P(x_{t-1}|y_1,\cdots,y_{t-1})$ 相结合，以求得 $t$ 时刻后验概率的分布。常用的统计滤波方法，如卡尔曼滤波和粒子滤波，都是上式的特殊情况。</p>
+<p>在更一般的情况下，贝叶斯滤波可以被认为是在动态贝叶斯网格（DBN）中做概率推断。DBN是一种图模型，其中的节点代表随机变量（即前文中的状态 $x_t$ 和观测值 $y_t$），从一个节点到另一个节点的箭头代表条件概率（即前文中的 $P(x_t|x_{t-1})$ 和 $P(y_t|x_t)$）。</p>
+<h4 id="_12">卡尔曼滤波<a class="headerlink" href="#_12" title="anchor link to this section for reference">&para;</a></h4>
 <p>卡尔曼滤波器是贝叶斯滤波中最知名的算法，它是在假设动态概率和测量概率均为线性高斯模型的基础上导出的。</p>
-<p>卡尔曼滤波器可简化为如下所示的方程来递归更新每个<span class="heti-skip"><span class="heti-spacing"> </span>$t$<span class="heti-spacing"> </span></span>时刻下的均值<span class="heti-skip"><span class="heti-spacing"> </span>$\hat x_t$<span class="heti-spacing"> </span></span>和协方差<span><span class="heti-spacing"> </span>$S_t$</span> ：</p>
+<p>卡尔曼滤波器可简化为如下所示的方程来递归更新每个 $t$ 时刻下的均值 $\hat x_t$ 和协方差 $S_t$ ：</p>
 <details class="quote">
 <summary>卡尔曼滤波器更新方程</summary>
 <p>$$
@@ -1084,15 +1093,15 @@ $$</p>
 M_t = A S_{t-1} A^T + Q
 $$</p>
 </details>
-<p><strong>卡尔曼滤波器将环境的隐藏状态都估计为用均值和方差（协方差）定义的高斯分布</strong>。其工作过程为：在测量<span class="heti-skip"><span class="heti-spacing"> </span>$y_t$<span class="heti-spacing"> </span></span>之前，先预测均值<span class="heti-skip"><span class="heti-spacing"> </span>$\overline x_t$<span class="heti-spacing"> </span></span>和协方差<span><span class="heti-spacing"> </span>$M_t$</span> ，它们由卡尔曼滤波器在<span class="heti-skip"><span class="heti-spacing"> </span>$t-1$<span class="heti-spacing"> </span></span>时刻估计的均值和协方差计算得到，然后计算预测误差<span><span class="heti-spacing"> </span>$(y_t - B \overline x_t)$</span> ，将校正项<span class="heti-skip"><span class="heti-spacing"> </span>$K_t (y_t - B \overline x_t)$<span class="heti-spacing"> </span></span>与之前的预测均值<span class="heti-skip"><span class="heti-spacing"> </span>$\overline x_t$<span class="heti-spacing"> </span></span>相加即可得到新的估计值<span><span class="heti-spacing"> </span>$\hat x_t$</span> 。下图说明了卡尔曼滤波器的预测<span class="heti-skip"><span class="heti-spacing"> </span>-<span class="heti-spacing"> </span></span>校正周期：</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/4.jpg"><img alt="卡尔曼滤波器的预测-校正周期" src="/assets/images/bci/bciai/4.jpg" title="卡尔曼滤波器的预测-校正周期"/></a></p>
-<h4 id="_13">粒子滤波<a class="headerlink" href="#_13" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h4>
+<p><strong>卡尔曼滤波器将环境的隐藏状态都估计为用均值和方差（协方差）定义的高斯分布</strong>。其工作过程为：在测量 $y_t$ 之前，先预测均值 $\overline x_t$ 和协方差 $M_t$ ，它们由卡尔曼滤波器在 $t-1$ 时刻估计的均值和协方差计算得到，然后计算预测误差 $(y_t - B \overline x_t)$ ，将校正项 $K_t (y_t - B \overline x_t)$ 与之前的预测均值 $\overline x_t$ 相加即可得到新的估计值 $\hat x_t$ 。下图说明了卡尔曼滤波器的预测-校正周期：</p>
+<p><a class="glightbox" href="/assets/images/bci/bciai/4.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="卡尔曼滤波器的预测-校正周期" src="/assets/images/bci/bciai/4.jpg" title="卡尔曼滤波器的预测-校正周期" /></a></p>
+<h4 id="_13">粒子滤波<a class="headerlink" href="#_13" title="anchor link to this section for reference">&para;</a></h4>
 <p><strong>卡尔曼滤波器假设其动态和测量过程为线性的，并服从高斯分布</strong>。基于这种简化的假设能导出贝叶斯滤波中更新方程的解析表达式，但在许多实际情况下这种假设可能并不适用。</p>
-<p><strong>粒子滤波是一种适用于分析非线性非高斯过程的方法</strong>。粒子滤波通过一群样本（粒子）来逼近后验概率<span><span class="heti-spacing"> </span>$P(x_t|y_1,\cdots,y_t)$</span> ，具体过程是“测量<span class="heti-skip"><span class="heti-spacing"> </span>-<span class="heti-spacing"> </span></span>加权<span class="heti-skip"><span class="heti-spacing"> </span>-<span class="heti-spacing"> </span></span>重采样<span class="heti-skip"><span class="heti-spacing"> </span>-<span class="heti-spacing"> </span></span>预测”的周期重复。</p>
-<p>当样本数趋于无穷大时，粒子滤波算法计算出的样本能正确表示后验概率<span><span class="heti-spacing"> </span>$P(x_t|y_1,\cdots,y_t)$</span> 。实际上，使用的样本数取决于特定的应用及可获得的计算能力，样本数一般在<span class="heti-skip"><span class="heti-spacing"> </span>1000~5000<span class="heti-spacing"> </span></span>之间。</p>
-<h2 id="_14">空间滤波<a class="headerlink" href="#_14" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<p><strong>粒子滤波是一种适用于分析非线性非高斯过程的方法</strong>。粒子滤波通过一群样本（粒子）来逼近后验概率 $P(x_t|y_1,\cdots,y_t)$ ，具体过程是“测量-加权-重采样-预测”的周期重复。</p>
+<p>当样本数趋于无穷大时，粒子滤波算法计算出的样本能正确表示后验概率 $P(x_t|y_1,\cdots,y_t)$ 。实际上，使用的样本数取决于特定的应用及可获得的计算能力，样本数一般在1000~5000之间。</p>
+<h2 id="_14">空间滤波<a class="headerlink" href="#_14" title="anchor link to this section for reference">&para;</a></h2>
 <p>空域滤波将<strong>不同位置（通道，channel）记录的大脑信号</strong>通过几种方式进行信号转换。下面讨论一些常用的空域滤波方法。</p>
-<h3 id="_15">双极、拉普拉斯和共同平均参考<a class="headerlink" href="#_15" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_15">双极、拉普拉斯和共同平均参考<a class="headerlink" href="#_15" title="anchor link to this section for reference">&para;</a></h3>
 <ul>
 <li>
 <p>双极滤波：
@@ -1106,7 +1115,7 @@ $$
 $$</p>
 </li>
 <li>
-<p>共同平均参考（CAR<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>：
+<p>共同平均参考（CAR）：
 用第 $i$ 个电极的信号减去其他所有信号的平均值，以增强第 $i$ 个电极上的局部活动。
 $$
 \widetilde s_i = s_i - \frac{1}{N} \sum_{i=1}^N s_i
@@ -1115,15 +1124,15 @@ $$</p>
 </ul>
 <details class="example">
 <summary>三种基本的空间滤波技术示例</summary>
-<p></p><div align="center">
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/5.jpg"><img src="/assets/images/bci/bciai/5.jpg" width="60%"/></a>
-</div>
+<p><div align="center">
+    <a class="glightbox" href="/assets/images/bci/bciai/5.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="/assets/images/bci/bciai/5.jpg" width="60%"></a>
+</div></p>
 </details>
-<h3 id="_16">主成分分析<a class="headerlink" href="#_16" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<h3 id="_16">主成分分析<a class="headerlink" href="#_16" title="anchor link to this section for reference">&para;</a></h3>
 <p>主成分分析（PCA）用于<strong>数据降维</strong>，实际上就是<strong>将在原有特征空间中分布的数据映射到新的维数更低的特征空间</strong>，实现降秩。具体而言，就是将原坐标旋转变换到最大方差的方向上，即使得在新坐标系中，某几根坐标轴上数据分布的方差较大，我们认为在这些特征（主成分）上，不同数据的区分度较高，如果原数据是冗余的，那么通过这种方法仅保留一些方差大的方向，舍弃方差小的方向，使数据维数显著降低。</p>
-<p><span>PCA<span class="heti-spacing"> </span></span>的具体操作关键在于<strong>寻找数据方差最大的方向</strong>。运用线性代数的方法，可以通过计算数据协方差矩阵<span class="heti-skip"><span class="heti-spacing"> </span>$A$<span class="heti-spacing"> </span></span>的特征向量来求解，最终<strong>得到一个低维且不相关的向量<span><span class="heti-spacing"> </span>$a$</span></strong>（<span>$a$<span class="heti-spacing"> </span></span>的维数小于等于输入<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>的维数<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，<strong>该向量可以作为有效的“特征向量”用于<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>的分类</strong>或者其他类型的分析。</p>
+<p>PCA的具体操作关键在于<strong>寻找数据方差最大的方向</strong>。运用线性代数的方法，可以通过计算数据协方差矩阵 $A$ 的特征向量来求解，最终<strong>得到一个低维且不相关的向量 $a$</strong>（$a$ 的维数小于等于输入 $x$ 的维数），<strong>该向量可以作为有效的“特征向量”用于BCI的分类</strong>或者其他类型的分析。</p>
 <details class="quote">
-<summary><span>PCA<span class="heti-spacing"> </span></span>的线性代数过程</summary>
+<summary>PCA的线性代数过程</summary>
 <p>$$
 \begin{aligned}
 var(v) &amp; = \frac{1}{N} \sum_{i=1}^N \Vert (x_i - \overline x)^T v \Vert ^2 \cr
@@ -1132,11 +1141,11 @@ var(v) &amp; = \frac{1}{N} \sum_{i=1}^N \Vert (x_i - \overline x)^T v \Vert ^2 \
 &amp; = v^T A v
 \end{aligned}
 $$</p>
-<p>通过最大化<span class="heti-skip"><span class="heti-spacing"> </span>$v^T A v$<span class="heti-spacing"> </span></span>使<span class="heti-skip"><span class="heti-spacing"> </span>$var(v)$<span class="heti-spacing"> </span></span>达到最大，其约束条件为<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>是单位向量，即<span><span class="heti-spacing"> </span>$v^T v = 1$</span> 。可以用拉格朗日乘子法来进行计算：找到能使<span class="heti-skip"><span class="heti-spacing"> </span>$v^T A v - \lambda (v^T v - 1)$<span class="heti-spacing"> </span></span>达到最大的向量<span><span class="heti-spacing"> </span>$v_1$</span> ，式中<span class="heti-skip"><span class="heti-spacing"> </span>$\lambda$<span class="heti-spacing"> </span></span>是通过优化计算得到的拉格朗日乘子。设该表达式关于<span class="heti-skip"><span class="heti-spacing"> </span>$v$<span class="heti-spacing"> </span></span>的导数为<span><span class="heti-spacing"> </span>$0$</span> ，则可得：</p>
+<p>通过最大化 $v^T A v$ 使 $var(v)$ 达到最大，其约束条件为 $v$ 是单位向量，即 $v^T v = 1$ 。可以用拉格朗日乘子法来进行计算：找到能使 $v^T A v - \lambda (v^T v - 1)$ 达到最大的向量 $v_1$ ，式中 $\lambda$ 是通过优化计算得到的拉格朗日乘子。设该表达式关于 $v$ 的导数为 $0$ ，则可得：</p>
 <p>$$
 A v = \lambda v
 $$</p>
-<p>这就是线性代数中关于矩阵<span class="heti-skip"><span class="heti-spacing"> </span>$A$<span class="heti-spacing"> </span></span>的经典的特征向量<span class="heti-skip"><span class="heti-spacing"> </span>-<span class="heti-spacing"> </span></span>特征值表达式，因此为寻找数据中方差最大的方向，只须计算出<span class="heti-skip"><span class="heti-spacing"> </span>$A$<span class="heti-spacing"> </span></span>的特征向量<span><span class="heti-spacing"> </span>$v_1, \cdots, v_m$</span>（主成分向量<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，由这些向量可以张成输入空间的一个低维子空间。对于输入<span><span class="heti-spacing"> </span>$x$</span> ，用计算得到的<span class="heti-skip"><span class="heti-spacing"> </span>$m$<span class="heti-spacing"> </span></span>维表达式来表示输入即可实现降维，这可以通过将输入投影到<span class="heti-skip"><span class="heti-spacing"> </span>$m$<span class="heti-spacing"> </span></span>个主成分向量上来实现：</p>
+<p>这就是线性代数中关于矩阵 $A$ 的经典的特征向量-特征值表达式，因此为寻找数据中方差最大的方向，只须计算出 $A$ 的特征向量 $v_1, \cdots, v_m$（主成分向量），由这些向量可以张成输入空间的一个低维子空间。对于输入 $x$ ，用计算得到的 $m$ 维表达式来表示输入即可实现降维，这可以通过将输入投影到 $m$ 个主成分向量上来实现：</p>
 <p>$$
 a = \begin{bmatrix}
 (x-\overline x)^T v_1 \cr
@@ -1145,38 +1154,38 @@ a = \begin{bmatrix}
 \end{bmatrix}
 $$</p>
 </details>
-<h3 id="_17">独立分量分析<a class="headerlink" href="#_17" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
-<p>独立分量分析（ICA）也是一种线性变换过程。但是<strong><span>PCA<span class="heti-spacing"> </span></span>只能保证变换后数据具有不相关性</strong>，但是无法保证其高阶独立性，而我们希望数据的各阶统计量都能利用。<span>ICA<span class="heti-spacing"> </span></span>的目标就是寻找一种方法<strong>使得变换后的数据具有最强的独立性</strong>。</p>
-<p>独立性是重要的，相比不相关性，独立性和真实的信号源关系密切。典型<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>中记录到的信号，是<strong>大脑中一组统计独立的信号源线性混合的结果</strong>，用<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>表示记录到的信号， <span>$y$<span class="heti-spacing"> </span></span>表示隐含的独立源向量， <span>$M$<span class="heti-spacing"> </span></span>表示未知的混合矩阵。我们需要同时估计<span class="heti-skip"><span class="heti-spacing"> </span>$M$<span class="heti-spacing"> </span></span>和<span><span class="heti-spacing"> </span>$y$</span> ，从而将<span class="heti-skip"><span class="heti-spacing"> </span>$y$<span class="heti-spacing"> </span></span>还原。</p>
+<h3 id="_17">独立分量分析<a class="headerlink" href="#_17" title="anchor link to this section for reference">&para;</a></h3>
+<p>独立分量分析（ICA）也是一种线性变换过程。但是<strong>PCA只能保证变换后数据具有不相关性</strong>，但是无法保证其高阶独立性，而我们希望数据的各阶统计量都能利用。ICA的目标就是寻找一种方法<strong>使得变换后的数据具有最强的独立性</strong>。</p>
+<p>独立性是重要的，相比不相关性，独立性和真实的信号源关系密切。典型BCI中记录到的信号，是<strong>大脑中一组统计独立的信号源线性混合的结果</strong>，用 $x$ 表示记录到的信号， $y$ 表示隐含的独立源向量， $M$ 表示未知的混合矩阵。我们需要同时估计 $M$ 和 $y$ ，从而将 $y$ 还原。</p>
 <p>$$
 x = M y
 $$</p>
-<p><span>$W$<span class="heti-spacing"> </span></span>也称为解混矩阵，因为它试图将混合的源分离开。独立分量分析<strong>通过寻找解混矩阵来恢复隐含的源</strong>。当<span class="heti-skip"><span class="heti-spacing"> </span>$a$<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>$x$<span class="heti-spacing"> </span></span>矩阵大小相同时，最优的<span><span class="heti-spacing"> </span>$W = M^{-1}$</span> 。</p>
+<p>$W$ 也称为解混矩阵，因为它试图将混合的源分离开。独立分量分析<strong>通过寻找解混矩阵来恢复隐含的源</strong>。当 $a$ 和 $x$ 矩阵大小相同时，最优的 $W = M^{-1}$ 。</p>
 <p>$$
 a = W x
 $$</p>
 <details class="example">
-<summary><span>PCA<span class="heti-spacing"> </span></span>并不试图寻找独立信号源，但是<span class="heti-skip"><span class="heti-spacing"> </span>ICA<span class="heti-spacing"> </span></span>是的</summary>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/assets/images/bci/bciai/6.png"><img alt="PCA与ICA线性变换过程对比示例" src="/assets/images/bci/bciai/6.png" title="PCA与ICA线性变换过程对比示例"/></a></p>
+<summary>PCA并不试图寻找独立信号源，但是ICA是的</summary>
+<p><a class="glightbox" href="/assets/images/bci/bciai/6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="PCA与ICA线性变换过程对比示例" src="/assets/images/bci/bciai/6.png" title="PCA与ICA线性变换过程对比示例" /></a></p>
 </details>
-<p>目前存在多种计算<span class="heti-skip"><span class="heti-spacing"> </span>$W$<span class="heti-spacing"> </span></span>的算法，其中最常用的是<code>Bell-Sejnowski "infomax" 算法</code>以及<code>FastICA</code>。由中心极限定理可得，独立源信号的线性混合几乎总是服从高斯分布，从而<span class="heti-skip"><span class="heti-spacing"> </span>ICA<span class="heti-spacing"> </span></span>算法将<strong>一个合适的非高斯分布作为待求</strong>的<span><span class="heti-spacing"> </span>$P(a_i)$</span> ，从得到的最优化函数推导出<span class="heti-skip"><span class="heti-spacing"> </span>$W$<span class="heti-spacing"> </span></span>的估算准则。</p>
-<p>无论是将<span class="heti-skip"><span class="heti-spacing"> </span>ICA<span class="heti-spacing"> </span></span>的输出向量<span class="heti-skip"><span class="heti-spacing"> </span>$a$<span class="heti-spacing"> </span></span>作为分类的特征向量和用于分离出感兴趣的大脑节律信号，还是去除<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>中的肌电伪迹，<strong><span>ICA<span class="heti-spacing"> </span></span>被证明可用于<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>的多个组成部分</strong>。</p>
-<h3 id="_18">共空间模式<a class="headerlink" href="#_18" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h3>
+<p>目前存在多种计算 $W$ 的算法，其中最常用的是<code>Bell-Sejnowski "infomax" 算法</code>以及<code>FastICA</code>。由中心极限定理可得，独立源信号的线性混合几乎总是服从高斯分布，从而ICA算法将<strong>一个合适的非高斯分布作为待求</strong>的 $P(a_i)$ ，从得到的最优化函数推导出 $W$ 的估算准则。</p>
+<p>无论是将ICA的输出向量 $a$ 作为分类的特征向量和用于分离出感兴趣的大脑节律信号，还是去除EEG中的肌电伪迹，<strong>ICA被证明可用于BCI的多个组成部分</strong>。</p>
+<h3 id="_18">共空间模式<a class="headerlink" href="#_18" title="anchor link to this section for reference">&para;</a></h3>
 <p>共空间模式（CSP）是一种<strong>两分类任务下</strong>的空域滤波特征提取算法。</p>
-<p>与<span class="heti-skip"><span class="heti-spacing"> </span>PCA<span class="heti-spacing"> </span></span>和<span class="heti-skip"><span class="heti-spacing"> </span>ICA<span class="heti-spacing"> </span></span>不同，<span>CSP<span class="heti-spacing"> </span></span>是一种监督方法，即训练数据集被标记过，每个数据向量的类别是已知的。例如，大脑信号是在受试者执行两种不同的任务（手和脚的运动想象）时采集的。<span>CSP<span class="heti-spacing"> </span></span>寻找合适的空间滤波器（线性代数过程，利用矩阵的对角化<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>，<strong>使两类信号的方差值差异最大化</strong>，从而得到具有较高区分度的特征向量。</p>
-<p><strong><span>CSP<span class="heti-spacing"> </span></span>已经成为基于<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>的<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>的一种常用滤波方法</strong>，其实质上<strong>使得<span class="heti-skip"><span class="heti-spacing"> </span>BCI<span class="heti-spacing"> </span></span>所使用特征的可区分度最大化</strong>。</p>
-<h2 id="_19">伪迹去除技术<a class="headerlink" href="#_19" title="anchor link to this section for reference"><span><span class="heti-spacing"> </span>¶</span></a></h2>
+<p>与PCA和ICA不同，CSP是一种监督方法，即训练数据集被标记过，每个数据向量的类别是已知的。例如，大脑信号是在受试者执行两种不同的任务（手和脚的运动想象）时采集的。CSP寻找合适的空间滤波器（线性代数过程，利用矩阵的对角化），<strong>使两类信号的方差值差异最大化</strong>，从而得到具有较高区分度的特征向量。</p>
+<p><strong>CSP已经成为基于EEG的BCI的一种常用滤波方法</strong>，其实质上<strong>使得BCI所使用特征的可区分度最大化</strong>。</p>
+<h2 id="_19">伪迹去除技术<a class="headerlink" href="#_19" title="anchor link to this section for reference">&para;</a></h2>
 <details class="info">
 <summary>什么是伪迹</summary>
-<p><span>BCI<span class="heti-spacing"> </span></span>中的伪迹来自于大脑外部不需要的信号，常见的伪迹可分为以下几类：</p>
+<p>BCI中的伪迹来自于大脑外部不需要的信号，常见的伪迹可分为以下几类：</p>
 <ul>
-<li>来自于人体外的伪迹：如<span class="heti-skip"><span class="heti-spacing"> </span>50/60Hz<span class="heti-spacing"> </span></span>电力工频噪声；</li>
+<li>来自于人体外的伪迹：如50/60Hz电力工频噪声；</li>
 <li>来自于人体内的伪迹：
 可能包括以下几类：<ul>
-<li>呼吸和心跳产生的节律性伪迹（后者称为心电伪迹或<span class="heti-skip"><span class="heti-spacing"> </span>ECG<span class="heti-spacing"> </span></span>伪迹<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>；</li>
+<li>呼吸和心跳产生的节律性伪迹（后者称为心电伪迹或ECG伪迹）；</li>
 <li>皮肤电传导的改变（出汗等产生的结果）引起的信号畸变或衰减；</li>
-<li>眼动或眨眼产生的伪迹（称为眼电伪迹或<span class="heti-skip"><span class="heti-spacing"> </span>EOG<span class="heti-spacing"> </span></span>伪迹，表现为在<span class="heti-skip"><span class="heti-spacing"> </span>EEG<span class="heti-spacing"> </span></span>等大脑信号<span class="heti-skip"><span class="heti-spacing"> </span>3~4Hz<span class="heti-spacing"> </span></span>频带范围内的高幅度偏差<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>；</li>
-<li>肌肉产生的伪迹（称为肌电伪迹或<span class="heti-skip"><span class="heti-spacing"> </span>EMG<span class="heti-spacing"> </span></span>伪迹，出现在<span class="heti-skip"><span class="heti-spacing"> </span>30Hz<span class="heti-spacing"> </span></span>或更高的频带范围<heti-adjacent class="heti-adjacent-half">）</heti-adjacent>；</li>
+<li>眼动或眨眼产生的伪迹（称为眼电伪迹或EOG伪迹，表现为在EEG等大脑信号3~4Hz频带范围内的高幅度偏差）；</li>
+<li>肌肉产生的伪迹（称为肌电伪迹或EMG伪迹，出现在30Hz或更高的频带范围）；</li>
 </ul>
 </li>
 </ul>
@@ -1212,6 +1221,8 @@ PCA已被证明对于去除EEG中的EOG伪迹是有效的。
 ICA寻找的是数据之间的独立性而不是不相关性，从而克服了PCA的一些缺点。</p>
 </li>
 </ul>
+
+
 <!-- source: https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/howto/override-a-theme/#example-mkdocs-material-theme -->
 <hr/>
 <div class="md-source-file">
@@ -1226,6 +1237,15 @@ ICA寻找的是数据之间的独立性而不是不相关性，从而克服了PC
 <!-- mkdocs-git-revision-date-plugin -->
 </small>
 </div>
+
+  
+
+
+
+ --&gt;
+                  <!-- redirect -->
+<h1><span>MinJoker's Notebook<span class="heti-spacing"> </span></span>已迁移，正在为您重定向<span><span class="heti-spacing"> </span>...</span></h1>
+<!-- redirect -->
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
